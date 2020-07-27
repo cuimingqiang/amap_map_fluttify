@@ -118,6 +118,7 @@ class _DrawPolylineScreenState extends State<DrawPolylineScreen>
                     _playbackTrace = await _controller.addPlaybackTrace(
                       latLngList,
                       iconProvider: _assetsIcon1,
+                      duration: Duration(seconds: 10),
                     );
                   },
                 ),

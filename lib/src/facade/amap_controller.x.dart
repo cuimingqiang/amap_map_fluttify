@@ -820,6 +820,12 @@ extension AmapControllerX on AmapController {
   }
 
   /// 添加回放轨迹
+  ///
+  /// [coordinateList] 路径经纬度列表
+  /// [width] 路径宽度
+  /// [strokeColor] 路径颜色
+  /// [iconProvider] 移动marker的图标
+  /// [duration] 移动时长
   Future<PlaybackTrace> addPlaybackTrace(
     List<LatLng> coordinateList, {
     double width = 5,
