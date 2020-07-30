@@ -25,11 +25,13 @@ class com_amap_api_maps_MapView_Android extends StatefulWidget {
     this.onViewCreated,
     this.onDispose,
     this.params = const <String, dynamic>{},
+    this.gestureRecognizers,
   }) : super(key: key);
 
   final MapViewCreatedCallback onViewCreated;
   final _OnAndroidViewDispose onDispose;
   final Map<String, dynamic> params;
+  final List<Factory<OneSequenceGestureRecognizer>> gestureRecognizers;
 
   @override
   _com_amap_api_maps_MapView_AndroidState createState() => _com_amap_api_maps_MapView_AndroidState();
@@ -40,7 +42,7 @@ class _com_amap_api_maps_MapView_AndroidState extends State<com_amap_api_maps_Ma
 
   @override
   Widget build(BuildContext context) {
-    final gestureRecognizers = <Factory<OneSequenceGestureRecognizer>>[
+    final gestureRecognizers = widget.gestureRecognizers ?? <Factory<OneSequenceGestureRecognizer>>[
       Factory<OneSequenceGestureRecognizer>(() => EagerGestureRecognizer()),
     ].toSet();
 

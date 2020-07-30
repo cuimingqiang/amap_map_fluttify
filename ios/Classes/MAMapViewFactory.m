@@ -76,7 +76,7 @@ extern BOOL enableLog;
       NSNumber* bearing = (NSNumber*) params[@"bearing"];
       NSNumber* centerCoordinateLatitude = (NSNumber*) params[@"centerCoordinateLatitude"];
       NSNumber* centerCoordinateLongitude = (NSNumber*) params[@"centerCoordinateLongitude"];
-      
+
       if (mapType != nil && (NSNull*)
           mapType != [NSNull null]) _view.mapType = [mapType intValue];
       if (showCompass != nil && (NSNull*) showCompass != [NSNull null])
