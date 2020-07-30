@@ -31,7 +31,7 @@ class com_amap_api_maps_offlinemap_DownloadProgressView_Android extends Stateful
   final DownloadProgressViewCreatedCallback onViewCreated;
   final _OnAndroidViewDispose onDispose;
   final Map<String, dynamic> params;
-  final List<Factory<OneSequenceGestureRecognizer>> gestureRecognizers;
+  final Set<Factory<OneSequenceGestureRecognizer>> gestureRecognizers;
 
   @override
   _com_amap_api_maps_offlinemap_DownloadProgressView_AndroidState createState() => _com_amap_api_maps_offlinemap_DownloadProgressView_AndroidState();
@@ -42,9 +42,9 @@ class _com_amap_api_maps_offlinemap_DownloadProgressView_AndroidState extends St
 
   @override
   Widget build(BuildContext context) {
-    final gestureRecognizers = widget.gestureRecognizers ?? <Factory<OneSequenceGestureRecognizer>>[
+    final gestureRecognizers = widget.gestureRecognizers ?? <Factory<OneSequenceGestureRecognizer>>{
       Factory<OneSequenceGestureRecognizer>(() => EagerGestureRecognizer()),
-    ].toSet();
+    };
 
     final messageCodec = StandardMessageCodec();
     return AndroidView(

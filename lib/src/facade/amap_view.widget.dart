@@ -141,7 +141,7 @@ class AmapView extends StatefulWidget {
   final bool autoRelease;
 
   /// 传递给PlatformView的手势识别器
-  final List<Factory<OneSequenceGestureRecognizer>> gestureRecognizers;
+  final Set<Factory<OneSequenceGestureRecognizer>> gestureRecognizers;
 
   @override
   _AmapViewState createState() => _AmapViewState();

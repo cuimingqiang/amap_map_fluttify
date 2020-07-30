@@ -31,7 +31,7 @@ class MAPinAnnotationView_iOS extends StatefulWidget {
   final MAPinAnnotationViewCreatedCallback onViewCreated;
   final _OnUiKitViewDispose onDispose;
   final Map<String, dynamic> params;
-  final List<Factory<OneSequenceGestureRecognizer>> gestureRecognizers;
+  final Set<Factory<OneSequenceGestureRecognizer>> gestureRecognizers;
 
   @override
   _MAPinAnnotationView_iOSState createState() => _MAPinAnnotationView_iOSState();
@@ -42,9 +42,9 @@ class _MAPinAnnotationView_iOSState extends State<MAPinAnnotationView_iOS> {
 
   @override
   Widget build(BuildContext context) {
-    final gestureRecognizers = widget.gestureRecognizers ?? <Factory<OneSequenceGestureRecognizer>>[
+    final gestureRecognizers = widget.gestureRecognizers ?? <Factory<OneSequenceGestureRecognizer>>{
       Factory<OneSequenceGestureRecognizer>(() => EagerGestureRecognizer()),
-    ].toSet();
+    };
 
     final messageCodec = StandardMessageCodec();
     return UiKitView(

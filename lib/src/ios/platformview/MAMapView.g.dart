@@ -31,7 +31,7 @@ class MAMapView_iOS extends StatefulWidget {
   final MAMapViewCreatedCallback onViewCreated;
   final _OnUiKitViewDispose onDispose;
   final Map<String, dynamic> params;
-  final List<Factory<OneSequenceGestureRecognizer>> gestureRecognizers;
+  final Set<Factory<OneSequenceGestureRecognizer>> gestureRecognizers;
 
   @override
   _MAMapView_iOSState createState() => _MAMapView_iOSState();
@@ -42,9 +42,9 @@ class _MAMapView_iOSState extends State<MAMapView_iOS> {
 
   @override
   Widget build(BuildContext context) {
-    final gestureRecognizers = widget.gestureRecognizers ?? <Factory<OneSequenceGestureRecognizer>>[
+    final gestureRecognizers = widget.gestureRecognizers ?? <Factory<OneSequenceGestureRecognizer>>{
       Factory<OneSequenceGestureRecognizer>(() => EagerGestureRecognizer()),
-    ].toSet();
+    };
 
     final messageCodec = StandardMessageCodec();
     return UiKitView(
