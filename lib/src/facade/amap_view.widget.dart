@@ -1,19 +1,21 @@
 import 'dart:async';
 import 'dart:io';
+import 'dart:math';
 import 'dart:typed_data';
 import 'dart:ui';
 
 import 'package:amap_map_fluttify/amap_map_fluttify.dart';
 import 'package:amap_map_fluttify/src/android/android.export.g.dart';
 import 'package:amap_map_fluttify/src/ios/ios.export.g.dart';
+import 'package:amap_search_fluttify/amap_search_fluttify.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:amap_search_fluttify/amap_search_fluttify.dart';
-import 'dart:math';
+
 import 'enums.dart';
 import 'extensions.dart';
 import 'models.dart';
@@ -58,6 +60,7 @@ class AmapView extends StatefulWidget {
     this.maskDelay = const Duration(seconds: 0),
     this.mask,
     this.autoRelease = true,
+    this.gestureRecognizers,
   })  : assert(
           zoomLevel == null || (zoomLevel >= 3 && zoomLevel <= 19),
           '缩放范围为3-19',
@@ -137,6 +140,9 @@ class AmapView extends StatefulWidget {
   /// 调用[releaseAmapObjectPool]来释放掉在地图页面期间创建的原生对象.
   final bool autoRelease;
 
+  /// 传递给PlatformView的手势识别器
+  final List<Factory<OneSequenceGestureRecognizer>> gestureRecognizers;
+
   @override
   _AmapViewState createState() => _AmapViewState();
 }
@@ -190,6 +196,7 @@ class _AmapViewState extends State<AmapView> {
               'tilt': widget.tilt,
               'bearing': widget.bearing,
             },
+            gestureRecognizers: widget.gestureRecognizers,
             onDispose: _onPlatformViewDispose,
             onViewCreated: (controller) async {
               _controller = AmapController.android(controller, this);
@@ -229,6 +236,7 @@ class _AmapViewState extends State<AmapView> {
               'tilt': widget.tilt,
               'bearing': widget.bearing,
             },
+            gestureRecognizers: widget.gestureRecognizers,
             onDispose: _onPlatformViewDispose,
             onViewCreated: (controller) async {
               _controller = AmapController.ios(controller, this);
