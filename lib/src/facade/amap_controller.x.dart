@@ -848,4 +848,34 @@ extension AmapControllerX on AmapController {
 
     return PlaybackTrace(marker, polyline);
   }
+
+  /// 设置最大缩放等级
+  Future<void> setMaxZoomLevel(double zoomLevel) async {
+    return platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+
+        await map.setMaxZoomLevel(zoomLevel);
+        pool..add(map);
+      },
+      ios: (pool) async {
+        await iosController.set_maxZoomLevel(zoomLevel);
+      },
+    );
+  }
+
+  /// 设置最小缩放等级
+  Future<void> setMinZoomLevel(double zoomLevel) async {
+    return platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+
+        await map.setMinZoomLevel(zoomLevel);
+        pool..add(map);
+      },
+      ios: (pool) async {
+        await iosController.set_minZoomLevel(zoomLevel);
+      },
+    );
+  }
 }
