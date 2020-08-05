@@ -351,6 +351,12 @@ class _CreateMapScreenState extends State<CreateMapScreen> with NextLatLng {
                     );
                   },
                 ),
+                ListTile(
+                  title: Center(child: Text('(专业版)设置地图锚点')),
+                  onTap: () async {
+                    _controller.setMapAnchor(0.8, 0.8);
+                  },
+                ),
               ],
             ),
           ),

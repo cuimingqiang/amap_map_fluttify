@@ -36,15 +36,9 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
               children: <Widget>[
                 AmapView(
                   zoomLevel: 6,
-//                  markers: [
-//                    MarkerOption(
-//                      latLng: getNextLatLng(),
-////                  iconUri: _assetsIcon1,
-////                  imageConfig: createLocalImageConfiguration(context),
-//                    ),
-//                  ],
                   onMapCreated: (controller) async {
                     _controller = controller;
+//                    await _controller.setMapAnchor(0.5, 0.8);
                     if (await requestPermission()) {
                       await controller.setZoomLevel(6);
                     }
@@ -188,12 +182,9 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                         for (int i = 0; i < 100; i++)
                           MarkerOption(
                             latLng: getNextLatLng(),
-//                            title: '北京$i',
-//                            snippet: '描述$i',
                             iconProvider:
                                 i % 2 == 0 ? _assetsIcon1 : _assetsIcon2,
                             infoWindowEnabled: false,
-//                            rotateAngle: 90,
                             object: 'Marker_$i',
                           ),
                       ],
@@ -247,14 +238,10 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                         .toList()
                         .then((boundary) {
                       debugPrint('boundary: $boundary');
-                      _controller
-                          .zoomToSpan(
-                            boundary,
-                            padding: EdgeInsets.only(bottom: 100),
-                          )
-                          .then((value) =>
-                              Future.delayed(Duration(milliseconds: 300)))
-                          .then((value) => _controller?.setTilt(40));
+                      _controller.zoomToSpan(
+                        boundary,
+                        padding: EdgeInsets.only(top: 100, bottom: 50),
+                      );
                     });
                   },
                 ),

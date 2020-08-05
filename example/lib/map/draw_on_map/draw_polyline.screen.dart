@@ -105,8 +105,8 @@ class _DrawPolylineScreenState extends State<DrawPolylineScreen>
                   title: Center(child: Text('添加回放轨迹')),
                   onTap: () async {
                     final result = await AmapSearch.instance.searchDriveRoute(
-                      from: LatLng(29.263124, 119.466172),
-                      to: LatLng(29.240359, 119.45201),
+                      from: LatLng(39.958245, 116.330929),
+                      to: LatLng(39.915599, 116.42912),
                     );
                     final pathList = await result.drivePathList;
                     final stepList = [

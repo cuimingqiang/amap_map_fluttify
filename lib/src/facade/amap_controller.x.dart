@@ -198,7 +198,7 @@ extension AmapControllerX on AmapController {
         final cameraUpdate =
             await com_amap_api_maps_CameraUpdateFactory.newLatLngBoundsRect(
           rect,
-          (padding.left * devicePixelRatio).toInt(),
+          (padding.left.toInt() * devicePixelRatio).toInt(),
           (padding.right.toInt() * devicePixelRatio).toInt(),
           (padding.top.toInt() * devicePixelRatio).toInt(),
           (padding.bottom.toInt() * devicePixelRatio).toInt(),
@@ -875,6 +875,22 @@ extension AmapControllerX on AmapController {
       },
       ios: (pool) async {
         await iosController.set_minZoomLevel(zoomLevel);
+      },
+    );
+  }
+
+  /// 设置地图锚点
+  Future<void> setMapAnchor(double anchorU, double anchorV) async {
+    return platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+
+//        await map.setPointToCenter(zoomLevel);
+        pool..add(map);
+      },
+      ios: (pool) async {
+        final anchor = await CGPoint.create(anchorU, anchorV);
+        await iosController.set_screenAnchor(anchor);
       },
     );
   }
