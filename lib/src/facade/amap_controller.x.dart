@@ -9,6 +9,8 @@ import 'package:amap_search_fluttify/amap_search_fluttify.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'extensions.dart';
+
 /// 可直接扩展的部分
 extension AmapControllerX on AmapController {
   /// 添加图片覆盖物
@@ -104,6 +106,18 @@ extension AmapControllerX on AmapController {
               .create__double__double(latLng.latitude, latLng.longitude));
         }
         await builder.data(latLngList);
+        if (option.gradient != null) {
+          await builder.gradient(
+            await com_amap_api_maps_model_GradientX.create(
+              Int32List.fromList(
+                  option.gradient.colors.map((e) => e.value).toList()),
+              Float64List.fromList(option.gradient.stops),
+            ),
+          );
+          if (option.gradient.radius != null) {
+            await builder.radius(option.gradient.radius?.toInt());
+          }
+        }
 
         // 创建Tile Overlay选项
         final tileOverlayOption =
@@ -141,10 +155,26 @@ extension AmapControllerX on AmapController {
           await node.set_coordinate(coordinate);
           // 权重值 暂时全部都为1
           await node.set_intensity(1);
+          // 权重值 暂时全部都为1
           nodeList.add(node);
         }
         // 添加结点数据
         await overlay.set_data(nodeList);
+        if (option.gradient != null) {
+          final gradient = await MAHeatMapGradient.create__();
+          await gradient.initWithColor_andWithStartPoints(
+            <UIColor>[
+              for (final color in option.gradient.colors)
+                await UIColor.create(color)
+            ],
+            option.gradient.stops,
+          );
+          await overlay.set_gradient(gradient);
+
+          if (option.gradient.radius != null) {
+            await overlay.set_radius(option.gradient.radius.toInt());
+          }
+        }
 
         // 添加热力图
         await iosController.addOverlay(overlay);

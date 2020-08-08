@@ -89,6 +89,33 @@ public class SubHandlerCustom {
                     return;
                 }
             });
+            put("ObjectFactory::createcom_amap_api_maps_model_Gradient__intArray__floatArrayX", (__args__, __methodResult__) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_amap_api_maps_model_Gradient__intArray__floatArray");
+                }
+
+                // args
+                // jsonable arg
+                int[] var1 = (int[]) ((Map<String, Object>) __args__).get("var1");
+                // jsonable arg
+                double[] var2 = (double[]) ((Map<String, Object>) __args__).get("var2");
+
+                float[] stopList = new float[var2.length];
+                for (int i = 0; i < var2.length; i++) {
+                    stopList[i] = (float) var2[i];
+                }
+
+                // create target object
+                com.amap.api.maps.model.Gradient __obj__ = new com.amap.api.maps.model.Gradient(var1, stopList);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+
+                __methodResult__.success(System.identityHashCode(__obj__));
+            });
         }};
     }
 }

@@ -244,8 +244,15 @@ class HeatmapTileOption {
   /// 中心点经纬度
   final List<LatLng> latLngList;
 
+  /// 热力图渐变色配置
+  ///
+  /// [RadialGradient.stops]的值范围为(0,1), 默认值为[0.2,0.5,0.9]
+  /// [RadialGradient.stops]和[RadialGradient.colors]列表的长度必须一致
+  final RadialGradient gradient;
+
   HeatmapTileOption({
     @required this.latLngList,
+    this.gradient,
   });
 
   @override

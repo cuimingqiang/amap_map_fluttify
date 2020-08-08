@@ -259,7 +259,13 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                   title: Center(child: Text('画热力图')),
                   onTap: () async {
                     await _controller?.addHeatmapTileOverlay(
-                      HeatmapTileOption(latLngList: getNextBatchLatLng(50)),
+                      HeatmapTileOption(
+                        latLngList: getNextBatchLatLng(50),
+                        gradient: RadialGradient(
+                          colors: [Colors.purple, Colors.red],
+                          stops: <double>[0.2, 1],
+                        ),
+                      ),
                     );
                   },
                 ),
