@@ -4159,6 +4159,8 @@ extern BOOL enableLog;
   
   ////////////////////////////如果需要手写代码, 请写在这里/////////////////////////////
   UIImage* icon = (UIImage *) objc_getAssociatedObject(annotation, (const void *) 1);
+  NSArray<UIImage*>* icons = (NSArray<UIImage*>*) objc_getAssociatedObject(annotation, (const void *) 11);
+  NSNumber* duration = (NSNumber*) objc_getAssociatedObject(annotation, (const void *) 12);
   NSNumber* draggable = objc_getAssociatedObject(annotation, (const void *) 2);
   NSNumber* rotateAngle = objc_getAssociatedObject(annotation, (const void *) 3);
   NSNumber* infoWindowEnabled = objc_getAssociatedObject(annotation, (const void *) 4);
@@ -4186,6 +4188,11 @@ extern BOOL enableLog;
           if (annotationView == nil) {
               annotationView = [[MAAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"customAnnotationReuseIndentifier"];
           }
+      }
+      if (icons != nil && (NSNull*) icon != [NSNull null]) {
+          annotationView.imageView.animationImages = icons;
+          annotationView.imageView.animationDuration = [duration doubleValue];
+          [annotationView.imageView startAnimating];
       }
       if (icon != nil && (NSNull*) icon != [NSNull null]) annotationView.image = icon;
       if (draggable != nil) annotationView.draggable = [draggable boolValue];

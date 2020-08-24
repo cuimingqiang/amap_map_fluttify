@@ -65,6 +65,8 @@ class MarkerOption {
     this.anchorV = 0,
     this.object,
     this.iconProvider,
+    this.iconsProvider,
+    this.animationFps,
   }) : assert(!(widget != null && iconProvider != null),
             'widget和iconProvider不能同时设置! ');
 
@@ -106,6 +108,14 @@ class MarkerOption {
 
   /// 图标
   final ImageProvider iconProvider;
+
+  /// 帧动画图标
+  final List<ImageProvider> iconsProvider;
+
+  /// 帧动画帧率
+  ///
+  /// 最大60, 最小3
+  final int animationFps;
 
   @override
   String toString() {

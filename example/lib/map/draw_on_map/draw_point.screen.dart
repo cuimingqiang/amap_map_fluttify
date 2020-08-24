@@ -110,6 +110,25 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                   },
                 ),
                 ListTile(
+                  title: Center(child: Text('添加帧动画Marker')),
+                  onTap: () async {
+                    final marker = await _controller?.addMarker(
+                      MarkerOption(
+                        latLng: getNextLatLng(),
+                        title: '北京${random.nextDouble()}',
+                        snippet: '描述${random.nextDouble()}',
+                        iconsProvider: [
+                          for (int i = 0; i < 20; i++)
+                            AssetImage('images/animation$i.jpg')
+                        ],
+                        animationFps: 3,
+                        object: '自定义数据${random.nextDouble()}',
+                      ),
+                    );
+                    _markers.add(marker);
+                  },
+                ),
+                ListTile(
                   title: Center(child: Text('移动Marker坐标')),
                   onTap: () async {
                     await _markers?.first?.setCoordinate(getNextLatLng());

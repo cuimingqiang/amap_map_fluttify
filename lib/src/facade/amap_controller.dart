@@ -780,8 +780,26 @@ mixin _Community on _Holder {
           await markerOption.snippet(option.snippet);
         }
         // 设置marker图标
+        // 帧动画
+        if (option.iconsProvider != null && option.iconsProvider.isNotEmpty) {
+          List<Uint8List> iconData = [];
+          for (final item in option.iconsProvider) {
+            final data = await item
+                .toImageData(createLocalImageConfiguration(state.context));
+            iconData.add(data);
+          }
+
+          final bitmap = await android_graphics_Bitmap.create_batch(iconData);
+          final icon =
+              await com_amap_api_maps_model_BitmapDescriptorFactory_Batch
+                  .fromBitmap_batch(bitmap);
+          await markerOption.icons(icon);
+          await markerOption.period(240 ~/ (option.animationFps ?? 30));
+
+          pool..addAll(bitmap)..addAll(icon);
+        }
         // 普通图片
-        if (option.iconProvider != null) {
+        else if (option.iconProvider != null) {
           Uint8List iconData = await option.iconProvider
               .toImageData(createLocalImageConfiguration(state.context));
 
@@ -857,8 +875,27 @@ mixin _Community on _Holder {
           await annotation.set_subtitle(option.snippet);
         }
         // 设置图片
+        // 帧动画
+        if (option.iconsProvider != null && option.iconsProvider.isNotEmpty) {
+          List<Uint8List> iconData = [];
+          for (final item in option.iconsProvider) {
+            final data = await item
+                .toImageData(createLocalImageConfiguration(state.context));
+            iconData.add(data);
+          }
+
+          final icons = await UIImage.create_batch(iconData);
+
+          await annotation.addListProperty__(11, icons);
+          await annotation.addJsonableProperty__(
+            12,
+            1 / (option.animationFps ?? 30) * icons.length,
+          );
+
+          pool..addAll(icons);
+        }
         // 普通图片
-        if (option.iconProvider != null) {
+        else if (option.iconProvider != null) {
           Uint8List iconData = await option.iconProvider
               .toImageData(createLocalImageConfiguration(state.context));
 
