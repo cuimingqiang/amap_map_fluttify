@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import '../android/android.export.g.dart';
 import '../ios/ios.export.g.dart';
 import 'enums.dart';
+import 'extensions.dart';
 
 /// 我的位置选项
 @immutable
@@ -646,12 +647,10 @@ class Marker {
     return platform(
       android: (_) => androidModel.setVisible(visible),
       ios: (_) async {
+        await iosModel.setVisible(visible);
+
         final annotationView = await iosController.viewForAnnotation(iosModel);
-        if (annotationView != null) {
-          await annotationView.setHidden(!visible);
-        } else {
-          debugPrint('当前_annotationView为null, 无法设置可见性!');
-        }
+        await annotationView?.setHidden(!visible);
       },
     );
   }
@@ -688,6 +687,12 @@ class Marker {
       ios: (pool) async {
         final icon = await UIImage.create(iconData);
 
+        // 这里和annotationView?.set_image看上去是做同一件事情, 但其实是针对两种不同情况
+        // 如果marker是屏幕内, 那会直接走annotationView?.set_image;
+        // 如果不在屏幕内, 那么annotationView?.set_image不会被执行, 如果此marker后来
+        // 进入到屏幕内后, 此时需要同步annotation的数据, 如果不给annotation设置值, 那么
+        // 渲染的时候还是上次的图片
+        await iosModel.setIcon(icon);
         final annotationView = await iosController.viewForAnnotation(iosModel);
         await annotationView?.set_image(icon, viewChannel: false);
       },
