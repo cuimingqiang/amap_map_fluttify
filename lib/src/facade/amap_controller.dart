@@ -945,12 +945,9 @@ mixin _Community on _Holder {
         // 添加marker
         await iosController.addAnnotation(annotation);
 
-        // 等待添加完成 获取对应的view
-        final annotationViewList =
-            await iosMapDelegate.annotationViewCompleter.future;
         pool.add(coordinate);
 
-        return Marker.ios(annotation, annotationViewList[0], iosController);
+        return Marker.ios(annotation, iosController);
       },
     );
   }
@@ -1093,11 +1090,7 @@ mixin _Community on _Holder {
         pool.addAll(coordinateBatch);
         return [
           for (int i = 0; i < options.length; i++)
-            Marker.ios(
-              annotationBatch[i],
-              annotationViewList[i],
-              iosController,
-            )
+            Marker.ios(annotationBatch[i], iosController)
         ];
       },
     );
@@ -1816,12 +1809,11 @@ mixin _Pro on _Holder, _Community {
         final height = await frame.height;
 
         // 去掉默认的弹窗
-        await marker.annotationView.set_canShowCallout(
-          false,
-          viewChannel: false,
-        );
+        final annotationView =
+            await iosController.viewForAnnotation(marker.iosModel);
+        await annotationView?.set_canShowCallout(false, viewChannel: false);
         // 由于默认偏移量是0, 这里根据弹窗view设置一下偏移量
-        await marker.annotationView.set_calloutOffset(
+        await annotationView?.set_calloutOffset(
           await CGPoint.create(-width / 2, -height),
           viewChannel: false,
         );
@@ -1831,8 +1823,8 @@ mixin _Pro on _Holder, _Community {
         await calloutView.initWithCustomView(imageView, viewChannel: false);
 
         // 设置自定义弹窗
-        await marker.annotationView
-            .set_customCalloutView(calloutView, viewChannel: false);
+        await annotationView?.set_customCalloutView(calloutView,
+            viewChannel: false);
 
         pool..add(bitmap)..add(imageView)..add(calloutView);
       },

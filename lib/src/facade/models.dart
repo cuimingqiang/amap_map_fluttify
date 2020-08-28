@@ -552,13 +552,11 @@ class MapLocation {
 class Marker {
   Marker.android(this.androidModel);
 
-  Marker.ios(this.iosModel, this.annotationView, this.iosController);
+  Marker.ios(this.iosModel, this.iosController);
 
   com_amap_api_maps_model_Marker androidModel;
 
   MAPointAnnotation iosModel;
-
-  MAAnnotationView annotationView;
   MAMapView iosController;
 
   /// 获取标题
@@ -627,6 +625,7 @@ class Marker {
         ),
       ),
       ios: (_) async {
+        final annotationView = await iosController.viewForAnnotation(iosModel);
         if (annotationView != null) {
           final coordinate = await CLLocationCoordinate2D.create(
             coord.latitude,
@@ -647,7 +646,7 @@ class Marker {
     return platform(
       android: (_) => androidModel.setVisible(visible),
       ios: (_) async {
-        debugPrint('ios端目前无法设置可见性!');
+        final annotationView = await iosController.viewForAnnotation(iosModel);
         if (annotationView != null) {
           await annotationView.setHidden(!visible);
         } else {
@@ -689,7 +688,8 @@ class Marker {
       ios: (pool) async {
         final icon = await UIImage.create(iconData);
 
-        annotationView.set_image(icon, viewChannel: false);
+        final annotationView = await iosController.viewForAnnotation(iosModel);
+        await annotationView?.set_image(icon, viewChannel: false);
       },
     );
   }
@@ -711,7 +711,8 @@ class Marker {
         await androidModel.setAnimation(_animation);
       },
       ios: (pool) async {
-        await annotationView.scaleWithDuration();
+        final annotationView = await iosController.viewForAnnotation(iosModel);
+        await annotationView?.scaleWithDuration();
       },
     );
   }
