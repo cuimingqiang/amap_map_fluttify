@@ -106,6 +106,9 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                         ),
                       );
                     });
+                    await marker.setAnimation(
+                        ScaleMarkerAnimation(x: 0, toX: 1, y: 0, toY: 1));
+                    await marker.startAnimation();
                     _markers.add(marker);
                   },
                 ),

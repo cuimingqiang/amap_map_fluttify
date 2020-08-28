@@ -1,4 +1,5 @@
 import 'package:amap_core_fluttify/amap_core_fluttify.dart';
+import 'package:amap_map_fluttify/amap_map_fluttify.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -464,6 +465,34 @@ class TrafficOption {
   }
 }
 
+@immutable
+class MarkerAnimation {
+  final Duration duration;
+
+  MarkerAnimation(this.duration);
+}
+
+@immutable
+class ScaleMarkerAnimation extends MarkerAnimation {
+  ScaleMarkerAnimation({
+    Duration duration = const Duration(seconds: 1),
+    @required this.x,
+    @required this.toX,
+    @required this.y,
+    @required this.toY,
+  }) : super(duration);
+
+  final double x;
+  final double toX;
+  final double y;
+  final double toY;
+
+  @override
+  String toString() {
+    return 'ScaleMarkerAnimation{x: $x, toX: $toX, y: $y, toY: $toY}';
+  }
+}
+
 /// 地图定位信息 区分于定位插件的定位信息
 class MapLocation {
   MapLocation.android(this.androidModel);
@@ -662,6 +691,38 @@ class Marker {
 
         annotationView.set_image(icon, viewChannel: false);
       },
+    );
+  }
+
+  /// 设置动画
+  Future<void> setAnimation(MarkerAnimation animation) async {
+    return platform(
+      android: (pool) async {
+        com_amap_api_maps_model_animation_Animation _animation;
+        if (animation is ScaleMarkerAnimation) {
+          _animation = await com_amap_api_maps_model_animation_ScaleAnimation
+              .create__float__float__float__float(
+            animation.x,
+            animation.toX,
+            animation.y,
+            animation.toY,
+          );
+        }
+        await androidModel.setAnimation(_animation);
+      },
+      ios: (pool) async {
+        await annotationView.scaleWithDuration();
+      },
+    );
+  }
+
+  /// 设置动画
+  Future<void> startAnimation() async {
+    return platform(
+      android: (pool) {
+        return androidModel.startAnimation();
+      },
+      ios: (pool) async {},
     );
   }
 }
