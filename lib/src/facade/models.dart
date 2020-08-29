@@ -469,28 +469,26 @@ class TrafficOption {
 @immutable
 class MarkerAnimation {
   final Duration duration;
+  final int repeatCount;
 
-  MarkerAnimation(this.duration);
+  MarkerAnimation(this.duration, this.repeatCount);
 }
 
 @immutable
 class ScaleMarkerAnimation extends MarkerAnimation {
   ScaleMarkerAnimation({
     Duration duration = const Duration(seconds: 1),
-    @required this.x,
-    @required this.toX,
-    @required this.y,
-    @required this.toY,
-  }) : super(duration);
+    int repeatCount = 1,
+    @required this.fromValue,
+    @required this.toValue,
+  }) : super(duration, repeatCount);
 
-  final double x;
-  final double toX;
-  final double y;
-  final double toY;
+  final double fromValue;
+  final double toValue;
 
   @override
   String toString() {
-    return 'ScaleMarkerAnimation{x: $x, toX: $toX, y: $y, toY: $toY}';
+    return 'ScaleMarkerAnimation{fromValue: $fromValue, toValue: $toValue}';
   }
 }
 
@@ -700,35 +698,34 @@ class Marker {
   }
 
   /// 设置动画
-  Future<void> setAnimation(MarkerAnimation animation) async {
+  Future<void> startAnimation(MarkerAnimation animation) async {
     return platform(
       android: (pool) async {
         com_amap_api_maps_model_animation_Animation _animation;
         if (animation is ScaleMarkerAnimation) {
           _animation = await com_amap_api_maps_model_animation_ScaleAnimation
               .create__float__float__float__float(
-            animation.x,
-            animation.toX,
-            animation.y,
-            animation.toY,
+            animation.fromValue,
+            animation.toValue,
+            animation.fromValue,
+            animation.toValue,
           );
         }
+        await _animation.setRepeatCount(animation.repeatCount);
         await androidModel.setAnimation(_animation);
+        await androidModel.startAnimation();
       },
       ios: (pool) async {
         final annotationView = await iosController.viewForAnnotation(iosModel);
-        await annotationView?.scaleWithDuration();
+        if (animation is ScaleMarkerAnimation) {
+          await annotationView?.scaleWithDuration(
+            fromValue: animation.fromValue,
+            toValue: animation.toValue,
+            duration: animation.duration.inMilliseconds / 1000,
+            repeatCount: animation.repeatCount,
+          );
+        }
       },
-    );
-  }
-
-  /// 设置动画
-  Future<void> startAnimation() async {
-    return platform(
-      android: (pool) {
-        return androidModel.startAnimation();
-      },
-      ios: (pool) async {},
     );
   }
 }

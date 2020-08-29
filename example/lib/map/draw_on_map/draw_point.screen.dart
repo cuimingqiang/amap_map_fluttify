@@ -106,9 +106,24 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                         ),
                       );
                     });
-                    await marker.setAnimation(
-                        ScaleMarkerAnimation(x: 0, toX: 1, y: 0, toY: 1));
-                    await marker.startAnimation();
+                    _markers.add(marker);
+                  },
+                ),
+                ListTile(
+                  title: Center(child: Text('添加缩放动画Marker')),
+                  onTap: () async {
+                    final marker = await _controller?.addMarker(
+                      MarkerOption(
+                        latLng: getNextLatLng(),
+                        iconProvider: _assetsIcon1,
+                        anchorU: 0.5,
+                        anchorV: 1,
+                        visible: false,
+                      ),
+                    );
+                    await marker.startAnimation(
+                        ScaleMarkerAnimation(fromValue: 0, toValue: 1));
+                    await marker.setVisible(true);
                     _markers.add(marker);
                   },
                 ),
