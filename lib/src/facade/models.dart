@@ -1,4 +1,5 @@
 import 'package:amap_core_fluttify/amap_core_fluttify.dart';
+import 'package:amap_map_fluttify/amap_map_fluttify.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/material.dart';
 import '../android/android.export.g.dart';
 import '../ios/ios.export.g.dart';
 import 'enums.dart';
+import 'extensions.dart';
 
 /// 我的位置选项
 @immutable
@@ -65,6 +67,8 @@ class MarkerOption {
     this.anchorV = 0,
     this.object,
     this.iconProvider,
+    this.iconsProvider,
+    this.animationFps,
   }) : assert(!(widget != null && iconProvider != null),
             'widget和iconProvider不能同时设置! ');
 
@@ -106,6 +110,14 @@ class MarkerOption {
 
   /// 图标
   final ImageProvider iconProvider;
+
+  /// 帧动画图标
+  final List<ImageProvider> iconsProvider;
+
+  /// 帧动画帧率
+  ///
+  /// 最大60, 最小3
+  final int animationFps;
 
   @override
   String toString() {
@@ -244,8 +256,15 @@ class HeatmapTileOption {
   /// 中心点经纬度
   final List<LatLng> latLngList;
 
+  /// 热力图渐变色配置
+  ///
+  /// [RadialGradient.stops]的值范围为(0,1), 默认值为[0.2,0.5,0.9]
+  /// [RadialGradient.stops]和[RadialGradient.colors]列表的长度必须一致
+  final RadialGradient gradient;
+
   HeatmapTileOption({
     @required this.latLngList,
+    this.gradient,
   });
 
   @override
@@ -415,25 +434,85 @@ class TraceLocation {
   }
 }
 
+/// 交通配置
+@immutable
+class TrafficOption {
+  /// 是否显示
+  final bool show;
+
+  /// 通畅路段颜色
+  final Color goodColor;
+
+  /// 缓行路段颜色
+  final Color badColor;
+
+  /// 拥堵路段颜色
+  final Color terribleColor;
+
+  /// 未知路段颜色
+  final Color unknownColor;
+
+  TrafficOption({
+    @required this.show,
+    this.goodColor = Colors.green,
+    this.badColor = Colors.yellow,
+    this.terribleColor = Colors.red,
+    this.unknownColor = Colors.blue,
+  }) : assert(show != null);
+
+  @override
+  String toString() {
+    return 'TrafficOption{show: $show, goodColor: $goodColor, badColor: $badColor, terribleColor: $terribleColor, unknownColor: $unknownColor}';
+  }
+}
+
+@immutable
+class MarkerAnimation {
+  final Duration duration;
+
+  MarkerAnimation(this.duration);
+}
+
+@immutable
+class ScaleMarkerAnimation extends MarkerAnimation {
+  ScaleMarkerAnimation({
+    Duration duration = const Duration(seconds: 1),
+    @required this.x,
+    @required this.toX,
+    @required this.y,
+    @required this.toY,
+  }) : super(duration);
+
+  final double x;
+  final double toX;
+  final double y;
+  final double toY;
+
+  @override
+  String toString() {
+    return 'ScaleMarkerAnimation{x: $x, toX: $toX, y: $y, toY: $toY}';
+  }
+}
+
 /// 地图定位信息 区分于定位插件的定位信息
 class MapLocation {
-  MapLocation.android(this._androidModel);
+  MapLocation.android(this.androidModel);
 
-  MapLocation.ios(this._iosModel);
+  MapLocation.ios(this.iosModel);
 
-  android_location_Location _androidModel;
-  MAUserLocation _iosModel;
+  android_location_Location androidModel;
+  MAUserLocation iosModel;
 
   Future<LatLng> get coord {
     return platform(
       android: (pool) async {
         return LatLng(
-          await _androidModel.latitude,
-          await _androidModel.longitude,
+          await androidModel.latitude,
+          await androidModel.longitude,
         );
       },
       ios: (pool) async {
-        final location = await _iosModel.get_coordinate();
+        final location = await iosModel.get_coordinate();
         return LatLng(await location.latitude, await location.longitude);
       },
     );
@@ -441,9 +520,9 @@ class MapLocation {
 
   Future<double> get bearing {
     return platform(
-      android: (pool) => _androidModel.bearing,
+      android: (pool) => androidModel.bearing,
       ios: (pool) async {
-        final heading = await _iosModel.get_heading();
+        final heading = await iosModel.get_heading();
         return heading.magneticHeading;
       },
     );
@@ -451,9 +530,9 @@ class MapLocation {
 
   Future<double> get altitude {
     return platform(
-      android: (pool) => _androidModel.altitude,
+      android: (pool) => androidModel.altitude,
       ios: (pool) async {
-        final location = await _iosModel.get_location();
+        final location = await iosModel.get_location();
         return location.altitude;
       },
     );
@@ -461,9 +540,9 @@ class MapLocation {
 
   Future<double> get speed {
     return platform(
-      android: (pool) => _androidModel.speed,
+      android: (pool) => androidModel.speed,
       ios: (pool) async {
-        final location = await _iosModel.get_location();
+        final location = await iosModel.get_location();
         return location.speed;
       },
     );
@@ -474,13 +553,11 @@ class MapLocation {
 class Marker {
   Marker.android(this.androidModel);
 
-  Marker.ios(this.iosModel, this.annotationView, this.iosController);
+  Marker.ios(this.iosModel, this.iosController);
 
   com_amap_api_maps_model_Marker androidModel;
 
   MAPointAnnotation iosModel;
-
-  MAAnnotationView annotationView;
   MAMapView iosController;
 
   /// 获取标题
@@ -549,6 +626,7 @@ class Marker {
         ),
       ),
       ios: (_) async {
+        final annotationView = await iosController.viewForAnnotation(iosModel);
         if (annotationView != null) {
           final coordinate = await CLLocationCoordinate2D.create(
             coord.latitude,
@@ -569,12 +647,10 @@ class Marker {
     return platform(
       android: (_) => androidModel.setVisible(visible),
       ios: (_) async {
-        debugPrint('ios端目前无法设置可见性!');
-        if (annotationView != null) {
-          await annotationView.setHidden(!visible);
-        } else {
-          debugPrint('当前_annotationView为null, 无法设置可见性!');
-        }
+        await iosModel.setVisible(visible);
+
+        final annotationView = await iosController.viewForAnnotation(iosModel);
+        await annotationView?.setHidden(!visible);
       },
     );
   }
@@ -611,61 +687,111 @@ class Marker {
       ios: (pool) async {
         final icon = await UIImage.create(iconData);
 
-        annotationView.set_image(icon, viewChannel: false);
+        // 这里和annotationView?.set_image看上去是做同一件事情, 但其实是针对两种不同情况
+        // 如果marker是屏幕内, 那会直接走annotationView?.set_image;
+        // 如果不在屏幕内, 那么annotationView?.set_image不会被执行, 如果此marker后来
+        // 进入到屏幕内后, 此时需要同步annotation的数据, 如果不给annotation设置值, 那么
+        // 渲染的时候还是上次的图片
+        await iosModel.setIcon(icon);
+        final annotationView = await iosController.viewForAnnotation(iosModel);
+        await annotationView?.set_image(icon, viewChannel: false);
       },
+    );
+  }
+
+  /// 设置动画
+  Future<void> setAnimation(MarkerAnimation animation) async {
+    return platform(
+      android: (pool) async {
+        com_amap_api_maps_model_animation_Animation _animation;
+        if (animation is ScaleMarkerAnimation) {
+          _animation = await com_amap_api_maps_model_animation_ScaleAnimation
+              .create__float__float__float__float(
+            animation.x,
+            animation.toX,
+            animation.y,
+            animation.toY,
+          );
+        }
+        await androidModel.setAnimation(_animation);
+      },
+      ios: (pool) async {
+        final annotationView = await iosController.viewForAnnotation(iosModel);
+        await annotationView?.scaleWithDuration();
+      },
+    );
+  }
+
+  /// 设置动画
+  Future<void> startAnimation() async {
+    return platform(
+      android: (pool) {
+        return androidModel.startAnimation();
+      },
+      ios: (pool) async {},
     );
   }
 }
 
 /// 平滑移动点
 class SmoothMoveMarker {
-  SmoothMoveMarker.android(this._androidModel);
+  SmoothMoveMarker.android(this.androidModel);
 
-  SmoothMoveMarker.ios(this._iosAnimation);
+  SmoothMoveMarker.ios(this.iosController, this.iosAnimation, this.annotation);
 
-  com_amap_api_maps_utils_overlay_SmoothMoveMarker _androidModel;
-  MAAnnotationMoveAnimation _iosAnimation;
+  com_amap_api_maps_utils_overlay_SmoothMoveMarker androidModel;
+
+  MAMapView iosController;
+  MAAnnotationMoveAnimation iosAnimation;
+  MAAnimatedAnnotation annotation;
+
+  Future<void> remove() async {
+    return platform(
+      android: (pool) => androidModel.removeMarker(),
+      ios: (pool) => iosController.removeAnnotation(annotation),
+    );
+  }
 
   Future<void> stop() async {
     return platform(
-      android: (pool) => _androidModel.stopMove(),
-      ios: (pool) => _iosAnimation.cancel(),
+      android: (pool) => androidModel.stopMove(),
+      ios: (pool) => iosAnimation.cancel(),
     );
   }
 }
 
 /// 折线
 class Polyline {
-  Polyline.android(this._androidModel);
+  Polyline.android(this.androidModel);
 
-  Polyline.ios(this._iosModel, this._iosController);
+  Polyline.ios(this.iosModel, this.iosController);
 
-  com_amap_api_maps_model_Polyline _androidModel;
-  MAPolyline _iosModel;
-  MAMapView _iosController;
+  com_amap_api_maps_model_Polyline androidModel;
+  MAPolyline iosModel;
+  MAMapView iosController;
 
   Future<void> remove() {
     return platform(
-      android: (_) => _androidModel.remove(),
-      ios: (_) => _iosController?.removeOverlay(_iosModel),
+      android: (_) => androidModel.remove(),
+      ios: (_) => iosController?.removeOverlay(iosModel),
     );
   }
 }
 
 /// 多边形
 class Polygon {
-  Polygon.android(this._androidModel);
+  Polygon.android(this.androidModel);
 
-  Polygon.ios(this._iosModel, this._iosController);
+  Polygon.ios(this.iosModel, this.iosController);
 
-  com_amap_api_maps_model_Polygon _androidModel;
-  MAPolygon _iosModel;
-  MAMapView _iosController;
+  com_amap_api_maps_model_Polygon androidModel;
+  MAPolygon iosModel;
+  MAMapView iosController;
 
   Future<void> remove() {
     return platform(
-      android: (_) => _androidModel.remove(),
-      ios: (_) => _iosController?.removeOverlay(_iosModel),
+      android: (_) => androidModel.remove(),
+      ios: (_) => iosController?.removeOverlay(iosModel),
     );
   }
 
@@ -674,13 +800,13 @@ class Polygon {
       android: (_) async {
         final latLng = await com_amap_api_maps_model_LatLng
             .create__double__double(target.latitude, target.longitude);
-        return _androidModel.contains(latLng);
+        return androidModel.contains(latLng);
       },
       ios: (_) async {
         final latLng = await CLLocationCoordinate2D.create(
             target.latitude, target.longitude);
         final point = await MAMapPointForCoordinate(latLng);
-        final bounds = await _iosModel.get_points();
+        final bounds = await iosModel.get_points();
         return MAPolygonContainsPoint(point, bounds, bounds.length);
       },
     );
@@ -689,125 +815,111 @@ class Polygon {
 
 /// 圆形
 class Circle {
-  Circle.android(this._androidModel);
+  Circle.android(this.androidModel);
 
-  Circle.ios(this._iosModel, this._iosController);
+  Circle.ios(this.iosModel, this.iosController);
 
-  com_amap_api_maps_model_Circle _androidModel;
-  MACircle _iosModel;
-  MAMapView _iosController;
+  com_amap_api_maps_model_Circle androidModel;
+  MACircle iosModel;
+  MAMapView iosController;
 
   Future<void> remove() {
     return platform(
-      android: (_) => _androidModel.remove(),
-      ios: (_) => _iosController?.removeOverlay(_iosModel),
+      android: (_) => androidModel.remove(),
+      ios: (_) => iosController?.removeOverlay(iosModel),
     );
   }
 }
 
 /// 热力图
 class HeatmapOverlay {
-  HeatmapOverlay.android(this._androidModel);
+  HeatmapOverlay.android(this.androidModel);
 
-  HeatmapOverlay.ios(this._iosModel, this._iosController);
+  HeatmapOverlay.ios(this.iosModel, this.iosController);
 
-  com_amap_api_maps_model_TileOverlay _androidModel;
-  MAHeatMapTileOverlay _iosModel;
-  MAMapView _iosController;
+  com_amap_api_maps_model_TileOverlay androidModel;
+  MAHeatMapTileOverlay iosModel;
+  MAMapView iosController;
 
   Future<void> remove() {
     return platform(
-      android: (_) => _androidModel.remove(),
-      ios: (_) => _iosController?.removeOverlay(_iosModel),
+      android: (_) => androidModel.remove(),
+      ios: (_) => iosController?.removeOverlay(iosModel),
     );
   }
 }
 
 /// 热力图
 class UrlTileOverlay {
-  UrlTileOverlay.android(this._androidModel);
+  UrlTileOverlay.android(this.androidModel);
 
-  UrlTileOverlay.ios(this._iosModel, this._iosController);
+  UrlTileOverlay.ios(this.iosModel, this.iosController);
 
-  com_amap_api_maps_model_TileOverlay _androidModel;
-  MAHeatMapTileOverlay _iosModel;
-  MAMapView _iosController;
+  com_amap_api_maps_model_TileOverlay androidModel;
+  MAHeatMapTileOverlay iosModel;
+  MAMapView iosController;
 
   Future<void> remove() {
     return platform(
-      android: (_) => _androidModel.remove(),
-      ios: (_) => _iosController?.removeOverlay(_iosModel),
+      android: (_) => androidModel.remove(),
+      ios: (_) => iosController?.removeOverlay(iosModel),
     );
   }
 }
 
 /// 图片覆盖物
 class GroundOverlay {
-  GroundOverlay.android(this._androidModel);
+  GroundOverlay.android(this.androidModel);
 
-  GroundOverlay.ios(this._iosModel, this._iosController);
+  GroundOverlay.ios(this.iosModel, this.iosController);
 
-  com_amap_api_maps_model_GroundOverlay _androidModel;
-  MAGroundOverlay _iosModel;
-  MAMapView _iosController;
+  com_amap_api_maps_model_GroundOverlay androidModel;
+  MAGroundOverlay iosModel;
+  MAMapView iosController;
 
   Future<void> remove() {
     return platform(
-      android: (_) => _androidModel.remove(),
-      ios: (_) => _iosController?.removeOverlay(_iosModel),
+      android: (_) => androidModel.remove(),
+      ios: (_) => iosController?.removeOverlay(iosModel),
     );
   }
 }
 
 /// 海量点
 class MultiPointOverlay {
-  MultiPointOverlay.android(this._androidModel)
-      : _iosModel = null,
-        _iosController = null;
+  MultiPointOverlay.android(this.androidModel)
+      : iosModel = null,
+        iosController = null;
 
-  MultiPointOverlay.ios(this._iosModel, this._iosController)
-      : _androidModel = null;
+  MultiPointOverlay.ios(this.iosModel, this.iosController)
+      : androidModel = null;
 
-  final com_amap_api_maps_model_MultiPointOverlay _androidModel;
+  final com_amap_api_maps_model_MultiPointOverlay androidModel;
 
-  final MAMultiPointOverlay _iosModel;
-  final MAMapView _iosController;
+  final MAMultiPointOverlay iosModel;
+  final MAMapView iosController;
 
   Future<void> remove() {
     return platform(
-      android: (_) => _androidModel.remove(),
-      ios: (_) => _iosController?.removeOverlay(_iosModel),
+      android: (_) => androidModel.remove(),
+      ios: (_) => iosController?.removeOverlay(iosModel),
     );
   }
 }
 
-@immutable
-class TrafficOption {
-  /// 是否显示
-  final bool show;
+/// 回放轨迹
+class PlaybackTrace {
+  PlaybackTrace(this.marker, this.polyline);
 
-  /// 通畅路段颜色
-  final Color goodColor;
+  final SmoothMoveMarker marker;
+  final Polyline polyline;
 
-  /// 缓行路段颜色
-  final Color badColor;
+  Future<void> remove() async {
+    await marker.remove();
+    await polyline.remove();
+  }
 
-  /// 拥堵路段颜色
-  final Color terribleColor;
-
-  /// 未知路段颜色
-  final Color unknownColor;
-
-  TrafficOption({
-    @required this.show,
-    this.goodColor = Colors.green,
-    this.badColor = Colors.yellow,
-    this.terribleColor = Colors.red,
-    this.unknownColor = Colors.blue,
-  }) : assert(show != null);
-
-  @override
-  String toString() {
-    return 'TrafficOption{show: $show, goodColor: $goodColor, badColor: $badColor, terribleColor: $terribleColor, unknownColor: $unknownColor}';
+  Future<void> stop() async {
+    await marker.stop();
   }
 }

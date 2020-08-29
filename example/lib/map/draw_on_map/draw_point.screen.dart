@@ -36,15 +36,9 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
               children: <Widget>[
                 AmapView(
                   zoomLevel: 6,
-//                  markers: [
-//                    MarkerOption(
-//                      latLng: getNextLatLng(),
-////                  iconUri: _assetsIcon1,
-////                  imageConfig: createLocalImageConfiguration(context),
-//                    ),
-//                  ],
                   onMapCreated: (controller) async {
                     _controller = controller;
+//                    await _controller.setMapAnchor(0.5, 0.8);
                     if (await requestPermission()) {
                       await controller.setZoomLevel(6);
                     }
@@ -112,6 +106,28 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                         ),
                       );
                     });
+                    await marker.setAnimation(
+                        ScaleMarkerAnimation(x: 0, toX: 1, y: 0, toY: 1));
+                    await marker.startAnimation();
+                    _markers.add(marker);
+                  },
+                ),
+                ListTile(
+                  title: Center(child: Text('添加帧动画Marker')),
+                  onTap: () async {
+                    final marker = await _controller?.addMarker(
+                      MarkerOption(
+                        latLng: getNextLatLng(),
+                        title: '北京${random.nextDouble()}',
+                        snippet: '描述${random.nextDouble()}',
+                        iconsProvider: [
+                          for (int i = 0; i < 20; i++)
+                            AssetImage('images/animation$i.jpg')
+                        ],
+                        animationFps: 3,
+                        object: '自定义数据${random.nextDouble()}',
+                      ),
+                    );
                     _markers.add(marker);
                   },
                 ),
@@ -188,12 +204,9 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                         for (int i = 0; i < 100; i++)
                           MarkerOption(
                             latLng: getNextLatLng(),
-//                            title: '北京$i',
-//                            snippet: '描述$i',
                             iconProvider:
                                 i % 2 == 0 ? _assetsIcon1 : _assetsIcon2,
                             infoWindowEnabled: false,
-//                            rotateAngle: 90,
                             object: 'Marker_$i',
                           ),
                       ],
@@ -247,14 +260,10 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                         .toList()
                         .then((boundary) {
                       debugPrint('boundary: $boundary');
-                      _controller
-                          .zoomToSpan(
-                            boundary,
-                            padding: EdgeInsets.only(bottom: 100),
-                          )
-                          .then((value) =>
-                              Future.delayed(Duration(milliseconds: 300)))
-                          .then((value) => _controller?.setTilt(40));
+                      _controller.zoomToSpan(
+                        boundary,
+                        padding: EdgeInsets.only(top: 100, bottom: 50),
+                      );
                     });
                   },
                 ),
@@ -272,7 +281,13 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                   title: Center(child: Text('画热力图')),
                   onTap: () async {
                     await _controller?.addHeatmapTileOverlay(
-                      HeatmapTileOption(latLngList: getNextBatchLatLng(50)),
+                      HeatmapTileOption(
+                        latLngList: getNextBatchLatLng(50),
+                        gradient: RadialGradient(
+                          colors: [Colors.purple, Colors.red],
+                          stops: <double>[0.2, 1],
+                        ),
+                      ),
                     );
                   },
                 ),

@@ -25,11 +25,13 @@ class com_amap_api_maps_TextureMapView_Android extends StatefulWidget {
     this.onViewCreated,
     this.onDispose,
     this.params = const <String, dynamic>{},
+    this.gestureRecognizers,
   }) : super(key: key);
 
   final TextureMapViewCreatedCallback onViewCreated;
   final _OnAndroidViewDispose onDispose;
   final Map<String, dynamic> params;
+  final Set<Factory<OneSequenceGestureRecognizer>> gestureRecognizers;
 
   @override
   _com_amap_api_maps_TextureMapView_AndroidState createState() => _com_amap_api_maps_TextureMapView_AndroidState();
@@ -40,9 +42,9 @@ class _com_amap_api_maps_TextureMapView_AndroidState extends State<com_amap_api_
 
   @override
   Widget build(BuildContext context) {
-    final gestureRecognizers = <Factory<OneSequenceGestureRecognizer>>[
+    final gestureRecognizers = widget.gestureRecognizers ?? <Factory<OneSequenceGestureRecognizer>>{
       Factory<OneSequenceGestureRecognizer>(() => EagerGestureRecognizer()),
-    ].toSet();
+    };
 
     final messageCodec = StandardMessageCodec();
     return AndroidView(
