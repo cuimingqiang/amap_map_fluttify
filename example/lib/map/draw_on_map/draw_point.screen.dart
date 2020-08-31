@@ -128,6 +128,42 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                   },
                 ),
                 ListTile(
+                  title: Center(child: Text('添加透明度动画Marker')),
+                  onTap: () async {
+                    final marker = await _controller?.addMarker(
+                      MarkerOption(
+                        latLng: getNextLatLng(),
+                        iconProvider: _assetsIcon1,
+                        anchorU: 0.5,
+                        anchorV: 1,
+                        visible: false,
+                      ),
+                    );
+                    await marker.startAnimation(
+                        AlphaMarkerAnimation(fromValue: 0, toValue: 1));
+                    await marker.setVisible(true);
+                    _markers.add(marker);
+                  },
+                ),
+                ListTile(
+                  title: Center(child: Text('添加旋转动画Marker')),
+                  onTap: () async {
+                    final marker = await _controller?.addMarker(
+                      MarkerOption(
+                        latLng: getNextLatLng(),
+                        iconProvider: _assetsIcon1,
+                        anchorU: 0.5,
+                        anchorV: 1,
+                        visible: false,
+                      ),
+                    );
+                    await marker.startAnimation(
+                        RotateMarkerAnimation(fromValue: 0, toValue: 100));
+                    await marker.setVisible(true);
+                    _markers.add(marker);
+                  },
+                ),
+                ListTile(
                   title: Center(child: Text('添加帧动画Marker')),
                   onTap: () async {
                     final marker = await _controller?.addMarker(
