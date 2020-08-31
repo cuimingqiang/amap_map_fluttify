@@ -469,28 +469,78 @@ class TrafficOption {
 @immutable
 class MarkerAnimation {
   final Duration duration;
+  final int repeatCount;
 
-  MarkerAnimation(this.duration);
+  MarkerAnimation(this.duration, this.repeatCount);
 }
 
 @immutable
 class ScaleMarkerAnimation extends MarkerAnimation {
   ScaleMarkerAnimation({
     Duration duration = const Duration(seconds: 1),
-    @required this.x,
-    @required this.toX,
-    @required this.y,
-    @required this.toY,
-  }) : super(duration);
+    int repeatCount = 1,
+    @required this.fromValue,
+    @required this.toValue,
+  }) : super(duration, repeatCount);
 
-  final double x;
-  final double toX;
-  final double y;
-  final double toY;
+  final double fromValue;
+  final double toValue;
 
   @override
   String toString() {
-    return 'ScaleMarkerAnimation{x: $x, toX: $toX, y: $y, toY: $toY}';
+    return 'ScaleMarkerAnimation{fromValue: $fromValue, toValue: $toValue}';
+  }
+}
+
+@immutable
+class AlphaMarkerAnimation extends MarkerAnimation {
+  AlphaMarkerAnimation({
+    Duration duration = const Duration(seconds: 1),
+    int repeatCount = 1,
+    @required this.fromValue,
+    @required this.toValue,
+  }) : super(duration, repeatCount);
+
+  final double fromValue;
+  final double toValue;
+
+  @override
+  String toString() {
+    return 'AlphaMarkerAnimation{fromValue: $fromValue, toValue: $toValue}';
+  }
+}
+
+@immutable
+class RotateMarkerAnimation extends MarkerAnimation {
+  RotateMarkerAnimation({
+    Duration duration = const Duration(seconds: 1),
+    int repeatCount = 1,
+    @required this.fromValue,
+    @required this.toValue,
+  }) : super(duration, repeatCount);
+
+  final double fromValue;
+  final double toValue;
+
+  @override
+  String toString() {
+    return 'RotateMarkerAnimation{fromValue: $fromValue, toValue: $toValue}';
+  }
+}
+
+@immutable
+class TranslateMarkerAnimation extends MarkerAnimation {
+  TranslateMarkerAnimation({
+    Duration duration = const Duration(seconds: 1),
+    int repeatCount = 1,
+    @required this.coordinate,
+  }) : super(duration, repeatCount);
+
+  final LatLng coordinate;
+
+  @override
+  String toString() {
+    return 'TranslateMarkerAnimation{toValue: $coordinate}';
   }
 }
 
@@ -700,35 +750,56 @@ class Marker {
   }
 
   /// 设置动画
-  Future<void> setAnimation(MarkerAnimation animation) async {
+  Future<void> startAnimation(MarkerAnimation animation) async {
     return platform(
       android: (pool) async {
         com_amap_api_maps_model_animation_Animation _animation;
         if (animation is ScaleMarkerAnimation) {
           _animation = await com_amap_api_maps_model_animation_ScaleAnimation
               .create__float__float__float__float(
-            animation.x,
-            animation.toX,
-            animation.y,
-            animation.toY,
+            animation.fromValue,
+            animation.toValue,
+            animation.fromValue,
+            animation.toValue,
           );
+        } else if (animation is AlphaMarkerAnimation) {
+          _animation = await com_amap_api_maps_model_animation_AlphaAnimation
+              .create__float__float(animation.fromValue, animation.toValue);
+        } else if (animation is RotateMarkerAnimation) {
+          _animation = await com_amap_api_maps_model_animation_RotateAnimation
+              .create__float__float(animation.fromValue, animation.toValue);
         }
+        // 重复执行的次数 比如1表示执行一次动画后, 再执行一次, 这里和ios端统一, 表示总共执行
+        // 几次动画 参考 https://a.amap.com/lbs/static/unzip/Android_Map_Doc/index.html
+        await _animation.setRepeatCount(animation.repeatCount - 1);
         await androidModel.setAnimation(_animation);
+        await androidModel.startAnimation();
       },
       ios: (pool) async {
         final annotationView = await iosController.viewForAnnotation(iosModel);
-        await annotationView?.scaleWithDuration();
+        if (animation is ScaleMarkerAnimation) {
+          await annotationView?.scaleWithDuration(
+            fromValue: animation.fromValue,
+            toValue: animation.toValue,
+            duration: animation.duration,
+            repeatCount: animation.repeatCount,
+          );
+        } else if (animation is AlphaMarkerAnimation) {
+          await annotationView?.alphaWithDuration(
+            fromValue: animation.fromValue,
+            toValue: animation.toValue,
+            duration: animation.duration,
+            repeatCount: animation.repeatCount,
+          );
+        } else if (animation is RotateMarkerAnimation) {
+          await annotationView?.rotateWithDuration(
+            fromValue: animation.fromValue,
+            toValue: animation.toValue,
+            duration: animation.duration,
+            repeatCount: animation.repeatCount,
+          );
+        }
       },
-    );
-  }
-
-  /// 设置动画
-  Future<void> startAnimation() async {
-    return platform(
-      android: (pool) {
-        return androidModel.startAnimation();
-      },
-      ios: (pool) async {},
     );
   }
 }
