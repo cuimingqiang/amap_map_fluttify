@@ -53,13 +53,13 @@ class MACoordinateRegion extends NSObject  {
 
   //region setters
   Future<void> set_center(CLLocationCoordinate2D center) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MACoordinateRegion::set_center', <String, dynamic>{'__this__': this, "center": center});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MACoordinateRegion::set_center', <String, dynamic>{'__this__': this, "center": center});
   
   
   }
   
   Future<void> set_span(MACoordinateSpan span) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MACoordinateRegion::set_span', <String, dynamic>{'__this__': this, "span": span});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MACoordinateRegion::set_span', <String, dynamic>{'__this__': this, "span": span});
   
   
   }

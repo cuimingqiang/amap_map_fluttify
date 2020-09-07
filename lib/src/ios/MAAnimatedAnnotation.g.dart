@@ -48,7 +48,7 @@ class MAAnimatedAnnotation extends MAPointAnnotation with MAAnimatableAnnotation
 
   //region setters
   Future<void> set_movingDirection(double movingDirection) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAAnimatedAnnotation::set_movingDirection', <String, dynamic>{'__this__': this, "movingDirection": movingDirection});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAAnimatedAnnotation::set_movingDirection', <String, dynamic>{'__this__': this, "movingDirection": movingDirection});
   
   
   }
@@ -68,7 +68,7 @@ class MAAnimatedAnnotation extends MAPointAnnotation with MAAnimatableAnnotation
   
   
     // handle native call
-    MethodChannel('void|BOOL#isFinished::Callback', StandardMethodCodec(FluttifyMessageCodec()))
+    MethodChannel('void|BOOL#isFinished::Callback', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
           try {
             final args = methodCall.arguments as Map;
@@ -112,7 +112,7 @@ class MAAnimatedAnnotation extends MAPointAnnotation with MAAnimatableAnnotation
   
   
     // handle native call
-    MethodChannel('void|BOOL#isFinished::Callback', StandardMethodCodec(FluttifyMessageCodec()))
+    MethodChannel('void|BOOL#isFinished::Callback', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
           try {
             final args = methodCall.arguments as Map;
@@ -134,7 +134,7 @@ class MAAnimatedAnnotation extends MAPointAnnotation with MAAnimatableAnnotation
             throw e;
           }
         });
-    MethodChannel('void|MAAnnotationMoveAnimation*#currentAni::Callback', StandardMethodCodec(FluttifyMessageCodec()))
+    MethodChannel('void|MAAnnotationMoveAnimation*#currentAni::Callback', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
           try {
             final args = methodCall.arguments as Map;

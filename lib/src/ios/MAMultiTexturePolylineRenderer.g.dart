@@ -68,19 +68,19 @@ class MAMultiTexturePolylineRenderer extends MAPolylineRenderer  {
 
   //region setters
   Future<void> set_strokeTextureImages(List<NSObject> strokeTextureImages) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMultiTexturePolylineRenderer::set_strokeTextureImages', <String, dynamic>{'__this__': this, "strokeTextureImages": strokeTextureImages});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAMultiTexturePolylineRenderer::set_strokeTextureImages', <String, dynamic>{'__this__': this, "strokeTextureImages": strokeTextureImages});
   
   
   }
   
   Future<void> set_showRangeEnabled(bool showRangeEnabled) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMultiTexturePolylineRenderer::set_showRangeEnabled', <String, dynamic>{'__this__': this, "showRangeEnabled": showRangeEnabled});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAMultiTexturePolylineRenderer::set_showRangeEnabled', <String, dynamic>{'__this__': this, "showRangeEnabled": showRangeEnabled});
   
   
   }
   
   Future<void> set_showRange(MAPathShowRange showRange) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMultiTexturePolylineRenderer::set_showRange', <String, dynamic>{'__this__': this, "showRange": showRange});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAMultiTexturePolylineRenderer::set_showRange', <String, dynamic>{'__this__': this, "showRange": showRange});
   
   
   }

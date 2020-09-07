@@ -63,7 +63,7 @@ class MAGroundOverlay extends MAShape with MAOverlay, MAAnnotation {
 
   //region setters
   Future<void> set_alpha(double alpha) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAGroundOverlay::set_alpha', <String, dynamic>{'__this__': this, "alpha": alpha});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAGroundOverlay::set_alpha', <String, dynamic>{'__this__': this, "alpha": alpha});
   
   
   }

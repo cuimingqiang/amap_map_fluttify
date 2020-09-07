@@ -93,7 +93,7 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                       ),
                     );
                     await _controller?.setMarkerClickedListener((marker) async {
-                      _controller.showCustomInfoWindow(
+                      await _controller.showCustomInfoWindow(
                         marker,
                         Card(
                           elevation: 10,

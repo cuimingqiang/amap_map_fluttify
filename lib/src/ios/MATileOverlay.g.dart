@@ -78,37 +78,37 @@ class MATileOverlay extends NSObject with MAAnnotation, MAOverlay {
 
   //region setters
   Future<void> set_tileSize(CGSize tileSize) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MATileOverlay::set_tileSize', <String, dynamic>{'__this__': this, "tileSize": tileSize});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MATileOverlay::set_tileSize', <String, dynamic>{'__this__': this, "tileSize": tileSize});
   
   
   }
   
   Future<void> set_minimumZ(int minimumZ) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MATileOverlay::set_minimumZ', <String, dynamic>{'__this__': this, "minimumZ": minimumZ});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MATileOverlay::set_minimumZ', <String, dynamic>{'__this__': this, "minimumZ": minimumZ});
   
   
   }
   
   Future<void> set_maximumZ(int maximumZ) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MATileOverlay::set_maximumZ', <String, dynamic>{'__this__': this, "maximumZ": maximumZ});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MATileOverlay::set_maximumZ', <String, dynamic>{'__this__': this, "maximumZ": maximumZ});
   
   
   }
   
   Future<void> set_canReplaceMapContent(bool canReplaceMapContent) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MATileOverlay::set_canReplaceMapContent', <String, dynamic>{'__this__': this, "canReplaceMapContent": canReplaceMapContent});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MATileOverlay::set_canReplaceMapContent', <String, dynamic>{'__this__': this, "canReplaceMapContent": canReplaceMapContent});
   
   
   }
   
   Future<void> set_boundingMapRect(MAMapRect boundingMapRect) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MATileOverlay::set_boundingMapRect', <String, dynamic>{'__this__': this, "boundingMapRect": boundingMapRect});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MATileOverlay::set_boundingMapRect', <String, dynamic>{'__this__': this, "boundingMapRect": boundingMapRect});
   
   
   }
   
   Future<void> set_disableOffScreenTileLoading(bool disableOffScreenTileLoading) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MATileOverlay::set_disableOffScreenTileLoading', <String, dynamic>{'__this__': this, "disableOffScreenTileLoading": disableOffScreenTileLoading});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MATileOverlay::set_disableOffScreenTileLoading', <String, dynamic>{'__this__': this, "disableOffScreenTileLoading": disableOffScreenTileLoading});
   
   
   }
@@ -151,7 +151,7 @@ class MATileOverlay extends NSObject with MAAnnotation, MAOverlay {
   
   
     // handle native call
-    MethodChannel('void|NSData*#tileData,NSError*#error::Callback', StandardMethodCodec(FluttifyMessageCodec()))
+    MethodChannel('void|NSData*#tileData,NSError*#error::Callback', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
           try {
             final args = methodCall.arguments as Map;

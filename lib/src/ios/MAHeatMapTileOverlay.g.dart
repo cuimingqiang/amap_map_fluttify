@@ -68,31 +68,31 @@ class MAHeatMapTileOverlay extends MATileOverlay with MAAnnotation, MAOverlay {
 
   //region setters
   Future<void> set_data(List<MAHeatMapNode> data) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAHeatMapTileOverlay::set_data', <String, dynamic>{'__this__': this, "data": data});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAHeatMapTileOverlay::set_data', <String, dynamic>{'__this__': this, "data": data});
   
   
   }
   
   Future<void> set_radius(int radius) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAHeatMapTileOverlay::set_radius', <String, dynamic>{'__this__': this, "radius": radius});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAHeatMapTileOverlay::set_radius', <String, dynamic>{'__this__': this, "radius": radius});
   
   
   }
   
   Future<void> set_opacity(double opacity) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAHeatMapTileOverlay::set_opacity', <String, dynamic>{'__this__': this, "opacity": opacity});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAHeatMapTileOverlay::set_opacity', <String, dynamic>{'__this__': this, "opacity": opacity});
   
   
   }
   
   Future<void> set_gradient(MAHeatMapGradient gradient) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAHeatMapTileOverlay::set_gradient', <String, dynamic>{'__this__': this, "gradient": gradient});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAHeatMapTileOverlay::set_gradient', <String, dynamic>{'__this__': this, "gradient": gradient});
   
   
   }
   
   Future<void> set_allowRetinaAdapting(bool allowRetinaAdapting) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAHeatMapTileOverlay::set_allowRetinaAdapting', <String, dynamic>{'__this__': this, "allowRetinaAdapting": allowRetinaAdapting});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAHeatMapTileOverlay::set_allowRetinaAdapting', <String, dynamic>{'__this__': this, "allowRetinaAdapting": allowRetinaAdapting});
   
   
   }

@@ -63,25 +63,25 @@ class MAMultiPointItem extends NSObject with MAAnnotation, NSCopying {
 
   //region setters
   Future<void> set_coordinate(CLLocationCoordinate2D coordinate) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMultiPointItem::set_coordinate', <String, dynamic>{'__this__': this, "coordinate": coordinate});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAMultiPointItem::set_coordinate', <String, dynamic>{'__this__': this, "coordinate": coordinate});
   
   
   }
   
   Future<void> set_customID(String customID) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMultiPointItem::set_customID', <String, dynamic>{'__this__': this, "customID": customID});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAMultiPointItem::set_customID', <String, dynamic>{'__this__': this, "customID": customID});
   
   
   }
   
   Future<void> set_title(String title) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMultiPointItem::set_title', <String, dynamic>{'__this__': this, "title": title});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAMultiPointItem::set_title', <String, dynamic>{'__this__': this, "title": title});
   
   
   }
   
   Future<void> set_subtitle(String subtitle) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMultiPointItem::set_subtitle', <String, dynamic>{'__this__': this, "subtitle": subtitle});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAMultiPointItem::set_subtitle', <String, dynamic>{'__this__': this, "subtitle": subtitle});
   
   
   }

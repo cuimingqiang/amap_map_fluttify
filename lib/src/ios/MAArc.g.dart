@@ -63,19 +63,19 @@ class MAArc extends MAShape with MAOverlay, MAAnnotation {
 
   //region setters
   Future<void> set_startCoordinate(CLLocationCoordinate2D startCoordinate) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAArc::set_startCoordinate', <String, dynamic>{'__this__': this, "startCoordinate": startCoordinate});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAArc::set_startCoordinate', <String, dynamic>{'__this__': this, "startCoordinate": startCoordinate});
   
   
   }
   
   Future<void> set_passedCoordinate(CLLocationCoordinate2D passedCoordinate) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAArc::set_passedCoordinate', <String, dynamic>{'__this__': this, "passedCoordinate": passedCoordinate});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAArc::set_passedCoordinate', <String, dynamic>{'__this__': this, "passedCoordinate": passedCoordinate});
   
   
   }
   
   Future<void> set_endCoordinate(CLLocationCoordinate2D endCoordinate) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAArc::set_endCoordinate', <String, dynamic>{'__this__': this, "endCoordinate": endCoordinate});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAArc::set_endCoordinate', <String, dynamic>{'__this__': this, "endCoordinate": endCoordinate});
   
   
   }

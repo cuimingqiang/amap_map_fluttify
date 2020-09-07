@@ -68,31 +68,31 @@ class MAMapStatus extends NSObject  {
 
   //region setters
   Future<void> set_centerCoordinate(CLLocationCoordinate2D centerCoordinate) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMapStatus::set_centerCoordinate', <String, dynamic>{'__this__': this, "centerCoordinate": centerCoordinate});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAMapStatus::set_centerCoordinate', <String, dynamic>{'__this__': this, "centerCoordinate": centerCoordinate});
   
   
   }
   
   Future<void> set_zoomLevel(double zoomLevel) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMapStatus::set_zoomLevel', <String, dynamic>{'__this__': this, "zoomLevel": zoomLevel});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAMapStatus::set_zoomLevel', <String, dynamic>{'__this__': this, "zoomLevel": zoomLevel});
   
   
   }
   
   Future<void> set_rotationDegree(double rotationDegree) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMapStatus::set_rotationDegree', <String, dynamic>{'__this__': this, "rotationDegree": rotationDegree});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAMapStatus::set_rotationDegree', <String, dynamic>{'__this__': this, "rotationDegree": rotationDegree});
   
   
   }
   
   Future<void> set_cameraDegree(double cameraDegree) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMapStatus::set_cameraDegree', <String, dynamic>{'__this__': this, "cameraDegree": cameraDegree});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAMapStatus::set_cameraDegree', <String, dynamic>{'__this__': this, "cameraDegree": cameraDegree});
   
   
   }
   
   Future<void> set_screenAnchor(CGPoint screenAnchor) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMapStatus::set_screenAnchor', <String, dynamic>{'__this__': this, "screenAnchor": screenAnchor});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAMapStatus::set_screenAnchor', <String, dynamic>{'__this__': this, "screenAnchor": screenAnchor});
   
   
   }

@@ -53,13 +53,13 @@ class MACoordinateBounds extends NSObject  {
 
   //region setters
   Future<void> set_northEast(CLLocationCoordinate2D northEast) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MACoordinateBounds::set_northEast', <String, dynamic>{'__this__': this, "northEast": northEast});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MACoordinateBounds::set_northEast', <String, dynamic>{'__this__': this, "northEast": northEast});
   
   
   }
   
   Future<void> set_southWest(CLLocationCoordinate2D southWest) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MACoordinateBounds::set_southWest', <String, dynamic>{'__this__': this, "southWest": southWest});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MACoordinateBounds::set_southWest', <String, dynamic>{'__this__': this, "southWest": southWest});
   
   
   }

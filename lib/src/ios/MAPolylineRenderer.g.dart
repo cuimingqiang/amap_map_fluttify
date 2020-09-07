@@ -78,37 +78,37 @@ class MAPolylineRenderer extends MAOverlayPathRenderer  {
 
   //region setters
   Future<void> set_is3DArrowLine(bool is3DArrowLine) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAPolylineRenderer::set_is3DArrowLine', <String, dynamic>{'__this__': this, "is3DArrowLine": is3DArrowLine});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAPolylineRenderer::set_is3DArrowLine', <String, dynamic>{'__this__': this, "is3DArrowLine": is3DArrowLine});
   
   
   }
   
   Future<void> set_sideColor(UIColor sideColor) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAPolylineRenderer::set_sideColor', <String, dynamic>{'__this__': this, "sideColor": sideColor});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAPolylineRenderer::set_sideColor', <String, dynamic>{'__this__': this, "sideColor": sideColor});
   
   
   }
   
   Future<void> set_userInteractionEnabled(bool userInteractionEnabled) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAPolylineRenderer::set_userInteractionEnabled', <String, dynamic>{'__this__': this, "userInteractionEnabled": userInteractionEnabled});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAPolylineRenderer::set_userInteractionEnabled', <String, dynamic>{'__this__': this, "userInteractionEnabled": userInteractionEnabled});
   
   
   }
   
   Future<void> set_hitTestInset(double hitTestInset) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAPolylineRenderer::set_hitTestInset', <String, dynamic>{'__this__': this, "hitTestInset": hitTestInset});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAPolylineRenderer::set_hitTestInset', <String, dynamic>{'__this__': this, "hitTestInset": hitTestInset});
   
   
   }
   
   Future<void> set_showRangeEnabled(bool showRangeEnabled) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAPolylineRenderer::set_showRangeEnabled', <String, dynamic>{'__this__': this, "showRangeEnabled": showRangeEnabled});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAPolylineRenderer::set_showRangeEnabled', <String, dynamic>{'__this__': this, "showRangeEnabled": showRangeEnabled});
   
   
   }
   
   Future<void> set_showRange(MAPathShowRange showRange) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAPolylineRenderer::set_showRange', <String, dynamic>{'__this__': this, "showRange": showRange});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAPolylineRenderer::set_showRange', <String, dynamic>{'__this__': this, "showRange": showRange});
   
   
   }

@@ -63,25 +63,25 @@ class MATraceLocation extends NSObject  {
 
   //region setters
   Future<void> set_loc(CLLocationCoordinate2D loc) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MATraceLocation::set_loc', <String, dynamic>{'__this__': this, "loc": loc});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MATraceLocation::set_loc', <String, dynamic>{'__this__': this, "loc": loc});
   
   
   }
   
   Future<void> set_angle(double angle) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MATraceLocation::set_angle', <String, dynamic>{'__this__': this, "angle": angle});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MATraceLocation::set_angle', <String, dynamic>{'__this__': this, "angle": angle});
   
   
   }
   
   Future<void> set_speed(double speed) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MATraceLocation::set_speed', <String, dynamic>{'__this__': this, "speed": speed});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MATraceLocation::set_speed', <String, dynamic>{'__this__': this, "speed": speed});
   
   
   }
   
   Future<void> set_time(double time) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MATraceLocation::set_time', <String, dynamic>{'__this__': this, "time": time});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MATraceLocation::set_time', <String, dynamic>{'__this__': this, "time": time});
   
   
   }

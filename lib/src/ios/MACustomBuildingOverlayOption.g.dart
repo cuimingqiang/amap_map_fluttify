@@ -68,31 +68,31 @@ class MACustomBuildingOverlayOption extends MAMultiPoint with MAAnnotation {
 
   //region setters
   Future<void> set_height(double height) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MACustomBuildingOverlayOption::set_height', <String, dynamic>{'__this__': this, "height": height});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MACustomBuildingOverlayOption::set_height', <String, dynamic>{'__this__': this, "height": height});
   
   
   }
   
   Future<void> set_heightScale(double heightScale) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MACustomBuildingOverlayOption::set_heightScale', <String, dynamic>{'__this__': this, "heightScale": heightScale});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MACustomBuildingOverlayOption::set_heightScale', <String, dynamic>{'__this__': this, "heightScale": heightScale});
   
   
   }
   
   Future<void> set_topColor(UIColor topColor) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MACustomBuildingOverlayOption::set_topColor', <String, dynamic>{'__this__': this, "topColor": topColor});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MACustomBuildingOverlayOption::set_topColor', <String, dynamic>{'__this__': this, "topColor": topColor});
   
   
   }
   
   Future<void> set_sideColor(UIColor sideColor) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MACustomBuildingOverlayOption::set_sideColor', <String, dynamic>{'__this__': this, "sideColor": sideColor});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MACustomBuildingOverlayOption::set_sideColor', <String, dynamic>{'__this__': this, "sideColor": sideColor});
   
   
   }
   
   Future<void> set_visibile(bool visibile) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MACustomBuildingOverlayOption::set_visibile', <String, dynamic>{'__this__': this, "visibile": visibile});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MACustomBuildingOverlayOption::set_visibile', <String, dynamic>{'__this__': this, "visibile": visibile});
   
   
   }

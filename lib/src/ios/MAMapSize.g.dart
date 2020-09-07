@@ -53,13 +53,13 @@ class MAMapSize extends NSObject  {
 
   //region setters
   Future<void> set_width(double width) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMapSize::set_width', <String, dynamic>{'__this__': this, "width": width});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAMapSize::set_width', <String, dynamic>{'__this__': this, "width": width});
   
   
   }
   
   Future<void> set_height(double height) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMapSize::set_height', <String, dynamic>{'__this__': this, "height": height});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAMapSize::set_height', <String, dynamic>{'__this__': this, "height": height});
   
   
   }

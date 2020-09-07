@@ -53,13 +53,13 @@ class MAPathShowRange extends NSObject  {
 
   //region setters
   Future<void> set_begin(double begin) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAPathShowRange::set_begin', <String, dynamic>{'__this__': this, "begin": begin});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAPathShowRange::set_begin', <String, dynamic>{'__this__': this, "begin": begin});
   
   
   }
   
   Future<void> set_end(double end) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAPathShowRange::set_end', <String, dynamic>{'__this__': this, "end": end});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAPathShowRange::set_end', <String, dynamic>{'__this__': this, "end": end});
   
   
   }

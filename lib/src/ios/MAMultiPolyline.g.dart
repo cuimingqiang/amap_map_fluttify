@@ -48,7 +48,7 @@ class MAMultiPolyline extends MAPolyline with MAOverlay, MAAnnotation {
 
   //region setters
   Future<void> set_drawStyleIndexes(List<num> drawStyleIndexes) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMultiPolyline::set_drawStyleIndexes', <String, dynamic>{'__this__': this, "drawStyleIndexes": drawStyleIndexes});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAMultiPolyline::set_drawStyleIndexes', <String, dynamic>{'__this__': this, "drawStyleIndexes": drawStyleIndexes});
   
   
   }

@@ -44,9 +44,9 @@ class MATraceManager extends NSObject  {
 
   //region setters
   Future<void> set_delegate(MATraceDelegate delegate) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MATraceManager::set_delegate', <String, dynamic>{'__this__': this, });
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MATraceManager::set_delegate', <String, dynamic>{'__this__': this, });
   
-    MethodChannel('MATraceDelegate::Callback', StandardMethodCodec(FluttifyMessageCodec()))
+    MethodChannel('MATraceDelegate::Callback', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify')))
       .setMethodCallHandler((methodCall) async {
         try {
           final args = methodCall.arguments as Map;
@@ -117,7 +117,7 @@ class MATraceManager extends NSObject  {
   
   
     // handle native call
-    MethodChannel('MAProcessingCallback::Callback', StandardMethodCodec(FluttifyMessageCodec()))
+    MethodChannel('MAProcessingCallback::Callback', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
           try {
             final args = methodCall.arguments as Map;
@@ -139,7 +139,7 @@ class MATraceManager extends NSObject  {
             throw e;
           }
         });
-    MethodChannel('MAFinishCallback::Callback', StandardMethodCodec(FluttifyMessageCodec()))
+    MethodChannel('MAFinishCallback::Callback', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
           try {
             final args = methodCall.arguments as Map;
@@ -161,7 +161,7 @@ class MATraceManager extends NSObject  {
             throw e;
           }
         });
-    MethodChannel('MAFailedCallback::Callback', StandardMethodCodec(FluttifyMessageCodec()))
+    MethodChannel('MAFailedCallback::Callback', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
           try {
             final args = methodCall.arguments as Map;
@@ -205,7 +205,7 @@ class MATraceManager extends NSObject  {
   
   
     // handle native call
-    MethodChannel('MATraceLocationCallback::Callback', StandardMethodCodec(FluttifyMessageCodec()))
+    MethodChannel('MATraceLocationCallback::Callback', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
           try {
             final args = methodCall.arguments as Map;

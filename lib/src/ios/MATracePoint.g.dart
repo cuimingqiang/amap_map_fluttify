@@ -53,13 +53,13 @@ class MATracePoint extends NSObject with NSCoding {
 
   //region setters
   Future<void> set_latitude(double latitude) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MATracePoint::set_latitude', <String, dynamic>{'__this__': this, "latitude": latitude});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MATracePoint::set_latitude', <String, dynamic>{'__this__': this, "latitude": latitude});
   
   
   }
   
   Future<void> set_longitude(double longitude) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MATracePoint::set_longitude', <String, dynamic>{'__this__': this, "longitude": longitude});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MATracePoint::set_longitude', <String, dynamic>{'__this__': this, "longitude": longitude});
   
   
   }

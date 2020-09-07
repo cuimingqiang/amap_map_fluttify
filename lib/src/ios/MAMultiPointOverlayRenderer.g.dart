@@ -63,9 +63,9 @@ class MAMultiPointOverlayRenderer extends MAOverlayRenderer  {
 
   //region setters
   Future<void> set_delegate(MAMultiPointOverlayRendererDelegate delegate) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMultiPointOverlayRenderer::set_delegate', <String, dynamic>{'__this__': this, });
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAMultiPointOverlayRenderer::set_delegate', <String, dynamic>{'__this__': this, });
   
-    MethodChannel('MAMultiPointOverlayRendererDelegate::Callback', StandardMethodCodec(FluttifyMessageCodec()))
+    MethodChannel('MAMultiPointOverlayRendererDelegate::Callback', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify')))
       .setMethodCallHandler((methodCall) async {
         try {
           final args = methodCall.arguments as Map;
@@ -90,19 +90,19 @@ class MAMultiPointOverlayRenderer extends MAOverlayRenderer  {
   }
   
   Future<void> set_icon(UIImage icon) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMultiPointOverlayRenderer::set_icon', <String, dynamic>{'__this__': this, "icon": icon});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAMultiPointOverlayRenderer::set_icon', <String, dynamic>{'__this__': this, "icon": icon});
   
   
   }
   
   Future<void> set_pointSize(CGSize pointSize) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMultiPointOverlayRenderer::set_pointSize', <String, dynamic>{'__this__': this, "pointSize": pointSize});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAMultiPointOverlayRenderer::set_pointSize', <String, dynamic>{'__this__': this, "pointSize": pointSize});
   
   
   }
   
   Future<void> set_anchor(CGPoint anchor) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMultiPointOverlayRenderer::set_anchor', <String, dynamic>{'__this__': this, "anchor": anchor});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAMultiPointOverlayRenderer::set_anchor', <String, dynamic>{'__this__': this, "anchor": anchor});
   
   
   }

@@ -53,13 +53,13 @@ class MAShape extends NSObject with MAAnnotation {
 
   //region setters
   Future<void> set_title(String title) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAShape::set_title', <String, dynamic>{'__this__': this, "title": title});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAShape::set_title', <String, dynamic>{'__this__': this, "title": title});
   
   
   }
   
   Future<void> set_subtitle(String subtitle) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAShape::set_subtitle', <String, dynamic>{'__this__': this, "subtitle": subtitle});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAShape::set_subtitle', <String, dynamic>{'__this__': this, "subtitle": subtitle});
   
   
   }

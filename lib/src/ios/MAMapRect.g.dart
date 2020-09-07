@@ -53,13 +53,13 @@ class MAMapRect extends NSObject  {
 
   //region setters
   Future<void> set_origin(MAMapPoint origin) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMapRect::set_origin', <String, dynamic>{'__this__': this, "origin": origin});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAMapRect::set_origin', <String, dynamic>{'__this__': this, "origin": origin});
   
   
   }
   
   Future<void> set_size(MAMapSize size) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMapRect::set_size', <String, dynamic>{'__this__': this, "size": size});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAMapRect::set_size', <String, dynamic>{'__this__': this, "size": size});
   
   
   }

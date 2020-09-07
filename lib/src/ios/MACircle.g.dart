@@ -58,13 +58,13 @@ class MACircle extends MAShape with MAOverlay, MAAnnotation {
 
   //region setters
   Future<void> set_coordinate(CLLocationCoordinate2D coordinate) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MACircle::set_coordinate', <String, dynamic>{'__this__': this, "coordinate": coordinate});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MACircle::set_coordinate', <String, dynamic>{'__this__': this, "coordinate": coordinate});
   
   
   }
   
   Future<void> set_radius(double radius) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MACircle::set_radius', <String, dynamic>{'__this__': this, "radius": radius});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MACircle::set_radius', <String, dynamic>{'__this__': this, "radius": radius});
   
   
   }

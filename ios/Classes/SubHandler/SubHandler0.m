@@ -824,11 +824,6 @@ extern BOOL enableLog;
                 NSNumber* argisFinished = @(isFinished);
         
                 dispatch_async(dispatch_get_main_queue(), ^{
-                  FlutterMethodChannel *channel = [FlutterMethodChannel
-                        methodChannelWithName:@"void|BOOL#isFinished::Callback"
-                              binaryMessenger:[[self registrar] messenger]
-                                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
-        
                   [channel invokeMethod:@"Callback::void|BOOL#isFinished::void|BOOL#isFinished" arguments:@{@"isFinished": argisFinished == nil ? [NSNull null] : argisFinished}];
                 });
         
@@ -885,11 +880,6 @@ extern BOOL enableLog;
                 NSNumber* argisFinished = @(isFinished);
         
                 dispatch_async(dispatch_get_main_queue(), ^{
-                  FlutterMethodChannel *channel = [FlutterMethodChannel
-                        methodChannelWithName:@"void|BOOL#isFinished::Callback"
-                              binaryMessenger:[[self registrar] messenger]
-                                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
-        
                   [channel invokeMethod:@"Callback::void|BOOL#isFinished::void|BOOL#isFinished" arguments:@{@"isFinished": argisFinished == nil ? [NSNull null] : argisFinished}];
                 });
         
@@ -910,11 +900,6 @@ extern BOOL enableLog;
         
         
                 dispatch_async(dispatch_get_main_queue(), ^{
-                  FlutterMethodChannel *channel = [FlutterMethodChannel
-                        methodChannelWithName:@"void|MAAnnotationMoveAnimation*#currentAni::Callback"
-                              binaryMessenger:[[self registrar] messenger]
-                                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
-        
                   [channel invokeMethod:@"Callback::void|MAAnnotationMoveAnimation*#currentAni::void|MAAnnotationMoveAnimation*#currentAni" arguments:@{@"currentAni": argcurrentAni == nil ? [NSNull null] : argcurrentAni}];
                 });
         
@@ -1163,11 +1148,6 @@ extern BOOL enableLog;
                 NSArray<NSObject*>* argpoints = points;
         
                 dispatch_async(dispatch_get_main_queue(), ^{
-                  FlutterMethodChannel *channel = [FlutterMethodChannel
-                        methodChannelWithName:@"MAProcessingCallback::Callback"
-                              binaryMessenger:[[self registrar] messenger]
-                                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
-        
                   [channel invokeMethod:@"Callback::MAProcessingCallback::MAProcessingCallback" arguments:@{@"index": argindex == nil ? [NSNull null] : argindex, @"points": argpoints == nil ? [NSNull null] : argpoints}];
                 });
         
@@ -1189,11 +1169,6 @@ extern BOOL enableLog;
                 NSNumber* argdistance = @(distance);
         
                 dispatch_async(dispatch_get_main_queue(), ^{
-                  FlutterMethodChannel *channel = [FlutterMethodChannel
-                        methodChannelWithName:@"MAFinishCallback::Callback"
-                              binaryMessenger:[[self registrar] messenger]
-                                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
-        
                   [channel invokeMethod:@"Callback::MAFinishCallback::MAFinishCallback" arguments:@{@"points": argpoints == nil ? [NSNull null] : argpoints, @"distance": argdistance == nil ? [NSNull null] : argdistance}];
                 });
         
@@ -1215,11 +1190,6 @@ extern BOOL enableLog;
                 NSString* argerrorDesc = errorDesc;
         
                 dispatch_async(dispatch_get_main_queue(), ^{
-                  FlutterMethodChannel *channel = [FlutterMethodChannel
-                        methodChannelWithName:@"MAFailedCallback::Callback"
-                              binaryMessenger:[[self registrar] messenger]
-                                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
-        
                   [channel invokeMethod:@"Callback::MAFailedCallback::MAFailedCallback" arguments:@{@"errorCode": argerrorCode == nil ? [NSNull null] : argerrorCode, @"errorDesc": argerrorDesc == nil ? [NSNull null] : argerrorDesc}];
                 });
         
@@ -1267,11 +1237,6 @@ extern BOOL enableLog;
         
         
                 dispatch_async(dispatch_get_main_queue(), ^{
-                  FlutterMethodChannel *channel = [FlutterMethodChannel
-                        methodChannelWithName:@"MATraceLocationCallback::Callback"
-                              binaryMessenger:[[self registrar] messenger]
-                                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
-        
                   [channel invokeMethod:@"Callback::MATraceLocationCallback::MATraceLocationCallback" arguments:@{@"locations": arglocations == nil ? [NSNull null] : arglocations, @"tracePoints": argtracePoints == nil ? [NSNull null] : argtracePoints, @"distance": argdistance == nil ? [NSNull null] : argdistance, @"error": argerror == nil ? [NSNull null] : argerror}];
                 });
         
@@ -1710,11 +1675,6 @@ extern BOOL enableLog;
         
         
                 dispatch_async(dispatch_get_main_queue(), ^{
-                  FlutterMethodChannel *channel = [FlutterMethodChannel
-                        methodChannelWithName:@"void|NSData*#tileData,NSError*#error::Callback"
-                              binaryMessenger:[[self registrar] messenger]
-                                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
-        
                   [channel invokeMethod:@"Callback::void|NSData*#tileData,NSError*#error::void|NSData*#tileData,NSError*#error" arguments:@{@"tileData": argtileData == nil ? [NSNull null] : argtileData, @"error": argerror == nil ? [NSNull null] : argerror}];
                 });
         
@@ -1822,11 +1782,6 @@ extern BOOL enableLog;
                 NSNumber* argsetupSuccess = @(setupSuccess);
         
                 dispatch_async(dispatch_get_main_queue(), ^{
-                  FlutterMethodChannel *channel = [FlutterMethodChannel
-                        methodChannelWithName:@"void|BOOL#setupSuccess::Callback"
-                              binaryMessenger:[[self registrar] messenger]
-                                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
-        
                   [channel invokeMethod:@"Callback::void|BOOL#setupSuccess::void|BOOL#setupSuccess" arguments:@{@"setupSuccess": argsetupSuccess == nil ? [NSNull null] : argsetupSuccess}];
                 });
         
@@ -1877,11 +1832,6 @@ extern BOOL enableLog;
         
         
                 dispatch_async(dispatch_get_main_queue(), ^{
-                  FlutterMethodChannel *channel = [FlutterMethodChannel
-                        methodChannelWithName:@"MAOfflineMapDownloadBlock::Callback"
-                              binaryMessenger:[[self registrar] messenger]
-                                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
-        
                   [channel invokeMethod:@"Callback::MAOfflineMapDownloadBlock::MAOfflineMapDownloadBlock" arguments:@{@"downloadItem": argdownloadItem == nil ? [NSNull null] : argdownloadItem, @"downloadStatus": argdownloadStatus == nil ? [NSNull null] : argdownloadStatus, @"info": arginfo == nil ? [NSNull null] : arginfo}];
                 });
         
@@ -2030,11 +1980,6 @@ extern BOOL enableLog;
                 NSNumber* arghasNewestVersion = @(hasNewestVersion);
         
                 dispatch_async(dispatch_get_main_queue(), ^{
-                  FlutterMethodChannel *channel = [FlutterMethodChannel
-                        methodChannelWithName:@"MAOfflineMapNewestVersionBlock::Callback"
-                              binaryMessenger:[[self registrar] messenger]
-                                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
-        
                   [channel invokeMethod:@"Callback::MAOfflineMapNewestVersionBlock::MAOfflineMapNewestVersionBlock" arguments:@{@"hasNewestVersion": arghasNewestVersion == nil ? [NSNull null] : arghasNewestVersion}];
                 });
         
@@ -2083,11 +2028,6 @@ extern BOOL enableLog;
         
         
                 dispatch_async(dispatch_get_main_queue(), ^{
-                  FlutterMethodChannel *channel = [FlutterMethodChannel
-                        methodChannelWithName:@"MAOfflineMapDownloadBlock::Callback"
-                              binaryMessenger:[[self registrar] messenger]
-                                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
-        
                   [channel invokeMethod:@"Callback::MAOfflineMapDownloadBlock::MAOfflineMapDownloadBlock" arguments:@{@"downloadItem": argdownloadItem == nil ? [NSNull null] : argdownloadItem, @"downloadStatus": argdownloadStatus == nil ? [NSNull null] : argdownloadStatus, @"info": arginfo == nil ? [NSNull null] : arginfo}];
                 });
         
@@ -2138,11 +2078,6 @@ extern BOOL enableLog;
         
         
                 dispatch_async(dispatch_get_main_queue(), ^{
-                  FlutterMethodChannel *channel = [FlutterMethodChannel
-                        methodChannelWithName:@"MAOfflineMapDownloadBlock::Callback"
-                              binaryMessenger:[[self registrar] messenger]
-                                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
-        
                   [channel invokeMethod:@"Callback::MAOfflineMapDownloadBlock::MAOfflineMapDownloadBlock" arguments:@{@"downloadItem": argdownloadItem == nil ? [NSNull null] : argdownloadItem, @"downloadStatus": argdownloadStatus == nil ? [NSNull null] : argdownloadStatus, @"info": arginfo == nil ? [NSNull null] : arginfo}];
                 });
         
@@ -3694,11 +3629,6 @@ extern BOOL enableLog;
                 NSNumber* argstate = @(state);
         
                 dispatch_async(dispatch_get_main_queue(), ^{
-                  FlutterMethodChannel *channel = [FlutterMethodChannel
-                        methodChannelWithName:@"void|UIImage*#resultImage,NSInteger#state::Callback"
-                              binaryMessenger:[[self registrar] messenger]
-                                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
-        
                   [channel invokeMethod:@"Callback::void|UIImage*#resultImage,NSInteger#state::void|UIImage*#resultImage,NSInteger#state" arguments:@{@"resultImage": argresultImage == nil ? [NSNull null] : argresultImage, @"state": argstate == nil ? [NSNull null] : argstate}];
                 });
         

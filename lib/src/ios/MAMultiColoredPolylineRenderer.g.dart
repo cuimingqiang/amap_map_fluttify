@@ -58,13 +58,13 @@ class MAMultiColoredPolylineRenderer extends MAPolylineRenderer  {
 
   //region setters
   Future<void> set_strokeColors(List<UIColor> strokeColors) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMultiColoredPolylineRenderer::set_strokeColors', <String, dynamic>{'__this__': this, "strokeColors": strokeColors});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAMultiColoredPolylineRenderer::set_strokeColors', <String, dynamic>{'__this__': this, "strokeColors": strokeColors});
   
   
   }
   
   Future<void> set_gradient(bool gradient) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMultiColoredPolylineRenderer::set_gradient', <String, dynamic>{'__this__': this, "gradient": gradient});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAMultiColoredPolylineRenderer::set_gradient', <String, dynamic>{'__this__': this, "gradient": gradient});
   
   
   }

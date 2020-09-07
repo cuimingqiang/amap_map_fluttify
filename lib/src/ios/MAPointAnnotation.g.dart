@@ -58,19 +58,19 @@ class MAPointAnnotation extends MAShape with MAAnnotation {
 
   //region setters
   Future<void> set_coordinate(CLLocationCoordinate2D coordinate) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAPointAnnotation::set_coordinate', <String, dynamic>{'__this__': this, "coordinate": coordinate});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAPointAnnotation::set_coordinate', <String, dynamic>{'__this__': this, "coordinate": coordinate});
   
   
   }
   
   Future<void> set_lockedToScreen(bool lockedToScreen) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAPointAnnotation::set_lockedToScreen', <String, dynamic>{'__this__': this, "lockedToScreen": lockedToScreen});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAPointAnnotation::set_lockedToScreen', <String, dynamic>{'__this__': this, "lockedToScreen": lockedToScreen});
   
   
   }
   
   Future<void> set_lockedScreenPoint(CGPoint lockedScreenPoint) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAPointAnnotation::set_lockedScreenPoint', <String, dynamic>{'__this__': this, "lockedScreenPoint": lockedScreenPoint});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAPointAnnotation::set_lockedScreenPoint', <String, dynamic>{'__this__': this, "lockedScreenPoint": lockedScreenPoint});
   
   
   }

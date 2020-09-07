@@ -68,13 +68,13 @@ class MAOverlayRenderer extends NSObject  {
 
   //region setters
   Future<void> set_strokeImage(UIImage strokeImage) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAOverlayRenderer::set_strokeImage', <String, dynamic>{'__this__': this, "strokeImage": strokeImage});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAOverlayRenderer::set_strokeImage', <String, dynamic>{'__this__': this, "strokeImage": strokeImage});
   
   
   }
   
   Future<void> set_alpha(double alpha) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAOverlayRenderer::set_alpha', <String, dynamic>{'__this__': this, "alpha": alpha});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAOverlayRenderer::set_alpha', <String, dynamic>{'__this__': this, "alpha": alpha});
   
   
   }

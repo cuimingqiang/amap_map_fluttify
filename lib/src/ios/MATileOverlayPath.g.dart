@@ -63,25 +63,25 @@ class MATileOverlayPath extends NSObject  {
 
   //region setters
   Future<void> set_x(int x) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MATileOverlayPath::set_x', <String, dynamic>{'__this__': this, "x": x});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MATileOverlayPath::set_x', <String, dynamic>{'__this__': this, "x": x});
   
   
   }
   
   Future<void> set_y(int y) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MATileOverlayPath::set_y', <String, dynamic>{'__this__': this, "y": y});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MATileOverlayPath::set_y', <String, dynamic>{'__this__': this, "y": y});
   
   
   }
   
   Future<void> set_z(int z) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MATileOverlayPath::set_z', <String, dynamic>{'__this__': this, "z": z});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MATileOverlayPath::set_z', <String, dynamic>{'__this__': this, "z": z});
   
   
   }
   
   Future<void> set_contentScaleFactor(double contentScaleFactor) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MATileOverlayPath::set_contentScaleFactor', <String, dynamic>{'__this__': this, "contentScaleFactor": contentScaleFactor});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MATileOverlayPath::set_contentScaleFactor', <String, dynamic>{'__this__': this, "contentScaleFactor": contentScaleFactor});
   
   
   }

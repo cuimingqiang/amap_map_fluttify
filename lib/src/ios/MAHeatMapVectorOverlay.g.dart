@@ -48,7 +48,7 @@ class MAHeatMapVectorOverlay extends MAShape with MAOverlay, MAAnnotation {
 
   //region setters
   Future<void> set_option(MAHeatMapVectorOverlayOptions option) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAHeatMapVectorOverlay::set_option', <String, dynamic>{'__this__': this, "option": option});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAHeatMapVectorOverlay::set_option', <String, dynamic>{'__this__': this, "option": option});
   
   
   }

@@ -53,13 +53,13 @@ class MAHeatMapNode extends NSObject  {
 
   //region setters
   Future<void> set_coordinate(CLLocationCoordinate2D coordinate) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAHeatMapNode::set_coordinate', <String, dynamic>{'__this__': this, "coordinate": coordinate});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAHeatMapNode::set_coordinate', <String, dynamic>{'__this__': this, "coordinate": coordinate});
   
   
   }
   
   Future<void> set_intensity(double intensity) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAHeatMapNode::set_intensity', <String, dynamic>{'__this__': this, "intensity": intensity});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAHeatMapNode::set_intensity', <String, dynamic>{'__this__': this, "intensity": intensity});
   
   
   }

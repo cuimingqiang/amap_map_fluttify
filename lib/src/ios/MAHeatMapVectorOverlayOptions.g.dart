@@ -98,67 +98,67 @@ class MAHeatMapVectorOverlayOptions extends NSObject  {
 
   //region setters
   Future<void> set_type(MAHeatMapType type) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAHeatMapVectorOverlayOptions::set_type', <String, dynamic>{'__this__': this, "type": type.toValue()});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAHeatMapVectorOverlayOptions::set_type', <String, dynamic>{'__this__': this, "type": type.toValue()});
   
   
   }
   
   Future<void> set_visible(bool visible) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAHeatMapVectorOverlayOptions::set_visible', <String, dynamic>{'__this__': this, "visible": visible});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAHeatMapVectorOverlayOptions::set_visible', <String, dynamic>{'__this__': this, "visible": visible});
   
   
   }
   
   Future<void> set_inputNodes(List<MAHeatMapVectorNode> inputNodes) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAHeatMapVectorOverlayOptions::set_inputNodes', <String, dynamic>{'__this__': this, "inputNodes": inputNodes});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAHeatMapVectorOverlayOptions::set_inputNodes', <String, dynamic>{'__this__': this, "inputNodes": inputNodes});
   
   
   }
   
   Future<void> set_size(double size) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAHeatMapVectorOverlayOptions::set_size', <String, dynamic>{'__this__': this, "size": size});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAHeatMapVectorOverlayOptions::set_size', <String, dynamic>{'__this__': this, "size": size});
   
   
   }
   
   Future<void> set_gap(double gap) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAHeatMapVectorOverlayOptions::set_gap', <String, dynamic>{'__this__': this, "gap": gap});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAHeatMapVectorOverlayOptions::set_gap', <String, dynamic>{'__this__': this, "gap": gap});
   
   
   }
   
   Future<void> set_colors(List<UIColor> colors) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAHeatMapVectorOverlayOptions::set_colors', <String, dynamic>{'__this__': this, "colors": colors});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAHeatMapVectorOverlayOptions::set_colors', <String, dynamic>{'__this__': this, "colors": colors});
   
   
   }
   
   Future<void> set_startPoints(List<num> startPoints) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAHeatMapVectorOverlayOptions::set_startPoints', <String, dynamic>{'__this__': this, "startPoints": startPoints});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAHeatMapVectorOverlayOptions::set_startPoints', <String, dynamic>{'__this__': this, "startPoints": startPoints});
   
   
   }
   
   Future<void> set_opacity(double opacity) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAHeatMapVectorOverlayOptions::set_opacity', <String, dynamic>{'__this__': this, "opacity": opacity});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAHeatMapVectorOverlayOptions::set_opacity', <String, dynamic>{'__this__': this, "opacity": opacity});
   
   
   }
   
   Future<void> set_maxIntensity(int maxIntensity) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAHeatMapVectorOverlayOptions::set_maxIntensity', <String, dynamic>{'__this__': this, "maxIntensity": maxIntensity});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAHeatMapVectorOverlayOptions::set_maxIntensity', <String, dynamic>{'__this__': this, "maxIntensity": maxIntensity});
   
   
   }
   
   Future<void> set_minZoom(double minZoom) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAHeatMapVectorOverlayOptions::set_minZoom', <String, dynamic>{'__this__': this, "minZoom": minZoom});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAHeatMapVectorOverlayOptions::set_minZoom', <String, dynamic>{'__this__': this, "minZoom": minZoom});
   
   
   }
   
   Future<void> set_maxZoom(double maxZoom) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAHeatMapVectorOverlayOptions::set_maxZoom', <String, dynamic>{'__this__': this, "maxZoom": maxZoom});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAHeatMapVectorOverlayOptions::set_maxZoom', <String, dynamic>{'__this__': this, "maxZoom": maxZoom});
   
   
   }

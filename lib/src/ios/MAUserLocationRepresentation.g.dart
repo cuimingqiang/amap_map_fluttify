@@ -88,55 +88,55 @@ class MAUserLocationRepresentation extends NSObject  {
 
   //region setters
   Future<void> set_showsAccuracyRing(bool showsAccuracyRing) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAUserLocationRepresentation::set_showsAccuracyRing', <String, dynamic>{'__this__': this, "showsAccuracyRing": showsAccuracyRing});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAUserLocationRepresentation::set_showsAccuracyRing', <String, dynamic>{'__this__': this, "showsAccuracyRing": showsAccuracyRing});
   
   
   }
   
   Future<void> set_showsHeadingIndicator(bool showsHeadingIndicator) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAUserLocationRepresentation::set_showsHeadingIndicator', <String, dynamic>{'__this__': this, "showsHeadingIndicator": showsHeadingIndicator});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAUserLocationRepresentation::set_showsHeadingIndicator', <String, dynamic>{'__this__': this, "showsHeadingIndicator": showsHeadingIndicator});
   
   
   }
   
   Future<void> set_fillColor(UIColor fillColor) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAUserLocationRepresentation::set_fillColor', <String, dynamic>{'__this__': this, "fillColor": fillColor});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAUserLocationRepresentation::set_fillColor', <String, dynamic>{'__this__': this, "fillColor": fillColor});
   
   
   }
   
   Future<void> set_strokeColor(UIColor strokeColor) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAUserLocationRepresentation::set_strokeColor', <String, dynamic>{'__this__': this, "strokeColor": strokeColor});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAUserLocationRepresentation::set_strokeColor', <String, dynamic>{'__this__': this, "strokeColor": strokeColor});
   
   
   }
   
   Future<void> set_lineWidth(double lineWidth) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAUserLocationRepresentation::set_lineWidth', <String, dynamic>{'__this__': this, "lineWidth": lineWidth});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAUserLocationRepresentation::set_lineWidth', <String, dynamic>{'__this__': this, "lineWidth": lineWidth});
   
   
   }
   
   Future<void> set_locationDotBgColor(UIColor locationDotBgColor) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAUserLocationRepresentation::set_locationDotBgColor', <String, dynamic>{'__this__': this, "locationDotBgColor": locationDotBgColor});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAUserLocationRepresentation::set_locationDotBgColor', <String, dynamic>{'__this__': this, "locationDotBgColor": locationDotBgColor});
   
   
   }
   
   Future<void> set_locationDotFillColor(UIColor locationDotFillColor) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAUserLocationRepresentation::set_locationDotFillColor', <String, dynamic>{'__this__': this, "locationDotFillColor": locationDotFillColor});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAUserLocationRepresentation::set_locationDotFillColor', <String, dynamic>{'__this__': this, "locationDotFillColor": locationDotFillColor});
   
   
   }
   
   Future<void> set_enablePulseAnnimation(bool enablePulseAnnimation) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAUserLocationRepresentation::set_enablePulseAnnimation', <String, dynamic>{'__this__': this, "enablePulseAnnimation": enablePulseAnnimation});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAUserLocationRepresentation::set_enablePulseAnnimation', <String, dynamic>{'__this__': this, "enablePulseAnnimation": enablePulseAnnimation});
   
   
   }
   
   Future<void> set_image(UIImage image) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAUserLocationRepresentation::set_image', <String, dynamic>{'__this__': this, "image": image});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAUserLocationRepresentation::set_image', <String, dynamic>{'__this__': this, "image": image});
   
   
   }

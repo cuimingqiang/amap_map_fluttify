@@ -53,13 +53,13 @@ class MAMapPoint extends NSObject  {
 
   //region setters
   Future<void> set_x(double x) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMapPoint::set_x', <String, dynamic>{'__this__': this, "x": x});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAMapPoint::set_x', <String, dynamic>{'__this__': this, "x": x});
   
   
   }
   
   Future<void> set_y(double y) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMapPoint::set_y', <String, dynamic>{'__this__': this, "y": y});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAMapPoint::set_y', <String, dynamic>{'__this__': this, "y": y});
   
   
   }

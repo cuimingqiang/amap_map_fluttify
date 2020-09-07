@@ -53,7 +53,7 @@ class MACustomCalloutView extends UIView  {
 
   //region setters
   Future<void> set_userData(dynamic userData, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MACustomCalloutView' : 'me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MACustomCalloutView::set_userData', <String, dynamic>{'__this__': this, "userData": userData});
+    await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MACustomCalloutView' : 'me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MACustomCalloutView::set_userData', <String, dynamic>{'__this__': this, "userData": userData});
   
   
   }

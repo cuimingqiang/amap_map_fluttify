@@ -53,13 +53,13 @@ class MAPinAnnotationView extends MAAnnotationView  {
 
   //region setters
   Future<void> set_pinColor(MAPinAnnotationColor pinColor, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MAPinAnnotationView' : 'me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAPinAnnotationView::set_pinColor', <String, dynamic>{'__this__': this, "pinColor": pinColor.toValue()});
+    await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MAPinAnnotationView' : 'me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAPinAnnotationView::set_pinColor', <String, dynamic>{'__this__': this, "pinColor": pinColor.toValue()});
   
   
   }
   
   Future<void> set_animatesDrop(bool animatesDrop, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MAPinAnnotationView' : 'me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAPinAnnotationView::set_animatesDrop', <String, dynamic>{'__this__': this, "animatesDrop": animatesDrop});
+    await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MAPinAnnotationView' : 'me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAPinAnnotationView::set_animatesDrop', <String, dynamic>{'__this__': this, "animatesDrop": animatesDrop});
   
   
   }

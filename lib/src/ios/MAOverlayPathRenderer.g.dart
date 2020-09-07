@@ -83,49 +83,49 @@ class MAOverlayPathRenderer extends MAOverlayRenderer  {
 
   //region setters
   Future<void> set_fillColor(UIColor fillColor) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAOverlayPathRenderer::set_fillColor', <String, dynamic>{'__this__': this, "fillColor": fillColor});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAOverlayPathRenderer::set_fillColor', <String, dynamic>{'__this__': this, "fillColor": fillColor});
   
   
   }
   
   Future<void> set_strokeColor(UIColor strokeColor) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAOverlayPathRenderer::set_strokeColor', <String, dynamic>{'__this__': this, "strokeColor": strokeColor});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAOverlayPathRenderer::set_strokeColor', <String, dynamic>{'__this__': this, "strokeColor": strokeColor});
   
   
   }
   
   Future<void> set_lineWidth(double lineWidth) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAOverlayPathRenderer::set_lineWidth', <String, dynamic>{'__this__': this, "lineWidth": lineWidth});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAOverlayPathRenderer::set_lineWidth', <String, dynamic>{'__this__': this, "lineWidth": lineWidth});
   
   
   }
   
   Future<void> set_lineJoinType(MALineJoinType lineJoinType) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAOverlayPathRenderer::set_lineJoinType', <String, dynamic>{'__this__': this, "lineJoinType": lineJoinType.toValue()});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAOverlayPathRenderer::set_lineJoinType', <String, dynamic>{'__this__': this, "lineJoinType": lineJoinType.toValue()});
   
   
   }
   
   Future<void> set_lineCapType(MALineCapType lineCapType) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAOverlayPathRenderer::set_lineCapType', <String, dynamic>{'__this__': this, "lineCapType": lineCapType.toValue()});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAOverlayPathRenderer::set_lineCapType', <String, dynamic>{'__this__': this, "lineCapType": lineCapType.toValue()});
   
   
   }
   
   Future<void> set_miterLimit(double miterLimit) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAOverlayPathRenderer::set_miterLimit', <String, dynamic>{'__this__': this, "miterLimit": miterLimit});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAOverlayPathRenderer::set_miterLimit', <String, dynamic>{'__this__': this, "miterLimit": miterLimit});
   
   
   }
   
   Future<void> set_lineDash(bool lineDash) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAOverlayPathRenderer::set_lineDash', <String, dynamic>{'__this__': this, "lineDash": lineDash});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAOverlayPathRenderer::set_lineDash', <String, dynamic>{'__this__': this, "lineDash": lineDash});
   
   
   }
   
   Future<void> set_lineDashType(MALineDashType lineDashType) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAOverlayPathRenderer::set_lineDashType', <String, dynamic>{'__this__': this, "lineDashType": lineDashType.toValue()});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAOverlayPathRenderer::set_lineDashType', <String, dynamic>{'__this__': this, "lineDashType": lineDashType.toValue()});
   
   
   }

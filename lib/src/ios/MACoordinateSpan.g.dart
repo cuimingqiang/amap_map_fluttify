@@ -53,13 +53,13 @@ class MACoordinateSpan extends NSObject  {
 
   //region setters
   Future<void> set_latitudeDelta(double latitudeDelta) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MACoordinateSpan::set_latitudeDelta', <String, dynamic>{'__this__': this, "latitudeDelta": latitudeDelta});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MACoordinateSpan::set_latitudeDelta', <String, dynamic>{'__this__': this, "latitudeDelta": latitudeDelta});
   
   
   }
   
   Future<void> set_longitudeDelta(double longitudeDelta) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MACoordinateSpan::set_longitudeDelta', <String, dynamic>{'__this__': this, "longitudeDelta": longitudeDelta});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MACoordinateSpan::set_longitudeDelta', <String, dynamic>{'__this__': this, "longitudeDelta": longitudeDelta});
   
   
   }

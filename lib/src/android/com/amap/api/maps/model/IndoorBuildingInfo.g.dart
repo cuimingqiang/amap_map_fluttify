@@ -68,31 +68,31 @@ class com_amap_api_maps_model_IndoorBuildingInfo extends java_lang_Object  {
 
   //region setters
   Future<void> set_activeFloorName(String activeFloorName) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.amap.api.maps.model.IndoorBuildingInfo::set_activeFloorName', <String, dynamic>{'__this__': this, "activeFloorName": activeFloorName});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('com.amap.api.maps.model.IndoorBuildingInfo::set_activeFloorName', <String, dynamic>{'__this__': this, "activeFloorName": activeFloorName});
   
   
   }
   
   Future<void> set_activeFloorIndex(int activeFloorIndex) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.amap.api.maps.model.IndoorBuildingInfo::set_activeFloorIndex', <String, dynamic>{'__this__': this, "activeFloorIndex": activeFloorIndex});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('com.amap.api.maps.model.IndoorBuildingInfo::set_activeFloorIndex', <String, dynamic>{'__this__': this, "activeFloorIndex": activeFloorIndex});
   
   
   }
   
   Future<void> set_poiid(String poiid) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.amap.api.maps.model.IndoorBuildingInfo::set_poiid', <String, dynamic>{'__this__': this, "poiid": poiid});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('com.amap.api.maps.model.IndoorBuildingInfo::set_poiid', <String, dynamic>{'__this__': this, "poiid": poiid});
   
   
   }
   
   Future<void> set_floor_indexs(Int32List floor_indexs) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.amap.api.maps.model.IndoorBuildingInfo::set_floor_indexs', <String, dynamic>{'__this__': this, "floor_indexs": floor_indexs});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('com.amap.api.maps.model.IndoorBuildingInfo::set_floor_indexs', <String, dynamic>{'__this__': this, "floor_indexs": floor_indexs});
   
   
   }
   
   Future<void> set_floor_names(List<String> floor_names) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.amap.api.maps.model.IndoorBuildingInfo::set_floor_names', <String, dynamic>{'__this__': this, "floor_names": floor_names});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('com.amap.api.maps.model.IndoorBuildingInfo::set_floor_names', <String, dynamic>{'__this__': this, "floor_names": floor_names});
   
   
   }

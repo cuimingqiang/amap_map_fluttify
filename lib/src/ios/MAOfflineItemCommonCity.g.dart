@@ -48,7 +48,7 @@ class MAOfflineItemCommonCity extends MAOfflineCity  {
 
   //region setters
   Future<void> set_province(MAOfflineItem province) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAOfflineItemCommonCity::set_province', <String, dynamic>{'__this__': this, "province": province});
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('MAOfflineItemCommonCity::set_province', <String, dynamic>{'__this__': this, "province": province});
   
   
   }
