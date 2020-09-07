@@ -14,6 +14,7 @@
 #import "SubHandler/SubHandler7.h"
 #import "SubHandler/SubHandler8.h"
 #import "SubHandler/Custom/SubHandlerCustom.h"
+#import "FluttifyMessageCodec.h"
 
 // Dart端一次方法调用所存在的栈, 只有当MethodChannel传递参数受限时, 再启用这个容器
 extern NSMutableDictionary<NSString*, NSObject*>* STACK;
@@ -51,7 +52,8 @@ extern BOOL enableLog;
 + (void)registerWithRegistrar:(NSObject <FlutterPluginRegistrar> *)registrar {
   FlutterMethodChannel *channel = [FlutterMethodChannel
       methodChannelWithName:@"me.yohom/amap_map_fluttify"
-            binaryMessenger:[registrar messenger]];
+            binaryMessenger:[registrar messenger]
+                      codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
 
   [registrar addMethodCallDelegate:[[AmapMapFluttifyPlugin alloc] initWithFlutterPluginRegistrar:registrar]
                            channel:channel];
@@ -75,9 +77,6 @@ extern BOOL enableLog;
 // 委托方法们
 - (void)traceManager : (MATraceManager*)manager didTrace: (NSArray<CLLocation*>*)locations correct: (NSArray<MATracePoint*>*)tracePoints distance: (double)distance withError: (NSError*)error
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MATraceDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MATraceDelegate::traceManager_didTrace_correct_distance_withError");
@@ -85,51 +84,31 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmanager = [NSNull null];
-  if (manager != nil) {
-      argmanager = [NSNumber numberWithLong: manager.hash];
-      HEAP[argmanager] = manager;
-  }
+  NSObject* argmanager = manager;
   
   // list callback arg
-  NSMutableArray<NSNumber*>* arglocations = [NSMutableArray arrayWithCapacity:locations.count];
-  for (int __i__ = 0; __i__ < locations.count; __i__++) {
-      NSObject* item = ((NSObject*) [locations objectAtIndex:__i__]);
-      // return to dart side data
-      arglocations[__i__] = [NSNumber numberWithLong: item.hash];
-      // add to HEAP
-      HEAP[[NSNumber numberWithLong: item.hash]] = item;
-  }
+  NSArray<NSObject*>* arglocations = locations;
   // list callback arg
-  NSMutableArray<NSNumber*>* argtracePoints = [NSMutableArray arrayWithCapacity:tracePoints.count];
-  for (int __i__ = 0; __i__ < tracePoints.count; __i__++) {
-      NSObject* item = ((NSObject*) [tracePoints objectAtIndex:__i__]);
-      // return to dart side data
-      argtracePoints[__i__] = [NSNumber numberWithLong: item.hash];
-      // add to HEAP
-      HEAP[[NSNumber numberWithLong: item.hash]] = item;
-  }
+  NSArray<NSObject*>* argtracePoints = tracePoints;
   // primitive callback arg
   NSNumber* argdistance = @(distance);
   // ref callback arg
-  NSNumber* argerror = [NSNull null];
-  if (error != nil) {
-      argerror = [NSNumber numberWithLong: error.hash];
-      HEAP[argerror] = error;
-  }
+  NSObject* argerror = error;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MATraceDelegate::traceManager_didTrace_correct_distance_withError" arguments:@{@"manager": argmanager, @"locations": arglocations, @"tracePoints": argtracePoints, @"distance": argdistance, @"error": argerror}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MATraceDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MATraceDelegate::traceManager_didTrace_correct_distance_withError" arguments:@{@"manager": argmanager == nil ? [NSNull null] : argmanager, @"locations": arglocations == nil ? [NSNull null] : arglocations, @"tracePoints": argtracePoints == nil ? [NSNull null] : argtracePoints, @"distance": argdistance == nil ? [NSNull null] : argdistance, @"error": argerror == nil ? [NSNull null] : argerror}];
   });
   
 }
 
 - (void)mapViewRequireLocationAuth : (CLLocationManager*)locationManager
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MATraceDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MATraceDelegate::mapViewRequireLocationAuth");
@@ -137,24 +116,22 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* arglocationManager = [NSNull null];
-  if (locationManager != nil) {
-      arglocationManager = [NSNumber numberWithLong: locationManager.hash];
-      HEAP[arglocationManager] = locationManager;
-  }
+  NSObject* arglocationManager = locationManager;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MATraceDelegate::mapViewRequireLocationAuth" arguments:@{@"locationManager": arglocationManager}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MATraceDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MATraceDelegate::mapViewRequireLocationAuth" arguments:@{@"locationManager": arglocationManager == nil ? [NSNull null] : arglocationManager}];
   });
   
 }
 
 - (void)multiPointOverlayRenderer : (MAMultiPointOverlayRenderer*)renderer didItemTapped: (MAMultiPointItem*)item
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMultiPointOverlayRendererDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMultiPointOverlayRendererDelegate::multiPointOverlayRenderer_didItemTapped");
@@ -162,31 +139,25 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argrenderer = [NSNull null];
-  if (renderer != nil) {
-      argrenderer = [NSNumber numberWithLong: renderer.hash];
-      HEAP[argrenderer] = renderer;
-  }
+  NSObject* argrenderer = renderer;
   
   // ref callback arg
-  NSNumber* argitem = [NSNull null];
-  if (item != nil) {
-      argitem = [NSNumber numberWithLong: item.hash];
-      HEAP[argitem] = item;
-  }
+  NSObject* argitem = item;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMultiPointOverlayRendererDelegate::multiPointOverlayRenderer_didItemTapped" arguments:@{@"renderer": argrenderer, @"item": argitem}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMultiPointOverlayRendererDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMultiPointOverlayRendererDelegate::multiPointOverlayRenderer_didItemTapped" arguments:@{@"renderer": argrenderer == nil ? [NSNull null] : argrenderer, @"item": argitem == nil ? [NSNull null] : argitem}];
   });
   
 }
 
 - (void)mapViewRegionChanged : (MAMapView*)mapView
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapViewRegionChanged");
@@ -194,24 +165,22 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapViewRegionChanged" arguments:@{@"mapView": argmapView}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapViewRegionChanged" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView}];
   });
   
 }
 
 - (void)mapView : (MAMapView*)mapView regionWillChangeAnimated: (BOOL)animated
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_regionWillChangeAnimated");
@@ -219,26 +188,24 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // primitive callback arg
   NSNumber* arganimated = @(animated);
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_regionWillChangeAnimated" arguments:@{@"mapView": argmapView, @"animated": arganimated}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_regionWillChangeAnimated" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"animated": arganimated == nil ? [NSNull null] : arganimated}];
   });
   
 }
 
 - (void)mapView : (MAMapView*)mapView regionDidChangeAnimated: (BOOL)animated
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_regionDidChangeAnimated");
@@ -246,26 +213,24 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // primitive callback arg
   NSNumber* arganimated = @(animated);
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_regionDidChangeAnimated" arguments:@{@"mapView": argmapView, @"animated": arganimated}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_regionDidChangeAnimated" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"animated": arganimated == nil ? [NSNull null] : arganimated}];
   });
   
 }
 
 - (void)mapView : (MAMapView*)mapView regionWillChangeAnimated: (BOOL)animated wasUserAction: (BOOL)wasUserAction
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_regionWillChangeAnimated_wasUserAction");
@@ -273,11 +238,7 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // primitive callback arg
   NSNumber* arganimated = @(animated);
@@ -285,16 +246,18 @@ extern BOOL enableLog;
   NSNumber* argwasUserAction = @(wasUserAction);
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_regionWillChangeAnimated_wasUserAction" arguments:@{@"mapView": argmapView, @"animated": arganimated, @"wasUserAction": argwasUserAction}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_regionWillChangeAnimated_wasUserAction" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"animated": arganimated == nil ? [NSNull null] : arganimated, @"wasUserAction": argwasUserAction == nil ? [NSNull null] : argwasUserAction}];
   });
   
 }
 
 - (void)mapView : (MAMapView*)mapView regionDidChangeAnimated: (BOOL)animated wasUserAction: (BOOL)wasUserAction
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_regionDidChangeAnimated_wasUserAction");
@@ -302,11 +265,7 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // primitive callback arg
   NSNumber* arganimated = @(animated);
@@ -314,16 +273,18 @@ extern BOOL enableLog;
   NSNumber* argwasUserAction = @(wasUserAction);
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_regionDidChangeAnimated_wasUserAction" arguments:@{@"mapView": argmapView, @"animated": arganimated, @"wasUserAction": argwasUserAction}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_regionDidChangeAnimated_wasUserAction" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"animated": arganimated == nil ? [NSNull null] : arganimated, @"wasUserAction": argwasUserAction == nil ? [NSNull null] : argwasUserAction}];
   });
   
 }
 
 - (void)mapView : (MAMapView*)mapView mapWillMoveByUser: (BOOL)wasUserAction
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_mapWillMoveByUser");
@@ -331,26 +292,24 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // primitive callback arg
   NSNumber* argwasUserAction = @(wasUserAction);
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_mapWillMoveByUser" arguments:@{@"mapView": argmapView, @"wasUserAction": argwasUserAction}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_mapWillMoveByUser" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"wasUserAction": argwasUserAction == nil ? [NSNull null] : argwasUserAction}];
   });
   
 }
 
 - (void)mapView : (MAMapView*)mapView mapDidMoveByUser: (BOOL)wasUserAction
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_mapDidMoveByUser");
@@ -358,26 +317,24 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // primitive callback arg
   NSNumber* argwasUserAction = @(wasUserAction);
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_mapDidMoveByUser" arguments:@{@"mapView": argmapView, @"wasUserAction": argwasUserAction}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_mapDidMoveByUser" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"wasUserAction": argwasUserAction == nil ? [NSNull null] : argwasUserAction}];
   });
   
 }
 
 - (void)mapView : (MAMapView*)mapView mapWillZoomByUser: (BOOL)wasUserAction
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_mapWillZoomByUser");
@@ -385,26 +342,24 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // primitive callback arg
   NSNumber* argwasUserAction = @(wasUserAction);
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_mapWillZoomByUser" arguments:@{@"mapView": argmapView, @"wasUserAction": argwasUserAction}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_mapWillZoomByUser" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"wasUserAction": argwasUserAction == nil ? [NSNull null] : argwasUserAction}];
   });
   
 }
 
 - (void)mapView : (MAMapView*)mapView mapDidZoomByUser: (BOOL)wasUserAction
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_mapDidZoomByUser");
@@ -412,26 +367,24 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // primitive callback arg
   NSNumber* argwasUserAction = @(wasUserAction);
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_mapDidZoomByUser" arguments:@{@"mapView": argmapView, @"wasUserAction": argwasUserAction}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_mapDidZoomByUser" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"wasUserAction": argwasUserAction == nil ? [NSNull null] : argwasUserAction}];
   });
   
 }
 
 - (void)mapViewWillStartLoadingMap : (MAMapView*)mapView
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapViewWillStartLoadingMap");
@@ -439,24 +392,22 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapViewWillStartLoadingMap" arguments:@{@"mapView": argmapView}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapViewWillStartLoadingMap" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView}];
   });
   
 }
 
 - (void)mapViewDidFinishLoadingMap : (MAMapView*)mapView
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapViewDidFinishLoadingMap");
@@ -464,24 +415,22 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapViewDidFinishLoadingMap" arguments:@{@"mapView": argmapView}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapViewDidFinishLoadingMap" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView}];
   });
   
 }
 
 - (void)mapViewDidFailLoadingMap : (MAMapView*)mapView withError: (NSError*)error
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapViewDidFailLoadingMap_withError");
@@ -489,31 +438,25 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // ref callback arg
-  NSNumber* argerror = [NSNull null];
-  if (error != nil) {
-      argerror = [NSNumber numberWithLong: error.hash];
-      HEAP[argerror] = error;
-  }
+  NSObject* argerror = error;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapViewDidFailLoadingMap_withError" arguments:@{@"mapView": argmapView, @"error": argerror}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapViewDidFailLoadingMap_withError" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"error": argerror == nil ? [NSNull null] : argerror}];
   });
   
 }
 
 - (MAAnnotationView*)mapView : (MAMapView*)mapView viewForAnnotation: (id<MAAnnotation>)annotation
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_viewForAnnotation");
@@ -521,24 +464,21 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // ref callback arg
-  NSNumber* argannotation = [NSNull null];
-  if (annotation != nil) {
-      argannotation = [NSNumber numberWithLong: annotation.hash];
-      HEAP[argannotation] = annotation;
-  }
+  NSObject* argannotation = annotation;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_viewForAnnotation"
-                  arguments:@{}
-                     result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_viewForAnnotation"
+                arguments:@{}
+                   result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
   });
   
   // 由于flutter无法同步调用method channel, 所以暂不支持有返回值的回调方法
@@ -549,14 +489,11 @@ extern BOOL enableLog;
   
   ////////////////////////////////////////////////////////////////////////////////
   
-  return nil;
+  return (MAAnnotationView*) nil;
 }
 
 - (void)mapView : (MAMapView*)mapView didAddAnnotationViews: (NSArray*)views
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_didAddAnnotationViews");
@@ -564,33 +501,24 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // list callback arg
-  NSMutableArray<NSNumber*>* argviews = [NSMutableArray arrayWithCapacity:views.count];
-  for (int __i__ = 0; __i__ < views.count; __i__++) {
-      NSObject* item = ((NSObject*) [views objectAtIndex:__i__]);
-      // return to dart side data
-      argviews[__i__] = [NSNumber numberWithLong: item.hash];
-      // add to HEAP
-      HEAP[[NSNumber numberWithLong: item.hash]] = item;
-  }
+  NSArray<NSObject*>* argviews = views;
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didAddAnnotationViews" arguments:@{@"mapView": argmapView, @"views": argviews}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didAddAnnotationViews" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"views": argviews == nil ? [NSNull null] : argviews}];
   });
   
 }
 
 - (void)mapView : (MAMapView*)mapView didSelectAnnotationView: (MAAnnotationView*)view
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_didSelectAnnotationView");
@@ -598,31 +526,25 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // ref callback arg
-  NSNumber* argview = [NSNull null];
-  if (view != nil) {
-      argview = [NSNumber numberWithLong: view.hash];
-      HEAP[argview] = view;
-  }
+  NSObject* argview = view;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didSelectAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didSelectAnnotationView" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"view": argview == nil ? [NSNull null] : argview}];
   });
   
 }
 
 - (void)mapView : (MAMapView*)mapView didDeselectAnnotationView: (MAAnnotationView*)view
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_didDeselectAnnotationView");
@@ -630,31 +552,25 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // ref callback arg
-  NSNumber* argview = [NSNull null];
-  if (view != nil) {
-      argview = [NSNumber numberWithLong: view.hash];
-      HEAP[argview] = view;
-  }
+  NSObject* argview = view;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didDeselectAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didDeselectAnnotationView" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"view": argview == nil ? [NSNull null] : argview}];
   });
   
 }
 
 - (void)mapViewWillStartLocatingUser : (MAMapView*)mapView
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapViewWillStartLocatingUser");
@@ -662,24 +578,22 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapViewWillStartLocatingUser" arguments:@{@"mapView": argmapView}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapViewWillStartLocatingUser" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView}];
   });
   
 }
 
 - (void)mapViewDidStopLocatingUser : (MAMapView*)mapView
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapViewDidStopLocatingUser");
@@ -687,24 +601,22 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapViewDidStopLocatingUser" arguments:@{@"mapView": argmapView}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapViewDidStopLocatingUser" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView}];
   });
   
 }
 
 - (void)mapView : (MAMapView*)mapView didUpdateUserLocation: (MAUserLocation*)userLocation updatingLocation: (BOOL)updatingLocation
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_didUpdateUserLocation_updatingLocation");
@@ -712,33 +624,27 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // ref callback arg
-  NSNumber* arguserLocation = [NSNull null];
-  if (userLocation != nil) {
-      arguserLocation = [NSNumber numberWithLong: userLocation.hash];
-      HEAP[arguserLocation] = userLocation;
-  }
+  NSObject* arguserLocation = userLocation;
   
   // primitive callback arg
   NSNumber* argupdatingLocation = @(updatingLocation);
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didUpdateUserLocation_updatingLocation" arguments:@{@"mapView": argmapView, @"userLocation": arguserLocation, @"updatingLocation": argupdatingLocation}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didUpdateUserLocation_updatingLocation" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"userLocation": arguserLocation == nil ? [NSNull null] : arguserLocation, @"updatingLocation": argupdatingLocation == nil ? [NSNull null] : argupdatingLocation}];
   });
   
 }
 
 - (void)mapView : (MAMapView*)mapView didFailToLocateUserWithError: (NSError*)error
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_didFailToLocateUserWithError");
@@ -746,31 +652,25 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // ref callback arg
-  NSNumber* argerror = [NSNull null];
-  if (error != nil) {
-      argerror = [NSNumber numberWithLong: error.hash];
-      HEAP[argerror] = error;
-  }
+  NSObject* argerror = error;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didFailToLocateUserWithError" arguments:@{@"mapView": argmapView, @"error": argerror}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didFailToLocateUserWithError" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"error": argerror == nil ? [NSNull null] : argerror}];
   });
   
 }
 
 - (void)mapView : (MAMapView*)mapView annotationView: (MAAnnotationView*)view didChangeDragState: (MAAnnotationViewDragState)newState fromOldState: (MAAnnotationViewDragState)oldState
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_annotationView_didChangeDragState_fromOldState");
@@ -778,18 +678,10 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // ref callback arg
-  NSNumber* argview = [NSNull null];
-  if (view != nil) {
-      argview = [NSNumber numberWithLong: view.hash];
-      HEAP[argview] = view;
-  }
+  NSObject* argview = view;
   
   // enum callback arg
   NSNumber* argnewState = @((NSInteger) newState);
@@ -797,16 +689,18 @@ extern BOOL enableLog;
   NSNumber* argoldState = @((NSInteger) oldState);
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_annotationView_didChangeDragState_fromOldState" arguments:@{@"mapView": argmapView, @"view": argview, @"newState": argnewState, @"oldState": argoldState}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_annotationView_didChangeDragState_fromOldState" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"view": argview == nil ? [NSNull null] : argview, @"newState": argnewState == nil ? [NSNull null] : argnewState, @"oldState": argoldState == nil ? [NSNull null] : argoldState}];
   });
   
 }
 
 - (MAOverlayRenderer*)mapView : (MAMapView*)mapView rendererForOverlay: (id<MAOverlay>)overlay
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_rendererForOverlay");
@@ -814,24 +708,21 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // ref callback arg
-  NSNumber* argoverlay = [NSNull null];
-  if (overlay != nil) {
-      argoverlay = [NSNumber numberWithLong: overlay.hash];
-      HEAP[argoverlay] = overlay;
-  }
+  NSObject* argoverlay = overlay;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_rendererForOverlay"
-                  arguments:@{}
-                     result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_rendererForOverlay"
+                arguments:@{}
+                   result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
   });
   
   // 由于flutter无法同步调用method channel, 所以暂不支持有返回值的回调方法
@@ -842,14 +733,11 @@ extern BOOL enableLog;
   
   ////////////////////////////////////////////////////////////////////////////////
   
-  return nil;
+  return (MAOverlayRenderer*) nil;
 }
 
 - (void)mapView : (MAMapView*)mapView didAddOverlayRenderers: (NSArray*)overlayRenderers
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_didAddOverlayRenderers");
@@ -857,33 +745,24 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // list callback arg
-  NSMutableArray<NSNumber*>* argoverlayRenderers = [NSMutableArray arrayWithCapacity:overlayRenderers.count];
-  for (int __i__ = 0; __i__ < overlayRenderers.count; __i__++) {
-      NSObject* item = ((NSObject*) [overlayRenderers objectAtIndex:__i__]);
-      // return to dart side data
-      argoverlayRenderers[__i__] = [NSNumber numberWithLong: item.hash];
-      // add to HEAP
-      HEAP[[NSNumber numberWithLong: item.hash]] = item;
-  }
+  NSArray<NSObject*>* argoverlayRenderers = overlayRenderers;
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didAddOverlayRenderers" arguments:@{@"mapView": argmapView, @"overlayRenderers": argoverlayRenderers}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didAddOverlayRenderers" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"overlayRenderers": argoverlayRenderers == nil ? [NSNull null] : argoverlayRenderers}];
   });
   
 }
 
 - (void)mapView : (MAMapView*)mapView annotationView: (MAAnnotationView*)view calloutAccessoryControlTapped: (UIControl*)control
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_annotationView_calloutAccessoryControlTapped");
@@ -891,38 +770,28 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // ref callback arg
-  NSNumber* argview = [NSNull null];
-  if (view != nil) {
-      argview = [NSNumber numberWithLong: view.hash];
-      HEAP[argview] = view;
-  }
+  NSObject* argview = view;
   
   // ref callback arg
-  NSNumber* argcontrol = [NSNull null];
-  if (control != nil) {
-      argcontrol = [NSNumber numberWithLong: control.hash];
-      HEAP[argcontrol] = control;
-  }
+  NSObject* argcontrol = control;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_annotationView_calloutAccessoryControlTapped" arguments:@{@"mapView": argmapView, @"view": argview, @"control": argcontrol}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_annotationView_calloutAccessoryControlTapped" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"view": argview == nil ? [NSNull null] : argview, @"control": argcontrol == nil ? [NSNull null] : argcontrol}];
   });
   
 }
 
 - (void)mapView : (MAMapView*)mapView didAnnotationViewCalloutTapped: (MAAnnotationView*)view
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_didAnnotationViewCalloutTapped");
@@ -930,31 +799,25 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // ref callback arg
-  NSNumber* argview = [NSNull null];
-  if (view != nil) {
-      argview = [NSNumber numberWithLong: view.hash];
-      HEAP[argview] = view;
-  }
+  NSObject* argview = view;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didAnnotationViewCalloutTapped" arguments:@{@"mapView": argmapView, @"view": argview}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didAnnotationViewCalloutTapped" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"view": argview == nil ? [NSNull null] : argview}];
   });
   
 }
 
 - (void)mapView : (MAMapView*)mapView didAnnotationViewTapped: (MAAnnotationView*)view
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_didAnnotationViewTapped");
@@ -962,31 +825,25 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // ref callback arg
-  NSNumber* argview = [NSNull null];
-  if (view != nil) {
-      argview = [NSNumber numberWithLong: view.hash];
-      HEAP[argview] = view;
-  }
+  NSObject* argview = view;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didAnnotationViewTapped" arguments:@{@"mapView": argmapView, @"view": argview}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didAnnotationViewTapped" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"view": argview == nil ? [NSNull null] : argview}];
   });
   
 }
 
 - (void)mapView : (MAMapView*)mapView didChangeUserTrackingMode: (MAUserTrackingMode)mode animated: (BOOL)animated
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_didChangeUserTrackingMode_animated");
@@ -994,11 +851,7 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // enum callback arg
   NSNumber* argmode = @((NSInteger) mode);
@@ -1006,16 +859,18 @@ extern BOOL enableLog;
   NSNumber* arganimated = @(animated);
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didChangeUserTrackingMode_animated" arguments:@{@"mapView": argmapView, @"mode": argmode, @"animated": arganimated}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didChangeUserTrackingMode_animated" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"mode": argmode == nil ? [NSNull null] : argmode, @"animated": arganimated == nil ? [NSNull null] : arganimated}];
   });
   
 }
 
 - (void)mapView : (MAMapView*)mapView didChangeOpenGLESDisabled: (BOOL)openGLESDisabled
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_didChangeOpenGLESDisabled");
@@ -1023,26 +878,24 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // primitive callback arg
   NSNumber* argopenGLESDisabled = @(openGLESDisabled);
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didChangeOpenGLESDisabled" arguments:@{@"mapView": argmapView, @"openGLESDisabled": argopenGLESDisabled}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didChangeOpenGLESDisabled" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"openGLESDisabled": argopenGLESDisabled == nil ? [NSNull null] : argopenGLESDisabled}];
   });
   
 }
 
 - (void)mapView : (MAMapView*)mapView didTouchPois: (NSArray*)pois
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_didTouchPois");
@@ -1050,33 +903,24 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // list callback arg
-  NSMutableArray<NSNumber*>* argpois = [NSMutableArray arrayWithCapacity:pois.count];
-  for (int __i__ = 0; __i__ < pois.count; __i__++) {
-      NSObject* item = ((NSObject*) [pois objectAtIndex:__i__]);
-      // return to dart side data
-      argpois[__i__] = [NSNumber numberWithLong: item.hash];
-      // add to HEAP
-      HEAP[[NSNumber numberWithLong: item.hash]] = item;
-  }
+  NSArray<NSObject*>* argpois = pois;
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didTouchPois" arguments:@{@"mapView": argmapView, @"pois": argpois}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didTouchPois" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"pois": argpois == nil ? [NSNull null] : argpois}];
   });
   
 }
 
 - (void)mapView : (MAMapView*)mapView didSingleTappedAtCoordinate: (CLLocationCoordinate2D)coordinate
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_didSingleTappedAtCoordinate");
@@ -1084,29 +928,25 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // struct callback arg
-  NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
-  NSNumber* argcoordinate = [NSNumber numberWithLong: coordinateValue.hash];
-  HEAP[argcoordinate] = coordinateValue;
+  NSValue* argcoordinate = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didSingleTappedAtCoordinate" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didSingleTappedAtCoordinate" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"coordinate": argcoordinate == nil ? [NSNull null] : argcoordinate}];
   });
   
 }
 
 - (void)mapView : (MAMapView*)mapView didLongPressedAtCoordinate: (CLLocationCoordinate2D)coordinate
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_didLongPressedAtCoordinate");
@@ -1114,29 +954,25 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // struct callback arg
-  NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
-  NSNumber* argcoordinate = [NSNumber numberWithLong: coordinateValue.hash];
-  HEAP[argcoordinate] = coordinateValue;
+  NSValue* argcoordinate = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didLongPressedAtCoordinate" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didLongPressedAtCoordinate" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"coordinate": argcoordinate == nil ? [NSNull null] : argcoordinate}];
   });
   
 }
 
 - (void)mapInitComplete : (MAMapView*)mapView
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapInitComplete");
@@ -1144,24 +980,22 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapInitComplete" arguments:@{@"mapView": argmapView}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapInitComplete" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView}];
   });
   
 }
 
 - (void)mapView : (MAMapView*)mapView didIndoorMapShowed: (MAIndoorInfo*)indoorInfo
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_didIndoorMapShowed");
@@ -1169,31 +1003,25 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // ref callback arg
-  NSNumber* argindoorInfo = [NSNull null];
-  if (indoorInfo != nil) {
-      argindoorInfo = [NSNumber numberWithLong: indoorInfo.hash];
-      HEAP[argindoorInfo] = indoorInfo;
-  }
+  NSObject* argindoorInfo = indoorInfo;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didIndoorMapShowed" arguments:@{@"mapView": argmapView, @"indoorInfo": argindoorInfo}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didIndoorMapShowed" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"indoorInfo": argindoorInfo == nil ? [NSNull null] : argindoorInfo}];
   });
   
 }
 
 - (void)mapView : (MAMapView*)mapView didIndoorMapFloorIndexChanged: (MAIndoorInfo*)indoorInfo
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_didIndoorMapFloorIndexChanged");
@@ -1201,31 +1029,25 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // ref callback arg
-  NSNumber* argindoorInfo = [NSNull null];
-  if (indoorInfo != nil) {
-      argindoorInfo = [NSNumber numberWithLong: indoorInfo.hash];
-      HEAP[argindoorInfo] = indoorInfo;
-  }
+  NSObject* argindoorInfo = indoorInfo;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didIndoorMapFloorIndexChanged" arguments:@{@"mapView": argmapView, @"indoorInfo": argindoorInfo}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didIndoorMapFloorIndexChanged" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"indoorInfo": argindoorInfo == nil ? [NSNull null] : argindoorInfo}];
   });
   
 }
 
 - (void)mapView : (MAMapView*)mapView didIndoorMapHidden: (MAIndoorInfo*)indoorInfo
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::mapView_didIndoorMapHidden");
@@ -1233,31 +1055,25 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // ref callback arg
-  NSNumber* argindoorInfo = [NSNull null];
-  if (indoorInfo != nil) {
-      argindoorInfo = [NSNumber numberWithLong: indoorInfo.hash];
-      HEAP[argindoorInfo] = indoorInfo;
-  }
+  NSObject* argindoorInfo = indoorInfo;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didIndoorMapHidden" arguments:@{@"mapView": argmapView, @"indoorInfo": argindoorInfo}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::mapView_didIndoorMapHidden" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"indoorInfo": argindoorInfo == nil ? [NSNull null] : argindoorInfo}];
   });
   
 }
 
 - (void)offlineDataWillReload : (MAMapView*)mapView
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::offlineDataWillReload");
@@ -1265,24 +1081,22 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::offlineDataWillReload" arguments:@{@"mapView": argmapView}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::offlineDataWillReload" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView}];
   });
   
 }
 
 - (void)offlineDataDidReload : (MAMapView*)mapView
 {
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"MAMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
     NSLog(@"MAMapViewDelegate::offlineDataDidReload");
@@ -1290,15 +1104,16 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::MAMapViewDelegate::offlineDataDidReload" arguments:@{@"mapView": argmapView}];
+    FlutterMethodChannel *channel = [FlutterMethodChannel
+          methodChannelWithName:@"MAMapViewDelegate::Callback"
+                binaryMessenger:[[self registrar] messenger]
+                          codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  
+    [channel invokeMethod:@"Callback::MAMapViewDelegate::offlineDataDidReload" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView}];
   });
   
 }

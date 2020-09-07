@@ -78,7 +78,7 @@ public class SubHandlerCustom {
                 try {
                     final UrlTileProviderImpl provider = new UrlTileProviderImpl(width, height, urlTemplate);
 
-                    getHEAP().put(System.identityHashCode(provider), provider);
+                    getHEAP().put(String.valueOf(System.identityHashCode(provider)), provider);
                     __methodResult__.success(System.identityHashCode(provider));
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
@@ -107,7 +107,7 @@ public class SubHandlerCustom {
 
                 // create target object
                 com.amap.api.maps.model.Gradient __obj__ = new com.amap.api.maps.model.Gradient(var1, stopList);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                getHEAP().put(String.valueOf(System.identityHashCode(__obj__)), __obj__);
 
                 // print current HEAP
                 if (getEnableLog()) {

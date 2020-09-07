@@ -25,10 +25,6 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-# dependency_overrides:
-#  foundation_fluttify:
-#    path: /Users/yohom/Github/Me/All/fluttify/fluttify_infra/foundation_fluttify
-
 flutter:
   plugin:
     platforms:
