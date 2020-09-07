@@ -24,7 +24,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* tileSizeValue = (NSValue*) HEAP[args[@"tileSize"]];
+            NSValue* tileSizeValue = (NSValue*) args[@"tileSize"];
             CGSize tileSize;
             [tileSizeValue getValue:&tileSize];
         
@@ -94,7 +94,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* boundingMapRectValue = (NSValue*) HEAP[args[@"boundingMapRect"]];
+            NSValue* boundingMapRectValue = (NSValue*) args[@"boundingMapRect"];
             MAMapRect boundingMapRect;
             [boundingMapRectValue getValue:&boundingMapRect];
         
@@ -251,7 +251,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* northEastValue = (NSValue*) HEAP[args[@"northEast"]];
+            NSValue* northEastValue = (NSValue*) args[@"northEast"];
             CLLocationCoordinate2D northEast;
             [northEastValue getValue:&northEast];
         
@@ -272,7 +272,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* southWestValue = (NSValue*) HEAP[args[@"southWest"]];
+            NSValue* southWestValue = (NSValue*) args[@"southWest"];
             CLLocationCoordinate2D southWest;
             [southWestValue getValue:&southWest];
         
@@ -331,7 +331,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* centerValue = (NSValue*) HEAP[args[@"center"]];
+            NSValue* centerValue = (NSValue*) args[@"center"];
             CLLocationCoordinate2D center;
             [centerValue getValue:&center];
         
@@ -352,7 +352,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* spanValue = (NSValue*) HEAP[args[@"span"]];
+            NSValue* spanValue = (NSValue*) args[@"span"];
             MACoordinateSpan span;
             [spanValue getValue:&span];
         
@@ -449,7 +449,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* originValue = (NSValue*) HEAP[args[@"origin"]];
+            NSValue* originValue = (NSValue*) args[@"origin"];
             MAMapPoint origin;
             [originValue getValue:&origin];
         
@@ -470,7 +470,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* sizeValue = (NSValue*) HEAP[args[@"size"]];
+            NSValue* sizeValue = (NSValue*) args[@"size"];
             MAMapSize size;
             [sizeValue getValue:&size];
         
@@ -576,7 +576,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* startParticleSizeValue = (NSValue*) HEAP[args[@"startParticleSize"]];
+            NSValue* startParticleSizeValue = (NSValue*) args[@"startParticleSize"];
             CGSize startParticleSize;
             [startParticleSizeValue getValue:&startParticleSize];
         
@@ -731,7 +731,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
+            NSValue* coordinateValue = (NSValue*) args[@"coordinate"];
             CLLocationCoordinate2D coordinate;
             [coordinateValue getValue:&coordinate];
         
@@ -801,12 +801,7 @@ extern BOOL enableLog;
         
             // args
             // list arg
-            NSArray<NSNumber*>* inputNodesRefArray = (NSArray<NSNumber*> *) args[@"inputNodes"];
-            NSMutableArray<MAHeatMapVectorNode*>* inputNodes = [NSMutableArray arrayWithCapacity:inputNodesRefArray.count];
-            for (int __i__ = 0; __i__ < inputNodesRefArray.count; __i__++) {
-                MAHeatMapVectorNode* item = (MAHeatMapVectorNode*) HEAP[[inputNodesRefArray objectAtIndex:__i__]];
-                [inputNodes addObject:item];
-            }
+            NSArray<MAHeatMapVectorNode*>* inputNodes = (NSArray<MAHeatMapVectorNode*>*) args[@"inputNodes"];
         
             // ref
             MAHeatMapVectorOverlayOptions* ref = (MAHeatMapVectorOverlayOptions*) args[@"__this__"];
@@ -857,12 +852,7 @@ extern BOOL enableLog;
         
             // args
             // list arg
-            NSArray<NSNumber*>* colorsRefArray = (NSArray<NSNumber*> *) args[@"colors"];
-            NSMutableArray<UIColor*>* colors = [NSMutableArray arrayWithCapacity:colorsRefArray.count];
-            for (int __i__ = 0; __i__ < colorsRefArray.count; __i__++) {
-                UIColor* item = (UIColor*) HEAP[[colorsRefArray objectAtIndex:__i__]];
-                [colors addObject:item];
-            }
+            NSArray<UIColor*>* colors = (NSArray<UIColor*>*) args[@"colors"];
         
             // ref
             MAHeatMapVectorOverlayOptions* ref = (MAHeatMapVectorOverlayOptions*) args[@"__this__"];
@@ -981,7 +971,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
+            NSValue* coordinateValue = (NSValue*) args[@"coordinate"];
             CLLocationCoordinate2D coordinate;
             [coordinateValue getValue:&coordinate];
         
@@ -1170,7 +1160,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* locValue = (NSValue*) HEAP[args[@"loc"]];
+            NSValue* locValue = (NSValue*) args[@"loc"];
             CLLocationCoordinate2D loc;
             [locValue getValue:&loc];
         
@@ -1240,7 +1230,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* startCoordinateValue = (NSValue*) HEAP[args[@"startCoordinate"]];
+            NSValue* startCoordinateValue = (NSValue*) args[@"startCoordinate"];
             CLLocationCoordinate2D startCoordinate;
             [startCoordinateValue getValue:&startCoordinate];
         
@@ -1259,7 +1249,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* passedCoordinateValue = (NSValue*) HEAP[args[@"passedCoordinate"]];
+            NSValue* passedCoordinateValue = (NSValue*) args[@"passedCoordinate"];
             CLLocationCoordinate2D passedCoordinate;
             [passedCoordinateValue getValue:&passedCoordinate];
         
@@ -1278,7 +1268,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* endCoordinateValue = (NSValue*) HEAP[args[@"endCoordinate"]];
+            NSValue* endCoordinateValue = (NSValue*) args[@"endCoordinate"];
             CLLocationCoordinate2D endCoordinate;
             [endCoordinateValue getValue:&endCoordinate];
         
@@ -1483,7 +1473,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* centerCoordinateValue = (NSValue*) HEAP[args[@"centerCoordinate"]];
+            NSValue* centerCoordinateValue = (NSValue*) args[@"centerCoordinate"];
             CLLocationCoordinate2D centerCoordinate;
             [centerCoordinateValue getValue:&centerCoordinate];
         
@@ -1502,7 +1492,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* regionValue = (NSValue*) HEAP[args[@"region"]];
+            NSValue* regionValue = (NSValue*) args[@"region"];
             MACoordinateRegion region;
             [regionValue getValue:&region];
         
@@ -1521,7 +1511,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* visibleMapRectValue = (NSValue*) HEAP[args[@"visibleMapRect"]];
+            NSValue* visibleMapRectValue = (NSValue*) args[@"visibleMapRect"];
             MAMapRect visibleMapRect;
             [visibleMapRectValue getValue:&visibleMapRect];
         
@@ -1540,7 +1530,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* limitRegionValue = (NSValue*) HEAP[args[@"limitRegion"]];
+            NSValue* limitRegionValue = (NSValue*) args[@"limitRegion"];
             MACoordinateRegion limitRegion;
             [limitRegionValue getValue:&limitRegion];
         
@@ -1559,7 +1549,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* limitMapRectValue = (NSValue*) HEAP[args[@"limitMapRect"]];
+            NSValue* limitMapRectValue = (NSValue*) args[@"limitMapRect"];
             MAMapRect limitMapRect;
             [limitMapRectValue getValue:&limitMapRect];
         
@@ -1867,7 +1857,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* compassOriginValue = (NSValue*) HEAP[args[@"compassOrigin"]];
+            NSValue* compassOriginValue = (NSValue*) args[@"compassOrigin"];
             CGPoint compassOrigin;
             [compassOriginValue getValue:&compassOrigin];
         
@@ -1903,7 +1893,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* scaleOriginValue = (NSValue*) HEAP[args[@"scaleOrigin"]];
+            NSValue* scaleOriginValue = (NSValue*) args[@"scaleOrigin"];
             CGPoint scaleOrigin;
             [scaleOriginValue getValue:&scaleOrigin];
         
@@ -1922,7 +1912,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* logoCenterValue = (NSValue*) HEAP[args[@"logoCenter"]];
+            NSValue* logoCenterValue = (NSValue*) args[@"logoCenter"];
             CGPoint logoCenter;
             [logoCenterValue getValue:&logoCenter];
         
@@ -1992,7 +1982,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* screenAnchorValue = (NSValue*) HEAP[args[@"screenAnchor"]];
+            NSValue* screenAnchorValue = (NSValue*) args[@"screenAnchor"];
             CGPoint screenAnchor;
             [screenAnchorValue getValue:&screenAnchor];
         
@@ -2045,12 +2035,7 @@ extern BOOL enableLog;
         
             // args
             // list arg
-            NSArray<NSNumber*>* selectedAnnotationsRefArray = (NSArray<NSNumber*> *) args[@"selectedAnnotations"];
-            NSMutableArray<NSObject*>* selectedAnnotations = [NSMutableArray arrayWithCapacity:selectedAnnotationsRefArray.count];
-            for (int __i__ = 0; __i__ < selectedAnnotationsRefArray.count; __i__++) {
-                NSObject* item = (NSObject*) HEAP[[selectedAnnotationsRefArray objectAtIndex:__i__]];
-                [selectedAnnotations addObject:item];
-            }
+            NSArray<NSObject*>* selectedAnnotations = (NSArray<NSObject*>*) args[@"selectedAnnotations"];
         
             // ref
             MAMapView* ref = (MAMapView*) args[@"__this__"];
@@ -2459,7 +2444,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
+                NSValue* coordinateValue = (NSValue*) args[@"coordinate"];
                 CLLocationCoordinate2D coordinate;
                 [coordinateValue getValue:&coordinate];
         
@@ -2497,12 +2482,7 @@ extern BOOL enableLog;
         
                 // args
                 // list arg
-                NSArray<NSNumber*>* dataRefArray = (NSArray<NSNumber*> *) args[@"data"];
-                NSMutableArray<MAHeatMapNode*>* data = [NSMutableArray arrayWithCapacity:dataRefArray.count];
-                for (int __i__ = 0; __i__ < dataRefArray.count; __i__++) {
-                    MAHeatMapNode* item = (MAHeatMapNode*) HEAP[[dataRefArray objectAtIndex:__i__]];
-                    [data addObject:item];
-                }
+                NSArray<MAHeatMapNode*>* data = (NSArray<MAHeatMapNode*>*) args[@"data"];
         
                 // ref
                 MAHeatMapTileOverlay* ref = (MAHeatMapTileOverlay*) args[@"__this__"];
@@ -2592,7 +2572,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* centerCoordinateValue = (NSValue*) HEAP[args[@"centerCoordinate"]];
+                NSValue* centerCoordinateValue = (NSValue*) args[@"centerCoordinate"];
                 CLLocationCoordinate2D centerCoordinate;
                 [centerCoordinateValue getValue:&centerCoordinate];
         
@@ -2666,7 +2646,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* screenAnchorValue = (NSValue*) HEAP[args[@"screenAnchor"]];
+                NSValue* screenAnchorValue = (NSValue*) args[@"screenAnchor"];
                 CGPoint screenAnchor;
                 [screenAnchorValue getValue:&screenAnchor];
         
@@ -2686,7 +2666,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
+                NSValue* coordinateValue = (NSValue*) args[@"coordinate"];
                 CLLocationCoordinate2D coordinate;
                 [coordinateValue getValue:&coordinate];
         
@@ -2724,7 +2704,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* lockedScreenPointValue = (NSValue*) HEAP[args[@"lockedScreenPoint"]];
+                NSValue* lockedScreenPointValue = (NSValue*) args[@"lockedScreenPoint"];
                 CGPoint lockedScreenPoint;
                 [lockedScreenPointValue getValue:&lockedScreenPoint];
         
@@ -2744,7 +2724,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
+                NSValue* coordinateValue = (NSValue*) args[@"coordinate"];
                 CLLocationCoordinate2D coordinate;
                 [coordinateValue getValue:&coordinate];
         
@@ -2908,12 +2888,7 @@ extern BOOL enableLog;
         
                 // args
                 // list arg
-                NSArray<NSNumber*>* strokeColorsRefArray = (NSArray<NSNumber*> *) args[@"strokeColors"];
-                NSMutableArray<UIColor*>* strokeColors = [NSMutableArray arrayWithCapacity:strokeColorsRefArray.count];
-                for (int __i__ = 0; __i__ < strokeColorsRefArray.count; __i__++) {
-                    UIColor* item = (UIColor*) HEAP[[strokeColorsRefArray objectAtIndex:__i__]];
-                    [strokeColors addObject:item];
-                }
+                NSArray<UIColor*>* strokeColors = (NSArray<UIColor*>*) args[@"strokeColors"];
         
                 // ref
                 MAMultiColoredPolylineRenderer* ref = (MAMultiColoredPolylineRenderer*) args[@"__this__"];
@@ -2967,12 +2942,7 @@ extern BOOL enableLog;
         
                 // args
                 // list arg
-                NSArray<NSNumber*>* strokeTextureImagesRefArray = (NSArray<NSNumber*> *) args[@"strokeTextureImages"];
-                NSMutableArray<NSObject*>* strokeTextureImages = [NSMutableArray arrayWithCapacity:strokeTextureImagesRefArray.count];
-                for (int __i__ = 0; __i__ < strokeTextureImagesRefArray.count; __i__++) {
-                    NSObject* item = (NSObject*) HEAP[[strokeTextureImagesRefArray objectAtIndex:__i__]];
-                    [strokeTextureImages addObject:item];
-                }
+                NSArray<NSObject*>* strokeTextureImages = (NSArray<NSObject*>*) args[@"strokeTextureImages"];
         
                 // ref
                 MAMultiTexturePolylineRenderer* ref = (MAMultiTexturePolylineRenderer*) args[@"__this__"];
@@ -3008,7 +2978,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* showRangeValue = (NSValue*) HEAP[args[@"showRange"]];
+                NSValue* showRangeValue = (NSValue*) args[@"showRange"];
                 MAPathShowRange showRange;
                 [showRangeValue getValue:&showRange];
         
@@ -3104,7 +3074,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* pointSizeValue = (NSValue*) HEAP[args[@"pointSize"]];
+                NSValue* pointSizeValue = (NSValue*) args[@"pointSize"];
                 CGSize pointSize;
                 [pointSizeValue getValue:&pointSize];
         
@@ -3124,7 +3094,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* anchorValue = (NSValue*) HEAP[args[@"anchor"]];
+                NSValue* anchorValue = (NSValue*) args[@"anchor"];
                 CGPoint anchor;
                 [anchorValue getValue:&anchor];
         
@@ -3234,7 +3204,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* showRangeValue = (NSValue*) HEAP[args[@"showRange"]];
+                NSValue* showRangeValue = (NSValue*) args[@"showRange"];
                 MAPathShowRange showRange;
                 [showRangeValue getValue:&showRange];
         
@@ -3362,7 +3332,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* centerOffsetValue = (NSValue*) HEAP[args[@"centerOffset"]];
+                NSValue* centerOffsetValue = (NSValue*) args[@"centerOffset"];
                 CGPoint centerOffset;
                 [centerOffsetValue getValue:&centerOffset];
         
@@ -3382,7 +3352,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* calloutOffsetValue = (NSValue*) HEAP[args[@"calloutOffset"]];
+                NSValue* calloutOffsetValue = (NSValue*) args[@"calloutOffset"];
                 CGPoint calloutOffset;
                 [calloutOffsetValue getValue:&calloutOffset];
         
@@ -3564,7 +3534,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* tileSizeValue = (NSValue*) HEAP[args[@"tileSize"]];
+                NSValue* tileSizeValue = (NSValue*) args[@"tileSize"];
                 CGSize tileSize;
                 [tileSizeValue getValue:&tileSize];
         

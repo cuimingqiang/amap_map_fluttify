@@ -145,7 +145,7 @@ extension MAHeatMapTileOverlay_Batch on List<MAHeatMapTileOverlay> {
 
   //region setters
   Future<void> set_data_batch(List<List<MAHeatMapNode>> data) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAHeatMapTileOverlay::set_data_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "data": data[__i__].map((it) => it.refId).toList()}]);
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAHeatMapTileOverlay::set_data_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "data": data[__i__]}]);
   
   
   }
@@ -163,7 +163,7 @@ extension MAHeatMapTileOverlay_Batch on List<MAHeatMapTileOverlay> {
   }
   
   Future<void> set_gradient_batch(List<MAHeatMapGradient> gradient) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAHeatMapTileOverlay::set_gradient_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "gradient": gradient[__i__].refId}]);
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAHeatMapTileOverlay::set_gradient_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "gradient": gradient[__i__]}]);
   
   
   }

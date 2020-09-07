@@ -91,13 +91,13 @@ extension MACoordinateBounds_Batch on List<MACoordinateBounds> {
 
   //region setters
   Future<void> set_northEast_batch(List<CLLocationCoordinate2D> northEast) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MACoordinateBounds::set_northEast_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "northEast": northEast[__i__].refId}]);
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MACoordinateBounds::set_northEast_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "northEast": northEast[__i__]}]);
   
   
   }
   
   Future<void> set_southWest_batch(List<CLLocationCoordinate2D> southWest) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MACoordinateBounds::set_southWest_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "southWest": southWest[__i__].refId}]);
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MACoordinateBounds::set_southWest_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "southWest": southWest[__i__]}]);
   
   
   }

@@ -130,7 +130,7 @@ extern BOOL enableLog;
       @"MAMapView::setRegion_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* regionValue = (NSValue*) HEAP[args[@"region"]];
+          NSValue* regionValue = (NSValue*) args[@"region"];
           MACoordinateRegion region;
           [regionValue getValue:&region];
           // jsonable arg
@@ -156,7 +156,7 @@ extern BOOL enableLog;
       @"MAMapView::regionThatFits": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* regionValue = (NSValue*) HEAP[args[@"region"]];
+          NSValue* regionValue = (NSValue*) args[@"region"];
           MACoordinateRegion region;
           [regionValue getValue:&region];
       
@@ -180,7 +180,7 @@ extern BOOL enableLog;
       @"MAMapView::setVisibleMapRect_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* mapRectValue = (NSValue*) HEAP[args[@"mapRect"]];
+          NSValue* mapRectValue = (NSValue*) args[@"mapRect"];
           MAMapRect mapRect;
           [mapRectValue getValue:&mapRect];
           // jsonable arg
@@ -206,7 +206,7 @@ extern BOOL enableLog;
       @"MAMapView::mapRectThatFits": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* mapRectValue = (NSValue*) HEAP[args[@"mapRect"]];
+          NSValue* mapRectValue = (NSValue*) args[@"mapRect"];
           MAMapRect mapRect;
           [mapRectValue getValue:&mapRect];
       
@@ -230,11 +230,11 @@ extern BOOL enableLog;
       @"MAMapView::mapRectThatFits_edgePadding": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* mapRectValue = (NSValue*) HEAP[args[@"mapRect"]];
+          NSValue* mapRectValue = (NSValue*) args[@"mapRect"];
           MAMapRect mapRect;
           [mapRectValue getValue:&mapRect];
           // struct arg
-          NSValue* insetsValue = (NSValue*) HEAP[args[@"insets"]];
+          NSValue* insetsValue = (NSValue*) args[@"insets"];
           UIEdgeInsets insets;
           [insetsValue getValue:&insets];
       
@@ -258,11 +258,11 @@ extern BOOL enableLog;
       @"MAMapView::setVisibleMapRect_edgePadding_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* mapRectValue = (NSValue*) HEAP[args[@"mapRect"]];
+          NSValue* mapRectValue = (NSValue*) args[@"mapRect"];
           MAMapRect mapRect;
           [mapRectValue getValue:&mapRect];
           // struct arg
-          NSValue* insetsValue = (NSValue*) HEAP[args[@"insets"]];
+          NSValue* insetsValue = (NSValue*) args[@"insets"];
           UIEdgeInsets insets;
           [insetsValue getValue:&insets];
           // jsonable arg
@@ -288,7 +288,7 @@ extern BOOL enableLog;
       @"MAMapView::setCenterCoordinate_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
+          NSValue* coordinateValue = (NSValue*) args[@"coordinate"];
           CLLocationCoordinate2D coordinate;
           [coordinateValue getValue:&coordinate];
           // jsonable arg
@@ -340,7 +340,7 @@ extern BOOL enableLog;
           // jsonable arg
           CGFloat zoomLevel = [args[@"zoomLevel"] floatValue];
           // struct arg
-          NSValue* pivotValue = (NSValue*) HEAP[args[@"pivot"]];
+          NSValue* pivotValue = (NSValue*) args[@"pivot"];
           CGPoint pivot;
           [pivotValue getValue:&pivot];
           // jsonable arg
@@ -511,7 +511,7 @@ extern BOOL enableLog;
       @"MAMapView::takeSnapshotInRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* rectValue = (NSValue*) HEAP[args[@"rect"]];
+          NSValue* rectValue = (NSValue*) args[@"rect"];
           CGRect rect;
           [rectValue getValue:&rect];
       
@@ -535,7 +535,7 @@ extern BOOL enableLog;
       @"MAMapView::takeSnapshotInRect_withCompletionBlock": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* rectValue = (NSValue*) HEAP[args[@"rect"]];
+          NSValue* rectValue = (NSValue*) args[@"rect"];
           CGRect rect;
           [rectValue getValue:&rect];
       
@@ -609,7 +609,7 @@ extern BOOL enableLog;
       @"MAMapView::convertCoordinate_toPointToView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
+          NSValue* coordinateValue = (NSValue*) args[@"coordinate"];
           CLLocationCoordinate2D coordinate;
           [coordinateValue getValue:&coordinate];
           // ref arg
@@ -635,7 +635,7 @@ extern BOOL enableLog;
       @"MAMapView::convertPoint_toCoordinateFromView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* pointValue = (NSValue*) HEAP[args[@"point"]];
+          NSValue* pointValue = (NSValue*) args[@"point"];
           CGPoint point;
           [pointValue getValue:&point];
           // ref arg
@@ -661,7 +661,7 @@ extern BOOL enableLog;
       @"MAMapView::convertRegion_toRectToView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* regionValue = (NSValue*) HEAP[args[@"region"]];
+          NSValue* regionValue = (NSValue*) args[@"region"];
           MACoordinateRegion region;
           [regionValue getValue:&region];
           // ref arg
@@ -687,7 +687,7 @@ extern BOOL enableLog;
       @"MAMapView::convertRect_toRegionFromView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* rectValue = (NSValue*) HEAP[args[@"rect"]];
+          NSValue* rectValue = (NSValue*) args[@"rect"];
           CGRect rect;
           [rectValue getValue:&rect];
           // ref arg
@@ -861,12 +861,7 @@ extern BOOL enableLog;
       @"MAMapView::addAnnotations": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // list arg
-          NSArray<NSNumber*>* annotationsRefArray = (NSArray<NSNumber*> *) args[@"annotations"];
-          NSMutableArray<NSObject*>* annotations = [NSMutableArray arrayWithCapacity:annotationsRefArray.count];
-          for (int __i__ = 0; __i__ < annotationsRefArray.count; __i__++) {
-              NSObject* item = (NSObject*) HEAP[[annotationsRefArray objectAtIndex:__i__]];
-              [annotations addObject:item];
-          }
+          NSArray<NSObject*>* annotations = (NSArray<NSObject*>*) args[@"annotations"];
       
           // ref
           MAMapView* ref = (MAMapView*) args[@"__this__"];
@@ -910,12 +905,7 @@ extern BOOL enableLog;
       @"MAMapView::removeAnnotations": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // list arg
-          NSArray<NSNumber*>* annotationsRefArray = (NSArray<NSNumber*> *) args[@"annotations"];
-          NSMutableArray<NSObject*>* annotations = [NSMutableArray arrayWithCapacity:annotationsRefArray.count];
-          for (int __i__ = 0; __i__ < annotationsRefArray.count; __i__++) {
-              NSObject* item = (NSObject*) HEAP[[annotationsRefArray objectAtIndex:__i__]];
-              [annotations addObject:item];
-          }
+          NSArray<NSObject*>* annotations = (NSArray<NSObject*>*) args[@"annotations"];
       
           // ref
           MAMapView* ref = (MAMapView*) args[@"__this__"];
@@ -1029,12 +1019,7 @@ extern BOOL enableLog;
       @"MAMapView::showAnnotations_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // list arg
-          NSArray<NSNumber*>* annotationsRefArray = (NSArray<NSNumber*> *) args[@"annotations"];
-          NSMutableArray<NSObject*>* annotations = [NSMutableArray arrayWithCapacity:annotationsRefArray.count];
-          for (int __i__ = 0; __i__ < annotationsRefArray.count; __i__++) {
-              NSObject* item = (NSObject*) HEAP[[annotationsRefArray objectAtIndex:__i__]];
-              [annotations addObject:item];
-          }
+          NSArray<NSObject*>* annotations = (NSArray<NSObject*>*) args[@"annotations"];
           // jsonable arg
           BOOL animated = [args[@"animated"] boolValue];
       
@@ -1058,14 +1043,9 @@ extern BOOL enableLog;
       @"MAMapView::showAnnotations_edgePadding_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // list arg
-          NSArray<NSNumber*>* annotationsRefArray = (NSArray<NSNumber*> *) args[@"annotations"];
-          NSMutableArray<NSObject*>* annotations = [NSMutableArray arrayWithCapacity:annotationsRefArray.count];
-          for (int __i__ = 0; __i__ < annotationsRefArray.count; __i__++) {
-              NSObject* item = (NSObject*) HEAP[[annotationsRefArray objectAtIndex:__i__]];
-              [annotations addObject:item];
-          }
+          NSArray<NSObject*>* annotations = (NSArray<NSObject*>*) args[@"annotations"];
           // struct arg
-          NSValue* insetsValue = (NSValue*) HEAP[args[@"insets"]];
+          NSValue* insetsValue = (NSValue*) args[@"insets"];
           UIEdgeInsets insets;
           [insetsValue getValue:&insets];
           // jsonable arg
@@ -1185,12 +1165,7 @@ extern BOOL enableLog;
       @"MAMapView::addOverlays": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // list arg
-          NSArray<NSNumber*>* overlaysRefArray = (NSArray<NSNumber*> *) args[@"overlays"];
-          NSMutableArray<NSObject*>* overlays = [NSMutableArray arrayWithCapacity:overlaysRefArray.count];
-          for (int __i__ = 0; __i__ < overlaysRefArray.count; __i__++) {
-              NSObject* item = (NSObject*) HEAP[[overlaysRefArray objectAtIndex:__i__]];
-              [overlays addObject:item];
-          }
+          NSArray<NSObject*>* overlays = (NSArray<NSObject*>*) args[@"overlays"];
       
           // ref
           MAMapView* ref = (MAMapView*) args[@"__this__"];
@@ -1236,12 +1211,7 @@ extern BOOL enableLog;
       @"MAMapView::addOverlays_level": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // list arg
-          NSArray<NSNumber*>* overlaysRefArray = (NSArray<NSNumber*> *) args[@"overlays"];
-          NSMutableArray<NSObject*>* overlays = [NSMutableArray arrayWithCapacity:overlaysRefArray.count];
-          for (int __i__ = 0; __i__ < overlaysRefArray.count; __i__++) {
-              NSObject* item = (NSObject*) HEAP[[overlaysRefArray objectAtIndex:__i__]];
-              [overlays addObject:item];
-          }
+          NSArray<NSObject*>* overlays = (NSArray<NSObject*>*) args[@"overlays"];
           // enum arg
           MAOverlayLevel level = (MAOverlayLevel) [args[@"level"] integerValue];
       
@@ -1287,12 +1257,7 @@ extern BOOL enableLog;
       @"MAMapView::removeOverlays": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // list arg
-          NSArray<NSNumber*>* overlaysRefArray = (NSArray<NSNumber*> *) args[@"overlays"];
-          NSMutableArray<NSObject*>* overlays = [NSMutableArray arrayWithCapacity:overlaysRefArray.count];
-          for (int __i__ = 0; __i__ < overlaysRefArray.count; __i__++) {
-              NSObject* item = (NSObject*) HEAP[[overlaysRefArray objectAtIndex:__i__]];
-              [overlays addObject:item];
-          }
+          NSArray<NSObject*>* overlays = (NSArray<NSObject*>*) args[@"overlays"];
       
           // ref
           MAMapView* ref = (MAMapView*) args[@"__this__"];
@@ -1508,12 +1473,7 @@ extern BOOL enableLog;
       @"MAMapView::showOverlays_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // list arg
-          NSArray<NSNumber*>* overlaysRefArray = (NSArray<NSNumber*> *) args[@"overlays"];
-          NSMutableArray<NSObject*>* overlays = [NSMutableArray arrayWithCapacity:overlaysRefArray.count];
-          for (int __i__ = 0; __i__ < overlaysRefArray.count; __i__++) {
-              NSObject* item = (NSObject*) HEAP[[overlaysRefArray objectAtIndex:__i__]];
-              [overlays addObject:item];
-          }
+          NSArray<NSObject*>* overlays = (NSArray<NSObject*>*) args[@"overlays"];
           // jsonable arg
           BOOL animated = [args[@"animated"] boolValue];
       
@@ -1537,14 +1497,9 @@ extern BOOL enableLog;
       @"MAMapView::showOverlays_edgePadding_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // list arg
-          NSArray<NSNumber*>* overlaysRefArray = (NSArray<NSNumber*> *) args[@"overlays"];
-          NSMutableArray<NSObject*>* overlays = [NSMutableArray arrayWithCapacity:overlaysRefArray.count];
-          for (int __i__ = 0; __i__ < overlaysRefArray.count; __i__++) {
-              NSObject* item = (NSObject*) HEAP[[overlaysRefArray objectAtIndex:__i__]];
-              [overlays addObject:item];
-          }
+          NSArray<NSObject*>* overlays = (NSArray<NSObject*>*) args[@"overlays"];
           // struct arg
-          NSValue* insetsValue = (NSValue*) HEAP[args[@"insets"]];
+          NSValue* insetsValue = (NSValue*) args[@"insets"];
           UIEdgeInsets insets;
           [insetsValue getValue:&insets];
           // jsonable arg
@@ -1570,7 +1525,7 @@ extern BOOL enableLog;
       @"MAMapView::getHittedPolylinesWith_traverseAll": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* tappedCoordValue = (NSValue*) HEAP[args[@"tappedCoord"]];
+          NSValue* tappedCoordValue = (NSValue*) args[@"tappedCoord"];
           CLLocationCoordinate2D tappedCoord;
           [tappedCoordValue getValue:&tappedCoord];
           // jsonable arg
@@ -1600,7 +1555,7 @@ extern BOOL enableLog;
       @"MAMapView::setIndoorMapControlOrigin": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* originValue = (NSValue*) HEAP[args[@"origin"]];
+          NSValue* originValue = (NSValue*) args[@"origin"];
           CGPoint origin;
           [originValue getValue:&origin];
       
@@ -2849,7 +2804,7 @@ extern BOOL enableLog;
       
           // args
           // struct arg
-          NSValue* centerCoordinateValue = (NSValue*) HEAP[args[@"centerCoordinate"]];
+          NSValue* centerCoordinateValue = (NSValue*) args[@"centerCoordinate"];
           CLLocationCoordinate2D centerCoordinate;
           [centerCoordinateValue getValue:&centerCoordinate];
       
@@ -2868,7 +2823,7 @@ extern BOOL enableLog;
       
           // args
           // struct arg
-          NSValue* regionValue = (NSValue*) HEAP[args[@"region"]];
+          NSValue* regionValue = (NSValue*) args[@"region"];
           MACoordinateRegion region;
           [regionValue getValue:&region];
       
@@ -2887,7 +2842,7 @@ extern BOOL enableLog;
       
           // args
           // struct arg
-          NSValue* visibleMapRectValue = (NSValue*) HEAP[args[@"visibleMapRect"]];
+          NSValue* visibleMapRectValue = (NSValue*) args[@"visibleMapRect"];
           MAMapRect visibleMapRect;
           [visibleMapRectValue getValue:&visibleMapRect];
       
@@ -2906,7 +2861,7 @@ extern BOOL enableLog;
       
           // args
           // struct arg
-          NSValue* limitRegionValue = (NSValue*) HEAP[args[@"limitRegion"]];
+          NSValue* limitRegionValue = (NSValue*) args[@"limitRegion"];
           MACoordinateRegion limitRegion;
           [limitRegionValue getValue:&limitRegion];
       
@@ -2925,7 +2880,7 @@ extern BOOL enableLog;
       
           // args
           // struct arg
-          NSValue* limitMapRectValue = (NSValue*) HEAP[args[@"limitMapRect"]];
+          NSValue* limitMapRectValue = (NSValue*) args[@"limitMapRect"];
           MAMapRect limitMapRect;
           [limitMapRectValue getValue:&limitMapRect];
       
@@ -3233,7 +3188,7 @@ extern BOOL enableLog;
       
           // args
           // struct arg
-          NSValue* compassOriginValue = (NSValue*) HEAP[args[@"compassOrigin"]];
+          NSValue* compassOriginValue = (NSValue*) args[@"compassOrigin"];
           CGPoint compassOrigin;
           [compassOriginValue getValue:&compassOrigin];
       
@@ -3269,7 +3224,7 @@ extern BOOL enableLog;
       
           // args
           // struct arg
-          NSValue* scaleOriginValue = (NSValue*) HEAP[args[@"scaleOrigin"]];
+          NSValue* scaleOriginValue = (NSValue*) args[@"scaleOrigin"];
           CGPoint scaleOrigin;
           [scaleOriginValue getValue:&scaleOrigin];
       
@@ -3288,7 +3243,7 @@ extern BOOL enableLog;
       
           // args
           // struct arg
-          NSValue* logoCenterValue = (NSValue*) HEAP[args[@"logoCenter"]];
+          NSValue* logoCenterValue = (NSValue*) args[@"logoCenter"];
           CGPoint logoCenter;
           [logoCenterValue getValue:&logoCenter];
       
@@ -3358,7 +3313,7 @@ extern BOOL enableLog;
       
           // args
           // struct arg
-          NSValue* screenAnchorValue = (NSValue*) HEAP[args[@"screenAnchor"]];
+          NSValue* screenAnchorValue = (NSValue*) args[@"screenAnchor"];
           CGPoint screenAnchor;
           [screenAnchorValue getValue:&screenAnchor];
       
@@ -3411,12 +3366,7 @@ extern BOOL enableLog;
       
           // args
           // list arg
-          NSArray<NSNumber*>* selectedAnnotationsRefArray = (NSArray<NSNumber*> *) args[@"selectedAnnotations"];
-          NSMutableArray<NSObject*>* selectedAnnotations = [NSMutableArray arrayWithCapacity:selectedAnnotationsRefArray.count];
-          for (int __i__ = 0; __i__ < selectedAnnotationsRefArray.count; __i__++) {
-              NSObject* item = (NSObject*) HEAP[[selectedAnnotationsRefArray objectAtIndex:__i__]];
-              [selectedAnnotations addObject:item];
-          }
+          NSArray<NSObject*>* selectedAnnotations = (NSArray<NSObject*>*) args[@"selectedAnnotations"];
       
           // ref
           MAMapView* ref = (MAMapView*) args[@"__this__"];

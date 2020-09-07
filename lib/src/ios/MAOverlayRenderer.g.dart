@@ -333,7 +333,7 @@ extension MAOverlayRenderer_Batch on List<MAOverlayRenderer> {
 
   //region setters
   Future<void> set_strokeImage_batch(List<UIImage> strokeImage) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAOverlayRenderer::set_strokeImage_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "strokeImage": strokeImage[__i__].refId}]);
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAOverlayRenderer::set_strokeImage_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "strokeImage": strokeImage[__i__]}]);
   
   
   }

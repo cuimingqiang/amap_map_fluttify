@@ -264,7 +264,7 @@ extension MATileOverlay_Batch on List<MATileOverlay> {
 
   //region setters
   Future<void> set_tileSize_batch(List<CGSize> tileSize) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MATileOverlay::set_tileSize_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "tileSize": tileSize[__i__].refId}]);
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MATileOverlay::set_tileSize_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "tileSize": tileSize[__i__]}]);
   
   
   }
@@ -288,7 +288,7 @@ extension MATileOverlay_Batch on List<MATileOverlay> {
   }
   
   Future<void> set_boundingMapRect_batch(List<MAMapRect> boundingMapRect) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MATileOverlay::set_boundingMapRect_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "boundingMapRect": boundingMapRect[__i__].refId}]);
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MATileOverlay::set_boundingMapRect_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "boundingMapRect": boundingMapRect[__i__]}]);
   
   
   }

@@ -295,13 +295,13 @@ extension MAParticleOverlayOptions_Batch on List<MAParticleOverlayOptions> {
   }
   
   Future<void> set_icon_batch(List<UIImage> icon) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAParticleOverlayOptions::set_icon_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "icon": icon[__i__].refId}]);
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAParticleOverlayOptions::set_icon_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "icon": icon[__i__]}]);
   
   
   }
   
   Future<void> set_startParticleSize_batch(List<CGSize> startParticleSize) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAParticleOverlayOptions::set_startParticleSize_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "startParticleSize": startParticleSize[__i__].refId}]);
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAParticleOverlayOptions::set_startParticleSize_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "startParticleSize": startParticleSize[__i__]}]);
   
   
   }
@@ -313,31 +313,31 @@ extension MAParticleOverlayOptions_Batch on List<MAParticleOverlayOptions> {
   }
   
   Future<void> set_particleStartColor_batch(List<MAParticleColorGenerate> particleStartColor) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAParticleOverlayOptions::set_particleStartColor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "particleStartColor": particleStartColor[__i__].refId}]);
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAParticleOverlayOptions::set_particleStartColor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "particleStartColor": particleStartColor[__i__]}]);
   
   
   }
   
   Future<void> set_particleStartSpeed_batch(List<MAParticleVelocityGenerate> particleStartSpeed) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAParticleOverlayOptions::set_particleStartSpeed_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "particleStartSpeed": particleStartSpeed[__i__].refId}]);
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAParticleOverlayOptions::set_particleStartSpeed_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "particleStartSpeed": particleStartSpeed[__i__]}]);
   
   
   }
   
   Future<void> set_particleEmissionModule_batch(List<MAParticleEmissionModule> particleEmissionModule) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAParticleOverlayOptions::set_particleEmissionModule_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "particleEmissionModule": particleEmissionModule[__i__].refId}]);
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAParticleOverlayOptions::set_particleEmissionModule_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "particleEmissionModule": particleEmissionModule[__i__]}]);
   
   
   }
   
   Future<void> set_particleShapeModule_batch(List<MAParticleShapeModule> particleShapeModule) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAParticleOverlayOptions::set_particleShapeModule_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "particleShapeModule": particleShapeModule[__i__].refId}]);
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAParticleOverlayOptions::set_particleShapeModule_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "particleShapeModule": particleShapeModule[__i__]}]);
   
   
   }
   
   Future<void> set_particleOverLifeModule_batch(List<MAParticleOverLifeModule> particleOverLifeModule) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAParticleOverlayOptions::set_particleOverLifeModule_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "particleOverLifeModule": particleOverLifeModule[__i__].refId}]);
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAParticleOverlayOptions::set_particleOverLifeModule_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "particleOverLifeModule": particleOverLifeModule[__i__]}]);
   
   
   }

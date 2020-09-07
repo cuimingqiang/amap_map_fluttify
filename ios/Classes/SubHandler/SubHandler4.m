@@ -2823,7 +2823,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
+            NSValue* coordinateValue = (NSValue*) args[@"coordinate"];
             CLLocationCoordinate2D coordinate;
             [coordinateValue getValue:&coordinate];
         
@@ -2859,12 +2859,7 @@ extern BOOL enableLog;
         
             // args
             // list arg
-            NSArray<NSNumber*>* dataRefArray = (NSArray<NSNumber*> *) args[@"data"];
-            NSMutableArray<MAHeatMapNode*>* data = [NSMutableArray arrayWithCapacity:dataRefArray.count];
-            for (int __i__ = 0; __i__ < dataRefArray.count; __i__++) {
-                MAHeatMapNode* item = (MAHeatMapNode*) HEAP[[dataRefArray objectAtIndex:__i__]];
-                [data addObject:item];
-            }
+            NSArray<MAHeatMapNode*>* data = (NSArray<MAHeatMapNode*>*) args[@"data"];
         
             // ref
             MAHeatMapTileOverlay* ref = (MAHeatMapTileOverlay*) args[@"__this__"];
@@ -2949,7 +2944,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* centerCoordinateValue = (NSValue*) HEAP[args[@"centerCoordinate"]];
+            NSValue* centerCoordinateValue = (NSValue*) args[@"centerCoordinate"];
             CLLocationCoordinate2D centerCoordinate;
             [centerCoordinateValue getValue:&centerCoordinate];
         
@@ -3019,7 +3014,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* screenAnchorValue = (NSValue*) HEAP[args[@"screenAnchor"]];
+            NSValue* screenAnchorValue = (NSValue*) args[@"screenAnchor"];
             CGPoint screenAnchor;
             [screenAnchorValue getValue:&screenAnchor];
         
@@ -3038,7 +3033,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
+            NSValue* coordinateValue = (NSValue*) args[@"coordinate"];
             CLLocationCoordinate2D coordinate;
             [coordinateValue getValue:&coordinate];
         
@@ -3074,7 +3069,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* lockedScreenPointValue = (NSValue*) HEAP[args[@"lockedScreenPoint"]];
+            NSValue* lockedScreenPointValue = (NSValue*) args[@"lockedScreenPoint"];
             CGPoint lockedScreenPoint;
             [lockedScreenPointValue getValue:&lockedScreenPoint];
         
@@ -3093,7 +3088,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
+            NSValue* coordinateValue = (NSValue*) args[@"coordinate"];
             CLLocationCoordinate2D coordinate;
             [coordinateValue getValue:&coordinate];
         
@@ -3248,12 +3243,7 @@ extern BOOL enableLog;
         
             // args
             // list arg
-            NSArray<NSNumber*>* strokeColorsRefArray = (NSArray<NSNumber*> *) args[@"strokeColors"];
-            NSMutableArray<UIColor*>* strokeColors = [NSMutableArray arrayWithCapacity:strokeColorsRefArray.count];
-            for (int __i__ = 0; __i__ < strokeColorsRefArray.count; __i__++) {
-                UIColor* item = (UIColor*) HEAP[[strokeColorsRefArray objectAtIndex:__i__]];
-                [strokeColors addObject:item];
-            }
+            NSArray<UIColor*>* strokeColors = (NSArray<UIColor*>*) args[@"strokeColors"];
         
             // ref
             MAMultiColoredPolylineRenderer* ref = (MAMultiColoredPolylineRenderer*) args[@"__this__"];
@@ -3304,12 +3294,7 @@ extern BOOL enableLog;
         
             // args
             // list arg
-            NSArray<NSNumber*>* strokeTextureImagesRefArray = (NSArray<NSNumber*> *) args[@"strokeTextureImages"];
-            NSMutableArray<NSObject*>* strokeTextureImages = [NSMutableArray arrayWithCapacity:strokeTextureImagesRefArray.count];
-            for (int __i__ = 0; __i__ < strokeTextureImagesRefArray.count; __i__++) {
-                NSObject* item = (NSObject*) HEAP[[strokeTextureImagesRefArray objectAtIndex:__i__]];
-                [strokeTextureImages addObject:item];
-            }
+            NSArray<NSObject*>* strokeTextureImages = (NSArray<NSObject*>*) args[@"strokeTextureImages"];
         
             // ref
             MAMultiTexturePolylineRenderer* ref = (MAMultiTexturePolylineRenderer*) args[@"__this__"];
@@ -3343,7 +3328,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* showRangeValue = (NSValue*) HEAP[args[@"showRange"]];
+            NSValue* showRangeValue = (NSValue*) args[@"showRange"];
             MAPathShowRange showRange;
             [showRangeValue getValue:&showRange];
         
@@ -3466,7 +3451,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* pointSizeValue = (NSValue*) HEAP[args[@"pointSize"]];
+            NSValue* pointSizeValue = (NSValue*) args[@"pointSize"];
             CGSize pointSize;
             [pointSizeValue getValue:&pointSize];
         
@@ -3485,7 +3470,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* anchorValue = (NSValue*) HEAP[args[@"anchor"]];
+            NSValue* anchorValue = (NSValue*) args[@"anchor"];
             CGPoint anchor;
             [anchorValue getValue:&anchor];
         
@@ -3589,7 +3574,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* showRangeValue = (NSValue*) HEAP[args[@"showRange"]];
+            NSValue* showRangeValue = (NSValue*) args[@"showRange"];
             MAPathShowRange showRange;
             [showRangeValue getValue:&showRange];
         
@@ -3710,7 +3695,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* centerOffsetValue = (NSValue*) HEAP[args[@"centerOffset"]];
+            NSValue* centerOffsetValue = (NSValue*) args[@"centerOffset"];
             CGPoint centerOffset;
             [centerOffsetValue getValue:&centerOffset];
         
@@ -3729,7 +3714,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* calloutOffsetValue = (NSValue*) HEAP[args[@"calloutOffset"]];
+            NSValue* calloutOffsetValue = (NSValue*) args[@"calloutOffset"];
             CGPoint calloutOffset;
             [calloutOffsetValue getValue:&calloutOffset];
         

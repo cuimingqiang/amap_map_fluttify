@@ -548,7 +548,7 @@ extern BOOL enableLog;
       
           // args
           // struct arg
-          NSValue* centerOffsetValue = (NSValue*) HEAP[args[@"centerOffset"]];
+          NSValue* centerOffsetValue = (NSValue*) args[@"centerOffset"];
           CGPoint centerOffset;
           [centerOffsetValue getValue:&centerOffset];
       
@@ -567,7 +567,7 @@ extern BOOL enableLog;
       
           // args
           // struct arg
-          NSValue* calloutOffsetValue = (NSValue*) HEAP[args[@"calloutOffset"]];
+          NSValue* calloutOffsetValue = (NSValue*) args[@"calloutOffset"];
           CGPoint calloutOffset;
           [calloutOffsetValue getValue:&calloutOffset];
       

@@ -95,7 +95,7 @@ extension MAHeatMapVectorOverlay_Batch on List<MAHeatMapVectorOverlay> {
 
   //region setters
   Future<void> set_option_batch(List<MAHeatMapVectorOverlayOptions> option) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAHeatMapVectorOverlay::set_option_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "option": option[__i__].refId}]);
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAHeatMapVectorOverlay::set_option_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "option": option[__i__]}]);
   
   
   }

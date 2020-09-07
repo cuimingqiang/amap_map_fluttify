@@ -145,7 +145,7 @@ extension MAMapCustomStyleOptions_Batch on List<MAMapCustomStyleOptions> {
 
   //region setters
   Future<void> set_styleData_batch(List<NSData> styleData) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMapCustomStyleOptions::set_styleData_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "styleData": styleData[__i__].refId}]);
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMapCustomStyleOptions::set_styleData_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "styleData": styleData[__i__]}]);
   
   
   }
@@ -163,13 +163,13 @@ extension MAMapCustomStyleOptions_Batch on List<MAMapCustomStyleOptions> {
   }
   
   Future<void> set_styleTextureData_batch(List<NSData> styleTextureData) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMapCustomStyleOptions::set_styleTextureData_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "styleTextureData": styleTextureData[__i__].refId}]);
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMapCustomStyleOptions::set_styleTextureData_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "styleTextureData": styleTextureData[__i__]}]);
   
   
   }
   
   Future<void> set_styleExtraData_batch(List<NSData> styleExtraData) async {
-    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMapCustomStyleOptions::set_styleExtraData_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "styleExtraData": styleExtraData[__i__].refId}]);
+    await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('MAMapCustomStyleOptions::set_styleExtraData_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "styleExtraData": styleExtraData[__i__]}]);
   
   
   }

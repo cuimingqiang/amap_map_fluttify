@@ -2145,11 +2145,11 @@ extern BOOL enableLog;
         @"MACoordinateBoundsMake::MACoordinateBoundsMake": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* northEastValue = (NSValue*) HEAP[args[@"northEast"]];
+            NSValue* northEastValue = (NSValue*) args[@"northEast"];
             CLLocationCoordinate2D northEast;
             [northEastValue getValue:&northEast];
             // struct arg
-            NSValue* southWestValue = (NSValue*) HEAP[args[@"southWest"]];
+            NSValue* southWestValue = (NSValue*) args[@"southWest"];
             CLLocationCoordinate2D southWest;
             [southWestValue getValue:&southWest];
         
@@ -2197,11 +2197,11 @@ extern BOOL enableLog;
         @"MACoordinateRegionMake::MACoordinateRegionMake": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* centerCoordinateValue = (NSValue*) HEAP[args[@"centerCoordinate"]];
+            NSValue* centerCoordinateValue = (NSValue*) args[@"centerCoordinate"];
             CLLocationCoordinate2D centerCoordinate;
             [centerCoordinateValue getValue:&centerCoordinate];
             // struct arg
-            NSValue* spanValue = (NSValue*) HEAP[args[@"span"]];
+            NSValue* spanValue = (NSValue*) args[@"span"];
             MACoordinateSpan span;
             [spanValue getValue:&span];
         
@@ -2225,7 +2225,7 @@ extern BOOL enableLog;
         @"MACoordinateRegionMakeWithDistance::MACoordinateRegionMakeWithDistance": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* centerCoordinateValue = (NSValue*) HEAP[args[@"centerCoordinate"]];
+            NSValue* centerCoordinateValue = (NSValue*) args[@"centerCoordinate"];
             CLLocationCoordinate2D centerCoordinate;
             [centerCoordinateValue getValue:&centerCoordinate];
             // jsonable arg
@@ -2253,7 +2253,7 @@ extern BOOL enableLog;
         @"MAMapPointForCoordinate::MAMapPointForCoordinate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
+            NSValue* coordinateValue = (NSValue*) args[@"coordinate"];
             CLLocationCoordinate2D coordinate;
             [coordinateValue getValue:&coordinate];
         
@@ -2277,7 +2277,7 @@ extern BOOL enableLog;
         @"MACoordinateForMapPoint::MACoordinateForMapPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* mapPointValue = (NSValue*) HEAP[args[@"mapPoint"]];
+            NSValue* mapPointValue = (NSValue*) args[@"mapPoint"];
             MAMapPoint mapPoint;
             [mapPointValue getValue:&mapPoint];
         
@@ -2301,7 +2301,7 @@ extern BOOL enableLog;
         @"MACoordinateRegionForMapRect::MACoordinateRegionForMapRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* rectValue = (NSValue*) HEAP[args[@"rect"]];
+            NSValue* rectValue = (NSValue*) args[@"rect"];
             MAMapRect rect;
             [rectValue getValue:&rect];
         
@@ -2325,7 +2325,7 @@ extern BOOL enableLog;
         @"MAMapRectForCoordinateRegion::MAMapRectForCoordinateRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* regionValue = (NSValue*) HEAP[args[@"region"]];
+            NSValue* regionValue = (NSValue*) args[@"region"];
             MACoordinateRegion region;
             [regionValue getValue:&region];
         
@@ -2393,11 +2393,11 @@ extern BOOL enableLog;
         @"MAMetersBetweenMapPoints::MAMetersBetweenMapPoints": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* aValue = (NSValue*) HEAP[args[@"a"]];
+            NSValue* aValue = (NSValue*) args[@"a"];
             MAMapPoint a;
             [aValue getValue:&a];
             // struct arg
-            NSValue* bValue = (NSValue*) HEAP[args[@"b"]];
+            NSValue* bValue = (NSValue*) args[@"b"];
             MAMapPoint b;
             [bValue getValue:&b];
         
@@ -2421,11 +2421,11 @@ extern BOOL enableLog;
         @"MAAreaBetweenCoordinates::MAAreaBetweenCoordinates": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* northEastValue = (NSValue*) HEAP[args[@"northEast"]];
+            NSValue* northEastValue = (NSValue*) args[@"northEast"];
             CLLocationCoordinate2D northEast;
             [northEastValue getValue:&northEast];
             // struct arg
-            NSValue* southWestValue = (NSValue*) HEAP[args[@"southWest"]];
+            NSValue* southWestValue = (NSValue*) args[@"southWest"];
             CLLocationCoordinate2D southWest;
             [southWestValue getValue:&southWest];
         
@@ -2449,7 +2449,7 @@ extern BOOL enableLog;
         @"MAMapRectInset::MAMapRectInset": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* rectValue = (NSValue*) HEAP[args[@"rect"]];
+            NSValue* rectValue = (NSValue*) args[@"rect"];
             MAMapRect rect;
             [rectValue getValue:&rect];
             // jsonable arg
@@ -2477,11 +2477,11 @@ extern BOOL enableLog;
         @"MAMapRectUnion::MAMapRectUnion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* rect1Value = (NSValue*) HEAP[args[@"rect1"]];
+            NSValue* rect1Value = (NSValue*) args[@"rect1"];
             MAMapRect rect1;
             [rect1Value getValue:&rect1];
             // struct arg
-            NSValue* rect2Value = (NSValue*) HEAP[args[@"rect2"]];
+            NSValue* rect2Value = (NSValue*) args[@"rect2"];
             MAMapRect rect2;
             [rect2Value getValue:&rect2];
         
@@ -2505,11 +2505,11 @@ extern BOOL enableLog;
         @"MAMapSizeContainsSize::MAMapSizeContainsSize": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* size1Value = (NSValue*) HEAP[args[@"size1"]];
+            NSValue* size1Value = (NSValue*) args[@"size1"];
             MAMapSize size1;
             [size1Value getValue:&size1];
             // struct arg
-            NSValue* size2Value = (NSValue*) HEAP[args[@"size2"]];
+            NSValue* size2Value = (NSValue*) args[@"size2"];
             MAMapSize size2;
             [size2Value getValue:&size2];
         
@@ -2533,11 +2533,11 @@ extern BOOL enableLog;
         @"MAMapRectContainsPoint::MAMapRectContainsPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* rectValue = (NSValue*) HEAP[args[@"rect"]];
+            NSValue* rectValue = (NSValue*) args[@"rect"];
             MAMapRect rect;
             [rectValue getValue:&rect];
             // struct arg
-            NSValue* pointValue = (NSValue*) HEAP[args[@"point"]];
+            NSValue* pointValue = (NSValue*) args[@"point"];
             MAMapPoint point;
             [pointValue getValue:&point];
         
@@ -2561,11 +2561,11 @@ extern BOOL enableLog;
         @"MAMapRectIntersectsRect::MAMapRectIntersectsRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* rect1Value = (NSValue*) HEAP[args[@"rect1"]];
+            NSValue* rect1Value = (NSValue*) args[@"rect1"];
             MAMapRect rect1;
             [rect1Value getValue:&rect1];
             // struct arg
-            NSValue* rect2Value = (NSValue*) HEAP[args[@"rect2"]];
+            NSValue* rect2Value = (NSValue*) args[@"rect2"];
             MAMapRect rect2;
             [rect2Value getValue:&rect2];
         
@@ -2589,11 +2589,11 @@ extern BOOL enableLog;
         @"MAMapRectContainsRect::MAMapRectContainsRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* rect1Value = (NSValue*) HEAP[args[@"rect1"]];
+            NSValue* rect1Value = (NSValue*) args[@"rect1"];
             MAMapRect rect1;
             [rect1Value getValue:&rect1];
             // struct arg
-            NSValue* rect2Value = (NSValue*) HEAP[args[@"rect2"]];
+            NSValue* rect2Value = (NSValue*) args[@"rect2"];
             MAMapRect rect2;
             [rect2Value getValue:&rect2];
         
@@ -2617,11 +2617,11 @@ extern BOOL enableLog;
         @"MACircleContainsPoint::MACircleContainsPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* pointValue = (NSValue*) HEAP[args[@"point"]];
+            NSValue* pointValue = (NSValue*) args[@"point"];
             MAMapPoint point;
             [pointValue getValue:&point];
             // struct arg
-            NSValue* centerValue = (NSValue*) HEAP[args[@"center"]];
+            NSValue* centerValue = (NSValue*) args[@"center"];
             MAMapPoint center;
             [centerValue getValue:&center];
             // jsonable arg
@@ -2647,11 +2647,11 @@ extern BOOL enableLog;
         @"MACircleContainsCoordinate::MACircleContainsCoordinate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* pointValue = (NSValue*) HEAP[args[@"point"]];
+            NSValue* pointValue = (NSValue*) args[@"point"];
             CLLocationCoordinate2D point;
             [pointValue getValue:&point];
             // struct arg
-            NSValue* centerValue = (NSValue*) HEAP[args[@"center"]];
+            NSValue* centerValue = (NSValue*) args[@"center"];
             CLLocationCoordinate2D center;
             [centerValue getValue:&center];
             // jsonable arg
@@ -2677,15 +2677,14 @@ extern BOOL enableLog;
         @"MAGetNearestMapPointFromPolyline::MAGetNearestMapPointFromPolyline": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* pointValue = (NSValue*) HEAP[args[@"point"]];
+            NSValue* pointValue = (NSValue*) args[@"point"];
             MAMapPoint point;
             [pointValue getValue:&point];
             // list arg struct
-            NSArray* polylineRefIdArray = (NSArray*) args[@"polyline"];
-            MAMapPoint polyline[polylineRefIdArray.count];
-        
-            for (int __i__ = 0; __i__ < polylineRefIdArray.count; __i__++) {
-                NSValue* polylineValue = (NSValue*) HEAP[[polylineRefIdArray objectAtIndex:__i__]];
+            NSArray<NSValue*>* polylineValueList = (NSArray<NSValue*>*) args[@"polyline"];
+            MAMapPoint polyline[polylineValueList.count];
+            for (int __i__ = 0; __i__ < polylineValueList.count; __i__++) {
+                NSValue* polylineValue = (NSValue*) [polylineValueList objectAtIndex:__i__];
                 MAMapPoint polylineItem;
                 [polylineValue getValue:&polylineItem];
                 polyline[__i__] = polylineItem;
@@ -2713,15 +2712,14 @@ extern BOOL enableLog;
         @"MAPolygonContainsPoint::MAPolygonContainsPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* pointValue = (NSValue*) HEAP[args[@"point"]];
+            NSValue* pointValue = (NSValue*) args[@"point"];
             MAMapPoint point;
             [pointValue getValue:&point];
             // list arg struct
-            NSArray* polygonRefIdArray = (NSArray*) args[@"polygon"];
-            MAMapPoint polygon[polygonRefIdArray.count];
-        
-            for (int __i__ = 0; __i__ < polygonRefIdArray.count; __i__++) {
-                NSValue* polygonValue = (NSValue*) HEAP[[polygonRefIdArray objectAtIndex:__i__]];
+            NSArray<NSValue*>* polygonValueList = (NSArray<NSValue*>*) args[@"polygon"];
+            MAMapPoint polygon[polygonValueList.count];
+            for (int __i__ = 0; __i__ < polygonValueList.count; __i__++) {
+                NSValue* polygonValue = (NSValue*) [polygonValueList objectAtIndex:__i__];
                 MAMapPoint polygonItem;
                 [polygonValue getValue:&polygonItem];
                 polygon[__i__] = polygonItem;
@@ -2749,15 +2747,14 @@ extern BOOL enableLog;
         @"MAPolygonContainsCoordinate::MAPolygonContainsCoordinate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* pointValue = (NSValue*) HEAP[args[@"point"]];
+            NSValue* pointValue = (NSValue*) args[@"point"];
             CLLocationCoordinate2D point;
             [pointValue getValue:&point];
             // list arg struct
-            NSArray* polygonRefIdArray = (NSArray*) args[@"polygon"];
-            CLLocationCoordinate2D polygon[polygonRefIdArray.count];
-        
-            for (int __i__ = 0; __i__ < polygonRefIdArray.count; __i__++) {
-                NSValue* polygonValue = (NSValue*) HEAP[[polygonRefIdArray objectAtIndex:__i__]];
+            NSArray<NSValue*>* polygonValueList = (NSArray<NSValue*>*) args[@"polygon"];
+            CLLocationCoordinate2D polygon[polygonValueList.count];
+            for (int __i__ = 0; __i__ < polygonValueList.count; __i__++) {
+                NSValue* polygonValue = (NSValue*) [polygonValueList objectAtIndex:__i__];
                 CLLocationCoordinate2D polygonItem;
                 [polygonValue getValue:&polygonItem];
                 polygon[__i__] = polygonItem;
@@ -2785,15 +2782,15 @@ extern BOOL enableLog;
         @"MAGetNearestMapPointFromLine::MAGetNearestMapPointFromLine": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* lineStartValue = (NSValue*) HEAP[args[@"lineStart"]];
+            NSValue* lineStartValue = (NSValue*) args[@"lineStart"];
             MAMapPoint lineStart;
             [lineStartValue getValue:&lineStart];
             // struct arg
-            NSValue* lineEndValue = (NSValue*) HEAP[args[@"lineEnd"]];
+            NSValue* lineEndValue = (NSValue*) args[@"lineEnd"];
             MAMapPoint lineEnd;
             [lineEndValue getValue:&lineEnd];
             // struct arg
-            NSValue* pointValue = (NSValue*) HEAP[args[@"point"]];
+            NSValue* pointValue = (NSValue*) args[@"point"];
             MAMapPoint point;
             [pointValue getValue:&point];
         
@@ -2817,11 +2814,10 @@ extern BOOL enableLog;
         @"MAAreaForPolygon::MAAreaForPolygon": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // list arg struct
-            NSArray* coordinatesRefIdArray = (NSArray*) args[@"coordinates"];
-            CLLocationCoordinate2D coordinates[coordinatesRefIdArray.count];
-        
-            for (int __i__ = 0; __i__ < coordinatesRefIdArray.count; __i__++) {
-                NSValue* coordinatesValue = (NSValue*) HEAP[[coordinatesRefIdArray objectAtIndex:__i__]];
+            NSArray<NSValue*>* coordinatesValueList = (NSArray<NSValue*>*) args[@"coordinates"];
+            CLLocationCoordinate2D coordinates[coordinatesValueList.count];
+            for (int __i__ = 0; __i__ < coordinatesValueList.count; __i__++) {
+                NSValue* coordinatesValue = (NSValue*) [coordinatesValueList objectAtIndex:__i__];
                 CLLocationCoordinate2D coordinatesItem;
                 [coordinatesValue getValue:&coordinatesItem];
                 coordinates[__i__] = coordinatesItem;
@@ -2925,7 +2921,7 @@ extern BOOL enableLog;
         @"MAMapRectGetMinX::MAMapRectGetMinX": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* rectValue = (NSValue*) HEAP[args[@"rect"]];
+            NSValue* rectValue = (NSValue*) args[@"rect"];
             MAMapRect rect;
             [rectValue getValue:&rect];
         
@@ -2949,7 +2945,7 @@ extern BOOL enableLog;
         @"MAMapRectGetMinY::MAMapRectGetMinY": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* rectValue = (NSValue*) HEAP[args[@"rect"]];
+            NSValue* rectValue = (NSValue*) args[@"rect"];
             MAMapRect rect;
             [rectValue getValue:&rect];
         
@@ -2973,7 +2969,7 @@ extern BOOL enableLog;
         @"MAMapRectGetMidX::MAMapRectGetMidX": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* rectValue = (NSValue*) HEAP[args[@"rect"]];
+            NSValue* rectValue = (NSValue*) args[@"rect"];
             MAMapRect rect;
             [rectValue getValue:&rect];
         
@@ -2997,7 +2993,7 @@ extern BOOL enableLog;
         @"MAMapRectGetMidY::MAMapRectGetMidY": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* rectValue = (NSValue*) HEAP[args[@"rect"]];
+            NSValue* rectValue = (NSValue*) args[@"rect"];
             MAMapRect rect;
             [rectValue getValue:&rect];
         
@@ -3021,7 +3017,7 @@ extern BOOL enableLog;
         @"MAMapRectGetMaxX::MAMapRectGetMaxX": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* rectValue = (NSValue*) HEAP[args[@"rect"]];
+            NSValue* rectValue = (NSValue*) args[@"rect"];
             MAMapRect rect;
             [rectValue getValue:&rect];
         
@@ -3045,7 +3041,7 @@ extern BOOL enableLog;
         @"MAMapRectGetMaxY::MAMapRectGetMaxY": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* rectValue = (NSValue*) HEAP[args[@"rect"]];
+            NSValue* rectValue = (NSValue*) args[@"rect"];
             MAMapRect rect;
             [rectValue getValue:&rect];
         
@@ -3069,7 +3065,7 @@ extern BOOL enableLog;
         @"MAMapRectGetWidth::MAMapRectGetWidth": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* rectValue = (NSValue*) HEAP[args[@"rect"]];
+            NSValue* rectValue = (NSValue*) args[@"rect"];
             MAMapRect rect;
             [rectValue getValue:&rect];
         
@@ -3093,7 +3089,7 @@ extern BOOL enableLog;
         @"MAMapRectGetHeight::MAMapRectGetHeight": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* rectValue = (NSValue*) HEAP[args[@"rect"]];
+            NSValue* rectValue = (NSValue*) args[@"rect"];
             MAMapRect rect;
             [rectValue getValue:&rect];
         
@@ -3117,11 +3113,11 @@ extern BOOL enableLog;
         @"MAMapPointEqualToPoint::MAMapPointEqualToPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* point1Value = (NSValue*) HEAP[args[@"point1"]];
+            NSValue* point1Value = (NSValue*) args[@"point1"];
             MAMapPoint point1;
             [point1Value getValue:&point1];
             // struct arg
-            NSValue* point2Value = (NSValue*) HEAP[args[@"point2"]];
+            NSValue* point2Value = (NSValue*) args[@"point2"];
             MAMapPoint point2;
             [point2Value getValue:&point2];
         
@@ -3145,11 +3141,11 @@ extern BOOL enableLog;
         @"MAMapSizeEqualToSize::MAMapSizeEqualToSize": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* size1Value = (NSValue*) HEAP[args[@"size1"]];
+            NSValue* size1Value = (NSValue*) args[@"size1"];
             MAMapSize size1;
             [size1Value getValue:&size1];
             // struct arg
-            NSValue* size2Value = (NSValue*) HEAP[args[@"size2"]];
+            NSValue* size2Value = (NSValue*) args[@"size2"];
             MAMapSize size2;
             [size2Value getValue:&size2];
         
@@ -3173,11 +3169,11 @@ extern BOOL enableLog;
         @"MAMapRectEqualToRect::MAMapRectEqualToRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* rect1Value = (NSValue*) HEAP[args[@"rect1"]];
+            NSValue* rect1Value = (NSValue*) args[@"rect1"];
             MAMapRect rect1;
             [rect1Value getValue:&rect1];
             // struct arg
-            NSValue* rect2Value = (NSValue*) HEAP[args[@"rect2"]];
+            NSValue* rect2Value = (NSValue*) args[@"rect2"];
             MAMapRect rect2;
             [rect2Value getValue:&rect2];
         
@@ -3201,7 +3197,7 @@ extern BOOL enableLog;
         @"MAMapRectIsNull::MAMapRectIsNull": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* rectValue = (NSValue*) HEAP[args[@"rect"]];
+            NSValue* rectValue = (NSValue*) args[@"rect"];
             MAMapRect rect;
             [rectValue getValue:&rect];
         
