@@ -1777,9 +1777,11 @@ mixin _Pro on _Holder, _Community {
     await platform(
       android: (pool) async {
         final map = await androidController.getMap();
-        await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod(
+        await MethodChannel('me.yohom/amap_map_fluttify',
+                StandardMethodCodec(FluttifyMessageCodec()))
+            .invokeMethod(
           'com.amap.api.maps.AMap::setInfoWindowAdapterX',
-          {'refId': map.refId},
+          {'__this__': map},
         );
         final bitmap = await android_graphics_Bitmap.create(imageData);
         await pushStack('infoWindow', bitmap);

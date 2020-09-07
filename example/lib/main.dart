@@ -1,4 +1,5 @@
 import 'package:amap_map_fluttify/amap_map_fluttify.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:oktoast/oktoast.dart';
 
@@ -7,7 +8,7 @@ import 'map/map.screen.dart';
 Future<void> main() async {
   runApp(MyApp());
 
-  await enableFluttifyLog(false);
+  await enableFluttifyLog(kDebugMode);
   await AmapService.instance.init(
     iosKey: '7a04506d15fdb7585707f7091d715ef4',
     androidKey: '7c9daac55e90a439f7b4304b465297fa',

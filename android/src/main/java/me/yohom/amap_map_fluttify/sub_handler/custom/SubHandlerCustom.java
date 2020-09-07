@@ -31,12 +31,11 @@ public class SubHandlerCustom {
         return new HashMap<String, Handler>() {{
             put("com.amap.api.maps.AMap::setInfoWindowAdapterX", (__args__, __methodResult__) -> {
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.amap.api.maps.AMap ref = (com.amap.api.maps.AMap) getHEAP().get(refId);
+                com.amap.api.maps.AMap __this__ = (com.amap.api.maps.AMap) ((Map<String, Object>) __args__).get("__this__");
 
                 // invoke native method
                 try {
-                    ref.setInfoWindowAdapter(new AMap.InfoWindowAdapter() {
+                    __this__.setInfoWindowAdapter(new AMap.InfoWindowAdapter() {
                         @Override
                         public View getInfoWindow(Marker marker) {
                             Bitmap bitmap = (Bitmap) getSTACK().get("infoWindow");
