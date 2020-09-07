@@ -91,7 +91,7 @@ class ProcessedTraceStateScreen extends State<ProcessedTraceScreen> {
             },
             child: Text('开始纠偏'),
           ),
-          Text(_result.join("\n")),
+          Text(_result.map((e) => '${e.latitude}, ${e.longitude}').join("\n")),
         ],
       ),
     );
