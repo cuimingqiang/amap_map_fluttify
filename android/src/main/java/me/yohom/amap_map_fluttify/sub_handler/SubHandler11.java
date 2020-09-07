@@ -2763,7 +2763,7 @@ public class SubHandler11 {
                     // ref arg
                     int var5 = (int) ((Map<String, Object>) __args__).get("var5");
                     // ref arg
-                    long var6 = (long) ((Map<String, Object>) __args__).get("var6");
+                    Integer var6 = (Integer) ((Map<String, Object>) __args__).get("var6");
             
                     // ref
                     com.amap.api.maps.AMap __this__ = (com.amap.api.maps.AMap) ((Map<String, Object>) __args__).get("__this__");
@@ -4124,7 +4124,7 @@ public class SubHandler11 {
             
                     // args
                     // ref arg
-                    long var1 = (long) ((Map<String, Object>) __args__).get("var1");
+                    Integer var1 = (Integer) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
                     com.amap.api.trace.TraceLocation __this__ = (com.amap.api.trace.TraceLocation) ((Map<String, Object>) __args__).get("__this__");

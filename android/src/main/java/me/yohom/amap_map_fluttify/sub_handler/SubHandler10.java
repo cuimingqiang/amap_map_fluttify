@@ -2980,7 +2980,7 @@ public class SubHandler10 {
             
                     // args
                     // ref arg
-                    long var1 = (long) ((Map<String, Object>) __args__).get("var1");
+                    Integer var1 = (Integer) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
                     com.amap.api.maps.model.particle.ParticleOverlayOptions __this__ = (com.amap.api.maps.model.particle.ParticleOverlayOptions) ((Map<String, Object>) __args__).get("__this__");
@@ -3043,7 +3043,7 @@ public class SubHandler10 {
             
                     // args
                     // ref arg
-                    long var1 = (long) ((Map<String, Object>) __args__).get("var1");
+                    Integer var1 = (Integer) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
                     com.amap.api.maps.model.particle.ParticleOverlayOptions __this__ = (com.amap.api.maps.model.particle.ParticleOverlayOptions) ((Map<String, Object>) __args__).get("__this__");
@@ -3426,7 +3426,7 @@ public class SubHandler10 {
             
                     // args
                     // ref arg
-                    long var1 = (long) ((Map<String, Object>) __args__).get("var1");
+                    Integer var1 = (Integer) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
                     com.amap.api.maps.model.particle.ParticleOverlay __this__ = (com.amap.api.maps.model.particle.ParticleOverlay) ((Map<String, Object>) __args__).get("__this__");
@@ -3458,7 +3458,7 @@ public class SubHandler10 {
             
                     // args
                     // ref arg
-                    long var1 = (long) ((Map<String, Object>) __args__).get("var1");
+                    Integer var1 = (Integer) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
                     com.amap.api.maps.model.particle.ParticleOverlay __this__ = (com.amap.api.maps.model.particle.ParticleOverlay) ((Map<String, Object>) __args__).get("__this__");

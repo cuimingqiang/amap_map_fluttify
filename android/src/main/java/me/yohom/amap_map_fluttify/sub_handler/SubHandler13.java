@@ -3016,7 +3016,7 @@ public class SubHandler13 {
                     // ref arg
                     Double var6 = (Double) ((Map<String, Object>) __args__).get("var6");
                     // ref arg
-                    long var7 = (long) ((Map<String, Object>) __args__).get("var7");
+                    Integer var7 = (Integer) ((Map<String, Object>) __args__).get("var7");
             
                     // create target object
                     com.amap.api.trace.TraceLocation __obj__ = new com.amap.api.trace.TraceLocation(var1, var3, new Double(var5).floatValue(), new Double(var6).floatValue(), var7);

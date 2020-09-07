@@ -2940,7 +2940,7 @@ public class SubHandler5 {
                 // ref arg
                 com.amap.api.maps.CameraUpdate var1 = (com.amap.api.maps.CameraUpdate) ((Map<String, Object>) __args__).get("var1");
                 // ref arg
-                long var2 = (long) ((Map<String, Object>) __args__).get("var2");
+                Integer var2 = (Integer) ((Map<String, Object>) __args__).get("var2");
             
                 // ref
                 com.amap.api.maps.AMap __this__ = (com.amap.api.maps.AMap) ((Map<String, Object>) __args__).get("__this__");
@@ -5897,7 +5897,7 @@ public class SubHandler5 {
                 // ref arg
                 int var5 = (int) ((Map<String, Object>) __args__).get("var5");
                 // ref arg
-                long var6 = (long) ((Map<String, Object>) __args__).get("var6");
+                Integer var6 = (Integer) ((Map<String, Object>) __args__).get("var6");
             
                 // ref
                 com.amap.api.maps.AMap __this__ = (com.amap.api.maps.AMap) ((Map<String, Object>) __args__).get("__this__");

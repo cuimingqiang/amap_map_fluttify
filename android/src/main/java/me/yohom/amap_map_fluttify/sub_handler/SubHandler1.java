@@ -1684,7 +1684,7 @@ public class SubHandler1 {
             put("com.amap.api.maps.offlinemap.OfflineMapProvince::setSize", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                long var1 = (long) ((Map<String, Object>) __args__).get("var1");
+                Integer var1 = (Integer) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
                 com.amap.api.maps.offlinemap.OfflineMapProvince __this__ = (com.amap.api.maps.offlinemap.OfflineMapProvince) ((Map<String, Object>) __args__).get("__this__");
@@ -2882,7 +2882,7 @@ public class SubHandler1 {
             put("com.amap.api.maps.offlinemap.OfflineMapCity::setSize", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                long var1 = (long) ((Map<String, Object>) __args__).get("var1");
+                Integer var1 = (Integer) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
                 com.amap.api.maps.offlinemap.OfflineMapCity __this__ = (com.amap.api.maps.offlinemap.OfflineMapCity) ((Map<String, Object>) __args__).get("__this__");
@@ -5518,7 +5518,7 @@ public class SubHandler1 {
             put("com.amap.api.maps.model.MyLocationStyle::interval", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                long var1 = (long) ((Map<String, Object>) __args__).get("var1");
+                Integer var1 = (Integer) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
                 com.amap.api.maps.model.MyLocationStyle __this__ = (com.amap.api.maps.model.MyLocationStyle) ((Map<String, Object>) __args__).get("__this__");

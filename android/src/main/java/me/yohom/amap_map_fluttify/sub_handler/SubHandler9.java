@@ -827,7 +827,7 @@ public class SubHandler9 {
             
                     // args
                     // ref arg
-                    long var1 = (long) ((Map<String, Object>) __args__).get("var1");
+                    Integer var1 = (Integer) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
                     com.amap.api.maps.model.animation.Animation __this__ = (com.amap.api.maps.model.animation.Animation) ((Map<String, Object>) __args__).get("__this__");
