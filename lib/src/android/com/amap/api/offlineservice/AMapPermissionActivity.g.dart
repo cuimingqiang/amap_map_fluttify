@@ -55,7 +55,7 @@ class com_amap_api_offlineservice_AMapPermissionActivity extends android_app_Act
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('com.amap.api.offlineservice.AMapPermissionActivity::onRequestPermissionsResult', {"var1": var1, "var2": Array.ofList(var2), "var3": Array.ofList(var3), "__this__": this});
+    final __result__ = await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('com.amap.api.offlineservice.AMapPermissionActivity::onRequestPermissionsResult', {"var1": var1, "var2": Array.ofList(var2), "var3": var3, "__this__": this});
   
   
     // handle native call

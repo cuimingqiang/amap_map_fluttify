@@ -40,7 +40,7 @@ class com_amap_api_maps_model_CrossOverlay extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('com.amap.api.maps.model.CrossOverlay::setData', {"var1": Array.ofList(var1), "__this__": this});
+    final __result__ = await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('com.amap.api.maps.model.CrossOverlay::setData', {"var1": var1, "__this__": this});
   
   
     // handle native call
