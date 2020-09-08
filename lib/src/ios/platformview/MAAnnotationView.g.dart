@@ -58,7 +58,7 @@ class _MAAnnotationView_iOSState extends State<MAAnnotationView_iOS> {
 
   void _onViewCreated(int id) {
     // 碰到一个对象返回的hashCode为0的情况, 造成和这个id冲突了, 这里用一个magic number避免一下
-    _controller = MAAnnotationView()..refId = 2147483647 - id;
+    _controller = MAAnnotationView()..refId = (2147483647 - id).toString();
     if (widget.onViewCreated != null) {
       widget.onViewCreated(_controller);
     }

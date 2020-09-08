@@ -95,14 +95,18 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                     await _controller?.setMarkerClickedListener((marker) async {
                       await _controller.showCustomInfoWindow(
                         marker,
-                        Container(
-                          width: 128,
-                          height: 222,
-                          decoration: BoxDecoration(
-                            color: Colors.yellow,
-                            borderRadius: BorderRadius.circular(16),
+                        Card(
+                          elevation: 10,
+                          child: Container(
+                            padding: EdgeInsets.all(16),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(Icons.location_on),
+                                Text(await marker.title),
+                              ],
+                            ),
                           ),
-                          child: Text(await marker.title),
                         ),
                       );
                     });

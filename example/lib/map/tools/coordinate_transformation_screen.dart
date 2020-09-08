@@ -44,7 +44,7 @@ class _CoordinateTransformationStateScreen
             enabled: false,
           ),
           SPACE_NORMAL,
-          Text('转换结果: $_target'),
+          Text('转换结果: ${_target.latitude}, ${_target.longitude}'),
           SPACE_NORMAL,
           GridView.count(
             shrinkWrap: true,

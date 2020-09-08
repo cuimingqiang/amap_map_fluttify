@@ -7,23 +7,23 @@ packages:
       name: amap_core_fluttify
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.9.5"
+    version: "0.10.0-pre.3"
   amap_location_fluttify:
     dependency: "direct main"
     description:
       path: "."
       ref: HEAD
-      resolved-ref: dee61fec0fe3f167b5c44c7c4a21fcf1f0bff1b7
+      resolved-ref: "85c3a68fa1d31d9a260b21888312f6cfd5691fb3"
       url: "git@github.com:yohom/amap_location_fluttify.git"
     source: git
-    version: "1.0.0-dev.0"
+    version: "0.15.0-pre.0"
   amap_search_fluttify:
     dependency: "direct main"
     description:
       name: amap_search_fluttify
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.11.0"
+    version: "0.12.0-pre.1"
   async:
     dependency: transitive
     description:
@@ -72,7 +72,7 @@ packages:
       name: core_location_fluttify
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.4"
+    version: "0.3.0-pre.1"
   fake_async:
     dependency: transitive
     description:
@@ -101,7 +101,7 @@ packages:
       name: foundation_fluttify
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.8.12-pre.4"
+    version: "0.9.0-pre.10"
   latlng:
     dependency: transitive
     description:
