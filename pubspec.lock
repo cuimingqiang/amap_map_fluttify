@@ -11,12 +11,10 @@ packages:
   amap_location_fluttify:
     dependency: "direct main"
     description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "85c3a68fa1d31d9a260b21888312f6cfd5691fb3"
-      url: "git@github.com:yohom/amap_location_fluttify.git"
-    source: git
-    version: "0.15.0-pre.0"
+      name: amap_location_fluttify
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.15.0-pre.1"
   amap_search_fluttify:
     dependency: "direct main"
     description:
