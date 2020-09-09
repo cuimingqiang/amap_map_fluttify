@@ -323,7 +323,7 @@ class _AndroidMapDelegate extends java_lang_Object
   OnMapMove onMapMoveEnd;
   OnMapClicked onMapClicked;
   OnMapClicked onMapLongClicked;
-  OnScreenShot onSnapshot;
+  ValueChanged<Uint8List> onSnapshot;
   OnLocationChange onLocationChange;
   OnMarkerClicked onInfoWindowClicked;
   OnMultiPointClicked onMultiPointClicked;
