@@ -19,9 +19,6 @@ typedef Future<void> OnMarkerDrag(Marker marker);
 /// ios请求权限回调签名
 typedef Future<void> _OnRequireAlwaysAuth(CLLocationManager manager);
 
-/// 地图截屏回调签名
-typedef Future<void> OnScreenShot(Uint8List imageData);
-
 /// 海量点点击回调签名
 typedef Future<void> OnMultiPointClicked(
   String id,
@@ -1631,28 +1628,33 @@ mixin _Community on _Holder {
   }
 
   /// 截图
-  Future<void> screenShot(OnScreenShot onScreenShot) async {
-    assert(onScreenShot != null);
-    await platform(
+  Future<Uint8List> screenShot() async {
+    return platform(
       android: (pool) async {
+        final completer = Completer<Uint8List>();
+
         final map = await androidController.getMap();
         await map.getMapScreenShot(
-          androidMapDelegate..onSnapshot = onScreenShot,
+          androidMapDelegate..onSnapshot = completer.complete,
         );
 
         pool.add(map);
+        return completer.future;
       },
       ios: (pool) async {
+        final completer = Completer<Uint8List>();
+
         final rect = await iosController.frame;
         await iosController.takeSnapshotInRect_withCompletionBlock(
           rect,
           (image, state) async {
-            await onScreenShot(await image.data);
+            completer.complete(await image.data);
             pool.add(image);
           },
         );
 
         pool.add(rect);
+        return completer.future;
       },
     );
   }
