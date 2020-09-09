@@ -325,7 +325,7 @@ class TextureMapViewFactory extends PlatformViewFactory {
         options.camera(builder.build());
         ////////////////////////////////初始化AndroidView////////////////////////////////////////
 
-        com.amap.api.maps.TextureMapView view = new com.amap.api.maps.TextureMapView(activity);
+        com.amap.api.maps.TextureMapView view = new com.amap.api.maps.TextureMapView(activity, options);
 
         getHEAP().put(String.valueOf(Integer.MAX_VALUE - id), view);
         return new PlatformView() {
