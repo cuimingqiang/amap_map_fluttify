@@ -1302,7 +1302,7 @@ public class SubHandler1 {
                 try {
                     com.amap.api.maps.MapsInitializer.setExceptionLogger(new com.amap.api.maps.ExceptionLogger() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.amap.api.maps.MapsInitializer::setExceptionLogger::Callback@" + String.valueOf(System.identityHashCode(__this__)), new StandardMethodCodec(new FluttifyMessageCodec()));
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.amap.api.maps.MapsInitializer::setExceptionLogger::Callback", new StandardMethodCodec(new FluttifyMessageCodec()));
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
