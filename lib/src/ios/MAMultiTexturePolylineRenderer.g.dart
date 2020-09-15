@@ -20,17 +20,17 @@ class MAMultiTexturePolylineRenderer extends MAPolylineRenderer  {
   //endregion
 
   //region creators
-  static Future<MAMultiTexturePolylineRenderer> create__() async {
-    final refId = await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('ObjectFactory::createMAMultiTexturePolylineRenderer');
+  static Future<MAMultiTexturePolylineRenderer> create__({ bool init = true /* ios only */ }) async {
+    final refId = await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('ObjectFactory::createMAMultiTexturePolylineRenderer', {'init': init});
     final object = MAMultiTexturePolylineRenderer()..refId = refId..tag__ = 'amap_map_fluttify';
     return object;
   }
   
-  static Future<List<MAMultiTexturePolylineRenderer>> create_batch__(int length) async {
+  static Future<List<MAMultiTexturePolylineRenderer>> create_batch__(int length, { bool init = true /* ios only */ }) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchMAMultiTexturePolylineRenderer', {'length': length});
+    final List resultBatch = await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchMAMultiTexturePolylineRenderer', {'length': length, 'init': init});
   
     final List<MAMultiTexturePolylineRenderer> typedResult = resultBatch.map((result) => MAMultiTexturePolylineRenderer()..refId = result..tag__ = 'amap_map_fluttify').toList();
     return typedResult;

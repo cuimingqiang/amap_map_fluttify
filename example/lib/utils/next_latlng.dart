@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:latlng/latlng.dart';
+import 'package:amap_map_fluttify/amap_map_fluttify.dart';
 
 mixin NextLatLng {
   final random = Random();

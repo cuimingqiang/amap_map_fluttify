@@ -295,45 +295,6 @@ class _AmapViewState extends State<AmapView> {
     await _controller?.dispose();
   }
 
-  Future<com_amap_api_maps_AMapOptions> _androidOptions() async {
-    final option = await com_amap_api_maps_AMapOptions.create__();
-    if (widget.mapType != null) {
-      await option.mapType(widget.mapType.index + 1);
-    }
-    if (widget.showZoomControl != null) {
-      await option.zoomControlsEnabled(widget.showZoomControl);
-    }
-    if (widget.showCompass != null) {
-      await option.compassEnabled(widget.showCompass);
-    }
-    if (widget.showScaleControl != null) {
-      await option.scaleControlsEnabled(widget.showScaleControl);
-    }
-    if (widget.zoomGesturesEnabled != null) {
-      await option.zoomGesturesEnabled(widget.zoomGesturesEnabled);
-    }
-    if (widget.scrollGesturesEnabled != null) {
-      await option.scrollGesturesEnabled(widget.scrollGesturesEnabled);
-    }
-    if (widget.rotateGestureEnabled != null) {
-      await option.rotateGesturesEnabled(widget.rotateGestureEnabled);
-    }
-    if (widget.tiltGestureEnabled != null) {
-      await option.tiltGesturesEnabled(widget.tiltGestureEnabled);
-    }
-    if (widget.centerCoordinate != null || widget.zoomLevel != null) {
-      final latLng =
-          await com_amap_api_maps_model_LatLng.create__double__double(
-        widget.centerCoordinate?.latitude ?? 39.92,
-        widget.centerCoordinate?.longitude ?? 116.46,
-      );
-      final cameraUpdate = await com_amap_api_maps_model_CameraPosition
-          .fromLatLngZoom(latLng, widget.zoomLevel ?? 10);
-      await option.camera(cameraUpdate);
-    }
-    return option;
-  }
-
   Future<void> _initAndroid() async {
     if (widget.markers != null && widget.markers.isNotEmpty) {
       await _controller?.addMarkers(widget.markers);

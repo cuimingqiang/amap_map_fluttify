@@ -3,6 +3,7 @@ import 'package:amap_map_fluttify_example/utils/next_latlng.dart';
 import 'package:decorated_flutter/decorated_flutter.dart';
 import 'package:demo_widgets/demo_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 final _assetsIcon = AssetImage('images/test_icon.png');
 
@@ -23,7 +24,6 @@ class _CreateMapScreenState extends State<CreateMapScreen> with NextLatLng {
           Flexible(
             flex: 1,
             child: AmapView(
-              mapType: MapType.Satellite,
               showZoomControl: false,
               tilt: 60,
               zoomLevel: 17,
@@ -42,10 +42,9 @@ class _CreateMapScreenState extends State<CreateMapScreen> with NextLatLng {
                 BooleanSetting(
                   head: '是否显示定位',
                   onSelected: (value) async {
-                    await _controller?.showMyLocation(MyLocationOption(
-                      show: value,
-                      iconProvider: AssetImage('images/test_icon.png'),
-                    ));
+                    await Permission.location.request();
+                    await _controller
+                        ?.showMyLocation(MyLocationOption(show: value));
                   },
                 ),
                 DiscreteSetting(

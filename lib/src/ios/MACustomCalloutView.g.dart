@@ -20,17 +20,17 @@ class MACustomCalloutView extends UIView  {
   //endregion
 
   //region creators
-  static Future<MACustomCalloutView> create__() async {
-    final refId = await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('ObjectFactory::createMACustomCalloutView');
+  static Future<MACustomCalloutView> create__({ bool init = true /* ios only */ }) async {
+    final refId = await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('ObjectFactory::createMACustomCalloutView', {'init': init});
     final object = MACustomCalloutView()..refId = refId..tag__ = 'amap_map_fluttify';
     return object;
   }
   
-  static Future<List<MACustomCalloutView>> create_batch__(int length) async {
+  static Future<List<MACustomCalloutView>> create_batch__(int length, { bool init = true /* ios only */ }) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchMACustomCalloutView', {'length': length});
+    final List resultBatch = await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchMACustomCalloutView', {'length': length, 'init': init});
   
     final List<MACustomCalloutView> typedResult = resultBatch.map((result) => MACustomCalloutView()..refId = result..tag__ = 'amap_map_fluttify').toList();
     return typedResult;
