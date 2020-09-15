@@ -158,7 +158,7 @@ mixin _Community on _Holder {
             case MyLocationType.Rotate:
               await locationStyle.myLocationType(
                 com_amap_api_maps_model_MyLocationStyle
-                    .LOCATION_TYPE_LOCATION_ROTATE,
+                    .LOCATION_TYPE_MAP_ROTATE,
               );
               break;
           }
