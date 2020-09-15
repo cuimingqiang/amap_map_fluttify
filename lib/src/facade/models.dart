@@ -16,9 +16,9 @@ class MyLocationOption {
     this.show = true,
     this.myLocationType = MyLocationType.Locate,
     this.interval = Duration.zero,
-    this.strokeColor,
-    this.strokeWidth,
-    this.fillColor,
+    this.strokeColor = Colors.transparent,
+    this.strokeWidth = 0,
+    this.fillColor = Colors.transparent,
     this.iconProvider,
   });
 

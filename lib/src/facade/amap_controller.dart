@@ -174,6 +174,15 @@ mixin _Community on _Holder {
                 await com_amap_api_maps_model_BitmapDescriptorFactory
                     .fromBitmap(bitmap);
             await locationStyle.myLocationIcon(bitmapDescriptor);
+          } else {
+            final imageData = await AssetImage('images/location_pointer.png',
+                    package: 'amap_map_fluttify')
+                .toImageData(createLocalImageConfiguration(state.context));
+            final bitmap = await android_graphics_Bitmap.create(imageData);
+            final bitmapDescriptor =
+                await com_amap_api_maps_model_BitmapDescriptorFactory
+                    .fromBitmap(bitmap);
+            await locationStyle.myLocationIcon(bitmapDescriptor);
           }
           // 边框颜色
           if (option.strokeColor != null) {
@@ -251,6 +260,12 @@ mixin _Community on _Holder {
           // 定位图标
           if (option.iconProvider != null) {
             final imageData = await option.iconProvider
+                .toImageData(createLocalImageConfiguration(state.context));
+            final bitmap = await UIImage.create(imageData);
+            await style.set_image(bitmap);
+          } else {
+            final imageData = await AssetImage('images/location_pointer.png',
+                    package: 'amap_map_fluttify')
                 .toImageData(createLocalImageConfiguration(state.context));
             final bitmap = await UIImage.create(imageData);
             await style.set_image(bitmap);
