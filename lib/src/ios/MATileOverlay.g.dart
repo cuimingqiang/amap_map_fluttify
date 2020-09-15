@@ -20,17 +20,17 @@ class MATileOverlay extends NSObject with MAAnnotation, MAOverlay {
   //endregion
 
   //region creators
-  static Future<MATileOverlay> create__() async {
-    final refId = await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('ObjectFactory::createMATileOverlay');
+  static Future<MATileOverlay> create__({ bool init = true /* ios only */ }) async {
+    final refId = await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('ObjectFactory::createMATileOverlay', {'init': init});
     final object = MATileOverlay()..refId = refId..tag__ = 'amap_map_fluttify';
     return object;
   }
   
-  static Future<List<MATileOverlay>> create_batch__(int length) async {
+  static Future<List<MATileOverlay>> create_batch__(int length, { bool init = true /* ios only */ }) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchMATileOverlay', {'length': length});
+    final List resultBatch = await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchMATileOverlay', {'length': length, 'init': init});
   
     final List<MATileOverlay> typedResult = resultBatch.map((result) => MATileOverlay()..refId = result..tag__ = 'amap_map_fluttify').toList();
     return typedResult;
