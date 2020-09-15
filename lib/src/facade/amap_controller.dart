@@ -174,7 +174,8 @@ mixin _Community on _Holder {
                 await com_amap_api_maps_model_BitmapDescriptorFactory
                     .fromBitmap(bitmap);
             await locationStyle.myLocationIcon(bitmapDescriptor);
-          } else {
+          }
+          /* else {
             final imageData = await AssetImage('images/location_pointer.png',
                     package: 'amap_map_fluttify')
                 .toImageData(createLocalImageConfiguration(state.context));
@@ -183,7 +184,7 @@ mixin _Community on _Holder {
                 await com_amap_api_maps_model_BitmapDescriptorFactory
                     .fromBitmap(bitmap);
             await locationStyle.myLocationIcon(bitmapDescriptor);
-          }
+          }*/
           // 边框颜色
           if (option.strokeColor != null) {
             await locationStyle
@@ -263,13 +264,14 @@ mixin _Community on _Holder {
                 .toImageData(createLocalImageConfiguration(state.context));
             final bitmap = await UIImage.create(imageData);
             await style.set_image(bitmap);
-          } else {
+          }
+          /* else {
             final imageData = await AssetImage('images/location_pointer.png',
                     package: 'amap_map_fluttify')
                 .toImageData(createLocalImageConfiguration(state.context));
             final bitmap = await UIImage.create(imageData);
             await style.set_image(bitmap);
-          }
+          }*/
           // 边框颜色
           if (option.strokeColor != null) {
             final color = await UIColor.create(option.strokeColor);
