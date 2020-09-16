@@ -7,6 +7,7 @@ import 'package:amap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'extensions.dart';
@@ -32,6 +33,9 @@ class AmapService {
   AmapService._();
 
   String _webKey;
+
+  final _channel = MethodChannel('me.yohom/amap_map_fluttify',
+      StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify')));
 
   /// 设置ios和android的app key
   Future<void> init({
@@ -380,6 +384,54 @@ class AmapService {
     var request = await httpClient.getUrl(Uri.parse(url));
     var response = await request.close();
     return consolidateHttpClientResponseBytes(response);
+  }
+
+  /// 轨迹平滑处理
+  Future<List<LatLng>> pathOptimize(
+    List<LatLng> coordinateList, {
+    int intensity = 4,
+  }) async {
+    assert(coordinateList != null);
+    if (coordinateList.isEmpty) return [];
+
+    final latitudeBatch = coordinateList.map((e) => e.latitude).toList();
+    final longitudeBatch = coordinateList.map((e) => e.longitude).toList();
+
+    return platform(
+      android: (pool) async {
+        final pathSmooth =
+            await com_amap_api_maps_utils_PathSmoothTool.create__();
+        await pathSmooth.setIntensity(intensity);
+        final result = await pathSmooth.pathOptimize(
+            await com_amap_api_maps_model_LatLng.create_batch__double__double(
+                latitudeBatch, longitudeBatch));
+
+        final resultLatitudeBatch = await result.get_latitude_batch();
+        final resultLongitudeBatch = await result.get_longitude_batch();
+        return [
+          for (int i = 0; i < result.length; i++)
+            LatLng(resultLatitudeBatch[i], resultLongitudeBatch[i])
+        ];
+      },
+      ios: (pool) async {
+        final pathSmooth = await MASmoothPathTool.create__();
+        await pathSmooth.set_intensity(intensity);
+
+        final pointBatch =
+            await MALonLatPoint.create_batch__(coordinateList.length);
+        await pointBatch.set_lat_batch(latitudeBatch);
+        await pointBatch.set_lon_batch(longitudeBatch);
+
+        final result = await pathSmooth.pathOptimize(pointBatch);
+
+        final resultLatitudeBatch = await result.get_lat_batch();
+        final resultLongitudeBatch = await result.get_lon_batch();
+        return [
+          for (int i = 0; i < result.length; i++)
+            LatLng(resultLatitudeBatch[i], resultLongitudeBatch[i])
+        ];
+      },
+    );
   }
 }
 

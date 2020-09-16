@@ -96,10 +96,10 @@ packages:
   foundation_fluttify:
     dependency: "direct main"
     description:
-      path: "/Users/yohom/Github/Me/All/fluttify/fluttify_infra/foundation_fluttify"
-      relative: false
-    source: path
-    version: "0.9.1+1"
+      name: foundation_fluttify
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.9.3"
   matcher:
     dependency: transitive
     description:
