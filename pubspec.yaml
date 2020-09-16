@@ -19,9 +19,9 @@ dependencies:
   foundation_fluttify: ^0.9.0
   core_location_fluttify: ^0.4.0
 
-#dependency_overrides:
-#  foundation_fluttify:
-#    path: /Users/yohom/Github/Me/All/fluttify/fluttify_infra/foundation_fluttify
+dependency_overrides:
+  foundation_fluttify:
+    path: /Users/yohom/Github/Me/All/fluttify/fluttify_infra/foundation_fluttify
 
 dev_dependencies:
   flutter_test:

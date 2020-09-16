@@ -125,8 +125,12 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                         visible: false,
                       ),
                     );
-                    await marker.startAnimation(
-                        ScaleMarkerAnimation(fromValue: 0, toValue: 1));
+                    await marker.startAnimation(ScaleMarkerAnimation(
+                      fromValue: 0.8,
+                      toValue: 1.2,
+                      duration: Duration(milliseconds: 1000),
+                      repeatCount: 0,
+                    ));
                     await marker.setVisible(true);
                     _markers.add(marker);
                   },
@@ -143,8 +147,12 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                         visible: false,
                       ),
                     );
-                    await marker.startAnimation(
-                        AlphaMarkerAnimation(fromValue: 0, toValue: 1));
+                    await marker.startAnimation(AlphaMarkerAnimation(
+                      fromValue: 0,
+                      toValue: 1,
+                      duration: Duration(milliseconds: 1000),
+                      repeatCount: 0,
+                    ));
                     await marker.setVisible(true);
                     _markers.add(marker);
                   },
@@ -161,8 +169,12 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                         visible: false,
                       ),
                     );
-                    await marker.startAnimation(
-                        RotateMarkerAnimation(fromValue: 0, toValue: 100));
+                    await marker.startAnimation(RotateMarkerAnimation(
+                      fromValue: 0,
+                      toValue: 100,
+                      duration: Duration(milliseconds: 1000),
+                      repeatCount: 0,
+                    ));
                     await marker.setVisible(true);
                     _markers.add(marker);
                   },
