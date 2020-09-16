@@ -93,3 +93,9 @@ enum RideType {
   /// 自行车
   bike,
 }
+
+/// 动画重复方式
+enum RepeatMode {
+  Restart,
+  Reverse,
+}
