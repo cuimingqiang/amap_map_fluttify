@@ -1001,6 +1001,134 @@ extern BOOL enableLog;
         
             methodResult(__result__);
         },
+        @"MASmoothPathTool::pathOptimize": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // list arg
+            NSArray<MALonLatPoint*>* originlist = (NSArray<MALonLatPoint*>*) args[@"originlist"];
+        
+            // ref
+            MASmoothPathTool* ref = (MASmoothPathTool*) args[@"__this__"];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MASmoothPathTool@%@::pathOptimize(%@)", args[@"refId"], args[@"originlist"]);
+            }
+        
+            // invoke native method
+            NSArray<MALonLatPoint*>* result = [ref pathOptimize: originlist];
+        
+            // result
+            // 返回值: 列表
+            NSMutableArray<NSObject*>* __result__ = [NSMutableArray array];
+            for (int __i__ = 0; __i__ < result.count; __i__++) {
+                NSObject* object = [result objectAtIndex:__i__];
+                [__result__ addObject: object];
+            }
+        
+            methodResult(__result__);
+        },
+        @"MASmoothPathTool::kalmanFilterPath": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // list arg
+            NSArray<MALonLatPoint*>* originlist = (NSArray<MALonLatPoint*>*) args[@"originlist"];
+        
+            // ref
+            MASmoothPathTool* ref = (MASmoothPathTool*) args[@"__this__"];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MASmoothPathTool@%@::kalmanFilterPath(%@)", args[@"refId"], args[@"originlist"]);
+            }
+        
+            // invoke native method
+            NSArray<MALonLatPoint*>* result = [ref kalmanFilterPath: originlist];
+        
+            // result
+            // 返回值: 列表
+            NSMutableArray<NSObject*>* __result__ = [NSMutableArray array];
+            for (int __i__ = 0; __i__ < result.count; __i__++) {
+                NSObject* object = [result objectAtIndex:__i__];
+                [__result__ addObject: object];
+            }
+        
+            methodResult(__result__);
+        },
+        @"MASmoothPathTool::removeNoisePoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // list arg
+            NSArray<MALonLatPoint*>* originlist = (NSArray<MALonLatPoint*>*) args[@"originlist"];
+        
+            // ref
+            MASmoothPathTool* ref = (MASmoothPathTool*) args[@"__this__"];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MASmoothPathTool@%@::removeNoisePoint(%@)", args[@"refId"], args[@"originlist"]);
+            }
+        
+            // invoke native method
+            NSArray<MALonLatPoint*>* result = [ref removeNoisePoint: originlist];
+        
+            // result
+            // 返回值: 列表
+            NSMutableArray<NSObject*>* __result__ = [NSMutableArray array];
+            for (int __i__ = 0; __i__ < result.count; __i__++) {
+                NSObject* object = [result objectAtIndex:__i__];
+                [__result__ addObject: object];
+            }
+        
+            methodResult(__result__);
+        },
+        @"MASmoothPathTool::kalmanFilterPoint_curLoc": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // ref arg
+            MALonLatPoint* lastLoc = (MALonLatPoint*) args[@"lastLoc"];
+            // ref arg
+            MALonLatPoint* curLoc = (MALonLatPoint*) args[@"curLoc"];
+        
+            // ref
+            MASmoothPathTool* ref = (MASmoothPathTool*) args[@"__this__"];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MASmoothPathTool@%@::kalmanFilterPoint(%@, %@)", args[@"refId"], args[@"lastLoc"], args[@"curLoc"]);
+            }
+        
+            // invoke native method
+            MALonLatPoint* result = [ref kalmanFilterPoint: lastLoc curLoc: curLoc];
+        
+            // result
+            // return a ref
+            id __result__ = result;
+        
+            methodResult(__result__);
+        },
+        @"MASmoothPathTool::reducerVerticalThreshold": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // list arg
+            NSArray<MALonLatPoint*>* inPoints = (NSArray<MALonLatPoint*>*) args[@"inPoints"];
+        
+            // ref
+            MASmoothPathTool* ref = (MASmoothPathTool*) args[@"__this__"];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MASmoothPathTool@%@::reducerVerticalThreshold(%@)", args[@"refId"], args[@"inPoints"]);
+            }
+        
+            // invoke native method
+            NSArray<MALonLatPoint*>* result = [ref reducerVerticalThreshold: inPoints];
+        
+            // result
+            // 返回值: 列表
+            NSMutableArray<NSObject*>* __result__ = [NSMutableArray array];
+            for (int __i__ = 0; __i__ < result.count; __i__++) {
+                NSObject* object = [result objectAtIndex:__i__];
+                [__result__ addObject: object];
+            }
+        
+            methodResult(__result__);
+        },
         @"MAHeatMapVectorOverlayRender::initWithHeatOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
@@ -5047,143 +5175,6 @@ extern BOOL enableLog;
                 // result
                 // return a ref
                 id __result__ = result;
-        
-                [resultList addObject:__result__];
-            }
-        
-            methodResult(resultList);
-        },
-        @"MACircle::circleWithCenterCoordinate_radius_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* coordValue = (NSValue*) args[@"coord"];
-                CLLocationCoordinate2D coord;
-                [coordValue getValue:&coord];
-                // jsonable arg
-                CLLocationDistance radius = [args[@"radius"] doubleValue];
-        
-                // ref
-        
-        
-                // invoke native method
-                MACircle* result = [MACircle circleWithCenterCoordinate: coord radius: radius];
-        
-                // result
-                // return a ref
-                id __result__ = result;
-        
-                [resultList addObject:__result__];
-            }
-        
-            methodResult(resultList);
-        },
-        @"MACircle::circleWithMapRect_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* mapRectValue = (NSValue*) args[@"mapRect"];
-                MAMapRect mapRect;
-                [mapRectValue getValue:&mapRect];
-        
-                // ref
-        
-        
-                // invoke native method
-                MACircle* result = [MACircle circleWithMapRect: mapRect];
-        
-                // result
-                // return a ref
-                id __result__ = result;
-        
-                [resultList addObject:__result__];
-            }
-        
-            methodResult(resultList);
-        },
-        @"MACircle::setCircleWithCenterCoordinate_radius_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* coordValue = (NSValue*) args[@"coord"];
-                CLLocationCoordinate2D coord;
-                [coordValue getValue:&coord];
-                // jsonable arg
-                CLLocationDistance radius = [args[@"radius"] doubleValue];
-        
-                // ref
-                MACircle* ref = (MACircle*) args[@"__this__"];
-        
-                // invoke native method
-                BOOL result = [ref setCircleWithCenterCoordinate: coord radius: radius];
-        
-                // result
-                // 返回值: Value
-                NSObject* __result__ = @(result);
-        
-                [resultList addObject:__result__];
-            }
-        
-            methodResult(resultList);
-        },
-        @"MAArcRenderer::initWithArc_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // ref arg
-                MAArc* arc = (MAArc*) args[@"arc"];
-        
-                // ref
-                MAArcRenderer* ref = (MAArcRenderer*) args[@"__this__"];
-        
-                // invoke native method
-                MAArcRenderer* result = [ref initWithArc: arc];
-        
-                // result
-                // return a ref
-                id __result__ = result;
-        
-                [resultList addObject:__result__];
-            }
-        
-            methodResult(resultList);
-        },
-        @"MAAnnotation::setCoordinate_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* newCoordinateValue = (NSValue*) args[@"newCoordinate"];
-                CLLocationCoordinate2D newCoordinate;
-                [newCoordinateValue getValue:&newCoordinate];
-        
-                // ref
-                id<MAAnnotation> ref = (id<MAAnnotation>) args[@"__this__"];
-        
-                // invoke native method
-                [ref setCoordinate : newCoordinate];
-        
-                // result
-                // 无返回值
-                NSString* __result__ = @"success";
         
                 [resultList addObject:__result__];
             }

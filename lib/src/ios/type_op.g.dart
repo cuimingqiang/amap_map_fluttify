@@ -116,6 +116,14 @@ extension TypeOpAmapMapFluttifyIOS on Object {
       final result = await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('RefClass::isKindOfMAMultiTexturePolylineRenderer', {'__this__': this});
       return result;
     }
+    else if (T == MALonLatPoint) {
+      final result = await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('RefClass::isKindOfMALonLatPoint', {'__this__': this});
+      return result;
+    }
+    else if (T == MASmoothPathTool) {
+      final result = await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('RefClass::isKindOfMASmoothPathTool', {'__this__': this});
+      return result;
+    }
     else if (T == MAOfflineProvince) {
       final result = await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('RefClass::isKindOfMAOfflineProvince', {'__this__': this});
       return result;
@@ -521,6 +529,12 @@ extension TypeOpAmapMapFluttifyIOS on Object {
     }
     else if (T == MAMultiTexturePolylineRenderer) {
       return (MAMultiTexturePolylineRenderer()..refId = (this is Ref ? (this as Ref).refId : this as String)..tag__ = 'amap_map_fluttify') as T;
+    }
+    else if (T == MALonLatPoint) {
+      return (MALonLatPoint()..refId = (this is Ref ? (this as Ref).refId : this as String)..tag__ = 'amap_map_fluttify') as T;
+    }
+    else if (T == MASmoothPathTool) {
+      return (MASmoothPathTool()..refId = (this is Ref ? (this as Ref).refId : this as String)..tag__ = 'amap_map_fluttify') as T;
     }
     else if (T == MAOfflineProvince) {
       return (MAOfflineProvince()..refId = (this is Ref ? (this as Ref).refId : this as String)..tag__ = 'amap_map_fluttify') as T;

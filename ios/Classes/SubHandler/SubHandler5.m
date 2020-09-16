@@ -16,6 +16,441 @@ extern BOOL enableLog;
 - (NSDictionary<NSString*, Handler>*) getSubHandler5 {
     __weak __typeof(self)weakSelf = self;
     return @{
+        @"MAMultiPointOverlayRenderer::set_pointSize": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAMultiPointOverlayRenderer::set_pointSize");
+            }
+        
+            // args
+            // struct arg
+            NSValue* pointSizeValue = (NSValue*) args[@"pointSize"];
+            CGSize pointSize;
+            [pointSizeValue getValue:&pointSize];
+        
+            // ref
+            MAMultiPointOverlayRenderer* ref = (MAMultiPointOverlayRenderer*) args[@"__this__"];
+        
+            ref.pointSize = pointSize;
+            methodResult(@"success");
+        },
+        
+        @"MAMultiPointOverlayRenderer::set_anchor": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAMultiPointOverlayRenderer::set_anchor");
+            }
+        
+            // args
+            // struct arg
+            NSValue* anchorValue = (NSValue*) args[@"anchor"];
+            CGPoint anchor;
+            [anchorValue getValue:&anchor];
+        
+            // ref
+            MAMultiPointOverlayRenderer* ref = (MAMultiPointOverlayRenderer*) args[@"__this__"];
+        
+            ref.anchor = anchor;
+            methodResult(@"success");
+        },
+        
+        @"MAPolylineRenderer::set_is3DArrowLine": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAPolylineRenderer::set_is3DArrowLine");
+            }
+        
+            // args
+            // jsonable arg
+            BOOL is3DArrowLine = [args[@"is3DArrowLine"] boolValue];
+        
+            // ref
+            MAPolylineRenderer* ref = (MAPolylineRenderer*) args[@"__this__"];
+        
+            ref.is3DArrowLine = is3DArrowLine;
+            methodResult(@"success");
+        },
+        
+        @"MAPolylineRenderer::set_sideColor": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAPolylineRenderer::set_sideColor");
+            }
+        
+            // args
+            // ref arg
+            UIColor* sideColor = (UIColor*) args[@"sideColor"];
+        
+            // ref
+            MAPolylineRenderer* ref = (MAPolylineRenderer*) args[@"__this__"];
+        
+            ref.sideColor = sideColor;
+            methodResult(@"success");
+        },
+        
+        @"MAPolylineRenderer::set_userInteractionEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAPolylineRenderer::set_userInteractionEnabled");
+            }
+        
+            // args
+            // jsonable arg
+            BOOL userInteractionEnabled = [args[@"userInteractionEnabled"] boolValue];
+        
+            // ref
+            MAPolylineRenderer* ref = (MAPolylineRenderer*) args[@"__this__"];
+        
+            ref.userInteractionEnabled = userInteractionEnabled;
+            methodResult(@"success");
+        },
+        
+        @"MAPolylineRenderer::set_hitTestInset": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAPolylineRenderer::set_hitTestInset");
+            }
+        
+            // args
+            // jsonable arg
+            CGFloat hitTestInset = [args[@"hitTestInset"] floatValue];
+        
+            // ref
+            MAPolylineRenderer* ref = (MAPolylineRenderer*) args[@"__this__"];
+        
+            ref.hitTestInset = hitTestInset;
+            methodResult(@"success");
+        },
+        
+        @"MAPolylineRenderer::set_showRangeEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAPolylineRenderer::set_showRangeEnabled");
+            }
+        
+            // args
+            // jsonable arg
+            BOOL showRangeEnabled = [args[@"showRangeEnabled"] boolValue];
+        
+            // ref
+            MAPolylineRenderer* ref = (MAPolylineRenderer*) args[@"__this__"];
+        
+            ref.showRangeEnabled = showRangeEnabled;
+            methodResult(@"success");
+        },
+        
+        @"MAPolylineRenderer::set_showRange": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAPolylineRenderer::set_showRange");
+            }
+        
+            // args
+            // struct arg
+            NSValue* showRangeValue = (NSValue*) args[@"showRange"];
+            MAPathShowRange showRange;
+            [showRangeValue getValue:&showRange];
+        
+            // ref
+            MAPolylineRenderer* ref = (MAPolylineRenderer*) args[@"__this__"];
+        
+            ref.showRange = showRange;
+            methodResult(@"success");
+        },
+        
+        @"MAShape::set_title": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAShape::set_title");
+            }
+        
+            // args
+            // jsonable arg
+            NSString* title = (NSString*) args[@"title"];
+        
+            // ref
+            MAShape* ref = (MAShape*) args[@"__this__"];
+        
+            ref.title = title;
+            methodResult(@"success");
+        },
+        
+        @"MAShape::set_subtitle": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAShape::set_subtitle");
+            }
+        
+            // args
+            // jsonable arg
+            NSString* subtitle = (NSString*) args[@"subtitle"];
+        
+            // ref
+            MAShape* ref = (MAShape*) args[@"__this__"];
+        
+            ref.subtitle = subtitle;
+            methodResult(@"success");
+        },
+        
+        @"MAAnnotationView::set_zIndex": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAAnnotationView::set_zIndex");
+            }
+        
+            // args
+            // jsonable arg
+            NSInteger zIndex = [args[@"zIndex"] longValue];
+        
+            // ref
+            MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
+        
+            ref.zIndex = zIndex;
+            methodResult(@"success");
+        },
+        
+        @"MAAnnotationView::set_annotation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAAnnotationView::set_annotation");
+            }
+        
+            // args
+            // ref arg
+            id<MAAnnotation> annotation = (id<MAAnnotation>) args[@"annotation"];
+        
+            // ref
+            MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
+        
+            ref.annotation = annotation;
+            methodResult(@"success");
+        },
+        
+        @"MAAnnotationView::set_image": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAAnnotationView::set_image");
+            }
+        
+            // args
+            // ref arg
+            UIImage* image = (UIImage*) args[@"image"];
+        
+            // ref
+            MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
+        
+            ref.image = image;
+            methodResult(@"success");
+        },
+        
+        @"MAAnnotationView::set_customCalloutView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAAnnotationView::set_customCalloutView");
+            }
+        
+            // args
+            // ref arg
+            MACustomCalloutView* customCalloutView = (MACustomCalloutView*) args[@"customCalloutView"];
+        
+            // ref
+            MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
+        
+            ref.customCalloutView = customCalloutView;
+            methodResult(@"success");
+        },
+        
+        @"MAAnnotationView::set_centerOffset": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAAnnotationView::set_centerOffset");
+            }
+        
+            // args
+            // struct arg
+            NSValue* centerOffsetValue = (NSValue*) args[@"centerOffset"];
+            CGPoint centerOffset;
+            [centerOffsetValue getValue:&centerOffset];
+        
+            // ref
+            MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
+        
+            ref.centerOffset = centerOffset;
+            methodResult(@"success");
+        },
+        
+        @"MAAnnotationView::set_calloutOffset": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAAnnotationView::set_calloutOffset");
+            }
+        
+            // args
+            // struct arg
+            NSValue* calloutOffsetValue = (NSValue*) args[@"calloutOffset"];
+            CGPoint calloutOffset;
+            [calloutOffsetValue getValue:&calloutOffset];
+        
+            // ref
+            MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
+        
+            ref.calloutOffset = calloutOffset;
+            methodResult(@"success");
+        },
+        
+        @"MAAnnotationView::set_enabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAAnnotationView::set_enabled");
+            }
+        
+            // args
+            // jsonable arg
+            BOOL enabled = [args[@"enabled"] boolValue];
+        
+            // ref
+            MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
+        
+            ref.enabled = enabled;
+            methodResult(@"success");
+        },
+        
+        @"MAAnnotationView::set_highlighted": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAAnnotationView::set_highlighted");
+            }
+        
+            // args
+            // jsonable arg
+            BOOL highlighted = [args[@"highlighted"] boolValue];
+        
+            // ref
+            MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
+        
+            ref.highlighted = highlighted;
+            methodResult(@"success");
+        },
+        
+        @"MAAnnotationView::set_selected": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAAnnotationView::set_selected");
+            }
+        
+            // args
+            // jsonable arg
+            BOOL selected = [args[@"selected"] boolValue];
+        
+            // ref
+            MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
+        
+            ref.selected = selected;
+            methodResult(@"success");
+        },
+        
+        @"MAAnnotationView::set_canShowCallout": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAAnnotationView::set_canShowCallout");
+            }
+        
+            // args
+            // jsonable arg
+            BOOL canShowCallout = [args[@"canShowCallout"] boolValue];
+        
+            // ref
+            MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
+        
+            ref.canShowCallout = canShowCallout;
+            methodResult(@"success");
+        },
+        
+        @"MAAnnotationView::set_leftCalloutAccessoryView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAAnnotationView::set_leftCalloutAccessoryView");
+            }
+        
+            // args
+            // ref arg
+            UIView* leftCalloutAccessoryView = (UIView*) args[@"leftCalloutAccessoryView"];
+        
+            // ref
+            MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
+        
+            ref.leftCalloutAccessoryView = leftCalloutAccessoryView;
+            methodResult(@"success");
+        },
+        
+        @"MAAnnotationView::set_rightCalloutAccessoryView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAAnnotationView::set_rightCalloutAccessoryView");
+            }
+        
+            // args
+            // ref arg
+            UIView* rightCalloutAccessoryView = (UIView*) args[@"rightCalloutAccessoryView"];
+        
+            // ref
+            MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
+        
+            ref.rightCalloutAccessoryView = rightCalloutAccessoryView;
+            methodResult(@"success");
+        },
+        
+        @"MAAnnotationView::set_draggable": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAAnnotationView::set_draggable");
+            }
+        
+            // args
+            // jsonable arg
+            BOOL draggable = [args[@"draggable"] boolValue];
+        
+            // ref
+            MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
+        
+            ref.draggable = draggable;
+            methodResult(@"success");
+        },
+        
+        @"MAAnnotationView::set_dragState": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAAnnotationView::set_dragState");
+            }
+        
+            // args
+            // enum arg
+            MAAnnotationViewDragState dragState = (MAAnnotationViewDragState) [args[@"dragState"] integerValue];
+        
+            // ref
+            MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
+        
+            ref.dragState = dragState;
+            methodResult(@"success");
+        },
+        
+        @"MAAnnotationView::set_canAdjustPositon": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAAnnotationView::set_canAdjustPositon");
+            }
+        
+            // args
+            // jsonable arg
+            BOOL canAdjustPositon = [args[@"canAdjustPositon"] boolValue];
+        
+            // ref
+            MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
+        
+            ref.canAdjustPositon = canAdjustPositon;
+            methodResult(@"success");
+        },
+        
         @"MATileOverlay::set_tileSize": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // print log
             if (enableLog) {
@@ -2992,6 +3427,96 @@ extern BOOL enableLog;
             methodResult(@"success");
         },
         
+        @"MALonLatPoint::set_lat_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                double lat = [args[@"lat"] doubleValue];
+        
+                // ref
+                MALonLatPoint* ref = (MALonLatPoint*) args[@"__this__"];
+        
+                ref.lat = lat;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"MALonLatPoint::set_lon_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                double lon = [args[@"lon"] doubleValue];
+        
+                // ref
+                MALonLatPoint* ref = (MALonLatPoint*) args[@"__this__"];
+        
+                ref.lon = lon;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"MASmoothPathTool::set_intensity_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                int intensity = [args[@"intensity"] intValue];
+        
+                // ref
+                MASmoothPathTool* ref = (MASmoothPathTool*) args[@"__this__"];
+        
+                ref.intensity = intensity;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"MASmoothPathTool::set_threshHold_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                float threshHold = [args[@"threshHold"] floatValue];
+        
+                // ref
+                MASmoothPathTool* ref = (MASmoothPathTool*) args[@"__this__"];
+        
+                ref.threshHold = threshHold;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"MASmoothPathTool::set_noiseThreshhold_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                int noiseThreshhold = [args[@"noiseThreshhold"] intValue];
+        
+                // ref
+                MASmoothPathTool* ref = (MASmoothPathTool*) args[@"__this__"];
+        
+                ref.noiseThreshhold = noiseThreshhold;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
         @"MAPathShowRange::set_begin_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
             for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
@@ -3044,558 +3569,6 @@ extern BOOL enableLog;
                 MAMultiPolyline* ref = (MAMultiPolyline*) args[@"__this__"];
         
                 ref.drawStyleIndexes = drawStyleIndexes;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAMultiPointOverlayRenderer::set_icon_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // ref arg
-                UIImage* icon = (UIImage*) args[@"icon"];
-        
-                // ref
-                MAMultiPointOverlayRenderer* ref = (MAMultiPointOverlayRenderer*) args[@"__this__"];
-        
-                ref.icon = icon;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAMultiPointOverlayRenderer::set_pointSize_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* pointSizeValue = (NSValue*) args[@"pointSize"];
-                CGSize pointSize;
-                [pointSizeValue getValue:&pointSize];
-        
-                // ref
-                MAMultiPointOverlayRenderer* ref = (MAMultiPointOverlayRenderer*) args[@"__this__"];
-        
-                ref.pointSize = pointSize;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAMultiPointOverlayRenderer::set_anchor_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* anchorValue = (NSValue*) args[@"anchor"];
-                CGPoint anchor;
-                [anchorValue getValue:&anchor];
-        
-                // ref
-                MAMultiPointOverlayRenderer* ref = (MAMultiPointOverlayRenderer*) args[@"__this__"];
-        
-                ref.anchor = anchor;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAPolylineRenderer::set_is3DArrowLine_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                BOOL is3DArrowLine = [args[@"is3DArrowLine"] boolValue];
-        
-                // ref
-                MAPolylineRenderer* ref = (MAPolylineRenderer*) args[@"__this__"];
-        
-                ref.is3DArrowLine = is3DArrowLine;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAPolylineRenderer::set_sideColor_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // ref arg
-                UIColor* sideColor = (UIColor*) args[@"sideColor"];
-        
-                // ref
-                MAPolylineRenderer* ref = (MAPolylineRenderer*) args[@"__this__"];
-        
-                ref.sideColor = sideColor;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAPolylineRenderer::set_userInteractionEnabled_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                BOOL userInteractionEnabled = [args[@"userInteractionEnabled"] boolValue];
-        
-                // ref
-                MAPolylineRenderer* ref = (MAPolylineRenderer*) args[@"__this__"];
-        
-                ref.userInteractionEnabled = userInteractionEnabled;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAPolylineRenderer::set_hitTestInset_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                CGFloat hitTestInset = [args[@"hitTestInset"] floatValue];
-        
-                // ref
-                MAPolylineRenderer* ref = (MAPolylineRenderer*) args[@"__this__"];
-        
-                ref.hitTestInset = hitTestInset;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAPolylineRenderer::set_showRangeEnabled_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                BOOL showRangeEnabled = [args[@"showRangeEnabled"] boolValue];
-        
-                // ref
-                MAPolylineRenderer* ref = (MAPolylineRenderer*) args[@"__this__"];
-        
-                ref.showRangeEnabled = showRangeEnabled;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAPolylineRenderer::set_showRange_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* showRangeValue = (NSValue*) args[@"showRange"];
-                MAPathShowRange showRange;
-                [showRangeValue getValue:&showRange];
-        
-                // ref
-                MAPolylineRenderer* ref = (MAPolylineRenderer*) args[@"__this__"];
-        
-                ref.showRange = showRange;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAShape::set_title_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                NSString* title = (NSString*) args[@"title"];
-        
-                // ref
-                MAShape* ref = (MAShape*) args[@"__this__"];
-        
-                ref.title = title;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAShape::set_subtitle_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                NSString* subtitle = (NSString*) args[@"subtitle"];
-        
-                // ref
-                MAShape* ref = (MAShape*) args[@"__this__"];
-        
-                ref.subtitle = subtitle;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAAnnotationView::set_zIndex_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                NSInteger zIndex = [args[@"zIndex"] longValue];
-        
-                // ref
-                MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
-        
-                ref.zIndex = zIndex;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAAnnotationView::set_annotation_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // ref arg
-                id<MAAnnotation> annotation = (id<MAAnnotation>) args[@"annotation"];
-        
-                // ref
-                MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
-        
-                ref.annotation = annotation;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAAnnotationView::set_image_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // ref arg
-                UIImage* image = (UIImage*) args[@"image"];
-        
-                // ref
-                MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
-        
-                ref.image = image;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAAnnotationView::set_customCalloutView_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // ref arg
-                MACustomCalloutView* customCalloutView = (MACustomCalloutView*) args[@"customCalloutView"];
-        
-                // ref
-                MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
-        
-                ref.customCalloutView = customCalloutView;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAAnnotationView::set_centerOffset_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* centerOffsetValue = (NSValue*) args[@"centerOffset"];
-                CGPoint centerOffset;
-                [centerOffsetValue getValue:&centerOffset];
-        
-                // ref
-                MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
-        
-                ref.centerOffset = centerOffset;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAAnnotationView::set_calloutOffset_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* calloutOffsetValue = (NSValue*) args[@"calloutOffset"];
-                CGPoint calloutOffset;
-                [calloutOffsetValue getValue:&calloutOffset];
-        
-                // ref
-                MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
-        
-                ref.calloutOffset = calloutOffset;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAAnnotationView::set_enabled_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                BOOL enabled = [args[@"enabled"] boolValue];
-        
-                // ref
-                MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
-        
-                ref.enabled = enabled;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAAnnotationView::set_highlighted_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                BOOL highlighted = [args[@"highlighted"] boolValue];
-        
-                // ref
-                MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
-        
-                ref.highlighted = highlighted;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAAnnotationView::set_selected_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                BOOL selected = [args[@"selected"] boolValue];
-        
-                // ref
-                MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
-        
-                ref.selected = selected;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAAnnotationView::set_canShowCallout_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                BOOL canShowCallout = [args[@"canShowCallout"] boolValue];
-        
-                // ref
-                MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
-        
-                ref.canShowCallout = canShowCallout;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAAnnotationView::set_leftCalloutAccessoryView_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // ref arg
-                UIView* leftCalloutAccessoryView = (UIView*) args[@"leftCalloutAccessoryView"];
-        
-                // ref
-                MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
-        
-                ref.leftCalloutAccessoryView = leftCalloutAccessoryView;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAAnnotationView::set_rightCalloutAccessoryView_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // ref arg
-                UIView* rightCalloutAccessoryView = (UIView*) args[@"rightCalloutAccessoryView"];
-        
-                // ref
-                MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
-        
-                ref.rightCalloutAccessoryView = rightCalloutAccessoryView;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAAnnotationView::set_draggable_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                BOOL draggable = [args[@"draggable"] boolValue];
-        
-                // ref
-                MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
-        
-                ref.draggable = draggable;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAAnnotationView::set_dragState_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // enum arg
-                MAAnnotationViewDragState dragState = (MAAnnotationViewDragState) [args[@"dragState"] integerValue];
-        
-                // ref
-                MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
-        
-                ref.dragState = dragState;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAAnnotationView::set_canAdjustPositon_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                BOOL canAdjustPositon = [args[@"canAdjustPositon"] boolValue];
-        
-                // ref
-                MAAnnotationView* ref = (MAAnnotationView*) args[@"__this__"];
-        
-                ref.canAdjustPositon = canAdjustPositon;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MATileOverlay::set_tileSize_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* tileSizeValue = (NSValue*) args[@"tileSize"];
-                CGSize tileSize;
-                [tileSizeValue getValue:&tileSize];
-        
-                // ref
-                MATileOverlay* ref = (MATileOverlay*) args[@"__this__"];
-        
-                ref.tileSize = tileSize;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MATileOverlay::set_minimumZ_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                NSInteger minimumZ = [args[@"minimumZ"] longValue];
-        
-                // ref
-                MATileOverlay* ref = (MATileOverlay*) args[@"__this__"];
-        
-                ref.minimumZ = minimumZ;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MATileOverlay::set_maximumZ_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                NSInteger maximumZ = [args[@"maximumZ"] longValue];
-        
-                // ref
-                MATileOverlay* ref = (MATileOverlay*) args[@"__this__"];
-        
-                ref.maximumZ = maximumZ;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MATileOverlay::set_canReplaceMapContent_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                BOOL canReplaceMapContent = [args[@"canReplaceMapContent"] boolValue];
-        
-                // ref
-                MATileOverlay* ref = (MATileOverlay*) args[@"__this__"];
-        
-                ref.canReplaceMapContent = canReplaceMapContent;
                 methodResult(@"success");
             }
         

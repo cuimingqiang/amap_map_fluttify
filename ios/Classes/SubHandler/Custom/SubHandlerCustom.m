@@ -14,7 +14,30 @@ extern BOOL enableLog;
 @implementation AmapMapFluttifyPlugin (SubHandlerCustom)
 - (NSDictionary<NSString*, Handler>*) getSubHandlerCustom {
     return @{
-
+        @"MAMapRectIsEmpty::MAMapRectIsEmpty": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* rectValue = (NSValue*) args[@"rect"];
+            MAMapRect rect;
+            [rectValue getValue:&rect];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMapRectIsEmpty::MAMapRectIsEmpty(%@)", args[@"rect"]);
+            }
+        
+            // invoke native method
+            BOOL result = MAMapRectIsEmpty(rect);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
     };
 }
 
