@@ -7,21 +7,21 @@ packages:
       name: amap_core_fluttify
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.11.0"
+    version: "0.12.0"
   amap_location_fluttify:
     dependency: "direct main"
     description:
       name: amap_location_fluttify
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.16.0"
+    version: "0.17.0"
   amap_search_fluttify:
     dependency: "direct main"
     description:
       name: amap_search_fluttify
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.0"
+    version: "0.14.0"
   async:
     dependency: transitive
     description:
