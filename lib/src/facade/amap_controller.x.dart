@@ -114,9 +114,9 @@ extension AmapControllerX on AmapController {
               Float64List.fromList(option.gradient.stops),
             ),
           );
-          if (option.gradient.radius != null) {
-            await builder.radius(option.gradient.radius?.toInt());
-          }
+          // if (option.gradient.radius != null) {
+          //   await builder.radius(option.gradient.radius?.toInt());
+          // }
         }
 
         // 创建Tile Overlay选项
@@ -161,7 +161,7 @@ extension AmapControllerX on AmapController {
         // 添加结点数据
         await overlay.set_data(nodeList);
         if (option.gradient != null) {
-          final gradient = await MAHeatMapGradient.create__();
+          final gradient = await MAHeatMapGradient.create__(init: false);
           await gradient.initWithColor_andWithStartPoints(
             <UIColor>[
               for (final color in option.gradient.colors)
@@ -171,9 +171,9 @@ extension AmapControllerX on AmapController {
           );
           await overlay.set_gradient(gradient);
 
-          if (option.gradient.radius != null) {
-            await overlay.set_radius(option.gradient.radius.toInt());
-          }
+          // if (option.gradient.radius != null) {
+          //   await overlay.set_radius(option.gradient.radius.toInt());
+          // }
         }
 
         // 添加热力图
