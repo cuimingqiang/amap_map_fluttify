@@ -20,7 +20,7 @@ extension AmapControllerX on AmapController {
         .toImageData(createLocalImageConfiguration(state.context));
     return platform(
       android: (pool) async {
-        final map = await androidController.getMap();
+        androidMap ??= await androidController.getMap();
 
         final groundOverlayOption =
             await com_amap_api_maps_model_GroundOverlayOptions.create__();
@@ -45,11 +45,11 @@ extension AmapControllerX on AmapController {
         await groundOverlayOption.image(descriptor);
 
         // 进行添加
-        final groundOverlay = await map.addGroundOverlay(groundOverlayOption);
+        final groundOverlay =
+            await androidMap.addGroundOverlay(groundOverlayOption);
 
         bitmap.recycle();
         pool
-          ..add(map)
           ..add(groundOverlayOption)
           ..add(southWestPoint)
           ..add(descriptor)
@@ -94,7 +94,7 @@ extension AmapControllerX on AmapController {
     assert(option != null);
     return platform(
       android: (pool) async {
-        final map = await androidController.getMap();
+        androidMap ??= await androidController.getMap();
 
         // 创建热力图Provider
         final builder =
@@ -125,10 +125,9 @@ extension AmapControllerX on AmapController {
         await tileOverlayOption.tileProvider(await builder.build());
 
         // 添加热力图
-        final heatmap = await map.addTileOverlay(tileOverlayOption);
+        final heatmap = await androidMap.addTileOverlay(tileOverlayOption);
 
         pool
-          ..add(map)
           ..add(builder)
           ..addAll(latLngList)
           ..add(tileOverlayOption);
@@ -210,7 +209,7 @@ extension AmapControllerX on AmapController {
 
     await platform(
       android: (pool) async {
-        final map = await androidController.getMap();
+        androidMap ??= await androidController.getMap();
 
         // 西南角
         final southWest = await com_amap_api_maps_model_LatLng
@@ -235,17 +234,13 @@ extension AmapControllerX on AmapController {
         );
 
         if (animated) {
-          await map.animateCamera__com_amap_api_maps_CameraUpdate(cameraUpdate);
+          await androidMap
+              .animateCamera__com_amap_api_maps_CameraUpdate(cameraUpdate);
         } else {
-          await map.moveCamera(cameraUpdate);
+          await androidMap.moveCamera(cameraUpdate);
         }
 
-        pool
-          ..add(map)
-          ..add(southWest)
-          ..add(northEast)
-          ..add(rect)
-          ..add(cameraUpdate);
+        pool..add(southWest)..add(northEast)..add(rect)..add(cameraUpdate);
       },
       ios: (pool) async {
         // 由于屏幕坐标的(0, 0)左上角, 所以需要西北角和东南角
@@ -322,7 +317,7 @@ extension AmapControllerX on AmapController {
     }
     await platform(
       android: (pool) async {
-        final map = await androidController.getMap();
+        androidMap ??= await androidController.getMap();
 
         // 构造选项
         final option =
@@ -332,9 +327,9 @@ extension AmapControllerX on AmapController {
         if (styleExtra != null) await option.setStyleExtraData(styleExtra);
         if (texture != null) await option.setStyleTextureData(texture);
 
-        await map.setCustomMapStyle(option);
+        await androidMap.setCustomMapStyle(option);
 
-        pool..add(map)..add(option);
+        pool..add(option);
       },
       ios: (pool) async {
         // 构造选项
@@ -370,12 +365,10 @@ extension AmapControllerX on AmapController {
   ) async {
     await platform(
       android: (pool) async {
-        final map = await androidController.getMap();
+        androidMap ??= await androidController.getMap();
 
-        await map.setOnMultiPointClickListener(
+        await androidMap.setOnMultiPointClickListener(
             androidMapDelegate..onMultiPointClicked = onMultiPointClicked);
-
-        pool..add(map);
       },
       ios: (pool) async {
         await iosController.set_delegate(
@@ -398,11 +391,11 @@ extension AmapControllerX on AmapController {
     return platform(
       android: (pool) async {
         // 获取地图
-        final map = await androidController.getMap();
+        androidMap ??= await androidController.getMap();
 
         // 创建平滑移动marker对象
         final marker = await com_amap_api_maps_utils_overlay_SmoothMoveMarker
-            .create__com_amap_api_maps_AMap(map);
+            .create__com_amap_api_maps_AMap(androidMap);
 
         // 创建marker的图标
         final bitmap = await android_graphics_Bitmap.create(iconData);
@@ -425,7 +418,6 @@ extension AmapControllerX on AmapController {
         await marker.startSmoothMove();
 
         pool
-          ..add(map)
           ..add(bitmap)
           ..add(bitmapDescriptor)
           ..addAll(points);
@@ -493,7 +485,7 @@ extension AmapControllerX on AmapController {
 
     return platform(
       android: (pool) async {
-        final map = await androidController.getMap();
+        androidMap ??= await androidController.getMap();
 
         final overlayOptions =
             await com_amap_api_maps_model_MultiPointOverlayOptions.create__();
@@ -513,7 +505,7 @@ extension AmapControllerX on AmapController {
         }
 
         final multiPointOverlay =
-            await map.addMultiPointOverlay(overlayOptions);
+            await androidMap.addMultiPointOverlay(overlayOptions);
 
         final multiPointList = await com_amap_api_maps_model_MultiPointItem
             .create_batch__com_amap_api_maps_model_LatLng(latLngBatch);
@@ -524,9 +516,7 @@ extension AmapControllerX on AmapController {
 
         await multiPointOverlay.setItems(multiPointList);
 
-        pool
-          ..add(map)
-          ..addAll(latLngBatch);
+        pool..addAll(latLngBatch);
         return MultiPointOverlay.android(multiPointOverlay);
       },
       ios: (pool) async {
@@ -569,17 +559,18 @@ extension AmapControllerX on AmapController {
   Future<void> setBearing(double bearing, {bool animated = true}) async {
     return platform(
       android: (pool) async {
-        final map = await androidController.getMap();
+        androidMap ??= await androidController.getMap();
 
         final update =
             await com_amap_api_maps_CameraUpdateFactory.changeBearing(bearing);
         if (animated) {
-          await map.animateCamera__com_amap_api_maps_CameraUpdate(update);
+          await androidMap
+              .animateCamera__com_amap_api_maps_CameraUpdate(update);
         } else {
-          await map.moveCamera(update);
+          await androidMap.moveCamera(update);
         }
 
-        pool..add(map)..add(update);
+        pool..add(update);
       },
       ios: (pool) async {
         final currentRotation = await iosController.get_rotationDegree();
@@ -604,17 +595,18 @@ extension AmapControllerX on AmapController {
   Future<void> setTilt(double tilt, {bool animated = true}) async {
     return platform(
       android: (pool) async {
-        final map = await androidController.getMap();
+        androidMap ??= await androidController.getMap();
 
         final update =
             await com_amap_api_maps_CameraUpdateFactory.changeTilt(tilt);
         if (animated) {
-          await map.animateCamera__com_amap_api_maps_CameraUpdate(update);
+          await androidMap
+              .animateCamera__com_amap_api_maps_CameraUpdate(update);
         } else {
-          await map.moveCamera(update);
+          await androidMap.moveCamera(update);
         }
 
-        pool..add(map)..add(update);
+        pool..add(update);
       },
       ios: (pool) async {
         await iosController.setCameraDegree_animated_duration(
@@ -630,10 +622,9 @@ extension AmapControllerX on AmapController {
   Future<void> showBuildings(bool show) async {
     return platform(
       android: (pool) async {
-        final map = await androidController.getMap();
+        androidMap ??= await androidController.getMap();
 
-        await map.showBuildings(show);
-        pool..add(map);
+        await androidMap.showBuildings(show);
       },
       ios: (pool) async {
         await iosController.set_showsBuildings(show);
@@ -645,10 +636,9 @@ extension AmapControllerX on AmapController {
   Future<void> showMapText(bool show) async {
     return platform(
       android: (pool) async {
-        final map = await androidController.getMap();
+        androidMap ??= await androidController.getMap();
 
-        await map.showMapText(show);
-        pool..add(map);
+        await androidMap.showMapText(show);
       },
       ios: (pool) async {
         await iosController.set_showsLabels(show);
@@ -667,7 +657,7 @@ extension AmapControllerX on AmapController {
   }) async {
     return platform(
       android: (pool) async {
-        final map = await androidController.getMap();
+        androidMap ??= await androidController.getMap();
 
         final builder = await com_amap_api_maps_model_CameraPosition.builder();
         if (coordinate != null) {
@@ -691,17 +681,17 @@ extension AmapControllerX on AmapController {
         final update = await com_amap_api_maps_CameraUpdateFactory
             .newCameraPosition(await builder.build());
         if (animated) {
-          await map
+          await androidMap
               .animateCamera__com_amap_api_maps_CameraUpdate__int__com_amap_api_maps_AMap_CancelableCallback(
             update,
             duration.inMilliseconds,
             null,
           );
         } else {
-          await map.moveCamera(update);
+          await androidMap.moveCamera(update);
         }
 
-        pool..add(map)..add(update);
+        pool..add(update);
       },
       ios: (pool) async {
         final status = await MAMapStatus.create__();
@@ -883,10 +873,9 @@ extension AmapControllerX on AmapController {
   Future<void> setMaxZoomLevel(double zoomLevel) async {
     return platform(
       android: (pool) async {
-        final map = await androidController.getMap();
+        androidMap ??= await androidController.getMap();
 
-        await map.setMaxZoomLevel(zoomLevel);
-        pool..add(map);
+        await androidMap.setMaxZoomLevel(zoomLevel);
       },
       ios: (pool) async {
         await iosController.set_maxZoomLevel(zoomLevel);
@@ -898,10 +887,9 @@ extension AmapControllerX on AmapController {
   Future<void> setMinZoomLevel(double zoomLevel) async {
     return platform(
       android: (pool) async {
-        final map = await androidController.getMap();
+        androidMap ??= await androidController.getMap();
 
-        await map.setMinZoomLevel(zoomLevel);
-        pool..add(map);
+        await androidMap.setMinZoomLevel(zoomLevel);
       },
       ios: (pool) async {
         await iosController.set_minZoomLevel(zoomLevel);
@@ -913,10 +901,9 @@ extension AmapControllerX on AmapController {
   Future<void> setMapAnchor(double anchorU, double anchorV) async {
     return platform(
       android: (pool) async {
-        final map = await androidController.getMap();
+        androidMap ??= await androidController.getMap();
 
-//        await map.setPointToCenter(zoomLevel);
-        pool..add(map);
+//        await androidMap.setPointToCenter(zoomLevel);
       },
       ios: (pool) async {
         final anchor = await CGPoint.create(anchorU, anchorV);
