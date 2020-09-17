@@ -180,6 +180,30 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                   },
                 ),
                 ListTile(
+                  title: Center(child: Text('添加混合动画Marker')),
+                  onTap: () async {
+                    final marker = await _controller?.addMarker(
+                      MarkerOption(
+                        latLng: getNextLatLng(),
+                        iconProvider: _assetsIcon1,
+                        anchorU: 0.5,
+                        anchorV: 1,
+                        visible: false,
+                      ),
+                    );
+                    await marker.startAnimation(MarkerAnimationSet(
+                      animationSet: [
+                        RotateMarkerAnimation(fromValue: 0, toValue: 100),
+                        AlphaMarkerAnimation(fromValue: 0, toValue: 1),
+                        ScaleMarkerAnimation(fromValue: 0.8, toValue: 1.2),
+                      ],
+                      repeatCount: 0,
+                    ));
+                    await marker.setVisible(true);
+                    _markers.add(marker);
+                  },
+                ),
+                ListTile(
                   title: Center(child: Text('添加帧动画Marker')),
                   onTap: () async {
                     final marker = await _controller?.addMarker(

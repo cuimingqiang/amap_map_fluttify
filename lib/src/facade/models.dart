@@ -468,11 +468,58 @@ class TrafficOption {
 
 @immutable
 class MarkerAnimation {
+  MarkerAnimation(
+    this.duration,
+    this.repeatCount,
+    this.repeatMode,
+    this.fromValue,
+    this.toValue,
+  );
+
   final Duration duration;
   final int repeatCount;
   final RepeatMode repeatMode;
+  final double fromValue;
+  final double toValue;
 
-  MarkerAnimation(this.duration, this.repeatCount, this.repeatMode);
+  Future<com_amap_api_maps_model_animation_Animation> toAndroidModel() async {
+    com_amap_api_maps_model_animation_Animation result;
+    if (this is ScaleMarkerAnimation) {
+      result = await com_amap_api_maps_model_animation_ScaleAnimation
+          .create__float__float__float__float(
+        fromValue,
+        toValue,
+        fromValue,
+        toValue,
+      );
+    } else if (this is AlphaMarkerAnimation) {
+      result = await com_amap_api_maps_model_animation_AlphaAnimation
+          .create__float__float(fromValue, toValue);
+    } else if (this is RotateMarkerAnimation) {
+      result = await com_amap_api_maps_model_animation_RotateAnimation
+          .create__float__float(fromValue, toValue);
+    } else if (this is MarkerAnimationSet) {
+      final _this = this as MarkerAnimationSet;
+      result = await com_amap_api_maps_model_animation_AnimationSet
+          .create__boolean(true);
+      for (final ani in _this.animationSet) {
+        await (result as com_amap_api_maps_model_animation_AnimationSet)
+            .addAnimation(await ani.toAndroidModel());
+      }
+      return result;
+    }
+    // 重复执行的次数 比如1表示执行一次动画后, 再执行一次, 这里和ios端统一, 表示总共执行
+    // 几次动画 参考 https://a.amap.com/lbs/static/unzip/Android_Map_Doc/index.html
+    await result.setRepeatCount(repeatCount - 1);
+    await result.setRepeatMode(
+      repeatMode == RepeatMode.Restart
+          ? com_amap_api_maps_model_animation_Animation.RESTART
+          : com_amap_api_maps_model_animation_Animation.REVERSE,
+    );
+    await result.setDuration(duration.inMilliseconds);
+
+    return result;
+  }
 }
 
 @immutable
@@ -481,12 +528,9 @@ class ScaleMarkerAnimation extends MarkerAnimation {
     Duration duration = const Duration(seconds: 1),
     int repeatCount = 1,
     RepeatMode repeatMode = RepeatMode.Reverse,
-    @required this.fromValue,
-    @required this.toValue,
-  }) : super(duration, repeatCount, repeatMode);
-
-  final double fromValue;
-  final double toValue;
+    double fromValue,
+    double toValue,
+  }) : super(duration, repeatCount, repeatMode, fromValue, toValue);
 
   @override
   String toString() {
@@ -500,12 +544,9 @@ class AlphaMarkerAnimation extends MarkerAnimation {
     Duration duration = const Duration(seconds: 1),
     int repeatCount = 1,
     RepeatMode repeatMode = RepeatMode.Reverse,
-    @required this.fromValue,
-    @required this.toValue,
-  }) : super(duration, repeatCount, repeatMode);
-
-  final double fromValue;
-  final double toValue;
+    double fromValue,
+    double toValue,
+  }) : super(duration, repeatCount, repeatMode, fromValue, toValue);
 
   @override
   String toString() {
@@ -519,12 +560,9 @@ class RotateMarkerAnimation extends MarkerAnimation {
     Duration duration = const Duration(seconds: 1),
     int repeatCount = 1,
     RepeatMode repeatMode = RepeatMode.Reverse,
-    @required this.fromValue,
-    @required this.toValue,
-  }) : super(duration, repeatCount, repeatMode);
-
-  final double fromValue;
-  final double toValue;
+    double fromValue,
+    double toValue,
+  }) : super(duration, repeatCount, repeatMode, fromValue, toValue);
 
   @override
   String toString() {
@@ -533,21 +571,38 @@ class RotateMarkerAnimation extends MarkerAnimation {
 }
 
 @immutable
-class TranslateMarkerAnimation extends MarkerAnimation {
-  TranslateMarkerAnimation({
-    Duration duration = const Duration(seconds: 1),
+class MarkerAnimationSet extends MarkerAnimation {
+  MarkerAnimationSet({
+    this.animationSet,
+    Duration duration,
     int repeatCount = 1,
     RepeatMode repeatMode = RepeatMode.Reverse,
-    @required this.coordinate,
-  }) : super(duration, repeatCount, repeatMode);
+  }) : super(duration, repeatCount, repeatMode, null, null);
 
-  final LatLng coordinate;
+  final List<MarkerAnimation> animationSet;
 
   @override
   String toString() {
-    return 'TranslateMarkerAnimation{toValue: $coordinate}';
+    return 'MarkerAnimationSet{animationSet: $animationSet}';
   }
 }
+
+// @immutable
+// class TranslateMarkerAnimation extends MarkerAnimation {
+//   TranslateMarkerAnimation({
+//     Duration duration = const Duration(seconds: 1),
+//     int repeatCount = 1,
+//     RepeatMode repeatMode = RepeatMode.Reverse,
+//     @required this.coordinate,
+//   }) : super(duration, repeatCount, repeatMode);
+//
+//   final LatLng coordinate;
+//
+//   @override
+//   String toString() {
+//     return 'TranslateMarkerAnimation{toValue: $coordinate}';
+//   }
+// }
 
 /// 地图定位信息 区分于定位插件的定位信息
 class MapLocation {
@@ -758,31 +813,7 @@ class Marker {
   Future<void> startAnimation(MarkerAnimation animation) async {
     return platform(
       android: (pool) async {
-        com_amap_api_maps_model_animation_Animation _animation;
-        if (animation is ScaleMarkerAnimation) {
-          _animation = await com_amap_api_maps_model_animation_ScaleAnimation
-              .create__float__float__float__float(
-            animation.fromValue,
-            animation.toValue,
-            animation.fromValue,
-            animation.toValue,
-          );
-        } else if (animation is AlphaMarkerAnimation) {
-          _animation = await com_amap_api_maps_model_animation_AlphaAnimation
-              .create__float__float(animation.fromValue, animation.toValue);
-        } else if (animation is RotateMarkerAnimation) {
-          _animation = await com_amap_api_maps_model_animation_RotateAnimation
-              .create__float__float(animation.fromValue, animation.toValue);
-        }
-        // 重复执行的次数 比如1表示执行一次动画后, 再执行一次, 这里和ios端统一, 表示总共执行
-        // 几次动画 参考 https://a.amap.com/lbs/static/unzip/Android_Map_Doc/index.html
-        await _animation.setRepeatCount(animation.repeatCount - 1);
-        await _animation.setRepeatMode(
-          animation.repeatMode == RepeatMode.Restart
-              ? com_amap_api_maps_model_animation_Animation.RESTART
-              : com_amap_api_maps_model_animation_Animation.REVERSE,
-        );
-        await _animation.setDuration(animation.duration.inMilliseconds);
+        final _animation = await animation.toAndroidModel();
         await androidModel.setAnimation(_animation);
         await androidModel.startAnimation();
       },
@@ -808,6 +839,23 @@ class Marker {
           await annotationView?.rotateWithDuration(
             fromValue: animation.fromValue,
             toValue: animation.toValue,
+            duration: animation.duration,
+            repeatCount: animation.repeatCount,
+            repeatMode: animation.repeatMode.index,
+          );
+        } else if (animation is MarkerAnimationSet) {
+          await annotationView?.groupWithDuration(
+            fromValue: animation.animationSet.map((e) => e.fromValue).toList(),
+            toValue: animation.animationSet.map((e) => e.toValue).toList(),
+            keyPath: [
+              for (final item in animation.animationSet)
+                if (item is ScaleMarkerAnimation)
+                  'transform.scale'
+                else if (item is AlphaMarkerAnimation)
+                  'opacity'
+                else if (item is RotateMarkerAnimation)
+                  'transform.rotation',
+            ],
             duration: animation.duration,
             repeatCount: animation.repeatCount,
             repeatMode: animation.repeatMode.index,
