@@ -301,8 +301,6 @@ mixin _Community on _Holder {
       android: (pool) async {
         androidMap ??= await androidController.getMap();
         await androidMap.setMyLocationRotateAngle((360 - angle).abs());
-
-        pool;
       },
       ios: (pool) async {
         // todo 暂时没有找到比较直接的方式实现
@@ -325,8 +323,6 @@ mixin _Community on _Holder {
       android: (pool) async {
         androidMap ??= await androidController.getMap();
         await androidMap.showIndoorMap(show);
-
-        pool;
       },
       ios: (pool) async {
         await iosController.set_showsIndoorMap(show);
@@ -356,8 +352,6 @@ mixin _Community on _Holder {
             await androidMap.setMapType(5);
             break;
         }
-
-        pool;
       },
       ios: (pool) async {
         switch (mapType) {
@@ -394,8 +388,6 @@ mixin _Community on _Holder {
             await androidMap.setMapLanguage(com_amap_api_maps_AMap.ENGLISH);
             break;
         }
-
-        pool;
       },
       ios: (pool) async {
         switch (language) {
@@ -418,8 +410,6 @@ mixin _Community on _Holder {
       android: (pool) async {
         androidMap ??= await androidController.getMap();
         await androidMap.setTrafficEnabled(enable);
-
-        pool;
       },
       ios: (pool) async {
         await iosController.set_showTraffic(enable);
