@@ -16,7 +16,6 @@ export 'com/amap/api/maps/BaseMapView.g.dart';
 export 'com/amap/api/maps/CameraUpdateFactory.g.dart';
 export 'com/amap/api/maps/AMap.g.dart';
 export 'com/amap/api/maps/LocationSource.g.dart';
-export 'com/amap/api/maps/utils/PathSmoothTool.g.dart';
 export 'com/amap/api/maps/utils/SpatialRelationUtil.g.dart';
 export 'com/amap/api/maps/utils/overlay/MovingPointOverlay.g.dart';
 export 'com/amap/api/maps/utils/overlay/SmoothMoveMarker.g.dart';

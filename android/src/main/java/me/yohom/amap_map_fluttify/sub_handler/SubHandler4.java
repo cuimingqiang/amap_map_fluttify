@@ -33,294 +33,6 @@ public class SubHandler4 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
             // method
-            put("com.amap.api.maps.model.Circle::getHoleOptions", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                com.amap.api.maps.model.Circle __this__ = (com.amap.api.maps.model.Circle) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.model.Circle@" + __this__ + "::getHoleOptions(" + "" + ")");
-                }
-            
-                // invoke native method
-                java.util.List<com.amap.api.maps.model.BaseHoleOptions> __result__ = null;
-                try {
-                    __result__ = __this__.getHoleOptions();
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.amap.api.maps.model.Circle::setStrokeDottedLineType", (__args__, __methodResult__) -> {
-                // args
-                // ref arg
-                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
-            
-                // ref
-                com.amap.api.maps.model.Circle __this__ = (com.amap.api.maps.model.Circle) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.model.Circle@" + __this__ + "::setStrokeDottedLineType(" + var1 + ")");
-                }
-            
-                // invoke native method
-                Void __result__ = null;
-                try {
-                    __this__.setStrokeDottedLineType(var1.intValue());
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.amap.api.maps.model.Circle::getStrokeDottedLineType", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                com.amap.api.maps.model.Circle __this__ = (com.amap.api.maps.model.Circle) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.model.Circle@" + __this__ + "::getStrokeDottedLineType(" + "" + ")");
-                }
-            
-                // invoke native method
-                Integer __result__ = null;
-                try {
-                    __result__ = __this__.getStrokeDottedLineType();
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.amap.api.maps.model.PolygonOptions::add__com_amap_api_maps_model_LatLng", (__args__, __methodResult__) -> {
-                // args
-                // ref arg
-                com.amap.api.maps.model.LatLng var1 = (com.amap.api.maps.model.LatLng) ((Map<String, Object>) __args__).get("var1");
-            
-                // ref
-                com.amap.api.maps.model.PolygonOptions __this__ = (com.amap.api.maps.model.PolygonOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.model.PolygonOptions@" + __this__ + "::add(" + var1 + ")");
-                }
-            
-                // invoke native method
-                com.amap.api.maps.model.PolygonOptions __result__ = null;
-                try {
-                    __result__ = __this__.add(var1);
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.amap.api.maps.model.PolygonOptions::addAll", (__args__, __methodResult__) -> {
-                // args
-                // ref arg
-                java.lang.Iterable<com.amap.api.maps.model.LatLng> var1 = (java.lang.Iterable<com.amap.api.maps.model.LatLng>) ((Map<String, Object>) __args__).get("var1");
-            
-                // ref
-                com.amap.api.maps.model.PolygonOptions __this__ = (com.amap.api.maps.model.PolygonOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.model.PolygonOptions@" + __this__ + "::addAll(" + var1 + ")");
-                }
-            
-                // invoke native method
-                com.amap.api.maps.model.PolygonOptions __result__ = null;
-                try {
-                    __result__ = __this__.addAll(var1);
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.amap.api.maps.model.PolygonOptions::setPoints", (__args__, __methodResult__) -> {
-                // args
-                // ref arg
-                java.util.List<com.amap.api.maps.model.LatLng> var1 = (java.util.List<com.amap.api.maps.model.LatLng>) ((Map<String, Object>) __args__).get("var1");
-            
-                // ref
-                com.amap.api.maps.model.PolygonOptions __this__ = (com.amap.api.maps.model.PolygonOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.model.PolygonOptions@" + __this__ + "::setPoints(" + var1 + ")");
-                }
-            
-                // invoke native method
-                Void __result__ = null;
-                try {
-                    __this__.setPoints(var1);
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.amap.api.maps.model.PolygonOptions::setHoleOptions", (__args__, __methodResult__) -> {
-                // args
-                // ref arg
-                java.util.List<com.amap.api.maps.model.BaseHoleOptions> var1 = (java.util.List<com.amap.api.maps.model.BaseHoleOptions>) ((Map<String, Object>) __args__).get("var1");
-            
-                // ref
-                com.amap.api.maps.model.PolygonOptions __this__ = (com.amap.api.maps.model.PolygonOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.model.PolygonOptions@" + __this__ + "::setHoleOptions(" + var1 + ")");
-                }
-            
-                // invoke native method
-                Void __result__ = null;
-                try {
-                    __this__.setHoleOptions(var1);
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.amap.api.maps.model.PolygonOptions::addHoles__com_amap_api_maps_model_BaseHoleOptions", (__args__, __methodResult__) -> {
-                // args
-                // ref arg
-                com.amap.api.maps.model.BaseHoleOptions var1 = (com.amap.api.maps.model.BaseHoleOptions) ((Map<String, Object>) __args__).get("var1");
-            
-                // ref
-                com.amap.api.maps.model.PolygonOptions __this__ = (com.amap.api.maps.model.PolygonOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.model.PolygonOptions@" + __this__ + "::addHoles(" + var1 + ")");
-                }
-            
-                // invoke native method
-                com.amap.api.maps.model.PolygonOptions __result__ = null;
-                try {
-                    __result__ = __this__.addHoles(var1);
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.amap.api.maps.model.PolygonOptions::addHoles__List_com_amap_api_maps_model_BaseHoleOptions_", (__args__, __methodResult__) -> {
-                // args
-                // ref arg
-                java.lang.Iterable<com.amap.api.maps.model.BaseHoleOptions> var1 = (java.lang.Iterable<com.amap.api.maps.model.BaseHoleOptions>) ((Map<String, Object>) __args__).get("var1");
-            
-                // ref
-                com.amap.api.maps.model.PolygonOptions __this__ = (com.amap.api.maps.model.PolygonOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.model.PolygonOptions@" + __this__ + "::addHoles(" + var1 + ")");
-                }
-            
-                // invoke native method
-                com.amap.api.maps.model.PolygonOptions __result__ = null;
-                try {
-                    __result__ = __this__.addHoles(var1);
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.amap.api.maps.model.PolygonOptions::strokeWidth", (__args__, __methodResult__) -> {
-                // args
-                // ref arg
-                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
-            
-                // ref
-                com.amap.api.maps.model.PolygonOptions __this__ = (com.amap.api.maps.model.PolygonOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.model.PolygonOptions@" + __this__ + "::strokeWidth(" + var1 + ")");
-                }
-            
-                // invoke native method
-                com.amap.api.maps.model.PolygonOptions __result__ = null;
-                try {
-                    __result__ = __this__.strokeWidth(var1.floatValue());
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
             put("com.amap.api.maps.model.PolygonOptions::strokeColor", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
@@ -5827,6 +5539,289 @@ public class SubHandler4 {
                 Boolean __result__ = null;
                 try {
                     __result__ = __this__.isVisible();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.amap.api.maps.model.TileOverlay::remove", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+                com.amap.api.maps.model.TileOverlay __this__ = (com.amap.api.maps.model.TileOverlay) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.model.TileOverlay@" + __this__ + "::remove(" + "" + ")");
+                }
+            
+                // invoke native method
+                Void __result__ = null;
+                try {
+                    __this__.remove();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.amap.api.maps.model.TileOverlay::clearTileCache", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+                com.amap.api.maps.model.TileOverlay __this__ = (com.amap.api.maps.model.TileOverlay) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.model.TileOverlay@" + __this__ + "::clearTileCache(" + "" + ")");
+                }
+            
+                // invoke native method
+                Void __result__ = null;
+                try {
+                    __this__.clearTileCache();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.amap.api.maps.model.TileOverlay::getId", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+                com.amap.api.maps.model.TileOverlay __this__ = (com.amap.api.maps.model.TileOverlay) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.model.TileOverlay@" + __this__ + "::getId(" + "" + ")");
+                }
+            
+                // invoke native method
+                String __result__ = null;
+                try {
+                    __result__ = __this__.getId();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.amap.api.maps.model.TileOverlay::setZIndex", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
+                com.amap.api.maps.model.TileOverlay __this__ = (com.amap.api.maps.model.TileOverlay) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.model.TileOverlay@" + __this__ + "::setZIndex(" + var1 + ")");
+                }
+            
+                // invoke native method
+                Void __result__ = null;
+                try {
+                    __this__.setZIndex(var1.floatValue());
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.amap.api.maps.model.TileOverlay::getZIndex", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+                com.amap.api.maps.model.TileOverlay __this__ = (com.amap.api.maps.model.TileOverlay) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.model.TileOverlay@" + __this__ + "::getZIndex(" + "" + ")");
+                }
+            
+                // invoke native method
+                Float __result__ = null;
+                try {
+                    __result__ = __this__.getZIndex();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.amap.api.maps.model.TileOverlay::setVisible", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
+                com.amap.api.maps.model.TileOverlay __this__ = (com.amap.api.maps.model.TileOverlay) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.model.TileOverlay@" + __this__ + "::setVisible(" + var1 + ")");
+                }
+            
+                // invoke native method
+                Void __result__ = null;
+                try {
+                    __this__.setVisible(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.amap.api.maps.model.TileOverlay::isVisible", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+                com.amap.api.maps.model.TileOverlay __this__ = (com.amap.api.maps.model.TileOverlay) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.model.TileOverlay@" + __this__ + "::isVisible(" + "" + ")");
+                }
+            
+                // invoke native method
+                Boolean __result__ = null;
+                try {
+                    __result__ = __this__.isVisible();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.amap.api.maps.model.Polyline::remove", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+                com.amap.api.maps.model.Polyline __this__ = (com.amap.api.maps.model.Polyline) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.model.Polyline@" + __this__ + "::remove(" + "" + ")");
+                }
+            
+                // invoke native method
+                Void __result__ = null;
+                try {
+                    __this__.remove();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.amap.api.maps.model.Polyline::getId", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+                com.amap.api.maps.model.Polyline __this__ = (com.amap.api.maps.model.Polyline) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.model.Polyline@" + __this__ + "::getId(" + "" + ")");
+                }
+            
+                // invoke native method
+                String __result__ = null;
+                try {
+                    __result__ = __this__.getId();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.amap.api.maps.model.Polyline::setPoints", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                java.util.List<com.amap.api.maps.model.LatLng> var1 = (java.util.List<com.amap.api.maps.model.LatLng>) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
+                com.amap.api.maps.model.Polyline __this__ = (com.amap.api.maps.model.Polyline) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.model.Polyline@" + __this__ + "::setPoints(" + var1 + ")");
+                }
+            
+                // invoke native method
+                Void __result__ = null;
+                try {
+                    __this__.setPoints(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {

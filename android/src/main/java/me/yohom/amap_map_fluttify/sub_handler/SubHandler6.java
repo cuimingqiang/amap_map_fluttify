@@ -33,634 +33,6 @@ public class SubHandler6 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
             // method
-            put("com.amap.api.maps.AMap::addOnMapClickListener", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                com.amap.api.maps.AMap __this__ = (com.amap.api.maps.AMap) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMap@" + __this__ + "::addOnMapClickListener(" + "" + ")");
-                }
-            
-                // invoke native method
-                Void __result__ = null;
-                try {
-                    __this__.addOnMapClickListener(new com.amap.api.maps.AMap.OnMapClickListener() {
-                        // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.amap.api.maps.AMap::addOnMapClickListener::Callback@" + String.valueOf(System.identityHashCode(__this__)), new StandardMethodCodec(new FluttifyMessageCodec()));
-                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
-            
-                        // call dart method
-                        @Override
-                        public void onMapClick(com.amap.api.maps.model.LatLng var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMapClick(" + var1 + ")");
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.amap.api.maps.AMap.OnMapClickListener::onMapClick",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", var1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                });
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.amap.api.maps.AMap::addOnMarkerDragListener", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                com.amap.api.maps.AMap __this__ = (com.amap.api.maps.AMap) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMap@" + __this__ + "::addOnMarkerDragListener(" + "" + ")");
-                }
-            
-                // invoke native method
-                Void __result__ = null;
-                try {
-                    __this__.addOnMarkerDragListener(new com.amap.api.maps.AMap.OnMarkerDragListener() {
-                        // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.amap.api.maps.AMap::addOnMarkerDragListener::Callback@" + String.valueOf(System.identityHashCode(__this__)), new StandardMethodCodec(new FluttifyMessageCodec()));
-                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
-            
-                        // call dart method
-                        @Override
-                        public void onMarkerDragStart(com.amap.api.maps.model.Marker var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMarkerDragStart(" + var1 + ")");
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.amap.api.maps.AMap.OnMarkerDragListener::onMarkerDragStart",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", var1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                        @Override
-                        public void onMarkerDrag(com.amap.api.maps.model.Marker var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMarkerDrag(" + var1 + ")");
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.amap.api.maps.AMap.OnMarkerDragListener::onMarkerDrag",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", var1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                        @Override
-                        public void onMarkerDragEnd(com.amap.api.maps.model.Marker var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMarkerDragEnd(" + var1 + ")");
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.amap.api.maps.AMap.OnMarkerDragListener::onMarkerDragEnd",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", var1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                });
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.amap.api.maps.AMap::addOnMapLoadedListener", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                com.amap.api.maps.AMap __this__ = (com.amap.api.maps.AMap) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMap@" + __this__ + "::addOnMapLoadedListener(" + "" + ")");
-                }
-            
-                // invoke native method
-                Void __result__ = null;
-                try {
-                    __this__.addOnMapLoadedListener(new com.amap.api.maps.AMap.OnMapLoadedListener() {
-                        // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.amap.api.maps.AMap::addOnMapLoadedListener::Callback@" + String.valueOf(System.identityHashCode(__this__)), new StandardMethodCodec(new FluttifyMessageCodec()));
-                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
-            
-                        // call dart method
-                        @Override
-                        public void onMapLoaded() {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMapLoaded(" + "" + ")");
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.amap.api.maps.AMap.OnMapLoadedListener::onMapLoaded",
-                                        new HashMap<String, Object>() {{
-                    
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                });
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.amap.api.maps.AMap::addOnMapTouchListener", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                com.amap.api.maps.AMap __this__ = (com.amap.api.maps.AMap) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMap@" + __this__ + "::addOnMapTouchListener(" + "" + ")");
-                }
-            
-                // invoke native method
-                Void __result__ = null;
-                try {
-                    __this__.addOnMapTouchListener(new com.amap.api.maps.AMap.OnMapTouchListener() {
-                        // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.amap.api.maps.AMap::addOnMapTouchListener::Callback@" + String.valueOf(System.identityHashCode(__this__)), new StandardMethodCodec(new FluttifyMessageCodec()));
-                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
-            
-                        // call dart method
-                        @Override
-                        public void onTouch(android.view.MotionEvent var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onTouch(" + var1 + ")");
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.amap.api.maps.AMap.OnMapTouchListener::onTouch",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", var1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                });
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.amap.api.maps.AMap::addOnMarkerClickListener", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                com.amap.api.maps.AMap __this__ = (com.amap.api.maps.AMap) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMap@" + __this__ + "::addOnMarkerClickListener(" + "" + ")");
-                }
-            
-                // invoke native method
-                Void __result__ = null;
-                try {
-                    __this__.addOnMarkerClickListener(new com.amap.api.maps.AMap.OnMarkerClickListener() {
-                        // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.amap.api.maps.AMap::addOnMarkerClickListener::Callback@" + String.valueOf(System.identityHashCode(__this__)), new StandardMethodCodec(new FluttifyMessageCodec()));
-                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
-            
-                        // call dart method
-                        @Override
-                        public boolean onMarkerClick(com.amap.api.maps.model.Marker var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMarkerClick(" + var1 + ")");
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.amap.api.maps.AMap.OnMarkerClickListener::onMarkerClick",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", var1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-                            return true;
-                        }
-            
-                });
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.amap.api.maps.AMap::addOnPolylineClickListener", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                com.amap.api.maps.AMap __this__ = (com.amap.api.maps.AMap) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMap@" + __this__ + "::addOnPolylineClickListener(" + "" + ")");
-                }
-            
-                // invoke native method
-                Void __result__ = null;
-                try {
-                    __this__.addOnPolylineClickListener(new com.amap.api.maps.AMap.OnPolylineClickListener() {
-                        // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.amap.api.maps.AMap::addOnPolylineClickListener::Callback@" + String.valueOf(System.identityHashCode(__this__)), new StandardMethodCodec(new FluttifyMessageCodec()));
-                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
-            
-                        // call dart method
-                        @Override
-                        public void onPolylineClick(com.amap.api.maps.model.Polyline var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onPolylineClick(" + var1 + ")");
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.amap.api.maps.AMap.OnPolylineClickListener::onPolylineClick",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", var1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                });
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.amap.api.maps.AMap::addOnPOIClickListener", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                com.amap.api.maps.AMap __this__ = (com.amap.api.maps.AMap) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMap@" + __this__ + "::addOnPOIClickListener(" + "" + ")");
-                }
-            
-                // invoke native method
-                Void __result__ = null;
-                try {
-                    __this__.addOnPOIClickListener(new com.amap.api.maps.AMap.OnPOIClickListener() {
-                        // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.amap.api.maps.AMap::addOnPOIClickListener::Callback@" + String.valueOf(System.identityHashCode(__this__)), new StandardMethodCodec(new FluttifyMessageCodec()));
-                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
-            
-                        // call dart method
-                        @Override
-                        public void onPOIClick(com.amap.api.maps.model.Poi var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onPOIClick(" + var1 + ")");
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.amap.api.maps.AMap.OnPOIClickListener::onPOIClick",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", var1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                });
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.amap.api.maps.AMap::addOnMapLongClickListener", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                com.amap.api.maps.AMap __this__ = (com.amap.api.maps.AMap) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMap@" + __this__ + "::addOnMapLongClickListener(" + "" + ")");
-                }
-            
-                // invoke native method
-                Void __result__ = null;
-                try {
-                    __this__.addOnMapLongClickListener(new com.amap.api.maps.AMap.OnMapLongClickListener() {
-                        // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.amap.api.maps.AMap::addOnMapLongClickListener::Callback@" + String.valueOf(System.identityHashCode(__this__)), new StandardMethodCodec(new FluttifyMessageCodec()));
-                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
-            
-                        // call dart method
-                        @Override
-                        public void onMapLongClick(com.amap.api.maps.model.LatLng var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMapLongClick(" + var1 + ")");
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.amap.api.maps.AMap.OnMapLongClickListener::onMapLongClick",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", var1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                });
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.amap.api.maps.AMap::addOnInfoWindowClickListener", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                com.amap.api.maps.AMap __this__ = (com.amap.api.maps.AMap) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMap@" + __this__ + "::addOnInfoWindowClickListener(" + "" + ")");
-                }
-            
-                // invoke native method
-                Void __result__ = null;
-                try {
-                    __this__.addOnInfoWindowClickListener(new com.amap.api.maps.AMap.OnInfoWindowClickListener() {
-                        // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.amap.api.maps.AMap::addOnInfoWindowClickListener::Callback@" + String.valueOf(System.identityHashCode(__this__)), new StandardMethodCodec(new FluttifyMessageCodec()));
-                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
-            
-                        // call dart method
-                        @Override
-                        public void onInfoWindowClick(com.amap.api.maps.model.Marker var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onInfoWindowClick(" + var1 + ")");
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.amap.api.maps.AMap.OnInfoWindowClickListener::onInfoWindowClick",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", var1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                });
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.amap.api.maps.AMap::addOnIndoorBuildingActiveListener", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                com.amap.api.maps.AMap __this__ = (com.amap.api.maps.AMap) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMap@" + __this__ + "::addOnIndoorBuildingActiveListener(" + "" + ")");
-                }
-            
-                // invoke native method
-                Void __result__ = null;
-                try {
-                    __this__.addOnIndoorBuildingActiveListener(new com.amap.api.maps.AMap.OnIndoorBuildingActiveListener() {
-                        // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.amap.api.maps.AMap::addOnIndoorBuildingActiveListener::Callback@" + String.valueOf(System.identityHashCode(__this__)), new StandardMethodCodec(new FluttifyMessageCodec()));
-                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
-            
-                        // call dart method
-                        @Override
-                        public void OnIndoorBuilding(com.amap.api.maps.model.IndoorBuildingInfo var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: OnIndoorBuilding(" + var1 + ")");
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.amap.api.maps.AMap.OnIndoorBuildingActiveListener::OnIndoorBuilding",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", var1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                });
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
             put("com.amap.api.maps.AMap::addOnMyLocationChangeListener", (__args__, __methodResult__) -> {
                 // args
             
@@ -5414,326 +4786,6 @@ public class SubHandler6 {
                 __methodResult__.success(__resultList__);
             });
             // method
-            put("com.amap.api.maps.utils.PathSmoothTool::getIntensity_batch", (__argsBatch__, __methodResult__) -> {
-                List<Integer> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-            
-            
-                    // ref
-                    com.amap.api.maps.utils.PathSmoothTool __this__ = (com.amap.api.maps.utils.PathSmoothTool) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    Integer __result__ = null;
-                    try {
-                        __result__ = __this__.getIntensity();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.utils.PathSmoothTool::setIntensity_batch", (__argsBatch__, __methodResult__) -> {
-                List<Void> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    Number mIntensity = (Number) ((Map<String, Object>) __args__).get("mIntensity");
-            
-                    // ref
-                    com.amap.api.maps.utils.PathSmoothTool __this__ = (com.amap.api.maps.utils.PathSmoothTool) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    Void __result__ = null;
-                    try {
-                        __this__.setIntensity(mIntensity.intValue());
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.utils.PathSmoothTool::getThreshhold_batch", (__argsBatch__, __methodResult__) -> {
-                List<Float> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-            
-            
-                    // ref
-                    com.amap.api.maps.utils.PathSmoothTool __this__ = (com.amap.api.maps.utils.PathSmoothTool) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    Float __result__ = null;
-                    try {
-                        __result__ = __this__.getThreshhold();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.utils.PathSmoothTool::setThreshhold_batch", (__argsBatch__, __methodResult__) -> {
-                List<Void> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    Number mThreshhold = (Number) ((Map<String, Object>) __args__).get("mThreshhold");
-            
-                    // ref
-                    com.amap.api.maps.utils.PathSmoothTool __this__ = (com.amap.api.maps.utils.PathSmoothTool) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    Void __result__ = null;
-                    try {
-                        __this__.setThreshhold(mThreshhold.floatValue());
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.utils.PathSmoothTool::setNoiseThreshhold_batch", (__argsBatch__, __methodResult__) -> {
-                List<Void> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    Number mnoiseThreshhold = (Number) ((Map<String, Object>) __args__).get("mnoiseThreshhold");
-            
-                    // ref
-                    com.amap.api.maps.utils.PathSmoothTool __this__ = (com.amap.api.maps.utils.PathSmoothTool) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    Void __result__ = null;
-                    try {
-                        __this__.setNoiseThreshhold(mnoiseThreshhold.floatValue());
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.utils.PathSmoothTool::pathOptimize_batch", (__argsBatch__, __methodResult__) -> {
-                List<java.util.List<com.amap.api.maps.model.LatLng>> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    java.util.List<com.amap.api.maps.model.LatLng> originlist = (java.util.List<com.amap.api.maps.model.LatLng>) ((Map<String, Object>) __args__).get("originlist");
-            
-                    // ref
-                    com.amap.api.maps.utils.PathSmoothTool __this__ = (com.amap.api.maps.utils.PathSmoothTool) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    java.util.List<com.amap.api.maps.model.LatLng> __result__ = null;
-                    try {
-                        __result__ = __this__.pathOptimize(originlist);
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.utils.PathSmoothTool::kalmanFilterPath__List_com_amap_api_maps_model_LatLng__batch", (__argsBatch__, __methodResult__) -> {
-                List<java.util.List<com.amap.api.maps.model.LatLng>> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    java.util.List<com.amap.api.maps.model.LatLng> originlist = (java.util.List<com.amap.api.maps.model.LatLng>) ((Map<String, Object>) __args__).get("originlist");
-            
-                    // ref
-                    com.amap.api.maps.utils.PathSmoothTool __this__ = (com.amap.api.maps.utils.PathSmoothTool) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    java.util.List<com.amap.api.maps.model.LatLng> __result__ = null;
-                    try {
-                        __result__ = __this__.kalmanFilterPath(originlist);
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.utils.PathSmoothTool::removeNoisePoint_batch", (__argsBatch__, __methodResult__) -> {
-                List<java.util.List<com.amap.api.maps.model.LatLng>> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    java.util.List<com.amap.api.maps.model.LatLng> originlist = (java.util.List<com.amap.api.maps.model.LatLng>) ((Map<String, Object>) __args__).get("originlist");
-            
-                    // ref
-                    com.amap.api.maps.utils.PathSmoothTool __this__ = (com.amap.api.maps.utils.PathSmoothTool) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    java.util.List<com.amap.api.maps.model.LatLng> __result__ = null;
-                    try {
-                        __result__ = __this__.removeNoisePoint(originlist);
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.utils.PathSmoothTool::kalmanFilterPoint__com_amap_api_maps_model_LatLng__com_amap_api_maps_model_LatLng_batch", (__argsBatch__, __methodResult__) -> {
-                List<com.amap.api.maps.model.LatLng> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    com.amap.api.maps.model.LatLng lastLoc = (com.amap.api.maps.model.LatLng) ((Map<String, Object>) __args__).get("lastLoc");
-                    // ref arg
-                    com.amap.api.maps.model.LatLng curLoc = (com.amap.api.maps.model.LatLng) ((Map<String, Object>) __args__).get("curLoc");
-            
-                    // ref
-                    com.amap.api.maps.utils.PathSmoothTool __this__ = (com.amap.api.maps.utils.PathSmoothTool) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    com.amap.api.maps.model.LatLng __result__ = null;
-                    try {
-                        __result__ = __this__.kalmanFilterPoint(lastLoc, curLoc);
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.utils.PathSmoothTool::reducerVerticalThreshold__List_com_amap_api_maps_model_LatLng__batch", (__argsBatch__, __methodResult__) -> {
-                List<java.util.List<com.amap.api.maps.model.LatLng>> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    java.util.List<com.amap.api.maps.model.LatLng> inPoints = (java.util.List<com.amap.api.maps.model.LatLng>) ((Map<String, Object>) __args__).get("inPoints");
-            
-                    // ref
-                    com.amap.api.maps.utils.PathSmoothTool __this__ = (com.amap.api.maps.utils.PathSmoothTool) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    java.util.List<com.amap.api.maps.model.LatLng> __result__ = null;
-                    try {
-                        __result__ = __this__.reducerVerticalThreshold(inPoints);
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
             put("com.amap.api.maps.utils.overlay.MovingPointOverlay::setPoints_batch", (__argsBatch__, __methodResult__) -> {
                 List<Void> __resultList__ = new ArrayList<>();
             
@@ -7104,6 +6156,636 @@ public class SubHandler6 {
                     Boolean __result__ = null;
                     try {
                         __result__ = com.amap.api.maps.MapsInitializer.getTextureViewDestorySync();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.MapsInitializer::setWorldVectorOfflineMapStyleFilePath_batch", (__argsBatch__, __methodResult__) -> {
+                List<Void> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    String var0 = (String) ((Map<String, Object>) __args__).get("var0");
+            
+                    // ref
+            
+            
+                    // invoke native method
+                    Void __result__ = null;
+                    try {
+                        com.amap.api.maps.MapsInitializer.setWorldVectorOfflineMapStyleFilePath(var0);
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.MapsInitializer::getWorldVectorOfflineMapStyleFilePath_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+            
+            
+                    // invoke native method
+                    String __result__ = null;
+                    try {
+                        __result__ = com.amap.api.maps.MapsInitializer.getWorldVectorOfflineMapStyleFilePath();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.MapsInitializer::setWorldVectorOfflineMapStyleAssetsPath_batch", (__argsBatch__, __methodResult__) -> {
+                List<Void> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    String var0 = (String) ((Map<String, Object>) __args__).get("var0");
+            
+                    // ref
+            
+            
+                    // invoke native method
+                    Void __result__ = null;
+                    try {
+                        com.amap.api.maps.MapsInitializer.setWorldVectorOfflineMapStyleAssetsPath(var0);
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.MapsInitializer::getWorldVectorOfflineMapStyleAssetsPath_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+            
+            
+                    // invoke native method
+                    String __result__ = null;
+                    try {
+                        __result__ = com.amap.api.maps.MapsInitializer.getWorldVectorOfflineMapStyleAssetsPath();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.MapsInitializer::setTextureDestroyedRender_batch", (__argsBatch__, __methodResult__) -> {
+                List<Void> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    boolean var0 = (boolean) ((Map<String, Object>) __args__).get("var0");
+            
+                    // ref
+            
+            
+                    // invoke native method
+                    Void __result__ = null;
+                    try {
+                        com.amap.api.maps.MapsInitializer.setTextureDestroyedRender(var0);
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.MapsInitializer::getTextureDestroyRender_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+            
+            
+                    // invoke native method
+                    Boolean __result__ = null;
+                    try {
+                        __result__ = com.amap.api.maps.MapsInitializer.getTextureDestroyRender();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.MapsInitializer::setTextureSizeChangedInvoked_batch", (__argsBatch__, __methodResult__) -> {
+                List<Void> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    boolean var0 = (boolean) ((Map<String, Object>) __args__).get("var0");
+            
+                    // ref
+            
+            
+                    // invoke native method
+                    Void __result__ = null;
+                    try {
+                        com.amap.api.maps.MapsInitializer.setTextureSizeChangedInvoked(var0);
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.MapsInitializer::getTextureSizeChangedInvoked_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+            
+            
+                    // invoke native method
+                    Boolean __result__ = null;
+                    try {
+                        __result__ = com.amap.api.maps.MapsInitializer.getTextureSizeChangedInvoked();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.MapsInitializer::disableCachedMapDataUpdate_batch", (__argsBatch__, __methodResult__) -> {
+                List<Void> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    boolean var0 = (boolean) ((Map<String, Object>) __args__).get("var0");
+            
+                    // ref
+            
+            
+                    // invoke native method
+                    Void __result__ = null;
+                    try {
+                        com.amap.api.maps.MapsInitializer.disableCachedMapDataUpdate(var0);
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.MapsInitializer::isDisableCachedMapDataUpdate_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+            
+            
+                    // invoke native method
+                    Boolean __result__ = null;
+                    try {
+                        __result__ = com.amap.api.maps.MapsInitializer.isDisableCachedMapDataUpdate();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.MapsInitializer::isSupportRecycleView_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+            
+            
+                    // invoke native method
+                    Boolean __result__ = null;
+                    try {
+                        __result__ = com.amap.api.maps.MapsInitializer.isSupportRecycleView();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.MapsInitializer::setSupportRecycleView_batch", (__argsBatch__, __methodResult__) -> {
+                List<Void> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    boolean var0 = (boolean) ((Map<String, Object>) __args__).get("var0");
+            
+                    // ref
+            
+            
+                    // invoke native method
+                    Void __result__ = null;
+                    try {
+                        com.amap.api.maps.MapsInitializer.setSupportRecycleView(var0);
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.MapsInitializer::setPolyline2Enable_batch", (__argsBatch__, __methodResult__) -> {
+                List<Void> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    boolean var0 = (boolean) ((Map<String, Object>) __args__).get("var0");
+            
+                    // ref
+            
+            
+                    // invoke native method
+                    Void __result__ = null;
+                    try {
+                        com.amap.api.maps.MapsInitializer.setPolyline2Enable(var0);
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.MapsInitializer::getPolyline2Enable_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+            
+            
+                    // invoke native method
+                    Boolean __result__ = null;
+                    try {
+                        __result__ = com.amap.api.maps.MapsInitializer.getPolyline2Enable();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.offlinemap.OfflineMapProvince::getUrl_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+                    com.amap.api.maps.offlinemap.OfflineMapProvince __this__ = (com.amap.api.maps.offlinemap.OfflineMapProvince) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    String __result__ = null;
+                    try {
+                        __result__ = __this__.getUrl();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.offlinemap.OfflineMapProvince::setUrl_batch", (__argsBatch__, __methodResult__) -> {
+                List<Void> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    String var1 = (String) ((Map<String, Object>) __args__).get("var1");
+            
+                    // ref
+                    com.amap.api.maps.offlinemap.OfflineMapProvince __this__ = (com.amap.api.maps.offlinemap.OfflineMapProvince) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    Void __result__ = null;
+                    try {
+                        __this__.setUrl(var1);
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.offlinemap.OfflineMapProvince::getState_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+                    com.amap.api.maps.offlinemap.OfflineMapProvince __this__ = (com.amap.api.maps.offlinemap.OfflineMapProvince) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    Integer __result__ = null;
+                    try {
+                        __result__ = __this__.getState();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.offlinemap.OfflineMapProvince::setState_batch", (__argsBatch__, __methodResult__) -> {
+                List<Void> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+            
+                    // ref
+                    com.amap.api.maps.offlinemap.OfflineMapProvince __this__ = (com.amap.api.maps.offlinemap.OfflineMapProvince) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    Void __result__ = null;
+                    try {
+                        __this__.setState(var1.intValue());
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.offlinemap.OfflineMapProvince::getSize_batch", (__argsBatch__, __methodResult__) -> {
+                List<Long> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+                    com.amap.api.maps.offlinemap.OfflineMapProvince __this__ = (com.amap.api.maps.offlinemap.OfflineMapProvince) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    Long __result__ = null;
+                    try {
+                        __result__ = __this__.getSize();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.offlinemap.OfflineMapProvince::setSize_batch", (__argsBatch__, __methodResult__) -> {
+                List<Void> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+            
+                    // ref
+                    com.amap.api.maps.offlinemap.OfflineMapProvince __this__ = (com.amap.api.maps.offlinemap.OfflineMapProvince) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    Void __result__ = null;
+                    try {
+                        __this__.setSize(var1.longValue());
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {

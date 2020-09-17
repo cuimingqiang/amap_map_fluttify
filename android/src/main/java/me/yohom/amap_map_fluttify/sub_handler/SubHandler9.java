@@ -33,631 +33,6 @@ public class SubHandler9 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
             // method
-            put("com.amap.api.maps.model.MarkerOptions::setGps_batch", (__argsBatch__, __methodResult__) -> {
-                List<com.amap.api.maps.model.MarkerOptions> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
-            
-                    // ref
-                    com.amap.api.maps.model.MarkerOptions __this__ = (com.amap.api.maps.model.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    com.amap.api.maps.model.MarkerOptions __result__ = null;
-                    try {
-                        __result__ = __this__.setGps(var1);
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.model.MarkerOptions::getPosition_batch", (__argsBatch__, __methodResult__) -> {
-                List<com.amap.api.maps.model.LatLng> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-            
-            
-                    // ref
-                    com.amap.api.maps.model.MarkerOptions __this__ = (com.amap.api.maps.model.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    com.amap.api.maps.model.LatLng __result__ = null;
-                    try {
-                        __result__ = __this__.getPosition();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.model.MarkerOptions::getTitle_batch", (__argsBatch__, __methodResult__) -> {
-                List<String> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-            
-            
-                    // ref
-                    com.amap.api.maps.model.MarkerOptions __this__ = (com.amap.api.maps.model.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    String __result__ = null;
-                    try {
-                        __result__ = __this__.getTitle();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.model.MarkerOptions::getSnippet_batch", (__argsBatch__, __methodResult__) -> {
-                List<String> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-            
-            
-                    // ref
-                    com.amap.api.maps.model.MarkerOptions __this__ = (com.amap.api.maps.model.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    String __result__ = null;
-                    try {
-                        __result__ = __this__.getSnippet();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.model.MarkerOptions::getIcon_batch", (__argsBatch__, __methodResult__) -> {
-                List<com.amap.api.maps.model.BitmapDescriptor> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-            
-            
-                    // ref
-                    com.amap.api.maps.model.MarkerOptions __this__ = (com.amap.api.maps.model.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    com.amap.api.maps.model.BitmapDescriptor __result__ = null;
-                    try {
-                        __result__ = __this__.getIcon();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.model.MarkerOptions::getAnchorU_batch", (__argsBatch__, __methodResult__) -> {
-                List<Float> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-            
-            
-                    // ref
-                    com.amap.api.maps.model.MarkerOptions __this__ = (com.amap.api.maps.model.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    Float __result__ = null;
-                    try {
-                        __result__ = __this__.getAnchorU();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.model.MarkerOptions::getInfoWindowOffsetX_batch", (__argsBatch__, __methodResult__) -> {
-                List<Integer> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-            
-            
-                    // ref
-                    com.amap.api.maps.model.MarkerOptions __this__ = (com.amap.api.maps.model.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    Integer __result__ = null;
-                    try {
-                        __result__ = __this__.getInfoWindowOffsetX();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.model.MarkerOptions::getInfoWindowOffsetY_batch", (__argsBatch__, __methodResult__) -> {
-                List<Integer> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-            
-            
-                    // ref
-                    com.amap.api.maps.model.MarkerOptions __this__ = (com.amap.api.maps.model.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    Integer __result__ = null;
-                    try {
-                        __result__ = __this__.getInfoWindowOffsetY();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.model.MarkerOptions::getAnchorV_batch", (__argsBatch__, __methodResult__) -> {
-                List<Float> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-            
-            
-                    // ref
-                    com.amap.api.maps.model.MarkerOptions __this__ = (com.amap.api.maps.model.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    Float __result__ = null;
-                    try {
-                        __result__ = __this__.getAnchorV();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.model.MarkerOptions::isDraggable_batch", (__argsBatch__, __methodResult__) -> {
-                List<Boolean> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-            
-            
-                    // ref
-                    com.amap.api.maps.model.MarkerOptions __this__ = (com.amap.api.maps.model.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    Boolean __result__ = null;
-                    try {
-                        __result__ = __this__.isDraggable();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.model.MarkerOptions::isVisible_batch", (__argsBatch__, __methodResult__) -> {
-                List<Boolean> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-            
-            
-                    // ref
-                    com.amap.api.maps.model.MarkerOptions __this__ = (com.amap.api.maps.model.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    Boolean __result__ = null;
-                    try {
-                        __result__ = __this__.isVisible();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.model.MarkerOptions::isGps_batch", (__argsBatch__, __methodResult__) -> {
-                List<Boolean> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-            
-            
-                    // ref
-                    com.amap.api.maps.model.MarkerOptions __this__ = (com.amap.api.maps.model.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    Boolean __result__ = null;
-                    try {
-                        __result__ = __this__.isGps();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.model.MarkerOptions::isFlat_batch", (__argsBatch__, __methodResult__) -> {
-                List<Boolean> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-            
-            
-                    // ref
-                    com.amap.api.maps.model.MarkerOptions __this__ = (com.amap.api.maps.model.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    Boolean __result__ = null;
-                    try {
-                        __result__ = __this__.isFlat();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.model.MarkerOptions::zIndex_batch", (__argsBatch__, __methodResult__) -> {
-                List<com.amap.api.maps.model.MarkerOptions> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
-            
-                    // ref
-                    com.amap.api.maps.model.MarkerOptions __this__ = (com.amap.api.maps.model.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    com.amap.api.maps.model.MarkerOptions __result__ = null;
-                    try {
-                        __result__ = __this__.zIndex(var1.floatValue());
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.model.MarkerOptions::getZIndex_batch", (__argsBatch__, __methodResult__) -> {
-                List<Float> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-            
-            
-                    // ref
-                    com.amap.api.maps.model.MarkerOptions __this__ = (com.amap.api.maps.model.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    Float __result__ = null;
-                    try {
-                        __result__ = __this__.getZIndex();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.model.MarkerOptions::alpha_batch", (__argsBatch__, __methodResult__) -> {
-                List<com.amap.api.maps.model.MarkerOptions> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
-            
-                    // ref
-                    com.amap.api.maps.model.MarkerOptions __this__ = (com.amap.api.maps.model.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    com.amap.api.maps.model.MarkerOptions __result__ = null;
-                    try {
-                        __result__ = __this__.alpha(var1.floatValue());
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.model.MarkerOptions::getAlpha_batch", (__argsBatch__, __methodResult__) -> {
-                List<Float> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-            
-            
-                    // ref
-                    com.amap.api.maps.model.MarkerOptions __this__ = (com.amap.api.maps.model.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    Float __result__ = null;
-                    try {
-                        __result__ = __this__.getAlpha();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.model.MarkerOptions::autoOverturnInfoWindow_batch", (__argsBatch__, __methodResult__) -> {
-                List<com.amap.api.maps.model.MarkerOptions> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
-            
-                    // ref
-                    com.amap.api.maps.model.MarkerOptions __this__ = (com.amap.api.maps.model.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    com.amap.api.maps.model.MarkerOptions __result__ = null;
-                    try {
-                        __result__ = __this__.autoOverturnInfoWindow(var1);
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.model.MarkerOptions::isInfoWindowAutoOverturn_batch", (__argsBatch__, __methodResult__) -> {
-                List<Boolean> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-            
-            
-                    // ref
-                    com.amap.api.maps.model.MarkerOptions __this__ = (com.amap.api.maps.model.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    Boolean __result__ = null;
-                    try {
-                        __result__ = __this__.isInfoWindowAutoOverturn();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.amap.api.maps.model.MarkerOptions::displayLevel_batch", (__argsBatch__, __methodResult__) -> {
-                List<com.amap.api.maps.model.MarkerOptions> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
-            
-                    // ref
-                    com.amap.api.maps.model.MarkerOptions __this__ = (com.amap.api.maps.model.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    com.amap.api.maps.model.MarkerOptions __result__ = null;
-                    try {
-                        __result__ = __this__.displayLevel(var1.intValue());
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
             put("com.amap.api.maps.model.MarkerOptions::getDisplayLevel_batch", (__argsBatch__, __methodResult__) -> {
                 List<Integer> __resultList__ = new ArrayList<>();
             
@@ -6313,6 +5688,636 @@ public class SubHandler9 {
                     com.amap.api.maps.model.LatLng __result__ = null;
                     try {
                         __result__ = __this__.getPassed();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.model.ArcOptions::getEnd_batch", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.model.LatLng> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+                    com.amap.api.maps.model.ArcOptions __this__ = (com.amap.api.maps.model.ArcOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    com.amap.api.maps.model.LatLng __result__ = null;
+                    try {
+                        __result__ = __this__.getEnd();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.model.CircleOptions::center_batch", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.model.CircleOptions> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    com.amap.api.maps.model.LatLng var1 = (com.amap.api.maps.model.LatLng) ((Map<String, Object>) __args__).get("var1");
+            
+                    // ref
+                    com.amap.api.maps.model.CircleOptions __this__ = (com.amap.api.maps.model.CircleOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    com.amap.api.maps.model.CircleOptions __result__ = null;
+                    try {
+                        __result__ = __this__.center(var1);
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.model.CircleOptions::radius_batch", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.model.CircleOptions> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+            
+                    // ref
+                    com.amap.api.maps.model.CircleOptions __this__ = (com.amap.api.maps.model.CircleOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    com.amap.api.maps.model.CircleOptions __result__ = null;
+                    try {
+                        __result__ = __this__.radius(var1.doubleValue());
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.model.CircleOptions::strokeWidth_batch", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.model.CircleOptions> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+            
+                    // ref
+                    com.amap.api.maps.model.CircleOptions __this__ = (com.amap.api.maps.model.CircleOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    com.amap.api.maps.model.CircleOptions __result__ = null;
+                    try {
+                        __result__ = __this__.strokeWidth(var1.floatValue());
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.model.CircleOptions::strokeColor_batch", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.model.CircleOptions> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+            
+                    // ref
+                    com.amap.api.maps.model.CircleOptions __this__ = (com.amap.api.maps.model.CircleOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    com.amap.api.maps.model.CircleOptions __result__ = null;
+                    try {
+                        __result__ = __this__.strokeColor(var1.intValue());
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.model.CircleOptions::fillColor_batch", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.model.CircleOptions> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+            
+                    // ref
+                    com.amap.api.maps.model.CircleOptions __this__ = (com.amap.api.maps.model.CircleOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    com.amap.api.maps.model.CircleOptions __result__ = null;
+                    try {
+                        __result__ = __this__.fillColor(var1.intValue());
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.model.CircleOptions::zIndex_batch", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.model.CircleOptions> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+            
+                    // ref
+                    com.amap.api.maps.model.CircleOptions __this__ = (com.amap.api.maps.model.CircleOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    com.amap.api.maps.model.CircleOptions __result__ = null;
+                    try {
+                        __result__ = __this__.zIndex(var1.floatValue());
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.model.CircleOptions::visible_batch", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.model.CircleOptions> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                    // ref
+                    com.amap.api.maps.model.CircleOptions __this__ = (com.amap.api.maps.model.CircleOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    com.amap.api.maps.model.CircleOptions __result__ = null;
+                    try {
+                        __result__ = __this__.visible(var1);
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.model.CircleOptions::getCenter_batch", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.model.LatLng> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+                    com.amap.api.maps.model.CircleOptions __this__ = (com.amap.api.maps.model.CircleOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    com.amap.api.maps.model.LatLng __result__ = null;
+                    try {
+                        __result__ = __this__.getCenter();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.model.CircleOptions::getRadius_batch", (__argsBatch__, __methodResult__) -> {
+                List<Double> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+                    com.amap.api.maps.model.CircleOptions __this__ = (com.amap.api.maps.model.CircleOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    Double __result__ = null;
+                    try {
+                        __result__ = __this__.getRadius();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.model.CircleOptions::getStrokeWidth_batch", (__argsBatch__, __methodResult__) -> {
+                List<Float> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+                    com.amap.api.maps.model.CircleOptions __this__ = (com.amap.api.maps.model.CircleOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    Float __result__ = null;
+                    try {
+                        __result__ = __this__.getStrokeWidth();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.model.CircleOptions::getStrokeColor_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+                    com.amap.api.maps.model.CircleOptions __this__ = (com.amap.api.maps.model.CircleOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    Integer __result__ = null;
+                    try {
+                        __result__ = __this__.getStrokeColor();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.model.CircleOptions::getFillColor_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+                    com.amap.api.maps.model.CircleOptions __this__ = (com.amap.api.maps.model.CircleOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    Integer __result__ = null;
+                    try {
+                        __result__ = __this__.getFillColor();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.model.CircleOptions::getZIndex_batch", (__argsBatch__, __methodResult__) -> {
+                List<Float> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+                    com.amap.api.maps.model.CircleOptions __this__ = (com.amap.api.maps.model.CircleOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    Float __result__ = null;
+                    try {
+                        __result__ = __this__.getZIndex();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.model.CircleOptions::isVisible_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+                    com.amap.api.maps.model.CircleOptions __this__ = (com.amap.api.maps.model.CircleOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    Boolean __result__ = null;
+                    try {
+                        __result__ = __this__.isVisible();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.model.CircleOptions::addHoles__com_amap_api_maps_model_BaseHoleOptions_batch", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.model.CircleOptions> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    com.amap.api.maps.model.BaseHoleOptions var1 = (com.amap.api.maps.model.BaseHoleOptions) ((Map<String, Object>) __args__).get("var1");
+            
+                    // ref
+                    com.amap.api.maps.model.CircleOptions __this__ = (com.amap.api.maps.model.CircleOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    com.amap.api.maps.model.CircleOptions __result__ = null;
+                    try {
+                        __result__ = __this__.addHoles(var1);
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.model.CircleOptions::addHoles__List_com_amap_api_maps_model_BaseHoleOptions__batch", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.model.CircleOptions> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    java.lang.Iterable<com.amap.api.maps.model.BaseHoleOptions> var1 = (java.lang.Iterable<com.amap.api.maps.model.BaseHoleOptions>) ((Map<String, Object>) __args__).get("var1");
+            
+                    // ref
+                    com.amap.api.maps.model.CircleOptions __this__ = (com.amap.api.maps.model.CircleOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    com.amap.api.maps.model.CircleOptions __result__ = null;
+                    try {
+                        __result__ = __this__.addHoles(var1);
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.model.CircleOptions::getHoleOptions_batch", (__argsBatch__, __methodResult__) -> {
+                List<java.util.List<com.amap.api.maps.model.BaseHoleOptions>> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+                    com.amap.api.maps.model.CircleOptions __this__ = (com.amap.api.maps.model.CircleOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    java.util.List<com.amap.api.maps.model.BaseHoleOptions> __result__ = null;
+                    try {
+                        __result__ = __this__.getHoleOptions();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.model.CircleOptions::setStrokeDottedLineType_batch", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.model.CircleOptions> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+            
+                    // ref
+                    com.amap.api.maps.model.CircleOptions __this__ = (com.amap.api.maps.model.CircleOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    com.amap.api.maps.model.CircleOptions __result__ = null;
+                    try {
+                        __result__ = __this__.setStrokeDottedLineType(var1.intValue());
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.amap.api.maps.model.CircleOptions::getStrokeDottedLineType_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+                    com.amap.api.maps.model.CircleOptions __this__ = (com.amap.api.maps.model.CircleOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    Integer __result__ = null;
+                    try {
+                        __result__ = __this__.getStrokeDottedLineType();
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {

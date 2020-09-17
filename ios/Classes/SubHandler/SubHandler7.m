@@ -16,262 +16,6 @@ extern BOOL enableLog;
 - (NSDictionary<NSString*, Handler>*) getSubHandler7 {
     __weak __typeof(self)weakSelf = self;
     return @{
-        @"RefClass::isKindOfMAOfflineItemCommonCity": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAOfflineItemCommonCity class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMAOfflineMap": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAOfflineMap class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMACircleRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MACircleRenderer class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMAParticleOverlayRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAParticleOverlayRenderer class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfNSValue": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[NSValue class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMAParticleRandomVelocityGenerate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAParticleRandomVelocityGenerate class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMAParticleRandomColorGenerate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAParticleRandomColorGenerate class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMAParticleConstantRotationGenerate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAParticleConstantRotationGenerate class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMAParticleCurveSizeGenerate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAParticleCurveSizeGenerate class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMAParticleEmissionModule": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAParticleEmissionModule class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMAParticleSinglePointShapeModule": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAParticleSinglePointShapeModule class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMAParticleRectShapeModule": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAParticleRectShapeModule class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMAParticleOverLifeModule": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAParticleOverLifeModule class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMAParticleOverlayOptions": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAParticleOverlayOptions class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMAParticleOverlayOptionsFactory": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAParticleOverlayOptionsFactory class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMAOverlayRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAOverlayRenderer class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMAUserLocation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAUserLocation class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMAHeatMapVectorNode": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAHeatMapVectorNode class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMAHeatMapVectorItem": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAHeatMapVectorItem class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMAHeatMapVectorOverlayOptions": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAHeatMapVectorOverlayOptions class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMAHeatMapVectorOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAHeatMapVectorOverlay class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMAMultiPointItem": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAMultiPointItem class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMAMultiPointOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAMultiPointOverlay class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMACustomBuildingOverlayOption": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MACustomBuildingOverlayOption class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMACustomBuildingOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MACustomBuildingOverlay class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMATracePoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MATracePoint class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMATraceLocation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MATraceLocation class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMAArc": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAArc class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMAUserLocationRepresentation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAUserLocationRepresentation class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMAMapView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAMapView class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMAOverlayPathRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAOverlayPathRenderer class]];
-            methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::isKindOfMAGroundOverlayRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
-        
-            BOOL isTargetType = [__this__ isKindOfClass:[MAGroundOverlayRenderer class]];
-            methodResult(@(isTargetType));
-        },
-        
         @"RefClass::isKindOfMACustomBuildingOverlayRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
             NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
@@ -651,42 +395,6 @@ extern BOOL enableLog;
                 __this__ = [[MAMultiTexturePolylineRenderer alloc] init];
             } else {
                 __this__ = [MAMultiTexturePolylineRenderer alloc];
-            }
-        
-            methodResult(__this__);
-        
-            if (enableLog) NSLog(@"HEAP: %@", HEAP);
-        },
-        
-        @"ObjectFactory::createMALonLatPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"ObjectFactory::createMALonLatPoint");
-            }
-        
-            MALonLatPoint* __this__;
-            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
-                __this__ = [[MALonLatPoint alloc] init];
-            } else {
-                __this__ = [MALonLatPoint alloc];
-            }
-        
-            methodResult(__this__);
-        
-            if (enableLog) NSLog(@"HEAP: %@", HEAP);
-        },
-        
-        @"ObjectFactory::createMASmoothPathTool": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"ObjectFactory::createMASmoothPathTool");
-            }
-        
-            MASmoothPathTool* __this__;
-            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
-                __this__ = [[MASmoothPathTool alloc] init];
-            } else {
-                __this__ = [MASmoothPathTool alloc];
             }
         
             methodResult(__this__);
@@ -2134,46 +1842,6 @@ extern BOOL enableLog;
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
         
-        @"ObjectFactory::create_batchMALonLatPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
-        
-            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
-            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
-                MALonLatPoint* __this__;
-                if ([init boolValue]) {
-                    __this__ = [[MALonLatPoint alloc] init];
-                } else {
-                    __this__ = [MALonLatPoint alloc];
-                }
-                [resultList addObject:__this__];
-            }
-        
-            methodResult(resultList);
-        
-            if (enableLog) NSLog(@"HEAP: %@", HEAP);
-        },
-        
-        @"ObjectFactory::create_batchMASmoothPathTool": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
-        
-            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
-            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
-                MASmoothPathTool* __this__;
-                if ([init boolValue]) {
-                    __this__ = [[MASmoothPathTool alloc] init];
-                } else {
-                    __this__ = [MASmoothPathTool alloc];
-                }
-                [resultList addObject:__this__];
-            }
-        
-            methodResult(resultList);
-        
-            if (enableLog) NSLog(@"HEAP: %@", HEAP);
-        },
-        
         @"ObjectFactory::create_batchMAOfflineProvince": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
             NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
         
@@ -3431,6 +3099,974 @@ extern BOOL enableLog;
             // result
             // 返回值: 结构体
             NSValue* __result__ = [NSValue value:&result withObjCType:@encode(MACoordinateRegion)];
+        
+            methodResult(__result__);
+        },
+        @"MAMapPointForCoordinate::MAMapPointForCoordinate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* coordinateValue = (NSValue*) args[@"coordinate"];
+            CLLocationCoordinate2D coordinate;
+            [coordinateValue getValue:&coordinate];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMapPointForCoordinate::MAMapPointForCoordinate(%@)", args[@"coordinate"]);
+            }
+        
+            // invoke native method
+            MAMapPoint result = MAMapPointForCoordinate(coordinate);
+        
+            // result
+            // 返回值: 结构体
+            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(MAMapPoint)];
+        
+            methodResult(__result__);
+        },
+        @"MACoordinateForMapPoint::MACoordinateForMapPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* mapPointValue = (NSValue*) args[@"mapPoint"];
+            MAMapPoint mapPoint;
+            [mapPointValue getValue:&mapPoint];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MACoordinateForMapPoint::MACoordinateForMapPoint(%@)", args[@"mapPoint"]);
+            }
+        
+            // invoke native method
+            CLLocationCoordinate2D result = MACoordinateForMapPoint(mapPoint);
+        
+            // result
+            // 返回值: 结构体
+            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(CLLocationCoordinate2D)];
+        
+            methodResult(__result__);
+        },
+        @"MACoordinateRegionForMapRect::MACoordinateRegionForMapRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* rectValue = (NSValue*) args[@"rect"];
+            MAMapRect rect;
+            [rectValue getValue:&rect];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MACoordinateRegionForMapRect::MACoordinateRegionForMapRect(%@)", args[@"rect"]);
+            }
+        
+            // invoke native method
+            MACoordinateRegion result = MACoordinateRegionForMapRect(rect);
+        
+            // result
+            // 返回值: 结构体
+            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(MACoordinateRegion)];
+        
+            methodResult(__result__);
+        },
+        @"MAMapRectForCoordinateRegion::MAMapRectForCoordinateRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* regionValue = (NSValue*) args[@"region"];
+            MACoordinateRegion region;
+            [regionValue getValue:&region];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMapRectForCoordinateRegion::MAMapRectForCoordinateRegion(%@)", args[@"region"]);
+            }
+        
+            // invoke native method
+            MAMapRect result = MAMapRectForCoordinateRegion(region);
+        
+            // result
+            // 返回值: 结构体
+            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(MAMapRect)];
+        
+            methodResult(__result__);
+        },
+        @"MAMetersPerMapPointAtLatitude::MAMetersPerMapPointAtLatitude": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // jsonable arg
+            CLLocationDegrees latitude = [args[@"latitude"] doubleValue];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMetersPerMapPointAtLatitude::MAMetersPerMapPointAtLatitude(%@)", args[@"latitude"]);
+            }
+        
+            // invoke native method
+            CLLocationDistance result = MAMetersPerMapPointAtLatitude(latitude);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        @"MAMapPointsPerMeterAtLatitude::MAMapPointsPerMeterAtLatitude": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // jsonable arg
+            CLLocationDegrees latitude = [args[@"latitude"] doubleValue];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMapPointsPerMeterAtLatitude::MAMapPointsPerMeterAtLatitude(%@)", args[@"latitude"]);
+            }
+        
+            // invoke native method
+            double result = MAMapPointsPerMeterAtLatitude(latitude);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        @"MAMetersBetweenMapPoints::MAMetersBetweenMapPoints": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* aValue = (NSValue*) args[@"a"];
+            MAMapPoint a;
+            [aValue getValue:&a];
+            // struct arg
+            NSValue* bValue = (NSValue*) args[@"b"];
+            MAMapPoint b;
+            [bValue getValue:&b];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMetersBetweenMapPoints::MAMetersBetweenMapPoints(%@, %@)", args[@"a"], args[@"b"]);
+            }
+        
+            // invoke native method
+            CLLocationDistance result = MAMetersBetweenMapPoints(a, b);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        @"MAAreaBetweenCoordinates::MAAreaBetweenCoordinates": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* northEastValue = (NSValue*) args[@"northEast"];
+            CLLocationCoordinate2D northEast;
+            [northEastValue getValue:&northEast];
+            // struct arg
+            NSValue* southWestValue = (NSValue*) args[@"southWest"];
+            CLLocationCoordinate2D southWest;
+            [southWestValue getValue:&southWest];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAAreaBetweenCoordinates::MAAreaBetweenCoordinates(%@, %@)", args[@"northEast"], args[@"southWest"]);
+            }
+        
+            // invoke native method
+            double result = MAAreaBetweenCoordinates(northEast, southWest);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        @"MAMapRectInset::MAMapRectInset": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* rectValue = (NSValue*) args[@"rect"];
+            MAMapRect rect;
+            [rectValue getValue:&rect];
+            // jsonable arg
+            double dx = [args[@"dx"] doubleValue];
+            // jsonable arg
+            double dy = [args[@"dy"] doubleValue];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMapRectInset::MAMapRectInset(%@, %@, %@)", args[@"rect"], args[@"dx"], args[@"dy"]);
+            }
+        
+            // invoke native method
+            MAMapRect result = MAMapRectInset(rect, dx, dy);
+        
+            // result
+            // 返回值: 结构体
+            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(MAMapRect)];
+        
+            methodResult(__result__);
+        },
+        @"MAMapRectUnion::MAMapRectUnion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* rect1Value = (NSValue*) args[@"rect1"];
+            MAMapRect rect1;
+            [rect1Value getValue:&rect1];
+            // struct arg
+            NSValue* rect2Value = (NSValue*) args[@"rect2"];
+            MAMapRect rect2;
+            [rect2Value getValue:&rect2];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMapRectUnion::MAMapRectUnion(%@, %@)", args[@"rect1"], args[@"rect2"]);
+            }
+        
+            // invoke native method
+            MAMapRect result = MAMapRectUnion(rect1, rect2);
+        
+            // result
+            // 返回值: 结构体
+            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(MAMapRect)];
+        
+            methodResult(__result__);
+        },
+        @"MAMapSizeContainsSize::MAMapSizeContainsSize": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* size1Value = (NSValue*) args[@"size1"];
+            MAMapSize size1;
+            [size1Value getValue:&size1];
+            // struct arg
+            NSValue* size2Value = (NSValue*) args[@"size2"];
+            MAMapSize size2;
+            [size2Value getValue:&size2];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMapSizeContainsSize::MAMapSizeContainsSize(%@, %@)", args[@"size1"], args[@"size2"]);
+            }
+        
+            // invoke native method
+            BOOL result = MAMapSizeContainsSize(size1, size2);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        @"MAMapRectContainsPoint::MAMapRectContainsPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* rectValue = (NSValue*) args[@"rect"];
+            MAMapRect rect;
+            [rectValue getValue:&rect];
+            // struct arg
+            NSValue* pointValue = (NSValue*) args[@"point"];
+            MAMapPoint point;
+            [pointValue getValue:&point];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMapRectContainsPoint::MAMapRectContainsPoint(%@, %@)", args[@"rect"], args[@"point"]);
+            }
+        
+            // invoke native method
+            BOOL result = MAMapRectContainsPoint(rect, point);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        @"MAMapRectIntersectsRect::MAMapRectIntersectsRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* rect1Value = (NSValue*) args[@"rect1"];
+            MAMapRect rect1;
+            [rect1Value getValue:&rect1];
+            // struct arg
+            NSValue* rect2Value = (NSValue*) args[@"rect2"];
+            MAMapRect rect2;
+            [rect2Value getValue:&rect2];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMapRectIntersectsRect::MAMapRectIntersectsRect(%@, %@)", args[@"rect1"], args[@"rect2"]);
+            }
+        
+            // invoke native method
+            BOOL result = MAMapRectIntersectsRect(rect1, rect2);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        @"MAMapRectContainsRect::MAMapRectContainsRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* rect1Value = (NSValue*) args[@"rect1"];
+            MAMapRect rect1;
+            [rect1Value getValue:&rect1];
+            // struct arg
+            NSValue* rect2Value = (NSValue*) args[@"rect2"];
+            MAMapRect rect2;
+            [rect2Value getValue:&rect2];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMapRectContainsRect::MAMapRectContainsRect(%@, %@)", args[@"rect1"], args[@"rect2"]);
+            }
+        
+            // invoke native method
+            BOOL result = MAMapRectContainsRect(rect1, rect2);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        @"MACircleContainsPoint::MACircleContainsPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* pointValue = (NSValue*) args[@"point"];
+            MAMapPoint point;
+            [pointValue getValue:&point];
+            // struct arg
+            NSValue* centerValue = (NSValue*) args[@"center"];
+            MAMapPoint center;
+            [centerValue getValue:&center];
+            // jsonable arg
+            double radius = [args[@"radius"] doubleValue];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MACircleContainsPoint::MACircleContainsPoint(%@, %@, %@)", args[@"point"], args[@"center"], args[@"radius"]);
+            }
+        
+            // invoke native method
+            BOOL result = MACircleContainsPoint(point, center, radius);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        @"MACircleContainsCoordinate::MACircleContainsCoordinate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* pointValue = (NSValue*) args[@"point"];
+            CLLocationCoordinate2D point;
+            [pointValue getValue:&point];
+            // struct arg
+            NSValue* centerValue = (NSValue*) args[@"center"];
+            CLLocationCoordinate2D center;
+            [centerValue getValue:&center];
+            // jsonable arg
+            double radius = [args[@"radius"] doubleValue];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MACircleContainsCoordinate::MACircleContainsCoordinate(%@, %@, %@)", args[@"point"], args[@"center"], args[@"radius"]);
+            }
+        
+            // invoke native method
+            BOOL result = MACircleContainsCoordinate(point, center, radius);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        @"MAGetNearestMapPointFromPolyline::MAGetNearestMapPointFromPolyline": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* pointValue = (NSValue*) args[@"point"];
+            MAMapPoint point;
+            [pointValue getValue:&point];
+            // list arg struct
+            NSArray<NSValue*>* polylineValueList = (NSArray<NSValue*>*) args[@"polyline"];
+            MAMapPoint polyline[polylineValueList.count];
+            for (int __i__ = 0; __i__ < polylineValueList.count; __i__++) {
+                NSValue* polylineValue = (NSValue*) [polylineValueList objectAtIndex:__i__];
+                MAMapPoint polylineItem;
+                [polylineValue getValue:&polylineItem];
+                polyline[__i__] = polylineItem;
+            }
+            // jsonable arg
+            NSUInteger count = [args[@"count"] unsignedIntegerValue];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAGetNearestMapPointFromPolyline::MAGetNearestMapPointFromPolyline(%@, %@, %@)", args[@"point"], args[@"polyline"], args[@"count"]);
+            }
+        
+            // invoke native method
+            MAMapPoint result = MAGetNearestMapPointFromPolyline(point, polyline, count);
+        
+            // result
+            // 返回值: 结构体
+            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(MAMapPoint)];
+        
+            methodResult(__result__);
+        },
+        @"MAPolygonContainsPoint::MAPolygonContainsPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* pointValue = (NSValue*) args[@"point"];
+            MAMapPoint point;
+            [pointValue getValue:&point];
+            // list arg struct
+            NSArray<NSValue*>* polygonValueList = (NSArray<NSValue*>*) args[@"polygon"];
+            MAMapPoint polygon[polygonValueList.count];
+            for (int __i__ = 0; __i__ < polygonValueList.count; __i__++) {
+                NSValue* polygonValue = (NSValue*) [polygonValueList objectAtIndex:__i__];
+                MAMapPoint polygonItem;
+                [polygonValue getValue:&polygonItem];
+                polygon[__i__] = polygonItem;
+            }
+            // jsonable arg
+            NSUInteger count = [args[@"count"] unsignedIntegerValue];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAPolygonContainsPoint::MAPolygonContainsPoint(%@, %@, %@)", args[@"point"], args[@"polygon"], args[@"count"]);
+            }
+        
+            // invoke native method
+            BOOL result = MAPolygonContainsPoint(point, polygon, count);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        @"MAPolygonContainsCoordinate::MAPolygonContainsCoordinate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* pointValue = (NSValue*) args[@"point"];
+            CLLocationCoordinate2D point;
+            [pointValue getValue:&point];
+            // list arg struct
+            NSArray<NSValue*>* polygonValueList = (NSArray<NSValue*>*) args[@"polygon"];
+            CLLocationCoordinate2D polygon[polygonValueList.count];
+            for (int __i__ = 0; __i__ < polygonValueList.count; __i__++) {
+                NSValue* polygonValue = (NSValue*) [polygonValueList objectAtIndex:__i__];
+                CLLocationCoordinate2D polygonItem;
+                [polygonValue getValue:&polygonItem];
+                polygon[__i__] = polygonItem;
+            }
+            // jsonable arg
+            NSUInteger count = [args[@"count"] unsignedIntegerValue];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAPolygonContainsCoordinate::MAPolygonContainsCoordinate(%@, %@, %@)", args[@"point"], args[@"polygon"], args[@"count"]);
+            }
+        
+            // invoke native method
+            BOOL result = MAPolygonContainsCoordinate(point, polygon, count);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        @"MAGetNearestMapPointFromLine::MAGetNearestMapPointFromLine": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* lineStartValue = (NSValue*) args[@"lineStart"];
+            MAMapPoint lineStart;
+            [lineStartValue getValue:&lineStart];
+            // struct arg
+            NSValue* lineEndValue = (NSValue*) args[@"lineEnd"];
+            MAMapPoint lineEnd;
+            [lineEndValue getValue:&lineEnd];
+            // struct arg
+            NSValue* pointValue = (NSValue*) args[@"point"];
+            MAMapPoint point;
+            [pointValue getValue:&point];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAGetNearestMapPointFromLine::MAGetNearestMapPointFromLine(%@, %@, %@)", args[@"lineStart"], args[@"lineEnd"], args[@"point"]);
+            }
+        
+            // invoke native method
+            MAMapPoint result = MAGetNearestMapPointFromLine(lineStart, lineEnd, point);
+        
+            // result
+            // 返回值: 结构体
+            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(MAMapPoint)];
+        
+            methodResult(__result__);
+        },
+        @"MAAreaForPolygon::MAAreaForPolygon": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // list arg struct
+            NSArray<NSValue*>* coordinatesValueList = (NSArray<NSValue*>*) args[@"coordinates"];
+            CLLocationCoordinate2D coordinates[coordinatesValueList.count];
+            for (int __i__ = 0; __i__ < coordinatesValueList.count; __i__++) {
+                NSValue* coordinatesValue = (NSValue*) [coordinatesValueList objectAtIndex:__i__];
+                CLLocationCoordinate2D coordinatesItem;
+                [coordinatesValue getValue:&coordinatesItem];
+                coordinates[__i__] = coordinatesItem;
+            }
+            // jsonable arg
+            int count = [args[@"count"] intValue];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAAreaForPolygon::MAAreaForPolygon(%@, %@)", args[@"coordinates"], args[@"count"]);
+            }
+        
+            // invoke native method
+            double result = MAAreaForPolygon(coordinates, count);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        @"MAMapPointMake::MAMapPointMake": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // jsonable arg
+            double x = [args[@"x"] doubleValue];
+            // jsonable arg
+            double y = [args[@"y"] doubleValue];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMapPointMake::MAMapPointMake(%@, %@)", args[@"x"], args[@"y"]);
+            }
+        
+            // invoke native method
+            MAMapPoint result = MAMapPointMake(x, y);
+        
+            // result
+            // 返回值: 结构体
+            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(MAMapPoint)];
+        
+            methodResult(__result__);
+        },
+        @"MAMapSizeMake::MAMapSizeMake": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // jsonable arg
+            double width = [args[@"width"] doubleValue];
+            // jsonable arg
+            double height = [args[@"height"] doubleValue];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMapSizeMake::MAMapSizeMake(%@, %@)", args[@"width"], args[@"height"]);
+            }
+        
+            // invoke native method
+            MAMapSize result = MAMapSizeMake(width, height);
+        
+            // result
+            // 返回值: 结构体
+            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(MAMapSize)];
+        
+            methodResult(__result__);
+        },
+        @"MAMapRectMake::MAMapRectMake": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // jsonable arg
+            double x = [args[@"x"] doubleValue];
+            // jsonable arg
+            double y = [args[@"y"] doubleValue];
+            // jsonable arg
+            double width = [args[@"width"] doubleValue];
+            // jsonable arg
+            double height = [args[@"height"] doubleValue];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMapRectMake::MAMapRectMake(%@, %@, %@, %@)", args[@"x"], args[@"y"], args[@"width"], args[@"height"]);
+            }
+        
+            // invoke native method
+            MAMapRect result = MAMapRectMake(x, y, width, height);
+        
+            // result
+            // 返回值: 结构体
+            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(MAMapRect)];
+        
+            methodResult(__result__);
+        },
+        @"MAMapRectGetMinX::MAMapRectGetMinX": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* rectValue = (NSValue*) args[@"rect"];
+            MAMapRect rect;
+            [rectValue getValue:&rect];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMapRectGetMinX::MAMapRectGetMinX(%@)", args[@"rect"]);
+            }
+        
+            // invoke native method
+            double result = MAMapRectGetMinX(rect);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        @"MAMapRectGetMinY::MAMapRectGetMinY": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* rectValue = (NSValue*) args[@"rect"];
+            MAMapRect rect;
+            [rectValue getValue:&rect];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMapRectGetMinY::MAMapRectGetMinY(%@)", args[@"rect"]);
+            }
+        
+            // invoke native method
+            double result = MAMapRectGetMinY(rect);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        @"MAMapRectGetMidX::MAMapRectGetMidX": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* rectValue = (NSValue*) args[@"rect"];
+            MAMapRect rect;
+            [rectValue getValue:&rect];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMapRectGetMidX::MAMapRectGetMidX(%@)", args[@"rect"]);
+            }
+        
+            // invoke native method
+            double result = MAMapRectGetMidX(rect);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        @"MAMapRectGetMidY::MAMapRectGetMidY": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* rectValue = (NSValue*) args[@"rect"];
+            MAMapRect rect;
+            [rectValue getValue:&rect];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMapRectGetMidY::MAMapRectGetMidY(%@)", args[@"rect"]);
+            }
+        
+            // invoke native method
+            double result = MAMapRectGetMidY(rect);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        @"MAMapRectGetMaxX::MAMapRectGetMaxX": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* rectValue = (NSValue*) args[@"rect"];
+            MAMapRect rect;
+            [rectValue getValue:&rect];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMapRectGetMaxX::MAMapRectGetMaxX(%@)", args[@"rect"]);
+            }
+        
+            // invoke native method
+            double result = MAMapRectGetMaxX(rect);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        @"MAMapRectGetMaxY::MAMapRectGetMaxY": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* rectValue = (NSValue*) args[@"rect"];
+            MAMapRect rect;
+            [rectValue getValue:&rect];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMapRectGetMaxY::MAMapRectGetMaxY(%@)", args[@"rect"]);
+            }
+        
+            // invoke native method
+            double result = MAMapRectGetMaxY(rect);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        @"MAMapRectGetWidth::MAMapRectGetWidth": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* rectValue = (NSValue*) args[@"rect"];
+            MAMapRect rect;
+            [rectValue getValue:&rect];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMapRectGetWidth::MAMapRectGetWidth(%@)", args[@"rect"]);
+            }
+        
+            // invoke native method
+            double result = MAMapRectGetWidth(rect);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        @"MAMapRectGetHeight::MAMapRectGetHeight": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* rectValue = (NSValue*) args[@"rect"];
+            MAMapRect rect;
+            [rectValue getValue:&rect];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMapRectGetHeight::MAMapRectGetHeight(%@)", args[@"rect"]);
+            }
+        
+            // invoke native method
+            double result = MAMapRectGetHeight(rect);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        @"MAMapPointEqualToPoint::MAMapPointEqualToPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* point1Value = (NSValue*) args[@"point1"];
+            MAMapPoint point1;
+            [point1Value getValue:&point1];
+            // struct arg
+            NSValue* point2Value = (NSValue*) args[@"point2"];
+            MAMapPoint point2;
+            [point2Value getValue:&point2];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMapPointEqualToPoint::MAMapPointEqualToPoint(%@, %@)", args[@"point1"], args[@"point2"]);
+            }
+        
+            // invoke native method
+            BOOL result = MAMapPointEqualToPoint(point1, point2);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        @"MAMapSizeEqualToSize::MAMapSizeEqualToSize": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* size1Value = (NSValue*) args[@"size1"];
+            MAMapSize size1;
+            [size1Value getValue:&size1];
+            // struct arg
+            NSValue* size2Value = (NSValue*) args[@"size2"];
+            MAMapSize size2;
+            [size2Value getValue:&size2];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMapSizeEqualToSize::MAMapSizeEqualToSize(%@, %@)", args[@"size1"], args[@"size2"]);
+            }
+        
+            // invoke native method
+            BOOL result = MAMapSizeEqualToSize(size1, size2);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        @"MAMapRectEqualToRect::MAMapRectEqualToRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* rect1Value = (NSValue*) args[@"rect1"];
+            MAMapRect rect1;
+            [rect1Value getValue:&rect1];
+            // struct arg
+            NSValue* rect2Value = (NSValue*) args[@"rect2"];
+            MAMapRect rect2;
+            [rect2Value getValue:&rect2];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMapRectEqualToRect::MAMapRectEqualToRect(%@, %@)", args[@"rect1"], args[@"rect2"]);
+            }
+        
+            // invoke native method
+            BOOL result = MAMapRectEqualToRect(rect1, rect2);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        @"MAMapRectIsNull::MAMapRectIsNull": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* rectValue = (NSValue*) args[@"rect"];
+            MAMapRect rect;
+            [rectValue getValue:&rect];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: MAMapRectIsNull::MAMapRectIsNull(%@)", args[@"rect"]);
+            }
+        
+            // invoke native method
+            BOOL result = MAMapRectIsNull(rect);
+        
+            // result
+            // 返回值: Value
+            NSObject* __result__ = @(result);
         
             methodResult(__result__);
         },

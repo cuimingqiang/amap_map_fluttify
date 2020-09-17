@@ -16,186 +16,6 @@ extern BOOL enableLog;
 - (NSDictionary<NSString*, Handler>*) getSubHandler2 {
     __weak __typeof(self)weakSelf = self;
     return @{
-        @"MAHeatMapTileOverlay::get_gradient": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MAHeatMapTileOverlay::get_gradient");
-            }
-        
-            // ref object
-            MAHeatMapTileOverlay* ref = (MAHeatMapTileOverlay*) args[@"__this__"];
-        
-            // invoke native method
-            MAHeatMapGradient* result = ref.gradient;
-        
-            // return a ref
-            id __result__ = result;
-        
-            methodResult(__result__);
-        },
-        
-        @"MAHeatMapTileOverlay::get_allowRetinaAdapting": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MAHeatMapTileOverlay::get_allowRetinaAdapting");
-            }
-        
-            // ref object
-            MAHeatMapTileOverlay* ref = (MAHeatMapTileOverlay*) args[@"__this__"];
-        
-            // invoke native method
-            BOOL result = ref.allowRetinaAdapting;
-        
-            // 返回值: Value
-            NSObject* __result__ = @(result);
-        
-            methodResult(__result__);
-        },
-        
-        @"MAMapStatus::get_centerCoordinate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MAMapStatus::get_centerCoordinate");
-            }
-        
-            // ref object
-            MAMapStatus* ref = (MAMapStatus*) args[@"__this__"];
-        
-            // invoke native method
-            CLLocationCoordinate2D result = ref.centerCoordinate;
-        
-            // 返回值: 结构体
-            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(CLLocationCoordinate2D)];
-        
-            methodResult(__result__);
-        },
-        
-        @"MAMapStatus::get_zoomLevel": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MAMapStatus::get_zoomLevel");
-            }
-        
-            // ref object
-            MAMapStatus* ref = (MAMapStatus*) args[@"__this__"];
-        
-            // invoke native method
-            CGFloat result = ref.zoomLevel;
-        
-            // 返回值: Value
-            NSObject* __result__ = @(result);
-        
-            methodResult(__result__);
-        },
-        
-        @"MAMapStatus::get_rotationDegree": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MAMapStatus::get_rotationDegree");
-            }
-        
-            // ref object
-            MAMapStatus* ref = (MAMapStatus*) args[@"__this__"];
-        
-            // invoke native method
-            CGFloat result = ref.rotationDegree;
-        
-            // 返回值: Value
-            NSObject* __result__ = @(result);
-        
-            methodResult(__result__);
-        },
-        
-        @"MAMapStatus::get_cameraDegree": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MAMapStatus::get_cameraDegree");
-            }
-        
-            // ref object
-            MAMapStatus* ref = (MAMapStatus*) args[@"__this__"];
-        
-            // invoke native method
-            CGFloat result = ref.cameraDegree;
-        
-            // 返回值: Value
-            NSObject* __result__ = @(result);
-        
-            methodResult(__result__);
-        },
-        
-        @"MAMapStatus::get_screenAnchor": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MAMapStatus::get_screenAnchor");
-            }
-        
-            // ref object
-            MAMapStatus* ref = (MAMapStatus*) args[@"__this__"];
-        
-            // invoke native method
-            CGPoint result = ref.screenAnchor;
-        
-            // 返回值: 结构体
-            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(CGPoint)];
-        
-            methodResult(__result__);
-        },
-        
-        @"MAPointAnnotation::get_coordinate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MAPointAnnotation::get_coordinate");
-            }
-        
-            // ref object
-            MAPointAnnotation* ref = (MAPointAnnotation*) args[@"__this__"];
-        
-            // invoke native method
-            CLLocationCoordinate2D result = ref.coordinate;
-        
-            // 返回值: 结构体
-            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(CLLocationCoordinate2D)];
-        
-            methodResult(__result__);
-        },
-        
-        @"MAPointAnnotation::get_isLockedToScreen": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MAPointAnnotation::get_isLockedToScreen");
-            }
-        
-            // ref object
-            MAPointAnnotation* ref = (MAPointAnnotation*) args[@"__this__"];
-        
-            // invoke native method
-            BOOL result = ref.lockedToScreen;
-        
-            // 返回值: Value
-            NSObject* __result__ = @(result);
-        
-            methodResult(__result__);
-        },
-        
-        @"MAPointAnnotation::get_lockedScreenPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MAPointAnnotation::get_lockedScreenPoint");
-            }
-        
-            // ref object
-            MAPointAnnotation* ref = (MAPointAnnotation*) args[@"__this__"];
-        
-            // invoke native method
-            CGPoint result = ref.lockedScreenPoint;
-        
-            // 返回值: 结构体
-            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(CGPoint)];
-        
-            methodResult(__result__);
-        },
-        
         @"MACircle::get_coordinate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // print log
             if (enableLog) {
@@ -650,96 +470,6 @@ extern BOOL enableLog;
         
             // 返回值: 结构体
             NSValue* __result__ = [NSValue value:&result withObjCType:@encode(MAPathShowRange)];
-        
-            methodResult(__result__);
-        },
-        
-        @"MALonLatPoint::get_lat": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MALonLatPoint::get_lat");
-            }
-        
-            // ref object
-            MALonLatPoint* ref = (MALonLatPoint*) args[@"__this__"];
-        
-            // invoke native method
-            double result = ref.lat;
-        
-            // 返回值: Value
-            NSObject* __result__ = @(result);
-        
-            methodResult(__result__);
-        },
-        
-        @"MALonLatPoint::get_lon": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MALonLatPoint::get_lon");
-            }
-        
-            // ref object
-            MALonLatPoint* ref = (MALonLatPoint*) args[@"__this__"];
-        
-            // invoke native method
-            double result = ref.lon;
-        
-            // 返回值: Value
-            NSObject* __result__ = @(result);
-        
-            methodResult(__result__);
-        },
-        
-        @"MASmoothPathTool::get_intensity": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MASmoothPathTool::get_intensity");
-            }
-        
-            // ref object
-            MASmoothPathTool* ref = (MASmoothPathTool*) args[@"__this__"];
-        
-            // invoke native method
-            int result = ref.intensity;
-        
-            // 返回值: Value
-            NSObject* __result__ = @(result);
-        
-            methodResult(__result__);
-        },
-        
-        @"MASmoothPathTool::get_threshHold": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MASmoothPathTool::get_threshHold");
-            }
-        
-            // ref object
-            MASmoothPathTool* ref = (MASmoothPathTool*) args[@"__this__"];
-        
-            // invoke native method
-            float result = ref.threshHold;
-        
-            // 返回值: Value
-            NSObject* __result__ = @(result);
-        
-            methodResult(__result__);
-        },
-        
-        @"MASmoothPathTool::get_noiseThreshhold": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MASmoothPathTool::get_noiseThreshhold");
-            }
-        
-            // ref object
-            MASmoothPathTool* ref = (MASmoothPathTool*) args[@"__this__"];
-        
-            // invoke native method
-            int result = ref.noiseThreshhold;
-        
-            // 返回值: Value
-            NSObject* __result__ = @(result);
         
             methodResult(__result__);
         },
@@ -3696,6 +3426,276 @@ extern BOOL enableLog;
         
             // return a ref
             id __result__ = result;
+        
+            methodResult(__result__);
+        },
+        
+        @"MAMapView::get_mapType": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAMapView::get_mapType");
+            }
+        
+            // ref object
+            MAMapView* ref = (MAMapView*) args[@"__this__"];
+        
+            // invoke native method
+            MAMapType result = ref.mapType;
+        
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        
+        @"MAMapView::get_centerCoordinate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAMapView::get_centerCoordinate");
+            }
+        
+            // ref object
+            MAMapView* ref = (MAMapView*) args[@"__this__"];
+        
+            // invoke native method
+            CLLocationCoordinate2D result = ref.centerCoordinate;
+        
+            // 返回值: 结构体
+            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(CLLocationCoordinate2D)];
+        
+            methodResult(__result__);
+        },
+        
+        @"MAMapView::get_region": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAMapView::get_region");
+            }
+        
+            // ref object
+            MAMapView* ref = (MAMapView*) args[@"__this__"];
+        
+            // invoke native method
+            MACoordinateRegion result = ref.region;
+        
+            // 返回值: 结构体
+            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(MACoordinateRegion)];
+        
+            methodResult(__result__);
+        },
+        
+        @"MAMapView::get_visibleMapRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAMapView::get_visibleMapRect");
+            }
+        
+            // ref object
+            MAMapView* ref = (MAMapView*) args[@"__this__"];
+        
+            // invoke native method
+            MAMapRect result = ref.visibleMapRect;
+        
+            // 返回值: 结构体
+            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(MAMapRect)];
+        
+            methodResult(__result__);
+        },
+        
+        @"MAMapView::get_limitRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAMapView::get_limitRegion");
+            }
+        
+            // ref object
+            MAMapView* ref = (MAMapView*) args[@"__this__"];
+        
+            // invoke native method
+            MACoordinateRegion result = ref.limitRegion;
+        
+            // 返回值: 结构体
+            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(MACoordinateRegion)];
+        
+            methodResult(__result__);
+        },
+        
+        @"MAMapView::get_limitMapRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAMapView::get_limitMapRect");
+            }
+        
+            // ref object
+            MAMapView* ref = (MAMapView*) args[@"__this__"];
+        
+            // invoke native method
+            MAMapRect result = ref.limitMapRect;
+        
+            // 返回值: 结构体
+            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(MAMapRect)];
+        
+            methodResult(__result__);
+        },
+        
+        @"MAMapView::get_zoomLevel": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAMapView::get_zoomLevel");
+            }
+        
+            // ref object
+            MAMapView* ref = (MAMapView*) args[@"__this__"];
+        
+            // invoke native method
+            CGFloat result = ref.zoomLevel;
+        
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        
+        @"MAMapView::get_minZoomLevel": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAMapView::get_minZoomLevel");
+            }
+        
+            // ref object
+            MAMapView* ref = (MAMapView*) args[@"__this__"];
+        
+            // invoke native method
+            CGFloat result = ref.minZoomLevel;
+        
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        
+        @"MAMapView::get_maxZoomLevel": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAMapView::get_maxZoomLevel");
+            }
+        
+            // ref object
+            MAMapView* ref = (MAMapView*) args[@"__this__"];
+        
+            // invoke native method
+            CGFloat result = ref.maxZoomLevel;
+        
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        
+        @"MAMapView::get_rotationDegree": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAMapView::get_rotationDegree");
+            }
+        
+            // ref object
+            MAMapView* ref = (MAMapView*) args[@"__this__"];
+        
+            // invoke native method
+            CGFloat result = ref.rotationDegree;
+        
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        
+        @"MAMapView::get_cameraDegree": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAMapView::get_cameraDegree");
+            }
+        
+            // ref object
+            MAMapView* ref = (MAMapView*) args[@"__this__"];
+        
+            // invoke native method
+            CGFloat result = ref.cameraDegree;
+        
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        
+        @"MAMapView::get_zoomingInPivotsAroundAnchorPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAMapView::get_zoomingInPivotsAroundAnchorPoint");
+            }
+        
+            // ref object
+            MAMapView* ref = (MAMapView*) args[@"__this__"];
+        
+            // invoke native method
+            BOOL result = ref.zoomingInPivotsAroundAnchorPoint;
+        
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        
+        @"MAMapView::get_isZoomEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAMapView::get_isZoomEnabled");
+            }
+        
+            // ref object
+            MAMapView* ref = (MAMapView*) args[@"__this__"];
+        
+            // invoke native method
+            BOOL result = ref.zoomEnabled;
+        
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        
+        @"MAMapView::get_isScrollEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAMapView::get_isScrollEnabled");
+            }
+        
+            // ref object
+            MAMapView* ref = (MAMapView*) args[@"__this__"];
+        
+            // invoke native method
+            BOOL result = ref.scrollEnabled;
+        
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        
+        @"MAMapView::get_isRotateEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAMapView::get_isRotateEnabled");
+            }
+        
+            // ref object
+            MAMapView* ref = (MAMapView*) args[@"__this__"];
+        
+            // invoke native method
+            BOOL result = ref.rotateEnabled;
+        
+            // 返回值: Value
+            NSObject* __result__ = @(result);
         
             methodResult(__result__);
         },

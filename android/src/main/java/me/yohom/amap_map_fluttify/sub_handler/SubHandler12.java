@@ -32,132 +32,6 @@ import static me.yohom.foundation_fluttify.FoundationFluttifyPluginKt.getHEAP;
 public class SubHandler12 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
-            put("RefClass::isKindOfcom_amap_api_maps_model_Text", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.amap.api.maps.model.Text);
-            });
-            put("RefClass::isKindOfcom_amap_api_maps_model_LatLngBounds_Builder", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.amap.api.maps.model.LatLngBounds.Builder);
-            });
-            put("RefClass::isKindOfcom_amap_api_maps_model_HeatMapLayer", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.amap.api.maps.model.HeatMapLayer);
-            });
-            put("RefClass::isKindOfcom_amap_api_maps_model_NavigateArrowOptions", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.amap.api.maps.model.NavigateArrowOptions);
-            });
-            put("RefClass::isKindOfcom_amap_api_maps_model_BitmapDescriptorFactory", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.amap.api.maps.model.BitmapDescriptorFactory);
-            });
-            put("RefClass::isKindOfcom_amap_api_maps_model_UrlTileProvider", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.amap.api.maps.model.UrlTileProvider);
-            });
-            put("RefClass::isKindOfcom_amap_api_maps_model_MultiPointOverlayOptions", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.amap.api.maps.model.MultiPointOverlayOptions);
-            });
-            put("RefClass::isKindOfcom_amap_api_maps_model_PoiCreator", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.amap.api.maps.model.PoiCreator);
-            });
-            put("RefClass::isKindOfcom_amap_api_maps_model_PolylineOptions", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.amap.api.maps.model.PolylineOptions);
-            });
-            put("RefClass::isKindOfcom_amap_api_maps_model_Tile", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.amap.api.maps.model.Tile);
-            });
-            put("RefClass::isKindOfcom_amap_api_maps_model_GL3DModel", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.amap.api.maps.model.GL3DModel);
-            });
-            put("RefClass::isKindOfcom_amap_api_maps_model_Gradient", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.amap.api.maps.model.Gradient);
-            });
-            put("RefClass::isKindOfcom_amap_api_maps_model_HeatMapItem", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.amap.api.maps.model.HeatMapItem);
-            });
-            put("RefClass::isKindOfcom_amap_api_maps_model_NaviPara", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.amap.api.maps.model.NaviPara);
-            });
-            put("RefClass::isKindOfcom_amap_api_maps_model_GroundOverlayOptions", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.amap.api.maps.model.GroundOverlayOptions);
-            });
-            put("RefClass::isKindOfcom_amap_api_maps_model_GL3DModelOptions", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.amap.api.maps.model.GL3DModelOptions);
-            });
-            put("RefClass::isKindOfcom_amap_api_maps_model_GroundOverlay", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.amap.api.maps.model.GroundOverlay);
-            });
-            put("RefClass::isKindOfcom_amap_api_maps_model_MyTrafficStyle", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.amap.api.maps.model.MyTrafficStyle);
-            });
-            put("RefClass::isKindOfcom_amap_api_maps_model_CameraPosition", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.amap.api.maps.model.CameraPosition);
-            });
-            put("RefClass::isKindOfcom_amap_api_maps_model_TextOptionsCreator", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.amap.api.maps.model.TextOptionsCreator);
-            });
-            put("RefClass::isKindOfcom_amap_api_maps_model_PoiPara", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.amap.api.maps.model.PoiPara);
-            });
             put("RefClass::isKindOfcom_amap_api_maps_model_MarkerOptions", (__args__, __methodResult__) -> {
                 // 引用对象
                 Object __this__ = ((Map<String, Object>) __args__).get("__this__");
@@ -736,25 +610,6 @@ public class SubHandler12 {
             
                 // create target object
                 com.amap.api.maps.CoordinateConverter __obj__ = new com.amap.api.maps.CoordinateConverter(var1);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(__obj__);
-            });
-            // factory
-            put("ObjectFactory::createcom_amap_api_maps_utils_PathSmoothTool__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_amap_api_maps_utils_PathSmoothTool__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.amap.api.maps.utils.PathSmoothTool __obj__ = new com.amap.api.maps.utils.PathSmoothTool();
             
                 // print current HEAP
                 if (getEnableLog()) {
@@ -2882,6 +2737,858 @@ public class SubHandler12 {
             
                     // create target object
                     com.amap.api.maps.CameraUpdateFactory __obj__ = new com.amap.api.maps.CameraUpdateFactory();
+            
+                    // print current HEAP
+                    if (getEnableLog()) {
+                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                    }
+            
+                    __resultList__.add(__obj__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // factory
+            put("ObjectFactory::create_batchcom_amap_api_maps_AMapException__String", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.AMapException> __resultList__ = new ArrayList<>();
+            
+                int __length__ = 0;
+                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
+                // of this batch
+                if (__argsBatch__ instanceof Map) {
+                    __length__ = (Integer) ((Map<String, Object>) __argsBatch__).get("length");
+                }
+                // or directly put the arg batch
+                else if (__argsBatch__ instanceof List) {
+                    __length__ = ((List<Map<String, Object>>) __argsBatch__).size();
+                }
+            
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
+                    Map<String, Object> __args__ = new HashMap<>();
+                    // only when arg batch is not empty, java side needs to parse args;
+                    if (__argsBatch__ instanceof List) {
+                        __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+                    }
+            
+                    // args
+                    // ref arg
+                    String var1 = (String) ((Map<String, Object>) __args__).get("var1");
+            
+                    // create target object
+                    com.amap.api.maps.AMapException __obj__ = new com.amap.api.maps.AMapException(var1);
+            
+                    // print current HEAP
+                    if (getEnableLog()) {
+                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                    }
+            
+                    __resultList__.add(__obj__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // factory
+            put("ObjectFactory::create_batchcom_amap_api_maps_AMapException__", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.AMapException> __resultList__ = new ArrayList<>();
+            
+                int __length__ = 0;
+                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
+                // of this batch
+                if (__argsBatch__ instanceof Map) {
+                    __length__ = (Integer) ((Map<String, Object>) __argsBatch__).get("length");
+                }
+                // or directly put the arg batch
+                else if (__argsBatch__ instanceof List) {
+                    __length__ = ((List<Map<String, Object>>) __argsBatch__).size();
+                }
+            
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
+                    Map<String, Object> __args__ = new HashMap<>();
+                    // only when arg batch is not empty, java side needs to parse args;
+                    if (__argsBatch__ instanceof List) {
+                        __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+                    }
+            
+                    // args
+            
+            
+                    // create target object
+                    com.amap.api.maps.AMapException __obj__ = new com.amap.api.maps.AMapException();
+            
+                    // print current HEAP
+                    if (getEnableLog()) {
+                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                    }
+            
+                    __resultList__.add(__obj__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // factory
+            put("ObjectFactory::create_batchcom_amap_api_maps_AMapOptions__", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.AMapOptions> __resultList__ = new ArrayList<>();
+            
+                int __length__ = 0;
+                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
+                // of this batch
+                if (__argsBatch__ instanceof Map) {
+                    __length__ = (Integer) ((Map<String, Object>) __argsBatch__).get("length");
+                }
+                // or directly put the arg batch
+                else if (__argsBatch__ instanceof List) {
+                    __length__ = ((List<Map<String, Object>>) __argsBatch__).size();
+                }
+            
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
+                    Map<String, Object> __args__ = new HashMap<>();
+                    // only when arg batch is not empty, java side needs to parse args;
+                    if (__argsBatch__ instanceof List) {
+                        __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+                    }
+            
+                    // args
+            
+            
+                    // create target object
+                    com.amap.api.maps.AMapOptions __obj__ = new com.amap.api.maps.AMapOptions();
+            
+                    // print current HEAP
+                    if (getEnableLog()) {
+                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                    }
+            
+                    __resultList__.add(__obj__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // factory
+            put("ObjectFactory::create_batchcom_amap_api_maps_AMapOptionsCreator__", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.AMapOptionsCreator> __resultList__ = new ArrayList<>();
+            
+                int __length__ = 0;
+                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
+                // of this batch
+                if (__argsBatch__ instanceof Map) {
+                    __length__ = (Integer) ((Map<String, Object>) __argsBatch__).get("length");
+                }
+                // or directly put the arg batch
+                else if (__argsBatch__ instanceof List) {
+                    __length__ = ((List<Map<String, Object>>) __argsBatch__).size();
+                }
+            
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
+                    Map<String, Object> __args__ = new HashMap<>();
+                    // only when arg batch is not empty, java side needs to parse args;
+                    if (__argsBatch__ instanceof List) {
+                        __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+                    }
+            
+                    // args
+            
+            
+                    // create target object
+                    com.amap.api.maps.AMapOptionsCreator __obj__ = new com.amap.api.maps.AMapOptionsCreator();
+            
+                    // print current HEAP
+                    if (getEnableLog()) {
+                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                    }
+            
+                    __resultList__.add(__obj__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // factory
+            put("ObjectFactory::create_batchcom_amap_api_maps_CoordinateConverter__android_content_Context", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.CoordinateConverter> __resultList__ = new ArrayList<>();
+            
+                int __length__ = 0;
+                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
+                // of this batch
+                if (__argsBatch__ instanceof Map) {
+                    __length__ = (Integer) ((Map<String, Object>) __argsBatch__).get("length");
+                }
+                // or directly put the arg batch
+                else if (__argsBatch__ instanceof List) {
+                    __length__ = ((List<Map<String, Object>>) __argsBatch__).size();
+                }
+            
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
+                    Map<String, Object> __args__ = new HashMap<>();
+                    // only when arg batch is not empty, java side needs to parse args;
+                    if (__argsBatch__ instanceof List) {
+                        __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+                    }
+            
+                    // args
+                    // ref arg
+                    android.content.Context var1 = (android.content.Context) ((Map<String, Object>) __args__).get("var1");
+            
+                    // create target object
+                    com.amap.api.maps.CoordinateConverter __obj__ = new com.amap.api.maps.CoordinateConverter(var1);
+            
+                    // print current HEAP
+                    if (getEnableLog()) {
+                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                    }
+            
+                    __resultList__.add(__obj__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // factory
+            put("ObjectFactory::create_batchcom_amap_api_maps_utils_SpatialRelationUtil__", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.utils.SpatialRelationUtil> __resultList__ = new ArrayList<>();
+            
+                int __length__ = 0;
+                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
+                // of this batch
+                if (__argsBatch__ instanceof Map) {
+                    __length__ = (Integer) ((Map<String, Object>) __argsBatch__).get("length");
+                }
+                // or directly put the arg batch
+                else if (__argsBatch__ instanceof List) {
+                    __length__ = ((List<Map<String, Object>>) __argsBatch__).size();
+                }
+            
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
+                    Map<String, Object> __args__ = new HashMap<>();
+                    // only when arg batch is not empty, java side needs to parse args;
+                    if (__argsBatch__ instanceof List) {
+                        __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+                    }
+            
+                    // args
+            
+            
+                    // create target object
+                    com.amap.api.maps.utils.SpatialRelationUtil __obj__ = new com.amap.api.maps.utils.SpatialRelationUtil();
+            
+                    // print current HEAP
+                    if (getEnableLog()) {
+                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                    }
+            
+                    __resultList__.add(__obj__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // factory
+            put("ObjectFactory::create_batchcom_amap_api_maps_utils_overlay_MovingPointOverlay__com_amap_api_maps_AMap__com_amap_api_maps_model_BasePointOverlay", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.utils.overlay.MovingPointOverlay> __resultList__ = new ArrayList<>();
+            
+                int __length__ = 0;
+                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
+                // of this batch
+                if (__argsBatch__ instanceof Map) {
+                    __length__ = (Integer) ((Map<String, Object>) __argsBatch__).get("length");
+                }
+                // or directly put the arg batch
+                else if (__argsBatch__ instanceof List) {
+                    __length__ = ((List<Map<String, Object>>) __argsBatch__).size();
+                }
+            
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
+                    Map<String, Object> __args__ = new HashMap<>();
+                    // only when arg batch is not empty, java side needs to parse args;
+                    if (__argsBatch__ instanceof List) {
+                        __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+                    }
+            
+                    // args
+                    // ref arg
+                    com.amap.api.maps.AMap var1 = (com.amap.api.maps.AMap) ((Map<String, Object>) __args__).get("var1");
+                    // ref arg
+                    com.amap.api.maps.model.BasePointOverlay var2 = (com.amap.api.maps.model.BasePointOverlay) ((Map<String, Object>) __args__).get("var2");
+            
+                    // create target object
+                    com.amap.api.maps.utils.overlay.MovingPointOverlay __obj__ = new com.amap.api.maps.utils.overlay.MovingPointOverlay(var1, var2);
+            
+                    // print current HEAP
+                    if (getEnableLog()) {
+                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                    }
+            
+                    __resultList__.add(__obj__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // factory
+            put("ObjectFactory::create_batchcom_amap_api_maps_utils_overlay_SmoothMoveMarker__com_amap_api_maps_AMap", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.utils.overlay.SmoothMoveMarker> __resultList__ = new ArrayList<>();
+            
+                int __length__ = 0;
+                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
+                // of this batch
+                if (__argsBatch__ instanceof Map) {
+                    __length__ = (Integer) ((Map<String, Object>) __argsBatch__).get("length");
+                }
+                // or directly put the arg batch
+                else if (__argsBatch__ instanceof List) {
+                    __length__ = ((List<Map<String, Object>>) __argsBatch__).size();
+                }
+            
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
+                    Map<String, Object> __args__ = new HashMap<>();
+                    // only when arg batch is not empty, java side needs to parse args;
+                    if (__argsBatch__ instanceof List) {
+                        __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+                    }
+            
+                    // args
+                    // ref arg
+                    com.amap.api.maps.AMap var1 = (com.amap.api.maps.AMap) ((Map<String, Object>) __args__).get("var1");
+            
+                    // create target object
+                    com.amap.api.maps.utils.overlay.SmoothMoveMarker __obj__ = new com.amap.api.maps.utils.overlay.SmoothMoveMarker(var1);
+            
+                    // print current HEAP
+                    if (getEnableLog()) {
+                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                    }
+            
+                    __resultList__.add(__obj__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // factory
+            put("ObjectFactory::create_batchcom_amap_api_maps_SwipeDismissCallBack__com_amap_api_maps_SwipeDismissView", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.SwipeDismissCallBack> __resultList__ = new ArrayList<>();
+            
+                int __length__ = 0;
+                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
+                // of this batch
+                if (__argsBatch__ instanceof Map) {
+                    __length__ = (Integer) ((Map<String, Object>) __argsBatch__).get("length");
+                }
+                // or directly put the arg batch
+                else if (__argsBatch__ instanceof List) {
+                    __length__ = ((List<Map<String, Object>>) __argsBatch__).size();
+                }
+            
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
+                    Map<String, Object> __args__ = new HashMap<>();
+                    // only when arg batch is not empty, java side needs to parse args;
+                    if (__argsBatch__ instanceof List) {
+                        __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+                    }
+            
+                    // args
+                    // ref arg
+                    com.amap.api.maps.SwipeDismissView var1 = (com.amap.api.maps.SwipeDismissView) ((Map<String, Object>) __args__).get("var1");
+            
+                    // create target object
+                    com.amap.api.maps.SwipeDismissCallBack __obj__ = new com.amap.api.maps.SwipeDismissCallBack(var1);
+            
+                    // print current HEAP
+                    if (getEnableLog()) {
+                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                    }
+            
+                    __resultList__.add(__obj__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // factory
+            put("ObjectFactory::create_batchcom_amap_api_maps_SwipeDismissView__android_content_Context__android_view_View", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.SwipeDismissView> __resultList__ = new ArrayList<>();
+            
+                int __length__ = 0;
+                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
+                // of this batch
+                if (__argsBatch__ instanceof Map) {
+                    __length__ = (Integer) ((Map<String, Object>) __argsBatch__).get("length");
+                }
+                // or directly put the arg batch
+                else if (__argsBatch__ instanceof List) {
+                    __length__ = ((List<Map<String, Object>>) __argsBatch__).size();
+                }
+            
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
+                    Map<String, Object> __args__ = new HashMap<>();
+                    // only when arg batch is not empty, java side needs to parse args;
+                    if (__argsBatch__ instanceof List) {
+                        __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+                    }
+            
+                    // args
+                    // ref arg
+                    android.content.Context var1 = (android.content.Context) ((Map<String, Object>) __args__).get("var1");
+                    // ref arg
+                    android.view.View var2 = (android.view.View) ((Map<String, Object>) __args__).get("var2");
+            
+                    // create target object
+                    com.amap.api.maps.SwipeDismissView __obj__ = new com.amap.api.maps.SwipeDismissView(var1, var2);
+            
+                    // print current HEAP
+                    if (getEnableLog()) {
+                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                    }
+            
+                    __resultList__.add(__obj__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // factory
+            put("ObjectFactory::create_batchcom_amap_api_maps_MapsInitializer__", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.MapsInitializer> __resultList__ = new ArrayList<>();
+            
+                int __length__ = 0;
+                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
+                // of this batch
+                if (__argsBatch__ instanceof Map) {
+                    __length__ = (Integer) ((Map<String, Object>) __argsBatch__).get("length");
+                }
+                // or directly put the arg batch
+                else if (__argsBatch__ instanceof List) {
+                    __length__ = ((List<Map<String, Object>>) __argsBatch__).size();
+                }
+            
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
+                    Map<String, Object> __args__ = new HashMap<>();
+                    // only when arg batch is not empty, java side needs to parse args;
+                    if (__argsBatch__ instanceof List) {
+                        __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+                    }
+            
+                    // args
+            
+            
+                    // create target object
+                    com.amap.api.maps.MapsInitializer __obj__ = new com.amap.api.maps.MapsInitializer();
+            
+                    // print current HEAP
+                    if (getEnableLog()) {
+                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                    }
+            
+                    __resultList__.add(__obj__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // factory
+            put("ObjectFactory::create_batchcom_amap_api_maps_offlinemap_OfflineMapStatus__", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.offlinemap.OfflineMapStatus> __resultList__ = new ArrayList<>();
+            
+                int __length__ = 0;
+                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
+                // of this batch
+                if (__argsBatch__ instanceof Map) {
+                    __length__ = (Integer) ((Map<String, Object>) __argsBatch__).get("length");
+                }
+                // or directly put the arg batch
+                else if (__argsBatch__ instanceof List) {
+                    __length__ = ((List<Map<String, Object>>) __argsBatch__).size();
+                }
+            
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
+                    Map<String, Object> __args__ = new HashMap<>();
+                    // only when arg batch is not empty, java side needs to parse args;
+                    if (__argsBatch__ instanceof List) {
+                        __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+                    }
+            
+                    // args
+            
+            
+                    // create target object
+                    com.amap.api.maps.offlinemap.OfflineMapStatus __obj__ = new com.amap.api.maps.offlinemap.OfflineMapStatus();
+            
+                    // print current HEAP
+                    if (getEnableLog()) {
+                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                    }
+            
+                    __resultList__.add(__obj__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // factory
+            put("ObjectFactory::create_batchcom_amap_api_maps_offlinemap_OfflineMapProvince__", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.offlinemap.OfflineMapProvince> __resultList__ = new ArrayList<>();
+            
+                int __length__ = 0;
+                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
+                // of this batch
+                if (__argsBatch__ instanceof Map) {
+                    __length__ = (Integer) ((Map<String, Object>) __argsBatch__).get("length");
+                }
+                // or directly put the arg batch
+                else if (__argsBatch__ instanceof List) {
+                    __length__ = ((List<Map<String, Object>>) __argsBatch__).size();
+                }
+            
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
+                    Map<String, Object> __args__ = new HashMap<>();
+                    // only when arg batch is not empty, java side needs to parse args;
+                    if (__argsBatch__ instanceof List) {
+                        __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+                    }
+            
+                    // args
+            
+            
+                    // create target object
+                    com.amap.api.maps.offlinemap.OfflineMapProvince __obj__ = new com.amap.api.maps.offlinemap.OfflineMapProvince();
+            
+                    // print current HEAP
+                    if (getEnableLog()) {
+                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                    }
+            
+                    __resultList__.add(__obj__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // factory
+            put("ObjectFactory::create_batchcom_amap_api_maps_offlinemap_DownloadProgressView__android_content_Context", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.offlinemap.DownloadProgressView> __resultList__ = new ArrayList<>();
+            
+                int __length__ = 0;
+                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
+                // of this batch
+                if (__argsBatch__ instanceof Map) {
+                    __length__ = (Integer) ((Map<String, Object>) __argsBatch__).get("length");
+                }
+                // or directly put the arg batch
+                else if (__argsBatch__ instanceof List) {
+                    __length__ = ((List<Map<String, Object>>) __argsBatch__).size();
+                }
+            
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
+                    Map<String, Object> __args__ = new HashMap<>();
+                    // only when arg batch is not empty, java side needs to parse args;
+                    if (__argsBatch__ instanceof List) {
+                        __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+                    }
+            
+                    // args
+                    // ref arg
+                    android.content.Context var1 = (android.content.Context) ((Map<String, Object>) __args__).get("var1");
+            
+                    // create target object
+                    com.amap.api.maps.offlinemap.DownloadProgressView __obj__ = new com.amap.api.maps.offlinemap.DownloadProgressView(var1);
+            
+                    // print current HEAP
+                    if (getEnableLog()) {
+                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                    }
+            
+                    __resultList__.add(__obj__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // factory
+            put("ObjectFactory::create_batchcom_amap_api_maps_offlinemap_Province__", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.offlinemap.Province> __resultList__ = new ArrayList<>();
+            
+                int __length__ = 0;
+                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
+                // of this batch
+                if (__argsBatch__ instanceof Map) {
+                    __length__ = (Integer) ((Map<String, Object>) __argsBatch__).get("length");
+                }
+                // or directly put the arg batch
+                else if (__argsBatch__ instanceof List) {
+                    __length__ = ((List<Map<String, Object>>) __argsBatch__).size();
+                }
+            
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
+                    Map<String, Object> __args__ = new HashMap<>();
+                    // only when arg batch is not empty, java side needs to parse args;
+                    if (__argsBatch__ instanceof List) {
+                        __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+                    }
+            
+                    // args
+            
+            
+                    // create target object
+                    com.amap.api.maps.offlinemap.Province __obj__ = new com.amap.api.maps.offlinemap.Province();
+            
+                    // print current HEAP
+                    if (getEnableLog()) {
+                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                    }
+            
+                    __resultList__.add(__obj__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // factory
+            put("ObjectFactory::create_batchcom_amap_api_maps_offlinemap_OfflineMapCity__", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.offlinemap.OfflineMapCity> __resultList__ = new ArrayList<>();
+            
+                int __length__ = 0;
+                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
+                // of this batch
+                if (__argsBatch__ instanceof Map) {
+                    __length__ = (Integer) ((Map<String, Object>) __argsBatch__).get("length");
+                }
+                // or directly put the arg batch
+                else if (__argsBatch__ instanceof List) {
+                    __length__ = ((List<Map<String, Object>>) __argsBatch__).size();
+                }
+            
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
+                    Map<String, Object> __args__ = new HashMap<>();
+                    // only when arg batch is not empty, java side needs to parse args;
+                    if (__argsBatch__ instanceof List) {
+                        __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+                    }
+            
+                    // args
+            
+            
+                    // create target object
+                    com.amap.api.maps.offlinemap.OfflineMapCity __obj__ = new com.amap.api.maps.offlinemap.OfflineMapCity();
+            
+                    // print current HEAP
+                    if (getEnableLog()) {
+                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                    }
+            
+                    __resultList__.add(__obj__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // factory
+            put("ObjectFactory::create_batchcom_amap_api_maps_offlinemap_OfflineMapActivity__", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.offlinemap.OfflineMapActivity> __resultList__ = new ArrayList<>();
+            
+                int __length__ = 0;
+                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
+                // of this batch
+                if (__argsBatch__ instanceof Map) {
+                    __length__ = (Integer) ((Map<String, Object>) __argsBatch__).get("length");
+                }
+                // or directly put the arg batch
+                else if (__argsBatch__ instanceof List) {
+                    __length__ = ((List<Map<String, Object>>) __argsBatch__).size();
+                }
+            
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
+                    Map<String, Object> __args__ = new HashMap<>();
+                    // only when arg batch is not empty, java side needs to parse args;
+                    if (__argsBatch__ instanceof List) {
+                        __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+                    }
+            
+                    // args
+            
+            
+                    // create target object
+                    com.amap.api.maps.offlinemap.OfflineMapActivity __obj__ = new com.amap.api.maps.offlinemap.OfflineMapActivity();
+            
+                    // print current HEAP
+                    if (getEnableLog()) {
+                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                    }
+            
+                    __resultList__.add(__obj__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // factory
+            put("ObjectFactory::create_batchcom_amap_api_maps_offlinemap_City__", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.offlinemap.City> __resultList__ = new ArrayList<>();
+            
+                int __length__ = 0;
+                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
+                // of this batch
+                if (__argsBatch__ instanceof Map) {
+                    __length__ = (Integer) ((Map<String, Object>) __argsBatch__).get("length");
+                }
+                // or directly put the arg batch
+                else if (__argsBatch__ instanceof List) {
+                    __length__ = ((List<Map<String, Object>>) __argsBatch__).size();
+                }
+            
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
+                    Map<String, Object> __args__ = new HashMap<>();
+                    // only when arg batch is not empty, java side needs to parse args;
+                    if (__argsBatch__ instanceof List) {
+                        __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+                    }
+            
+                    // args
+            
+            
+                    // create target object
+                    com.amap.api.maps.offlinemap.City __obj__ = new com.amap.api.maps.offlinemap.City();
+            
+                    // print current HEAP
+                    if (getEnableLog()) {
+                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                    }
+            
+                    __resultList__.add(__obj__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // factory
+            put("ObjectFactory::create_batchcom_amap_api_maps_model_HeatMapLayerOptions__", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.model.HeatMapLayerOptions> __resultList__ = new ArrayList<>();
+            
+                int __length__ = 0;
+                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
+                // of this batch
+                if (__argsBatch__ instanceof Map) {
+                    __length__ = (Integer) ((Map<String, Object>) __argsBatch__).get("length");
+                }
+                // or directly put the arg batch
+                else if (__argsBatch__ instanceof List) {
+                    __length__ = ((List<Map<String, Object>>) __argsBatch__).size();
+                }
+            
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
+                    Map<String, Object> __args__ = new HashMap<>();
+                    // only when arg batch is not empty, java side needs to parse args;
+                    if (__argsBatch__ instanceof List) {
+                        __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+                    }
+            
+                    // args
+            
+            
+                    // create target object
+                    com.amap.api.maps.model.HeatMapLayerOptions __obj__ = new com.amap.api.maps.model.HeatMapLayerOptions();
+            
+                    // print current HEAP
+                    if (getEnableLog()) {
+                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                    }
+            
+                    __resultList__.add(__obj__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // factory
+            put("ObjectFactory::create_batchcom_amap_api_maps_model_PolygonHoleOptions__", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.model.PolygonHoleOptions> __resultList__ = new ArrayList<>();
+            
+                int __length__ = 0;
+                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
+                // of this batch
+                if (__argsBatch__ instanceof Map) {
+                    __length__ = (Integer) ((Map<String, Object>) __argsBatch__).get("length");
+                }
+                // or directly put the arg batch
+                else if (__argsBatch__ instanceof List) {
+                    __length__ = ((List<Map<String, Object>>) __argsBatch__).size();
+                }
+            
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
+                    Map<String, Object> __args__ = new HashMap<>();
+                    // only when arg batch is not empty, java side needs to parse args;
+                    if (__argsBatch__ instanceof List) {
+                        __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+                    }
+            
+                    // args
+            
+            
+                    // create target object
+                    com.amap.api.maps.model.PolygonHoleOptions __obj__ = new com.amap.api.maps.model.PolygonHoleOptions();
+            
+                    // print current HEAP
+                    if (getEnableLog()) {
+                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                    }
+            
+                    __resultList__.add(__obj__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // factory
+            put("ObjectFactory::create_batchcom_amap_api_maps_model_TileOverlayOptionsCreator__", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.model.TileOverlayOptionsCreator> __resultList__ = new ArrayList<>();
+            
+                int __length__ = 0;
+                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
+                // of this batch
+                if (__argsBatch__ instanceof Map) {
+                    __length__ = (Integer) ((Map<String, Object>) __argsBatch__).get("length");
+                }
+                // or directly put the arg batch
+                else if (__argsBatch__ instanceof List) {
+                    __length__ = ((List<Map<String, Object>>) __argsBatch__).size();
+                }
+            
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
+                    Map<String, Object> __args__ = new HashMap<>();
+                    // only when arg batch is not empty, java side needs to parse args;
+                    if (__argsBatch__ instanceof List) {
+                        __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+                    }
+            
+                    // args
+            
+            
+                    // create target object
+                    com.amap.api.maps.model.TileOverlayOptionsCreator __obj__ = new com.amap.api.maps.model.TileOverlayOptionsCreator();
+            
+                    // print current HEAP
+                    if (getEnableLog()) {
+                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                    }
+            
+                    __resultList__.add(__obj__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // factory
+            put("ObjectFactory::create_batchcom_amap_api_maps_model_Poi__String__com_amap_api_maps_model_LatLng__String", (__argsBatch__, __methodResult__) -> {
+                List<com.amap.api.maps.model.Poi> __resultList__ = new ArrayList<>();
+            
+                int __length__ = 0;
+                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
+                // of this batch
+                if (__argsBatch__ instanceof Map) {
+                    __length__ = (Integer) ((Map<String, Object>) __argsBatch__).get("length");
+                }
+                // or directly put the arg batch
+                else if (__argsBatch__ instanceof List) {
+                    __length__ = ((List<Map<String, Object>>) __argsBatch__).size();
+                }
+            
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
+                    Map<String, Object> __args__ = new HashMap<>();
+                    // only when arg batch is not empty, java side needs to parse args;
+                    if (__argsBatch__ instanceof List) {
+                        __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+                    }
+            
+                    // args
+                    // ref arg
+                    String var1 = (String) ((Map<String, Object>) __args__).get("var1");
+                    // ref arg
+                    com.amap.api.maps.model.LatLng var2 = (com.amap.api.maps.model.LatLng) ((Map<String, Object>) __args__).get("var2");
+                    // ref arg
+                    String var3 = (String) ((Map<String, Object>) __args__).get("var3");
+            
+                    // create target object
+                    com.amap.api.maps.model.Poi __obj__ = new com.amap.api.maps.model.Poi(var1, var2, var3);
             
                     // print current HEAP
                     if (getEnableLog()) {

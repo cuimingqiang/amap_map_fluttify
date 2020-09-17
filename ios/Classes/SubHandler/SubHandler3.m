@@ -16,276 +16,6 @@ extern BOOL enableLog;
 - (NSDictionary<NSString*, Handler>*) getSubHandler3 {
     __weak __typeof(self)weakSelf = self;
     return @{
-        @"MAMapView::get_mapType": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MAMapView::get_mapType");
-            }
-        
-            // ref object
-            MAMapView* ref = (MAMapView*) args[@"__this__"];
-        
-            // invoke native method
-            MAMapType result = ref.mapType;
-        
-            // 返回值: Value
-            NSObject* __result__ = @(result);
-        
-            methodResult(__result__);
-        },
-        
-        @"MAMapView::get_centerCoordinate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MAMapView::get_centerCoordinate");
-            }
-        
-            // ref object
-            MAMapView* ref = (MAMapView*) args[@"__this__"];
-        
-            // invoke native method
-            CLLocationCoordinate2D result = ref.centerCoordinate;
-        
-            // 返回值: 结构体
-            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(CLLocationCoordinate2D)];
-        
-            methodResult(__result__);
-        },
-        
-        @"MAMapView::get_region": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MAMapView::get_region");
-            }
-        
-            // ref object
-            MAMapView* ref = (MAMapView*) args[@"__this__"];
-        
-            // invoke native method
-            MACoordinateRegion result = ref.region;
-        
-            // 返回值: 结构体
-            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(MACoordinateRegion)];
-        
-            methodResult(__result__);
-        },
-        
-        @"MAMapView::get_visibleMapRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MAMapView::get_visibleMapRect");
-            }
-        
-            // ref object
-            MAMapView* ref = (MAMapView*) args[@"__this__"];
-        
-            // invoke native method
-            MAMapRect result = ref.visibleMapRect;
-        
-            // 返回值: 结构体
-            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(MAMapRect)];
-        
-            methodResult(__result__);
-        },
-        
-        @"MAMapView::get_limitRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MAMapView::get_limitRegion");
-            }
-        
-            // ref object
-            MAMapView* ref = (MAMapView*) args[@"__this__"];
-        
-            // invoke native method
-            MACoordinateRegion result = ref.limitRegion;
-        
-            // 返回值: 结构体
-            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(MACoordinateRegion)];
-        
-            methodResult(__result__);
-        },
-        
-        @"MAMapView::get_limitMapRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MAMapView::get_limitMapRect");
-            }
-        
-            // ref object
-            MAMapView* ref = (MAMapView*) args[@"__this__"];
-        
-            // invoke native method
-            MAMapRect result = ref.limitMapRect;
-        
-            // 返回值: 结构体
-            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(MAMapRect)];
-        
-            methodResult(__result__);
-        },
-        
-        @"MAMapView::get_zoomLevel": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MAMapView::get_zoomLevel");
-            }
-        
-            // ref object
-            MAMapView* ref = (MAMapView*) args[@"__this__"];
-        
-            // invoke native method
-            CGFloat result = ref.zoomLevel;
-        
-            // 返回值: Value
-            NSObject* __result__ = @(result);
-        
-            methodResult(__result__);
-        },
-        
-        @"MAMapView::get_minZoomLevel": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MAMapView::get_minZoomLevel");
-            }
-        
-            // ref object
-            MAMapView* ref = (MAMapView*) args[@"__this__"];
-        
-            // invoke native method
-            CGFloat result = ref.minZoomLevel;
-        
-            // 返回值: Value
-            NSObject* __result__ = @(result);
-        
-            methodResult(__result__);
-        },
-        
-        @"MAMapView::get_maxZoomLevel": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MAMapView::get_maxZoomLevel");
-            }
-        
-            // ref object
-            MAMapView* ref = (MAMapView*) args[@"__this__"];
-        
-            // invoke native method
-            CGFloat result = ref.maxZoomLevel;
-        
-            // 返回值: Value
-            NSObject* __result__ = @(result);
-        
-            methodResult(__result__);
-        },
-        
-        @"MAMapView::get_rotationDegree": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MAMapView::get_rotationDegree");
-            }
-        
-            // ref object
-            MAMapView* ref = (MAMapView*) args[@"__this__"];
-        
-            // invoke native method
-            CGFloat result = ref.rotationDegree;
-        
-            // 返回值: Value
-            NSObject* __result__ = @(result);
-        
-            methodResult(__result__);
-        },
-        
-        @"MAMapView::get_cameraDegree": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MAMapView::get_cameraDegree");
-            }
-        
-            // ref object
-            MAMapView* ref = (MAMapView*) args[@"__this__"];
-        
-            // invoke native method
-            CGFloat result = ref.cameraDegree;
-        
-            // 返回值: Value
-            NSObject* __result__ = @(result);
-        
-            methodResult(__result__);
-        },
-        
-        @"MAMapView::get_zoomingInPivotsAroundAnchorPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MAMapView::get_zoomingInPivotsAroundAnchorPoint");
-            }
-        
-            // ref object
-            MAMapView* ref = (MAMapView*) args[@"__this__"];
-        
-            // invoke native method
-            BOOL result = ref.zoomingInPivotsAroundAnchorPoint;
-        
-            // 返回值: Value
-            NSObject* __result__ = @(result);
-        
-            methodResult(__result__);
-        },
-        
-        @"MAMapView::get_isZoomEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MAMapView::get_isZoomEnabled");
-            }
-        
-            // ref object
-            MAMapView* ref = (MAMapView*) args[@"__this__"];
-        
-            // invoke native method
-            BOOL result = ref.zoomEnabled;
-        
-            // 返回值: Value
-            NSObject* __result__ = @(result);
-        
-            methodResult(__result__);
-        },
-        
-        @"MAMapView::get_isScrollEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MAMapView::get_isScrollEnabled");
-            }
-        
-            // ref object
-            MAMapView* ref = (MAMapView*) args[@"__this__"];
-        
-            // invoke native method
-            BOOL result = ref.scrollEnabled;
-        
-            // 返回值: Value
-            NSObject* __result__ = @(result);
-        
-            methodResult(__result__);
-        },
-        
-        @"MAMapView::get_isRotateEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"MAMapView::get_isRotateEnabled");
-            }
-        
-            // ref object
-            MAMapView* ref = (MAMapView*) args[@"__this__"];
-        
-            // invoke native method
-            BOOL result = ref.rotateEnabled;
-        
-            // 返回值: Value
-            NSObject* __result__ = @(result);
-        
-            methodResult(__result__);
-        },
-        
         @"MAMapView::get_isRotateCameraEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // print log
             if (enableLog) {
@@ -2368,106 +2098,6 @@ extern BOOL enableLog;
             methodResult(resultList);
         },
         
-        @"MALonLatPoint::get_lat_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // ref object
-                MALonLatPoint* ref = (MALonLatPoint*) args[@"__this__"];
-        
-                double result = ref.lat;
-        
-                // 返回值: Value
-                NSObject* __result__ = @(result);
-        
-                [resultList addObject:__result__];
-            }
-        
-            methodResult(resultList);
-        },
-        
-        @"MALonLatPoint::get_lon_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // ref object
-                MALonLatPoint* ref = (MALonLatPoint*) args[@"__this__"];
-        
-                double result = ref.lon;
-        
-                // 返回值: Value
-                NSObject* __result__ = @(result);
-        
-                [resultList addObject:__result__];
-            }
-        
-            methodResult(resultList);
-        },
-        
-        @"MASmoothPathTool::get_intensity_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // ref object
-                MASmoothPathTool* ref = (MASmoothPathTool*) args[@"__this__"];
-        
-                int result = ref.intensity;
-        
-                // 返回值: Value
-                NSObject* __result__ = @(result);
-        
-                [resultList addObject:__result__];
-            }
-        
-            methodResult(resultList);
-        },
-        
-        @"MASmoothPathTool::get_threshHold_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // ref object
-                MASmoothPathTool* ref = (MASmoothPathTool*) args[@"__this__"];
-        
-                float result = ref.threshHold;
-        
-                // 返回值: Value
-                NSObject* __result__ = @(result);
-        
-                [resultList addObject:__result__];
-            }
-        
-            methodResult(resultList);
-        },
-        
-        @"MASmoothPathTool::get_noiseThreshhold_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // ref object
-                MASmoothPathTool* ref = (MASmoothPathTool*) args[@"__this__"];
-        
-                int result = ref.noiseThreshhold;
-        
-                // 返回值: Value
-                NSObject* __result__ = @(result);
-        
-                [resultList addObject:__result__];
-            }
-        
-            methodResult(resultList);
-        },
-        
         @"MAOfflineProvince::get_cities_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
             NSMutableArray* resultList = [NSMutableArray array];
         
@@ -3921,6 +3551,446 @@ extern BOOL enableLog;
         
                 // return a ref
                 id __result__ = result;
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"MAOfflineMap::get_provinces_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                MAOfflineMap* ref = (MAOfflineMap*) args[@"__this__"];
+        
+                NSArray<MAOfflineProvince*>* result = ref.provinces;
+        
+                // 返回值: 列表
+                NSMutableArray<NSObject*>* __result__ = [NSMutableArray array];
+                for (int __i__ = 0; __i__ < result.count; __i__++) {
+                    NSObject* object = [result objectAtIndex:__i__];
+                    [__result__ addObject: object];
+                }
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"MAOfflineMap::get_municipalities_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                MAOfflineMap* ref = (MAOfflineMap*) args[@"__this__"];
+        
+                NSArray<MAOfflineItemMunicipality*>* result = ref.municipalities;
+        
+                // 返回值: 列表
+                NSMutableArray<NSObject*>* __result__ = [NSMutableArray array];
+                for (int __i__ = 0; __i__ < result.count; __i__++) {
+                    NSObject* object = [result objectAtIndex:__i__];
+                    [__result__ addObject: object];
+                }
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"MAOfflineMap::get_nationWide_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                MAOfflineMap* ref = (MAOfflineMap*) args[@"__this__"];
+        
+                MAOfflineItemNationWide* result = ref.nationWide;
+        
+                // return a ref
+                id __result__ = result;
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"MAOfflineMap::get_cities_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                MAOfflineMap* ref = (MAOfflineMap*) args[@"__this__"];
+        
+                NSArray<MAOfflineCity*>* result = ref.cities;
+        
+                // 返回值: 列表
+                NSMutableArray<NSObject*>* __result__ = [NSMutableArray array];
+                for (int __i__ = 0; __i__ < result.count; __i__++) {
+                    NSObject* object = [result objectAtIndex:__i__];
+                    [__result__ addObject: object];
+                }
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"MAOfflineMap::get_version_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                MAOfflineMap* ref = (MAOfflineMap*) args[@"__this__"];
+        
+                NSString* result = ref.version;
+        
+                // 返回值: jsonable
+                id __result__ = result;
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"MAOfflineMap::get_offlineCities_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                MAOfflineMap* ref = (MAOfflineMap*) args[@"__this__"];
+        
+                NSArray* result = ref.offlineCities;
+        
+                // 返回值: 列表
+                NSMutableArray<NSObject*>* __result__ = [NSMutableArray array];
+                for (int __i__ = 0; __i__ < result.count; __i__++) {
+                    NSObject* object = [result objectAtIndex:__i__];
+                    [__result__ addObject: object];
+                }
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"MACircleRenderer::get_circle_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                MACircleRenderer* ref = (MACircleRenderer*) args[@"__this__"];
+        
+                MACircle* result = ref.circle;
+        
+                // return a ref
+                id __result__ = result;
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"MAParticleOverlayRenderer::get_particleOverlay_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                MAParticleOverlayRenderer* ref = (MAParticleOverlayRenderer*) args[@"__this__"];
+        
+                MAParticleOverlay* result = ref.particleOverlay;
+        
+                // return a ref
+                id __result__ = result;
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"MACoordinateBounds::get_northEast_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                NSValue* dataValue = (NSValue*) ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
+                MACoordinateBounds ref;
+                [dataValue getValue:&ref];
+        
+                CLLocationCoordinate2D result = ref.northEast;
+        
+                // 返回值: 结构体
+                NSValue* __result__ = [NSValue value:&result withObjCType:@encode(CLLocationCoordinate2D)];
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"MACoordinateBounds::get_southWest_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                NSValue* dataValue = (NSValue*) ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
+                MACoordinateBounds ref;
+                [dataValue getValue:&ref];
+        
+                CLLocationCoordinate2D result = ref.southWest;
+        
+                // 返回值: 结构体
+                NSValue* __result__ = [NSValue value:&result withObjCType:@encode(CLLocationCoordinate2D)];
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"MACoordinateSpan::get_latitudeDelta_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                NSValue* dataValue = (NSValue*) ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
+                MACoordinateSpan ref;
+                [dataValue getValue:&ref];
+        
+                CLLocationDegrees result = ref.latitudeDelta;
+        
+                // 返回值: Value
+                NSObject* __result__ = @(result);
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"MACoordinateSpan::get_longitudeDelta_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                NSValue* dataValue = (NSValue*) ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
+                MACoordinateSpan ref;
+                [dataValue getValue:&ref];
+        
+                CLLocationDegrees result = ref.longitudeDelta;
+        
+                // 返回值: Value
+                NSObject* __result__ = @(result);
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"MACoordinateRegion::get_center_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                NSValue* dataValue = (NSValue*) ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
+                MACoordinateRegion ref;
+                [dataValue getValue:&ref];
+        
+                CLLocationCoordinate2D result = ref.center;
+        
+                // 返回值: 结构体
+                NSValue* __result__ = [NSValue value:&result withObjCType:@encode(CLLocationCoordinate2D)];
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"MACoordinateRegion::get_span_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                NSValue* dataValue = (NSValue*) ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
+                MACoordinateRegion ref;
+                [dataValue getValue:&ref];
+        
+                MACoordinateSpan result = ref.span;
+        
+                // 返回值: 结构体
+                NSValue* __result__ = [NSValue value:&result withObjCType:@encode(MACoordinateSpan)];
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"MAMapPoint::get_x_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                NSValue* dataValue = (NSValue*) ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
+                MAMapPoint ref;
+                [dataValue getValue:&ref];
+        
+                double result = ref.x;
+        
+                // 返回值: Value
+                NSObject* __result__ = @(result);
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"MAMapPoint::get_y_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                NSValue* dataValue = (NSValue*) ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
+                MAMapPoint ref;
+                [dataValue getValue:&ref];
+        
+                double result = ref.y;
+        
+                // 返回值: Value
+                NSObject* __result__ = @(result);
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"MAMapSize::get_width_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                NSValue* dataValue = (NSValue*) ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
+                MAMapSize ref;
+                [dataValue getValue:&ref];
+        
+                double result = ref.width;
+        
+                // 返回值: Value
+                NSObject* __result__ = @(result);
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"MAMapSize::get_height_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                NSValue* dataValue = (NSValue*) ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
+                MAMapSize ref;
+                [dataValue getValue:&ref];
+        
+                double result = ref.height;
+        
+                // 返回值: Value
+                NSObject* __result__ = @(result);
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"MAMapRect::get_origin_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                NSValue* dataValue = (NSValue*) ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
+                MAMapRect ref;
+                [dataValue getValue:&ref];
+        
+                MAMapPoint result = ref.origin;
+        
+                // 返回值: 结构体
+                NSValue* __result__ = [NSValue value:&result withObjCType:@encode(MAMapPoint)];
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"MAMapRect::get_size_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                NSValue* dataValue = (NSValue*) ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
+                MAMapRect ref;
+                [dataValue getValue:&ref];
+        
+                MAMapSize result = ref.size;
+        
+                // 返回值: 结构体
+                NSValue* __result__ = [NSValue value:&result withObjCType:@encode(MAMapSize)];
         
                 [resultList addObject:__result__];
             }

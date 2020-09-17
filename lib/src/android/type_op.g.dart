@@ -64,10 +64,6 @@ extension TypeOpAmapMapFluttifyAndroid on Object {
       final result = await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('RefClass::isKindOfcom_amap_api_maps_AMap_ImageInfoWindowAdapter', {'__this__': this});
       return result;
     }
-    else if (T == com_amap_api_maps_utils_PathSmoothTool) {
-      final result = await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('RefClass::isKindOfcom_amap_api_maps_utils_PathSmoothTool', {'__this__': this});
-      return result;
-    }
     else if (T == com_amap_api_maps_utils_SpatialRelationUtil) {
       final result = await MethodChannel('me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('RefClass::isKindOfcom_amap_api_maps_utils_SpatialRelationUtil', {'__this__': this});
       return result;
@@ -694,9 +690,6 @@ extension TypeOpAmapMapFluttifyAndroid on Object {
     }
     else if (T == com_amap_api_maps_AMap_ImageInfoWindowAdapter) {
       return (com_amap_api_maps_AMap_ImageInfoWindowAdapter.subInstance()..refId = (this is Ref ? (this as Ref).refId : this as String)..tag__ = 'amap_map_fluttify') as T;
-    }
-    else if (T == com_amap_api_maps_utils_PathSmoothTool) {
-      return (com_amap_api_maps_utils_PathSmoothTool()..refId = (this is Ref ? (this as Ref).refId : this as String)..tag__ = 'amap_map_fluttify') as T;
     }
     else if (T == com_amap_api_maps_utils_SpatialRelationUtil) {
       return (com_amap_api_maps_utils_SpatialRelationUtil()..refId = (this is Ref ? (this as Ref).refId : this as String)..tag__ = 'amap_map_fluttify') as T;
