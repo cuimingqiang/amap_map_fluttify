@@ -305,14 +305,16 @@ mixin _Community on _Holder {
       ios: (pool) async {
         // todo 暂时没有找到比较直接的方式实现
         print('ios端暂时未实现');
-//        final annotations = await _iosController.get_annotations();
-//        for (final MAAnnotation annotation in annotations) {
-//          if (await annotation.isMAUserLocation()) {
-//            final userLocation = await annotation.asMAUserLocation();
-//            userLocation.set_movingDirection(movingDirection)
-//            break;
-//          }
-//        }
+        // final annotations = await iosController.get_annotations();
+        // for (final MAAnnotation annotation in annotations) {
+        //   if (await TypeOpAmapMapFluttifyIOS(annotation)
+        //       .is__<MAUserLocation>()) {
+        //     print('找到定位图标');
+        //     final view = await iosController.viewForAnnotation(annotation);
+        //     await view.rotate((360 - angle).abs());
+        //     break;
+        //   }
+        // }
       },
     );
   }
