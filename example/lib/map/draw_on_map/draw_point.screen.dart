@@ -375,8 +375,8 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                       HeatmapTileOption(
                         latLngList: getNextBatchLatLng(50),
                         gradient: RadialGradient(
-                          colors: [Colors.purple, Colors.red],
-                          stops: <double>[0.2, 1],
+                          colors: [Colors.blue, Colors.yellow, Colors.red],
+                          stops: <double>[0.08, 0.4, 1.0],
                         ),
                       ),
                     );

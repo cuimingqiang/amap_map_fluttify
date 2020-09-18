@@ -109,12 +109,16 @@ class _CreateMapScreenState extends State<CreateMapScreen> with NextLatLng {
                   },
                 ),
                 ListTile(
+                  title: Center(child: Text('旋转定位图标')),
+                  onTap: () async {
+                    await _controller.setMyLocationRotateAngle(90);
+                  },
+                ),
+                ListTile(
                   title: Center(child: Text('使用自定义定位图标')),
                   onTap: () async {
-                    await _controller?.showMyLocation(MyLocationOption(
-                      myLocationType: MyLocationType.Rotate,
-                      iconProvider: _assetsIcon,
-                    ));
+                    await _controller?.showMyLocation(
+                        MyLocationOption(iconProvider: _assetsIcon));
                   },
                 ),
                 BooleanSetting(

@@ -57,15 +57,26 @@ class _DrawPolylineScreenState extends State<DrawPolylineScreen>
                 ListTile(
                   title: Center(child: Text('添加线')),
                   onTap: () async {
-                    _pointList = [
-                      getNextLatLng(),
-                      getNextLatLng(),
-                      getNextLatLng(),
-                      getNextLatLng(),
-                    ];
+                    _pointList = getNextBatchLatLng(3);
                     _currentPolyline =
                         await _controller?.addPolyline(PolylineOption(
                       latLngList: _pointList,
+                      width: 10,
+                      strokeColor: Colors.green,
+                    ));
+                  },
+                ),
+                ListTile(
+                  title: Center(child: Text('平滑处理')),
+                  onTap: () async {
+                    if (_currentPolyline == null) {
+                      toast('请先添加对比折线');
+                      return;
+                    }
+                    final smooth =
+                        await AmapService.instance.pathSmooth(_pointList);
+                    await _controller?.addPolyline(PolylineOption(
+                      latLngList: smooth,
                       width: 10,
                       strokeColor: Colors.green,
                     ));

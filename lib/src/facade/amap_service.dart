@@ -10,6 +10,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'custom/android/PathSmoothTool.g.dart';
+import 'custom/ios/MALonLatPoint.g.dart';
+import 'custom/ios/MASmoothPathTool.g.dart';
 import 'extensions.dart';
 import 'list.x.dart';
 
@@ -386,53 +389,56 @@ class AmapService {
     return consolidateHttpClientResponseBytes(response);
   }
 
-  // /// 轨迹平滑处理
-  // Future<List<LatLng>> pathOptimize(
-  //   List<LatLng> coordinateList, {
-  //   int intensity = 4,
-  // }) async {
-  //   assert(coordinateList != null);
-  //   if (coordinateList.isEmpty) return [];
-  //
-  //   final latitudeBatch = coordinateList.map((e) => e.latitude).toList();
-  //   final longitudeBatch = coordinateList.map((e) => e.longitude).toList();
-  //
-  //   return platform(
-  //     android: (pool) async {
-  //       final pathSmooth =
-  //           await com_amap_api_maps_utils_PathSmoothTool.create__();
-  //       await pathSmooth.setIntensity(intensity);
-  //       final result = await pathSmooth.pathOptimize(
-  //           await com_amap_api_maps_model_LatLng.create_batch__double__double(
-  //               latitudeBatch, longitudeBatch));
-  //
-  //       final resultLatitudeBatch = await result.get_latitude_batch();
-  //       final resultLongitudeBatch = await result.get_longitude_batch();
-  //       return [
-  //         for (int i = 0; i < result.length; i++)
-  //           LatLng(resultLatitudeBatch[i], resultLongitudeBatch[i])
-  //       ];
-  //     },
-  //     ios: (pool) async {
-  //       final pathSmooth = await MASmoothPathTool.create__();
-  //       await pathSmooth.set_intensity(intensity);
-  //
-  //       final pointBatch =
-  //           await MALonLatPoint.create_batch__(coordinateList.length);
-  //       await pointBatch.set_lat_batch(latitudeBatch);
-  //       await pointBatch.set_lon_batch(longitudeBatch);
-  //
-  //       final result = await pathSmooth.pathOptimize(pointBatch);
-  //
-  //       final resultLatitudeBatch = await result.get_lat_batch();
-  //       final resultLongitudeBatch = await result.get_lon_batch();
-  //       return [
-  //         for (int i = 0; i < result.length; i++)
-  //           LatLng(resultLatitudeBatch[i], resultLongitudeBatch[i])
-  //       ];
-  //     },
-  //   );
-  // }
+  /// 轨迹平滑处理
+  Future<List<LatLng>> pathSmooth(
+    List<LatLng> coordinateList, {
+    int intensity = 3,
+    double threshold = 0.3,
+  }) async {
+    assert(coordinateList != null);
+    if (coordinateList.isEmpty) return [];
+
+    final latitudeBatch = coordinateList.map((e) => e.latitude).toList();
+    final longitudeBatch = coordinateList.map((e) => e.longitude).toList();
+
+    return platform(
+      android: (pool) async {
+        final pathSmooth =
+            await com_amap_api_maps_utils_PathSmoothTool.create__();
+        await pathSmooth.setIntensity(intensity);
+        await pathSmooth.setThreshhold(threshold);
+        final result = await pathSmooth.pathOptimize(
+            await com_amap_api_maps_model_LatLng.create_batch__double__double(
+                latitudeBatch, longitudeBatch));
+
+        final resultLatitudeBatch = await result.get_latitude_batch();
+        final resultLongitudeBatch = await result.get_longitude_batch();
+        return [
+          for (int i = 0; i < result.length; i++)
+            LatLng(resultLatitudeBatch[i], resultLongitudeBatch[i])
+        ];
+      },
+      ios: (pool) async {
+        final pathSmooth = await MASmoothPathTool.create__();
+        await pathSmooth.set_intensity(intensity);
+        await pathSmooth.set_threshHold(threshold);
+
+        final pointBatch =
+            await MALonLatPoint.create_batch__(coordinateList.length);
+        await pointBatch.set_lat_batch(latitudeBatch);
+        await pointBatch.set_lon_batch(longitudeBatch);
+
+        final result = await pathSmooth.pathOptimize(pointBatch);
+
+        final resultLatitudeBatch = await result.get_lat_batch();
+        final resultLongitudeBatch = await result.get_lon_batch();
+        return [
+          for (int i = 0; i < result.length; i++)
+            LatLng(resultLatitudeBatch[i], resultLongitudeBatch[i])
+        ];
+      },
+    );
+  }
 }
 
 class _TraceListener extends java_lang_Object
