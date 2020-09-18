@@ -390,9 +390,10 @@ class AmapService {
   }
 
   /// 轨迹平滑处理
-  Future<List<LatLng>> pathOptimize(
+  Future<List<LatLng>> pathSmooth(
     List<LatLng> coordinateList, {
-    int intensity = 4,
+    int intensity = 3,
+    double threshold = 0.3,
   }) async {
     assert(coordinateList != null);
     if (coordinateList.isEmpty) return [];
@@ -405,6 +406,7 @@ class AmapService {
         final pathSmooth =
             await com_amap_api_maps_utils_PathSmoothTool.create__();
         await pathSmooth.setIntensity(intensity);
+        await pathSmooth.setThreshhold(threshold);
         final result = await pathSmooth.pathOptimize(
             await com_amap_api_maps_model_LatLng.create_batch__double__double(
                 latitudeBatch, longitudeBatch));
@@ -419,6 +421,7 @@ class AmapService {
       ios: (pool) async {
         final pathSmooth = await MASmoothPathTool.create__();
         await pathSmooth.set_intensity(intensity);
+        await pathSmooth.set_threshHold(threshold);
 
         final pointBatch =
             await MALonLatPoint.create_batch__(coordinateList.length);
