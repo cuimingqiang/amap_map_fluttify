@@ -862,11 +862,8 @@ mixin _Community on _Holder {
         return Marker.android(marker);
       },
       ios: (pool) async {
-        await iosController.set_delegate(
-          iosMapDelegate
-            ..iosController = iosController
-            ..annotationViewCompleter = Completer(),
-        );
+        await iosController
+            .set_delegate(iosMapDelegate..iosController = iosController);
 
         // 创建marker
         final annotation = await MAPointAnnotation.create__();
@@ -1040,11 +1037,8 @@ mixin _Community on _Holder {
         return markers.map((it) => Marker.android(it)).toList();
       },
       ios: (pool) async {
-        await iosController.set_delegate(
-          iosMapDelegate
-            ..iosController = iosController
-            ..annotationViewCompleter = Completer(),
-        );
+        await iosController
+            .set_delegate(iosMapDelegate..iosController = iosController);
 
         // 创建marker
         final annotationBatch =

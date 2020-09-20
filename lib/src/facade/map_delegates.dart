@@ -18,22 +18,6 @@ class _IOSMapDelegate extends NSObject
   OnMultiPointClicked onMultiPointClicked;
 
   MAMapView iosController;
-  Completer<List<MAAnnotationView>> annotationViewCompleter;
-
-  @override
-  Future<void> mapView_didAddAnnotationViews(
-    MAMapView mapView,
-    List<NSObject> views,
-  ) async {
-    super.mapView_didAddAnnotationViews(mapView, views);
-    if (annotationViewCompleter?.isCompleted == false) {
-      List<MAAnnotationView> result = [
-        for (final view in views)
-          TypeOpAmapMapFluttifyIOS(view).as__<MAAnnotationView>()
-      ];
-      annotationViewCompleter.complete(result);
-    }
-  }
 
   @override
   Future<void> mapView_didAnnotationViewTapped(
