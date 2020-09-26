@@ -258,7 +258,7 @@ class _IOSMapDelegate extends NSObject
   @override
   Future<void> mapView_didAddOverlayRenderers(
     MAMapView mapView,
-    List<NSObject> overlayRenderers,
+    List<dynamic> overlayRenderers,
   ) async {
     super.mapView_didAddOverlayRenderers(mapView, overlayRenderers);
     if (overlayRenderers.length == 1 &&
