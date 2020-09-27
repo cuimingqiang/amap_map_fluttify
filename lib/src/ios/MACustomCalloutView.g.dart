@@ -46,7 +46,7 @@ class MACustomCalloutView extends UIView  {
   
   Future<dynamic> get_userData({bool viewChannel = true}) async {
     final __result__ = await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MACustomCalloutView' : 'me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod("MACustomCalloutView::get_userData", {'__this__': this});
-    return __result__ == null ? null : (Ref()..refId = __result__..tag__ = 'amap_map_fluttify');
+    return __result__ == null ? null : (__result__);
   }
   
   //endregion
@@ -79,7 +79,7 @@ class MACustomCalloutView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = Ref()..refId = __result__..tag__ = 'amap_map_fluttify';
+      final __return__ = __result__;
       return __return__;
     }
   }
@@ -99,7 +99,7 @@ extension MACustomCalloutView_Batch on List<MACustomCalloutView> {
   Future<List<dynamic>> get_userData_batch({bool viewChannel = true}) async {
     final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MACustomCalloutView' : 'me.yohom/amap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('amap_map_fluttify'))).invokeMethod("MACustomCalloutView::get_userData_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => Ref()..refId = __result__..tag__ = 'amap_map_fluttify').toList();
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
@@ -129,7 +129,7 @@ extension MACustomCalloutView_Batch on List<MACustomCalloutView> {
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => Ref()..refId = __result__..tag__ = 'amap_map_fluttify').toList();
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
       return typedResult;
     }
   }

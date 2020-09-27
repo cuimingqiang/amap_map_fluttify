@@ -130,6 +130,7 @@ class AmapView extends StatefulWidget {
   /// 如果你在多个页面有地图widget时, 就设置为false, 防止第二个(以及后续的)地图页面dispose时,
   /// 释放掉了第一个地图页面创建的原生对象, 导致第一个地图所有方法都失效. 在所有地图页面都被pop时,
   /// 调用[releaseAmapObjectPool]来释放掉在地图页面期间创建的原生对象.
+  @Deprecated('已无需使用')
   final bool autoRelease;
 
   /// 传递给PlatformView的手势识别器

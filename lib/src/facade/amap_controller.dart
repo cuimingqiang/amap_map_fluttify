@@ -130,6 +130,8 @@ mixin _Community on _Holder {
   /// 可配置的参数详见[MyLocationOption]
   Future<void> showMyLocation(MyLocationOption option) async {
     assert(option != null);
+    assert(state.context != null, '当前context为null!');
+
     await platform(
       android: (pool) async {
         androidMap ??= await androidController.getMap();
@@ -763,6 +765,7 @@ mixin _Community on _Holder {
   /// 其中图片参数[imageConfig]如果不知道怎么创建, 那么就直接调用flutter sdk内提供的[createLocalImageConfiguration]方法创建
   Future<Marker> addMarker(MarkerOption option) {
     assert(option != null);
+    assert(state.context != null, '当前context为null!');
 
     final lat = option.latLng.latitude;
     final lng = option.latLng.longitude;
@@ -862,11 +865,8 @@ mixin _Community on _Holder {
         return Marker.android(marker);
       },
       ios: (pool) async {
-        await iosController.set_delegate(
-          iosMapDelegate
-            ..iosController = iosController
-            ..annotationViewCompleter = Completer(),
-        );
+        await iosController
+            .set_delegate(iosMapDelegate..iosController = iosController);
 
         // 创建marker
         final annotation = await MAPointAnnotation.create__();
@@ -965,6 +965,7 @@ mixin _Community on _Holder {
   /// 根据[options]批量创建Marker
   Future<List<Marker>> addMarkers(List<MarkerOption> options) async {
     assert(options != null);
+    assert(state.context != null, '当前context为null!');
 
     if (options.isEmpty) return Future.value([]);
 
@@ -1040,11 +1041,8 @@ mixin _Community on _Holder {
         return markers.map((it) => Marker.android(it)).toList();
       },
       ios: (pool) async {
-        await iosController.set_delegate(
-          iosMapDelegate
-            ..iosController = iosController
-            ..annotationViewCompleter = Completer(),
-        );
+        await iosController
+            .set_delegate(iosMapDelegate..iosController = iosController);
 
         // 创建marker
         final annotationBatch =
@@ -1185,6 +1183,7 @@ mixin _Community on _Holder {
   /// 可配置参数详见[PolylineOption]
   Future<Polyline> addPolyline(PolylineOption option) async {
     assert(option != null);
+    assert(state.context != null, '当前context为null!');
 
     final latitudeBatch = option.latLngList.map((e) => e.latitude).toList();
     final longitudeBatch = option.latLngList.map((e) => e.longitude).toList();
