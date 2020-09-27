@@ -131,3 +131,14 @@ extension MAPointAnnotationListX on List<MAPointAnnotation> {
     await addJsonableProperty_batch(12, fps);
   }
 }
+
+extension LatLngX on LatLng {
+  Future<com_amap_api_maps_model_LatLng> toAndroidModel() async {
+    return com_amap_api_maps_model_LatLng.create__double__double(
+        latitude, longitude);
+  }
+
+  Future<CLLocationCoordinate2D> toIOSModel() async {
+    return CLLocationCoordinate2D.create(latitude, longitude);
+  }
+}

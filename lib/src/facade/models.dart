@@ -1,5 +1,7 @@
 import 'package:amap_core_fluttify/amap_core_fluttify.dart';
 import 'package:amap_map_fluttify/amap_map_fluttify.dart';
+import 'package:amap_map_fluttify/src/android/com/amap/api/maps/model/LatLng.g.dart';
+import 'package:amap_map_fluttify/src/android/com/amap/api/maps/model/animation/TranslateAnimation.g.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -399,20 +401,6 @@ class MapMove {
 
 /// 屏幕坐标
 @immutable
-class Point {
-  final double x;
-  final double y;
-
-  Point(this.x, this.y);
-
-  @override
-  String toString() {
-    return 'Point{x: $x, y: $y}';
-  }
-}
-
-/// 屏幕坐标
-@immutable
 class TraceLocation {
   final double latitude;
   final double longitude;
@@ -466,6 +454,7 @@ class TrafficOption {
   }
 }
 
+/// marker动画基类
 @immutable
 class MarkerAnimation {
   MarkerAnimation(
@@ -498,6 +487,11 @@ class MarkerAnimation {
     } else if (this is RotateMarkerAnimation) {
       result = await com_amap_api_maps_model_animation_RotateAnimation
           .create__float__float(fromValue, toValue);
+    } else if (this is TranslateMarkerAnimation) {
+      final target = (this as TranslateMarkerAnimation).coordinate;
+      result = await com_amap_api_maps_model_animation_TranslateAnimation
+          .create__com_amap_api_maps_model_LatLng(
+              await target.toAndroidModel());
     } else if (this is MarkerAnimationSet) {
       final _this = this as MarkerAnimationSet;
       result = await com_amap_api_maps_model_animation_AnimationSet
@@ -522,6 +516,7 @@ class MarkerAnimation {
   }
 }
 
+/// marker缩放动画
 @immutable
 class ScaleMarkerAnimation extends MarkerAnimation {
   ScaleMarkerAnimation({
@@ -538,6 +533,7 @@ class ScaleMarkerAnimation extends MarkerAnimation {
   }
 }
 
+/// marker透明度动画
 @immutable
 class AlphaMarkerAnimation extends MarkerAnimation {
   AlphaMarkerAnimation({
@@ -554,6 +550,7 @@ class AlphaMarkerAnimation extends MarkerAnimation {
   }
 }
 
+/// marker旋转动画
 @immutable
 class RotateMarkerAnimation extends MarkerAnimation {
   RotateMarkerAnimation({
@@ -570,6 +567,25 @@ class RotateMarkerAnimation extends MarkerAnimation {
   }
 }
 
+/// marker移动动画
+@immutable
+class TranslateMarkerAnimation extends MarkerAnimation {
+  TranslateMarkerAnimation({
+    Duration duration = const Duration(seconds: 1),
+    int repeatCount = 1,
+    RepeatMode repeatMode = RepeatMode.Reverse,
+    @required this.coordinate,
+  }) : super(duration, repeatCount, repeatMode, null, null);
+
+  final LatLng coordinate;
+
+  @override
+  String toString() {
+    return 'TranslateMarkerAnimation{toValue: $coordinate}';
+  }
+}
+
+/// marker动画集合
 @immutable
 class MarkerAnimationSet extends MarkerAnimation {
   MarkerAnimationSet({
@@ -586,23 +602,6 @@ class MarkerAnimationSet extends MarkerAnimation {
     return 'MarkerAnimationSet{animationSet: $animationSet}';
   }
 }
-
-// @immutable
-// class TranslateMarkerAnimation extends MarkerAnimation {
-//   TranslateMarkerAnimation({
-//     Duration duration = const Duration(seconds: 1),
-//     int repeatCount = 1,
-//     RepeatMode repeatMode = RepeatMode.Reverse,
-//     @required this.coordinate,
-//   }) : super(duration, repeatCount, repeatMode);
-//
-//   final LatLng coordinate;
-//
-//   @override
-//   String toString() {
-//     return 'TranslateMarkerAnimation{toValue: $coordinate}';
-//   }
-// }
 
 /// 地图定位信息 区分于定位插件的定位信息
 class MapLocation {
@@ -816,6 +815,8 @@ class Marker {
         final _animation = await animation.toAndroidModel();
         await androidModel.setAnimation(_animation);
         await androidModel.startAnimation();
+
+        pool.add(_animation);
       },
       ios: (pool) async {
         final annotationView = await iosController.viewForAnnotation(iosModel);
@@ -843,6 +844,16 @@ class Marker {
             repeatCount: animation.repeatCount,
             repeatMode: animation.repeatMode.index,
           );
+        } else if (animation is TranslateMarkerAnimation) {
+          await annotationView?.translateWithDuration(
+            toValue: await iosController.convertCoordinate_toPointToView(
+              await animation.coordinate.toIOSModel(),
+              iosController,
+            ),
+            duration: animation.duration,
+            repeatCount: animation.repeatCount,
+            repeatMode: animation.repeatMode.index,
+          );
         } else if (animation is MarkerAnimationSet) {
           await annotationView?.groupWithDuration(
             fromValue: animation.animationSet.map((e) => e.fromValue).toList(),
@@ -853,6 +864,8 @@ class Marker {
                   'transform.scale'
                 else if (item is AlphaMarkerAnimation)
                   'opacity'
+                else if (item is TranslateMarkerAnimation)
+                  'position'
                 else if (item is RotateMarkerAnimation)
                   'transform.rotation',
             ],

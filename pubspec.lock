@@ -96,9 +96,9 @@ packages:
   foundation_fluttify:
     dependency: "direct main"
     description:
-      name: foundation_fluttify
-      url: "https://pub.flutter-io.cn"
-    source: hosted
+      path: "/Users/yohom/Github/Me/All/fluttify/fluttify_infra/foundation_fluttify"
+      relative: false
+    source: path
     version: "0.9.6"
   matcher:
     dependency: transitive
